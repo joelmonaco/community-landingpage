@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alle Features von Teech - Live Video, Chat, Mediathek, Gamification, Kalender, Analytics und mehr für deine Community-Plattform.">
+  <title>Features - Teech Community-Plattform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="canonical" href="https://teech.com/features.html">
+  <style>
+    @font-face {
+      font-family: 'Vanguard CF';
+      src: url('./fonts/Vanguard-CF-Bold.otf') format('opentype');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-Medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-SemiBold.otf') format('opentype');
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'Suisse Intl', sans-serif;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .headline-vanguard {
+      font-family: 'Vanguard CF', sans-serif;
+    }
+
+    .feature-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-black text-white">
+  
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-4">
+      <div class="flex items-center justify-between">
+        <a href="/" class="text-2xl font-bold headline-vanguard">TEECH</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/features.html" id="nav-features" class="text-white font-semibold">Features</a>
+          <a href="/use-cases.html" id="nav-use-cases" class="text-white/80 hover:text-white transition">Use Cases</a>
+          <a href="/preise.html" id="nav-pricing" class="text-white/80 hover:text-white transition">Preise</a>
+          <a href="/customer-stories.html" id="nav-stories" class="text-white/80 hover:text-white transition">Customer Stories</a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="/kontakt.html#sales" id="nav-talk-to-sales" class="hidden md:block px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-lg hover:border-white/40">
+            Mit Sales sprechen
+          </a>
+          <a href="/kontakt.html#sales" id="nav-get-started" class="px-4 py-2 text-sm font-medium bg-white text-black rounded-lg hover:bg-white/90 transition">
+            Jetzt starten
+          </a>
+          <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition">
+            Log In
+          </a>
+          <button id="language-switch" class="px-3 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-lg hover:border-white/40 flex items-center gap-2" data-lang="de">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>EN</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-12 px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto text-center">
+      <h1 class="headline-vanguard text-5xl md:text-7xl lg:text-8xl font-bold mb-6 fade-in">
+        Alle Features
+      </h1>
+      <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto delay-200">
+        Alles was du brauchst, um deine Community erfolgreich zu führen und zu monetarisieren
+      </p>
+    </div>
+    
+    <!-- Hero Mockup -->
+    <div class="max-w-5xl mx-auto mt-12 delay-300">
+      <div class="mockup-container">
+        <div class="mockup-screen">
+          <div class="mockup-content">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="mockup-card">
+                <div class="mockup-line short"></div>
+                <div class="mockup-line long"></div>
+                <div class="mockup-line medium"></div>
+              </div>
+              <div class="mockup-card">
+                <div class="mockup-line short"></div>
+                <div class="mockup-line long"></div>
+                <div class="mockup-line medium"></div>
+              </div>
+              <div class="mockup-card">
+                <div class="mockup-line short"></div>
+                <div class="mockup-line long"></div>
+                <div class="mockup-line medium"></div>
+              </div>
+              <div class="mockup-card">
+                <div class="mockup-line short"></div>
+                <div class="mockup-line long"></div>
+                <div class="mockup-line medium"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section class="py-12 px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="feature-card bg-white/5 p-8 rounded-xl border border-white/10 animate-on-scroll delay-100">
+          <div class="text-4xl mb-4">🎥</div>
+          <h3 class="text-2xl font-semibold mb-3">Live Video & Workshops</h3>
+          <p class="text-white/70 leading-relaxed">
+            Führe Webinare, Bootcamps und virtuelle Treffen mit hochwertigen Video-Tools durch. Unterstützt verschiedene Videoformate für maximale Flexibilität.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card bg-white/5 p-8 rounded-xl border border-white/10 animate-on-scroll delay-200">
+          <div class="text-4xl mb-4">💬</div>
+          <h3 class="text-2xl font-semibold mb-3">Chat & Channels</h3>
+          <p class="text-white/70 leading-relaxed">
+            Einfache Kommunikation in privaten und öffentlichen Gruppen. Organisiere Diskussionen nach Themen und schaffe geschützte Räume für exklusive Inhalte.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card bg-white/5 p-8 rounded-xl border border-white/10 animate-on-scroll delay-300">
+          <div class="text-4xl mb-4">📁</div>
+          <h3 class="text-2xl font-semibold mb-3">Mediathek & Dateiablage</h3>
+          <p class="text-white/70 leading-relaxed">
+            Zentraler Speicherplatz für Videos, Dokumente und Kursmaterialien. Organisiere deine Inhalte übersichtlich und mache sie für deine Community zugänglich.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card bg-white/5 p-8 rounded-xl border border-white/10 animate-on-scroll delay-100">
+          <div class="text-4xl mb-4">🎮</div>
+          <h3 class="text-2xl font-semibold mb-3">Gamification & Mitgliedschaften</h3>
+          <p class="text-white/70 leading-relaxed">
+            Motiviere mit spielerischen Elementen und exklusiven Angeboten. Belohne aktive Mitglieder und schaffe Anreize für Engagement.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card bg-white/5 p-8 rounded-xl border border-white/10 animate-on-scroll delay-200">
+          <div class="text-4xl mb-4">📅</div>
+          <h3 class="text-2xl font-semibold mb-3">Kalender & Ticketing</h3>
+          <p class="text-white/70 leading-relaxed">
+            Organisiere Events, Manage Zugänge und verkaufe Tickets direkt in der Plattform. Alles an einem Ort, einfach und übersichtlich.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card bg-white/5 p-8 rounded-xl border border-white/10 animate-on-scroll delay-300">
+          <div class="text-4xl mb-4">📊</div>
+          <h3 class="text-2xl font-semibold mb-3">Umfragen & Feedback</h3>
+          <p class="text-white/70 leading-relaxed">
+            Sammle Insights und verbessere deine Angebote kontinuierlich. Erhalte wertvolles Feedback von deiner Community.
+          </p>
+        </div>
+
+        <!-- Feature 7 -->
+        <div class="feature-card bg-white/5 p-8 rounded-xl border border-white/10 animate-on-scroll delay-100">
+          <div class="text-4xl mb-4">📈</div>
+          <h3 class="text-2xl font-semibold mb-3">Analytics & Dashboard</h3>
+          <p class="text-white/70 leading-relaxed">
+            Behalte den Überblick über Aktivität, Engagement und Wachstum deiner Community. Detaillierte Analysen helfen dir, datengetriebene Entscheidungen zu treffen.
+          </p>
+        </div>
+
+        <!-- Feature 8 -->
+        <div class="feature-card bg-white/5 p-8 rounded-xl border border-white/10 animate-on-scroll delay-200">
+          <div class="text-4xl mb-4">🔒</div>
+          <h3 class="text-2xl font-semibold mb-3">Sicherheit & Datenschutz</h3>
+          <p class="text-white/70 leading-relaxed">
+            Modernste Technologie für maximale Sicherheit und DSGVO-Konformität. Deine Daten und die deiner Community sind sicher.
+          </p>
+        </div>
+
+        <!-- Feature 9 - Content Verkauf -->
+        <div class="feature-card bg-white/5 p-8 rounded-xl border border-white/10 animate-on-scroll delay-300">
+          <div class="text-4xl mb-4">💰</div>
+          <h3 class="text-2xl font-semibold mb-3">Content-Verkauf</h3>
+          <p class="text-white/70 leading-relaxed">
+            Verkaufe einmalige Produkte oder Abos direkt in deiner Community. Einfaches Payment-System für maximale Conversion.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Feature Mockups Section -->
+  <section class="py-12 px-6 lg:px-8 bg-white/5">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-8 text-center animate-on-scroll">Produkt-Mockups</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="animate-on-scroll delay-100">
+          <div class="mockup-container">
+            <div class="mockup-screen">
+              <div class="mockup-content">
+                <div class="mockup-header">
+                  <div class="mockup-avatar"></div>
+                  <div class="flex-1">
+                    <div class="mockup-line short"></div>
+                    <div class="mockup-line medium"></div>
+                  </div>
+                </div>
+                <div class="mockup-line long"></div>
+                <div class="mockup-line long"></div>
+                <div class="mockup-card">
+                  <div class="mockup-line short"></div>
+                  <div class="mockup-line long"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="animate-on-scroll delay-200">
+          <div class="mockup-container">
+            <div class="mockup-screen">
+              <div class="mockup-content">
+                <div class="grid grid-cols-3 gap-2">
+                  <div class="mockup-card">
+                    <div class="mockup-line short"></div>
+                  </div>
+                  <div class="mockup-card">
+                    <div class="mockup-line short"></div>
+                  </div>
+                  <div class="mockup-card">
+                    <div class="mockup-line short"></div>
+                  </div>
+                </div>
+                <div class="mockup-line long mt-4"></div>
+                <div class="mockup-line medium"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-6 lg:px-8 bg-white/5">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="headline-vanguard text-4xl md:text-6xl font-bold mb-6">Bereit loszulegen?</h2>
+      <p class="text-xl text-white/70 mb-8">
+        Starte noch heute und baue deine Community auf
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt.html#sales" class="px-8 py-4 bg-white text-black rounded-lg font-semibold hover:bg-white/90 transition text-lg">
+          Kostenlos starten
+        </a>
+        <a href="/kontakt.html#sales" class="px-8 py-4 border border-white/20 text-white rounded-lg font-semibold hover:border-white/40 transition text-lg">
+          Mit Sales sprechen
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black border-t border-white/10 py-12 px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-bold headline-vanguard mb-4">TEECH</h3>
+          <p class="text-white/70 text-sm">
+            Deine Community-Plattform für Coaches und Creator
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Produkt</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="/features.html" class="hover:text-white transition">Features</a></li>
+            <li><a href="/use-cases.html" class="hover:text-white transition">Use Cases</a></li>
+            <li><a href="/preise.html" class="hover:text-white transition">Preise</a></li>
+            <li><a href="/customer-stories.html" class="hover:text-white transition">Customer Stories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Unternehmen</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="/kontakt.html" class="hover:text-white transition">Kontakt</a></li>
+            <li><a href="/kontakt.html#unternehmen" class="hover:text-white transition">Über uns</a></li>
+            <li><a href="/faq.html" class="hover:text-white transition">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Rechtliches</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="/impressum.html" class="hover:text-white transition">Impressum</a></li>
+            <li><a href="/datenschutz.html" class="hover:text-white transition">Datenschutz</a></li>
+            <li><a href="/agb.html" class="hover:text-white transition">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 text-center text-sm text-white/70">
+        <p>&copy; 2024 Teech. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./animations.js"></script>
+  <script src="./language.js"></script>
+</body>
+</html>
+

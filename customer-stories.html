@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Customer Stories - Erfolgsgeschichten unserer Kunden mit Teech Community-Plattform.">
+  <title>Customer Stories - Teech</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="canonical" href="https://teech.com/customer-stories.html">
+  <style>
+    @font-face {
+      font-family: 'Vanguard CF';
+      src: url('./fonts/Vanguard-CF-Bold.otf') format('opentype');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-Medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-SemiBold.otf') format('opentype');
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'Suisse Intl', sans-serif;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .headline-vanguard {
+      font-family: 'Vanguard CF', sans-serif;
+    }
+
+    .story-card {
+      transition: transform 0.3s ease;
+    }
+
+    .story-card:hover {
+      transform: translateY(-4px);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-black text-white">
+  
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-4">
+      <div class="flex items-center justify-between">
+        <a href="/" class="text-2xl font-bold headline-vanguard">TEECH</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/features.html" id="nav-features" class="text-white/80 hover:text-white transition">Features</a>
+          <a href="/use-cases.html" id="nav-use-cases" class="text-white/80 hover:text-white transition">Use Cases</a>
+          <a href="/preise.html" id="nav-pricing" class="text-white/80 hover:text-white transition">Preise</a>
+          <a href="/customer-stories.html" id="nav-stories" class="text-white font-semibold">Customer Stories</a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="/kontakt.html#sales" id="nav-talk-to-sales" class="hidden md:block px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-lg hover:border-white/40">
+            Mit Sales sprechen
+          </a>
+          <a href="/kontakt.html#sales" id="nav-get-started" class="px-4 py-2 text-sm font-medium bg-white text-black rounded-lg hover:bg-white/90 transition">
+            Jetzt starten
+          </a>
+          <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition">
+            Log In
+          </a>
+          <button id="language-switch" class="px-3 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-lg hover:border-white/40 flex items-center gap-2" data-lang="de">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>EN</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-12 px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto text-center">
+      <h1 class="headline-vanguard text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
+        Customer Stories
+      </h1>
+      <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto">
+        Erfolgsgeschichten unserer Kunden
+      </p>
+    </div>
+  </section>
+
+  <!-- Stories Grid -->
+  <section class="py-12 px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Story 1 -->
+        <div class="story-card bg-white/5 p-8 rounded-xl border border-white/10">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-white/10 rounded-full mb-4 flex items-center justify-center text-2xl">
+              👤
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Sarah M., Business Coach</h3>
+            <p class="text-white/60 text-sm">Coaching & Training</p>
+          </div>
+          <p class="text-white/80 mb-4 italic">
+            "Mit Teech habe ich meine Community von 50 auf über 500 Mitglieder wachsen lassen. Die Plattform ist intuitiv und meine Kunden lieben die interaktiven Features."
+          </p>
+          <div class="text-sm text-white/60">
+            <p>✓ 500+ Mitglieder</p>
+            <p>✓ 80% Engagement-Rate</p>
+          </div>
+        </div>
+
+        <!-- Story 2 -->
+        <div class="story-card bg-white/5 p-8 rounded-xl border border-white/10">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-white/10 rounded-full mb-4 flex items-center justify-center text-2xl">
+              🎨
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Max K., Content Creator</h3>
+            <p class="text-white/60 text-sm">Kreative Inhalte</p>
+          </div>
+          <p class="text-white/80 mb-4 italic">
+            "Die Monetarisierungs-Features haben mir geholfen, meine Community zu monetarisieren. Ich verkaufe jetzt regelmäßig exklusive Inhalte und Abos."
+          </p>
+          <div class="text-sm text-white/60">
+            <p>✓ 1.200+ Mitglieder</p>
+            <p>✓ 3x Umsatzsteigerung</p>
+          </div>
+        </div>
+
+        <!-- Story 3 -->
+        <div class="story-card bg-white/5 p-8 rounded-xl border border-white/10">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-white/10 rounded-full mb-4 flex items-center justify-center text-2xl">
+              💼
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Lisa R., Fitness Trainer</h3>
+            <p class="text-white/60 text-sm">Fitness & Gesundheit</p>
+          </div>
+          <p class="text-white/80 mb-4 italic">
+            "Die Live-Video-Funktion ist ein Game-Changer. Meine Online-Workshops laufen reibungslos und die Aufzeichnungen sind perfekt für meine Mitglieder."
+          </p>
+          <div class="text-sm text-white/60">
+            <p>✓ 800+ Mitglieder</p>
+            <p>✓ 95% Zufriedenheit</p>
+          </div>
+        </div>
+
+        <!-- Story 4 -->
+        <div class="story-card bg-white/5 p-8 rounded-xl border border-white/10">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-white/10 rounded-full mb-4 flex items-center justify-center text-2xl">
+              📚
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Thomas W., Online-Kurs Anbieter</h3>
+            <p class="text-white/60 text-sm">Bildung & Kurse</p>
+          </div>
+          <p class="text-white/80 mb-4 italic">
+            "Die Mediathek und Dateiablage sind perfekt für meine Kurse. Alles an einem Ort, übersichtlich organisiert und einfach zu nutzen."
+          </p>
+          <div class="text-sm text-white/60">
+            <p>✓ 2.000+ Mitglieder</p>
+            <p>✓ 50+ Kurse</p>
+          </div>
+        </div>
+
+        <!-- Story 5 -->
+        <div class="story-card bg-white/5 p-8 rounded-xl border border-white/10">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-white/10 rounded-full mb-4 flex items-center justify-center text-2xl">
+              🎯
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Julia F., Marketing Expertin</h3>
+            <p class="text-white/60 text-sm">Marketing & Business</p>
+          </div>
+          <p class="text-white/80 mb-4 italic">
+            "Das Analytics-Dashboard gibt mir genau die Insights, die ich brauche. Ich kann jetzt datengetrieben Entscheidungen treffen und meine Community gezielt weiterentwickeln."
+          </p>
+          <div class="text-sm text-white/60">
+            <p>✓ 1.500+ Mitglieder</p>
+            <p>✓ 60% Conversion-Rate</p>
+          </div>
+        </div>
+
+        <!-- Story 6 -->
+        <div class="story-card bg-white/5 p-8 rounded-xl border border-white/10">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-white/10 rounded-full mb-4 flex items-center justify-center text-2xl">
+              🎵
+            </div>
+            <h3 class="text-xl font-semibold mb-2">David L., Musiker & Producer</h3>
+            <p class="text-white/60 text-sm">Musik & Entertainment</p>
+          </div>
+          <p class="text-white/80 mb-4 italic">
+            "Als Creator war es wichtig für mich, eine Plattform zu haben, die sowohl Community-Aufbau als auch Monetarisierung unterstützt. Teech bietet beides perfekt."
+          </p>
+          <div class="text-sm text-white/60">
+            <p>✓ 900+ Mitglieder</p>
+            <p>✓ 4x mehr Einnahmen</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-6 lg:px-8 bg-white/5">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="headline-vanguard text-4xl md:text-6xl font-bold mb-6">Werde Teil der Erfolgsgeschichte</h2>
+      <p class="text-xl text-white/70 mb-8">
+        Starte noch heute und baue deine Community auf
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt.html#sales" class="px-8 py-4 bg-white text-black rounded-lg font-semibold hover:bg-white/90 transition text-lg">
+          Kostenlos starten
+        </a>
+        <a href="/kontakt.html#sales" class="px-8 py-4 border border-white/20 text-white rounded-lg font-semibold hover:border-white/40 transition text-lg">
+          Mit Sales sprechen
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black border-t border-white/10 py-12 px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-bold headline-vanguard mb-4">TEECH</h3>
+          <p class="text-white/70 text-sm">
+            Deine Community-Plattform für Coaches und Creator
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Produkt</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="/features.html" class="hover:text-white transition">Features</a></li>
+            <li><a href="/use-cases.html" class="hover:text-white transition">Use Cases</a></li>
+            <li><a href="/preise.html" class="hover:text-white transition">Preise</a></li>
+            <li><a href="/customer-stories.html" class="hover:text-white transition">Customer Stories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Unternehmen</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="/kontakt.html" class="hover:text-white transition">Kontakt</a></li>
+            <li><a href="/kontakt.html#unternehmen" class="hover:text-white transition">Über uns</a></li>
+            <li><a href="/faq.html" class="hover:text-white transition">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Rechtliches</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="/impressum.html" class="hover:text-white transition">Impressum</a></li>
+            <li><a href="/datenschutz.html" class="hover:text-white transition">Datenschutz</a></li>
+            <li><a href="/agb.html" class="hover:text-white transition">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 text-center text-sm text-white/70">
+        <p>&copy; 2024 Teech. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./language.js"></script>
+</body>
+</html>
+

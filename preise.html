@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Teech Preise - Wähle das passende Lizenzpaket für deine Community-Plattform. Flexible Preismodelle für Coaches und Creator.">
+  <title>Preise - Teech Community-Plattform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="canonical" href="https://teech.com/preise.html">
+  <style>
+    @font-face {
+      font-family: 'Vanguard CF';
+      src: url('./fonts/Vanguard-CF-Bold.otf') format('opentype');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-Medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-SemiBold.otf') format('opentype');
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'Suisse Intl', sans-serif;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .headline-vanguard {
+      font-family: 'Vanguard CF', sans-serif;
+    }
+
+    .pricing-card {
+      transition: transform 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-4px);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-black text-white">
+  
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-4">
+      <div class="flex items-center justify-between">
+        <a href="/" class="text-2xl font-bold headline-vanguard">TEECH</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/features.html" id="nav-features" class="text-white/80 hover:text-white transition">Features</a>
+          <a href="/use-cases.html" id="nav-use-cases" class="text-white/80 hover:text-white transition">Use Cases</a>
+          <a href="/preise.html" id="nav-pricing" class="text-white font-semibold">Preise</a>
+          <a href="/customer-stories.html" id="nav-stories" class="text-white/80 hover:text-white transition">Customer Stories</a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="/kontakt.html#sales" id="nav-talk-to-sales" class="hidden md:block px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-lg hover:border-white/40">
+            Mit Sales sprechen
+          </a>
+          <a href="/kontakt.html#sales" id="nav-get-started" class="px-4 py-2 text-sm font-medium bg-white text-black rounded-lg hover:bg-white/90 transition">
+            Jetzt starten
+          </a>
+          <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition">
+            Log In
+          </a>
+          <button id="language-switch" class="px-3 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-lg hover:border-white/40 flex items-center gap-2" data-lang="de">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>EN</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-12 px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto text-center">
+      <h1 class="headline-vanguard text-5xl md:text-7xl lg:text-8xl font-bold mb-6 fade-in">
+        Preise
+      </h1>
+      <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto delay-200">
+        Wähle das passende Lizenzpaket für deine Community
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing Cards -->
+  <section class="py-12 px-6 lg:px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <!-- Starter Plan -->
+        <div class="pricing-card bg-white/5 p-8 rounded-xl border border-white/10 animate-on-scroll delay-100">
+          <h3 class="text-2xl font-semibold mb-2">Starter</h3>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">€49</span>
+            <span class="text-white/70">/Monat</span>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span class="text-white/80">Bis zu 100 Mitglieder</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span class="text-white/80">Alle Kernfeatures</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span class="text-white/80">Basis-Support</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span class="text-white/80">Content-Verkauf</span>
+            </li>
+          </ul>
+          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 border border-white/20 text-white rounded-lg font-semibold hover:border-white/40 transition">
+            Jetzt starten
+          </a>
+        </div>
+
+        <!-- Professional Plan -->
+        <div class="pricing-card bg-white p-8 rounded-xl border-2 border-white text-black relative animate-on-scroll delay-200 scale-in">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-1 rounded-full text-sm font-semibold">
+            Beliebt
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Professional</h3>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">€149</span>
+            <span class="text-black/70">/Monat</span>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span class="text-black/80">Bis zu 1.000 Mitglieder</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span class="text-black/80">Alle Features</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span class="text-black/80">Erweiterte Personalisierung</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span class="text-black/80">Priority Support</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span class="text-black/80">Erweiterte Analytics</span>
+            </li>
+          </ul>
+          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 bg-black text-white rounded-lg font-semibold hover:bg-black/90 transition">
+            Jetzt starten
+          </a>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="pricing-card bg-white/5 p-8 rounded-xl border border-white/10 animate-on-scroll delay-300">
+          <h3 class="text-2xl font-semibold mb-2">Enterprise</h3>
+          <div class="mb-6">
+            <span class="text-4xl font-bold">Custom</span>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span class="text-white/80">Unbegrenzte Mitglieder</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span class="text-white/80">White-Label Lösung</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span class="text-white/80">Dedicated Support</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span class="text-white/80">Custom Integrationen</span>
+            </li>
+            <li class="flex items-start">
+              <span class="mr-2">✓</span>
+              <span class="text-white/80">SLA Garantie</span>
+            </li>
+          </ul>
+          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 border border-white/20 text-white rounded-lg font-semibold hover:border-white/40 transition">
+            Kontakt aufnehmen
+          </a>
+        </div>
+
+      </div>
+      
+      <!-- Pricing Mockup -->
+      <div class="mt-12 max-w-4xl mx-auto animate-on-scroll delay-400">
+        <div class="mockup-container">
+          <div class="mockup-screen">
+            <div class="mockup-content">
+              <div class="grid grid-cols-3 gap-4">
+                <div class="mockup-card">
+                  <div class="mockup-line short"></div>
+                  <div class="mockup-line long"></div>
+                  <div class="mockup-line medium"></div>
+                  <div class="mockup-button mt-4"></div>
+                </div>
+                <div class="mockup-card">
+                  <div class="mockup-line short"></div>
+                  <div class="mockup-line long"></div>
+                  <div class="mockup-line medium"></div>
+                  <div class="mockup-button mt-4"></div>
+                </div>
+                <div class="mockup-card">
+                  <div class="mockup-line short"></div>
+                  <div class="mockup-line long"></div>
+                  <div class="mockup-line medium"></div>
+                  <div class="mockup-button mt-4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-12 px-6 lg:px-8 bg-white/5">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-8 text-center">Häufige Fragen zu den Preisen</h2>
+      <div class="space-y-6">
+        <div class="bg-black/50 p-6 rounded-lg">
+          <h3 class="font-semibold mb-2">Kann ich jederzeit upgraden oder downgraden?</h3>
+          <p class="text-white/70">Ja, du kannst dein Paket jederzeit anpassen. Änderungen werden anteilig verrechnet.</p>
+        </div>
+        <div class="bg-black/50 p-6 rounded-lg">
+          <h3 class="font-semibold mb-2">Gibt es eine Testversion?</h3>
+          <p class="text-white/70">Ja, alle Pakete können 14 Tage kostenlos getestet werden. Keine Kreditkarte erforderlich.</p>
+        </div>
+        <div class="bg-black/50 p-6 rounded-lg">
+          <h3 class="font-semibold mb-2">Was passiert, wenn ich mein Mitgliederlimit überschreite?</h3>
+          <p class="text-white/70">Wir informieren dich rechtzeitig. Du kannst dann upgraden oder zusätzliche Mitglieder einzeln buchen.</p>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <a href="/faq.html" class="text-white/80 hover:text-white transition font-semibold">
+          Alle FAQs ansehen →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="headline-vanguard text-4xl md:text-6xl font-bold mb-6">Noch Fragen?</h2>
+      <p class="text-xl text-white/70 mb-8">
+        Sprich mit unserem Sales-Team über das passende Paket für dich
+      </p>
+      <a href="/kontakt.html#sales" class="inline-block px-8 py-4 bg-white text-black rounded-lg font-semibold hover:bg-white/90 transition text-lg">
+        Mit Sales sprechen
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black border-t border-white/10 py-12 px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-xl font-bold headline-vanguard mb-4">TEECH</h3>
+          <p class="text-white/70 text-sm">
+            Deine Community-Plattform für Coaches und Creator
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Produkt</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="/features.html" class="hover:text-white transition">Features</a></li>
+            <li><a href="/use-cases.html" class="hover:text-white transition">Use Cases</a></li>
+            <li><a href="/preise.html" class="hover:text-white transition">Preise</a></li>
+            <li><a href="/customer-stories.html" class="hover:text-white transition">Customer Stories</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Unternehmen</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="/kontakt.html" class="hover:text-white transition">Kontakt</a></li>
+            <li><a href="/kontakt.html#unternehmen" class="hover:text-white transition">Über uns</a></li>
+            <li><a href="/faq.html" class="hover:text-white transition">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Rechtliches</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="/impressum.html" class="hover:text-white transition">Impressum</a></li>
+            <li><a href="/datenschutz.html" class="hover:text-white transition">Datenschutz</a></li>
+            <li><a href="/agb.html" class="hover:text-white transition">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 text-center text-sm text-white/70">
+        <p>&copy; 2024 Teech. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./animations.js"></script>
+  <script src="./language.js"></script>
+</body>
+</html>
+
