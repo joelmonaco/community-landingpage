@@ -1,0 +1,13 @@
+{
+  "name": "community-landingpage",
+  "version": "1.0.0",
+  "description": "Community Landingpage",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": ["community", "landingpage", "website"],
+  "author": "",
+  "license": "ISC"
+}
+
