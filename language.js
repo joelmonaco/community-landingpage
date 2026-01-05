@@ -11,7 +11,7 @@ const translations = {
       login: 'Log In'
     },
     hero: {
-      title: 'Deine Community.<br />Deine Regeln.',
+      title: 'Deine Community-Plattform.<br />Deine Regeln.',
       subtitle: 'Monetarisiere deine Leidenschaft, baue eine lebendige Community auf und verkaufe Content – alles in einer Plattform.',
       ctaStart: 'Kostenlos starten',
       ctaLearn: 'Mehr erfahren'
