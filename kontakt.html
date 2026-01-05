@@ -56,27 +56,18 @@
 <body class="min-h-screen bg-black text-white">
   
   <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
-    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-4">
-      <div class="flex items-center justify-between">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/75 backdrop-blur-sm border-b border-white/10">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
+      <div class="flex items-center justify-between relative">
         <a href="/" class="text-2xl font-bold headline-vanguard">TEECH</a>
-        <div class="hidden md:flex items-center space-x-8">
+        <div class="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
           <a href="/features.html" id="nav-features" class="text-white/80 hover:text-white transition">Features</a>
           <a href="/use-cases.html" id="nav-use-cases" class="text-white/80 hover:text-white transition">Use Cases</a>
           <a href="/preise.html" id="nav-pricing" class="text-white/80 hover:text-white transition">Preise</a>
           <a href="/customer-stories.html" id="nav-stories" class="text-white/80 hover:text-white transition">Customer Stories</a>
         </div>
-        <div class="flex items-center space-x-4">
-          <a href="/kontakt.html#sales" id="nav-talk-to-sales" class="hidden md:block px-4 py-2 text-sm font-medium text-white font-semibold border border-white/20 rounded-2xl hover:border-white/40">
-            Mit Sales sprechen
-          </a>
-          <a href="/kontakt.html#sales" id="nav-get-started" class="px-4 py-2 text-sm font-medium bg-white text-black rounded-2xl hover:bg-white/90 transition">
-            Jetzt starten
-          </a>
-          <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition">
-            Log In
-          </a>
-          <button id="language-switch" class="px-3 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-2xl hover:border-white/40 flex items-center gap-2" data-lang="de">
+        <div class="flex items-center space-x-4 ml-auto">
+          <button id="language-switch" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-full hover:border-white/40 flex items-center gap-2 hover:border-white/40 flex items-center gap-2" data-lang="de">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
@@ -84,6 +75,12 @@
             </svg>
             <span>EN</span>
           </button>
+          <a href="/kontakt.html#sales" id="nav-get-started" class="px-4 py-2 text-sm font-medium bg-white text-black rounded-full hover:bg-white/90 transition">
+            Jetzt starten
+          </a>
+          <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition">
+            Log In
+          </a>
         </div>
       </div>
     </nav>
@@ -99,22 +96,22 @@
         Unser Team hilft dir dabei, die perfekte Lösung für deine Community zu finden. Lass uns gemeinsam herausfinden, wie Teech deine Ziele unterstützen kann.
       </p>
       
-      <div class="bg-white/5 p-8 rounded-3xl border border-white/10 mb-12">
+      <div class="bg-white/5 p-8 rounded-full border border-white/10 mb-12">
         <h2 class="text-2xl font-semibold mb-6">Kontaktiere uns</h2>
         <div class="space-y-4 text-left max-w-md mx-auto">
           <div>
             <label class="block text-sm font-medium mb-2">Name</label>
-            <input type="text" class="w-full px-4 py-3 bg-black border border-white/20 rounded-2xl text-white focus:outline-none focus:border-white/40" placeholder="Dein Name">
+            <input type="text" class="w-full px-4 py-3 bg-black border border-white/20 rounded-full text-white focus:outline-none focus:border-white/40" placeholder="Dein Name">
           </div>
           <div>
             <label class="block text-sm font-medium mb-2">E-Mail</label>
-            <input type="email" class="w-full px-4 py-3 bg-black border border-white/20 rounded-2xl text-white focus:outline-none focus:border-white/40" placeholder="deine@email.com">
+            <input type="email" class="w-full px-4 py-3 bg-black border border-white/20 rounded-full text-white focus:outline-none focus:border-white/40" placeholder="deine@email.com">
           </div>
           <div>
             <label class="block text-sm font-medium mb-2">Nachricht</label>
-            <textarea rows="4" class="w-full px-4 py-3 bg-black border border-white/20 rounded-2xl text-white focus:outline-none focus:border-white/40" placeholder="Wie können wir dir helfen?"></textarea>
+            <textarea rows="4" class="w-full px-4 py-3 bg-black border border-white/20 rounded-full text-white focus:outline-none focus:border-white/40" placeholder="Wie können wir dir helfen?"></textarea>
           </div>
-          <button class="w-full px-6 py-3 bg-white text-black rounded-2xl font-semibold hover:bg-white/90 transition">
+          <button class="w-full px-6 py-3 bg-white text-black rounded-full font-semibold hover:bg-white/90 transition">
             Nachricht senden
           </button>
         </div>
@@ -172,7 +169,7 @@
       <p class="text-xl text-white/70 mb-8">
         Starte noch heute und baue deine Community auf
       </p>
-      <a href="/kontakt.html#sales" class="inline-block px-8 py-4 bg-white text-black rounded-2xl font-semibold hover:bg-white/90 transition text-lg">
+      <a href="/kontakt.html#sales" class="inline-block px-8 py-2 bg-white text-black rounded-full font-semibold hover:bg-white/90 transition text-lg">
         Kostenlos starten
       </a>
     </div>

@@ -65,27 +65,18 @@
 <body class="min-h-screen bg-black text-white">
   
   <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
-    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-4">
-      <div class="flex items-center justify-between">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/75 backdrop-blur-sm border-b border-white/10">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
+      <div class="flex items-center justify-between relative">
         <a href="/" class="text-2xl font-bold headline-vanguard">TEECH</a>
-        <div class="hidden md:flex items-center space-x-8">
+        <div class="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
           <a href="/features.html" id="nav-features" class="text-white/80 hover:text-white transition">Features</a>
           <a href="/use-cases.html" id="nav-use-cases" class="text-white font-semibold">Use Cases</a>
           <a href="/preise.html" id="nav-pricing" class="text-white/80 hover:text-white transition">Preise</a>
           <a href="/customer-stories.html" id="nav-stories" class="text-white/80 hover:text-white transition">Customer Stories</a>
         </div>
-        <div class="flex items-center space-x-4">
-          <a href="/kontakt.html#sales" id="nav-talk-to-sales" class="hidden md:block px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-2xl hover:border-white/40">
-            Mit Sales sprechen
-          </a>
-          <a href="/kontakt.html#sales" id="nav-get-started" class="px-4 py-2 text-sm font-medium bg-white text-black rounded-2xl hover:bg-white/90 transition">
-            Jetzt starten
-          </a>
-          <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition">
-            Log In
-          </a>
-          <button id="language-switch" class="px-3 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-2xl hover:border-white/40 flex items-center gap-2" data-lang="de">
+        <div class="flex items-center space-x-4 ml-auto">
+          <button id="language-switch" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-full hover:border-white/40 flex items-center gap-2" data-lang="de">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
@@ -93,6 +84,12 @@
             </svg>
             <span>EN</span>
           </button>
+          <a href="/kontakt.html#sales" id="nav-get-started" class="px-6 py-2 text-sm font-medium bg-white text-black rounded-full hover:bg-white/90 transition">
+            Jetzt starten
+          </a>
+          <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition">
+            Log In
+          </a>
         </div>
       </div>
     </nav>
@@ -130,31 +127,31 @@
           <div>
             <h3 class="text-2xl font-semibold mb-6">Die Features für deinen Coaching-Erfolg</h3>
             <div class="space-y-4">
-              <div class="feature-widget bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div class="feature-widget bg-white/5 p-5 rounded-full border border-white/10">
                 <h4 class="font-semibold mb-2">🎥 Live-Videokonferenzen & Workshops</h4>
                 <p class="text-white/70 text-sm">Führe interaktive Formate durch – von Webinaren bis hin zu intensiven Bootcamps. Nutze Aufzeichnungen für flexible Nachbereitungen.</p>
               </div>
-              <div class="feature-widget bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div class="feature-widget bg-white/5 p-5 rounded-full border border-white/10">
                 <h4 class="font-semibold mb-2">💬 Chat, Channels & geschützte Gruppen</h4>
                 <p class="text-white/70 text-sm">Ermögliche deinen Mitgliedern unkomplizierten Austausch und Vernetzung in sicheren Räumen zu ihren Lieblingsthemen.</p>
               </div>
-              <div class="feature-widget bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div class="feature-widget bg-white/5 p-5 rounded-full border border-white/10">
                 <h4 class="font-semibold mb-2">📁 Mediathek & Dateiablage</h4>
                 <p class="text-white/70 text-sm">Stelle deine Inhalte zentral bereit – Videos, Workbooks und Präsentationen immer griffbereit.</p>
               </div>
-              <div class="feature-widget bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div class="feature-widget bg-white/5 p-5 rounded-full border border-white/10">
                 <h4 class="font-semibold mb-2">🎮 Gamification & exklusive Inhalte</h4>
                 <p class="text-white/70 text-sm">Motiviere deine Community mit spielerischen Elementen und biete besondere Produkte oder Rabatte an.</p>
               </div>
-              <div class="feature-widget bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div class="feature-widget bg-white/5 p-5 rounded-full border border-white/10">
                 <h4 class="font-semibold mb-2">📅 Kalender & Ticketfunktion</h4>
                 <p class="text-white/70 text-sm">Verwalte Termine, Events und Zugänge einfach und übersichtlich – alles in deiner Plattform.</p>
               </div>
-              <div class="feature-widget bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div class="feature-widget bg-white/5 p-5 rounded-full border border-white/10">
                 <h4 class="font-semibold mb-2">📊 Fragebögen, Umfragen & Dashboard</h4>
                 <p class="text-white/70 text-sm">Sammle Feedback, verbessere dein Angebot und behalte mit übersichtlichen Dashboards den Überblick.</p>
               </div>
-              <div class="feature-widget bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div class="feature-widget bg-white/5 p-5 rounded-full border border-white/10">
                 <h4 class="font-semibold mb-2">🔒 DSGVO-konform & sicher</h4>
                 <p class="text-white/70 text-sm">Vertraue auf eine Plattform, die Datenschutz groß schreibt und deine Community schützt.</p>
               </div>
@@ -177,31 +174,31 @@
           <div>
             <h3 class="text-2xl font-semibold mb-6">Die Features für deinen Erfolg</h3>
             <div class="space-y-4">
-              <div class="feature-widget bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div class="feature-widget bg-white/5 p-5 rounded-full border border-white/10">
                 <h4 class="font-semibold mb-2">🎥 Live-Streaming & Videokonferenzen</h4>
                 <p class="text-white/70 text-sm">Interagiere in Echtzeit mit deinem Publikum – von regelmäßigen Streams bis hin zu exklusiven Events.</p>
               </div>
-              <div class="feature-widget bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div class="feature-widget bg-white/5 p-5 rounded-full border border-white/10">
                 <h4 class="font-semibold mb-2">💬 Chat, Channels & exklusive Gruppen</h4>
                 <p class="text-white/70 text-sm">Ermögliche deinen Fans den direkten Austausch und baue eine enge, vertrauensvolle Community auf.</p>
               </div>
-              <div class="feature-widget bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div class="feature-widget bg-white/5 p-5 rounded-full border border-white/10">
                 <h4 class="font-semibold mb-2">📁 Mediathek & digitale Dateiablage</h4>
                 <p class="text-white/70 text-sm">Biete exklusive Videos, Downloads und weitere Inhalte direkt auf der Plattform an.</p>
               </div>
-              <div class="feature-widget bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div class="feature-widget bg-white/5 p-5 rounded-full border border-white/10">
                 <h4 class="font-semibold mb-2">🎮 Gamification & Mitgliedschaften</h4>
                 <p class="text-white/70 text-sm">Schaffe Anreize mit spielerischen Elementen und exklusiven Mitgliedschaftsoptionen, inklusive Rabattaktionen.</p>
               </div>
-              <div class="feature-widget bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div class="feature-widget bg-white/5 p-5 rounded-full border border-white/10">
                 <h4 class="font-semibold mb-2">📅 Kalender & Ticketverkauf</h4>
                 <p class="text-white/70 text-sm">Verwalte deine Events unkompliziert und biete unterschiedliche Zugangsmöglichkeiten, inklusive verschiedener Währungen.</p>
               </div>
-              <div class="feature-widget bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div class="feature-widget bg-white/5 p-5 rounded-full border border-white/10">
                 <h4 class="font-semibold mb-2">📊 Fragebögen, Umfragen & Community-Dashboard</h4>
                 <p class="text-white/70 text-sm">Erhalte wertvolles Feedback, optimiere deine Inhalte und behalte den Überblick über deine Community-Daten.</p>
               </div>
-              <div class="feature-widget bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div class="feature-widget bg-white/5 p-5 rounded-full border border-white/10">
                 <h4 class="font-semibold mb-2">🔒 DSGVO-konform & sicher</h4>
                 <p class="text-white/70 text-sm">Vertraue einer Plattform, die Datenschutz und Sicherheit an erste Stelle setzt.</p>
               </div>
@@ -266,10 +263,10 @@
         Starte noch heute und baue deine Community auf
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/kontakt.html#sales" class="px-8 py-4 bg-white text-black rounded-2xl font-semibold hover:bg-white/90 transition text-lg">
+        <a href="/kontakt.html#sales" class="px-8 py-2 bg-white text-black rounded-full font-semibold hover:bg-white/90 transition text-lg">
           Kostenlos starten
         </a>
-        <a href="/kontakt.html#sales" class="px-8 py-4 border border-white/20 text-white rounded-2xl font-semibold hover:border-white/40 transition text-lg">
+        <a href="/kontakt.html#sales" class="px-8 py-2 border border-white/20 text-white rounded-full font-semibold hover:border-white/40 transition text-lg">
           Mit Sales sprechen
         </a>
       </div>

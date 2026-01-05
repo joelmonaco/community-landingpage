@@ -60,27 +60,18 @@
 <body class="min-h-screen bg-black text-white">
   
   <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
-    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-4">
-      <div class="flex items-center justify-between">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/75 backdrop-blur-sm border-b border-white/10">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
+      <div class="flex items-center justify-between relative">
         <a href="/" class="text-2xl font-bold headline-vanguard">TEECH</a>
-        <div class="hidden md:flex items-center space-x-8">
+        <div class="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
           <a href="/features.html" id="nav-features" class="text-white/80 hover:text-white transition">Features</a>
           <a href="/use-cases.html" id="nav-use-cases" class="text-white/80 hover:text-white transition">Use Cases</a>
           <a href="/preise.html" id="nav-pricing" class="text-white/80 hover:text-white transition">Preise</a>
           <a href="/customer-stories.html" id="nav-stories" class="text-white/80 hover:text-white transition">Customer Stories</a>
         </div>
-        <div class="flex items-center space-x-4">
-          <a href="/kontakt.html#sales" id="nav-talk-to-sales" class="hidden md:block px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-2xl hover:border-white/40">
-            Mit Sales sprechen
-          </a>
-          <a href="/kontakt.html#sales" id="nav-get-started" class="px-4 py-2 text-sm font-medium bg-white text-black rounded-2xl hover:bg-white/90 transition">
-            Jetzt starten
-          </a>
-          <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition">
-            Log In
-          </a>
-          <button id="language-switch" class="px-3 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-2xl hover:border-white/40 flex items-center gap-2" data-lang="de">
+        <div class="flex items-center space-x-4 ml-auto">
+          <button id="language-switch" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-full hover:border-white/40 flex items-center gap-2" data-lang="de">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
@@ -88,6 +79,12 @@
             </svg>
             <span>EN</span>
           </button>
+          <a href="/kontakt.html#sales" id="nav-get-started" class="px-4 py-2 text-sm font-medium bg-white text-black rounded-full hover:bg-white/90 transition">
+            Jetzt starten
+          </a>
+          <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition">
+            Log In
+          </a>
         </div>
       </div>
     </nav>
@@ -111,7 +108,7 @@
       <div class="space-y-4">
         
         <!-- FAQ 1 -->
-        <div class="faq-item bg-white/5 p-6 rounded-2xl border border-white/10">
+        <div class="faq-item bg-white/5 p-6 rounded-full border border-white/10">
           <h3 class="text-xl font-semibold mb-3">Was ist Teech?</h3>
           <p class="text-white/70 leading-relaxed">
             Teech ist eine moderne Community-Plattform für Coaches und Creator. Du kannst damit eine lebendige Community aufbauen, Content verkaufen und deine Mitglieder engagieren – alles in einer Plattform.
@@ -119,7 +116,7 @@
         </div>
 
         <!-- FAQ 2 -->
-        <div class="faq-item bg-white/5 p-6 rounded-2xl border border-white/10">
+        <div class="faq-item bg-white/5 p-6 rounded-full border border-white/10">
           <h3 class="text-xl font-semibold mb-3">Wie funktioniert die Anmeldung?</h3>
           <p class="text-white/70 leading-relaxed">
             Die Anmeldung ist einfach und schnell. Klicke auf "Jetzt starten", erstelle dein Konto und wähle dein passendes Paket. Du kannst 14 Tage kostenlos testen, ohne Kreditkarte.
@@ -127,7 +124,7 @@
         </div>
 
         <!-- FAQ 3 -->
-        <div class="faq-item bg-white/5 p-6 rounded-2xl border border-white/10">
+        <div class="faq-item bg-white/5 p-6 rounded-full border border-white/10">
           <h3 class="text-xl font-semibold mb-3">Kann ich meine Community personalisieren?</h3>
           <p class="text-white/70 leading-relaxed">
             Ja, Teech bietet umfangreiche Personalisierungsmöglichkeiten. Du kannst das Design anpassen, eigene Domains verwenden und die Plattform nach deinen Wünschen gestalten. Enterprise-Kunden erhalten sogar White-Label Lösungen.
@@ -135,7 +132,7 @@
         </div>
 
         <!-- FAQ 4 -->
-        <div class="faq-item bg-white/5 p-6 rounded-2xl border border-white/10">
+        <div class="faq-item bg-white/5 p-6 rounded-full border border-white/10">
           <h3 class="text-xl font-semibold mb-3">Wie funktioniert der Content-Verkauf?</h3>
           <p class="text-white/70 leading-relaxed">
             Du kannst einmalige Produkte oder Abos direkt in deiner Community verkaufen. Das integrierte Payment-System unterstützt verschiedene Zahlungsmethoden und Währungen. Die Abrechnung erfolgt automatisch.
@@ -143,7 +140,7 @@
         </div>
 
         <!-- FAQ 5 -->
-        <div class="faq-item bg-white/5 p-6 rounded-2xl border border-white/10">
+        <div class="faq-item bg-white/5 p-6 rounded-full border border-white/10">
           <h3 class="text-xl font-semibold mb-3">Welche Videoformate werden unterstützt?</h3>
           <p class="text-white/70 leading-relaxed">
             Teech unterstützt Live-Videokonferenzen, Webinare, Workshops und Streams. Aufzeichnungen können gespeichert und später abgerufen werden. Weitere Details zu den Videoformaten findest du auf unserer Features-Seite.
@@ -151,7 +148,7 @@
         </div>
 
         <!-- FAQ 6 -->
-        <div class="faq-item bg-white/5 p-6 rounded-2xl border border-white/10">
+        <div class="faq-item bg-white/5 p-6 rounded-full border border-white/10">
           <h3 class="text-xl font-semibold mb-3">Ist Teech DSGVO-konform?</h3>
           <p class="text-white/70 leading-relaxed">
             Ja, Datenschutz und Sicherheit haben bei uns höchste Priorität. Teech ist vollständig DSGVO-konform und nutzt modernste Sicherheitstechnologien zum Schutz deiner Daten und der deiner Community.
@@ -159,7 +156,7 @@
         </div>
 
         <!-- FAQ 7 -->
-        <div class="faq-item bg-white/5 p-6 rounded-2xl border border-white/10">
+        <div class="faq-item bg-white/5 p-6 rounded-full border border-white/10">
           <h3 class="text-xl font-semibold mb-3">Kann ich mein Paket später ändern?</h3>
           <p class="text-white/70 leading-relaxed">
             Ja, du kannst jederzeit upgraden oder downgraden. Änderungen werden anteilig verrechnet. Bei einem Upgrade stehen dir sofort alle neuen Features zur Verfügung.
@@ -167,7 +164,7 @@
         </div>
 
         <!-- FAQ 8 -->
-        <div class="faq-item bg-white/5 p-6 rounded-2xl border border-white/10">
+        <div class="faq-item bg-white/5 p-6 rounded-full border border-white/10">
           <h3 class="text-xl font-semibold mb-3">Welchen Support erhalte ich?</h3>
           <p class="text-white/70 leading-relaxed">
             Je nach Paket erhältst du Basis-Support, Priority Support oder sogar einen dedizierten Account Manager. Alle Pakete beinhalten Zugang zu unserer Wissensdatenbank und E-Mail-Support.
@@ -175,7 +172,7 @@
         </div>
 
         <!-- FAQ 9 -->
-        <div class="faq-item bg-white/5 p-6 rounded-2xl border border-white/10">
+        <div class="faq-item bg-white/5 p-6 rounded-full border border-white/10">
           <h3 class="text-xl font-semibold mb-3">Kann ich eine eigene Domain verwenden?</h3>
           <p class="text-white/70 leading-relaxed">
             Ja, ab dem Professional-Paket kannst du deine eigene Domain verwenden. Enterprise-Kunden erhalten zusätzlich White-Label Optionen für eine vollständig eigene Marke.
@@ -183,7 +180,7 @@
         </div>
 
         <!-- FAQ 10 -->
-        <div class="faq-item bg-white/5 p-6 rounded-2xl border border-white/10">
+        <div class="faq-item bg-white/5 p-6 rounded-full border border-white/10">
           <h3 class="text-xl font-semibold mb-3">Was passiert, wenn ich mein Mitgliederlimit überschreite?</h3>
           <p class="text-white/70 leading-relaxed">
             Wir informieren dich rechtzeitig, bevor du dein Limit erreichst. Du kannst dann upgraden oder zusätzliche Mitglieder einzeln buchen. So hast du immer die Kontrolle über deine Kosten.
@@ -202,10 +199,10 @@
         Unser Team hilft dir gerne weiter
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/kontakt.html#sales" class="px-8 py-4 bg-white text-black rounded-2xl font-semibold hover:bg-white/90 transition text-lg">
+        <a href="/kontakt.html#sales" class="px-8 py-2 bg-white text-black rounded-full font-semibold hover:bg-white/90 transition text-lg">
           Mit Sales sprechen
         </a>
-        <a href="/kontakt.html" class="px-8 py-4 border border-white/20 text-white rounded-2xl font-semibold hover:border-white/40 transition text-lg">
+        <a href="/kontakt.html" class="px-8 py-2 border border-white/20 text-white rounded-full font-semibold hover:border-white/40 transition text-lg">
           Kontakt aufnehmen
         </a>
       </div>

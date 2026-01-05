@@ -93,27 +93,18 @@
 <body class="min-h-screen bg-black text-white">
   
   <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm border-b border-white/10">
-    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-4">
-      <div class="flex items-center justify-between">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/75 backdrop-blur-sm border-b border-white/10">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
+      <div class="flex items-center justify-between relative">
         <a href="/" class="text-2xl font-bold headline-vanguard">TEECH</a>
-        <div class="hidden md:flex items-center space-x-8">
+        <div class="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
           <a href="/features.html" id="nav-features" class="text-white/80 hover:text-white transition">Features</a>
           <a href="/use-cases.html" id="nav-use-cases" class="text-white/80 hover:text-white transition">Use Cases</a>
           <a href="/preise.html" id="nav-pricing" class="text-white font-semibold">Preise</a>
           <a href="/customer-stories.html" id="nav-stories" class="text-white/80 hover:text-white transition">Customer Stories</a>
         </div>
-        <div class="flex items-center space-x-4">
-          <a href="/kontakt.html#sales" id="nav-talk-to-sales" class="hidden md:block px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-2xl hover:border-white/40">
-            Mit Sales sprechen
-          </a>
-          <a href="/kontakt.html#sales" id="nav-get-started" class="px-4 py-2 text-sm font-medium bg-primary text-white rounded-2xl hover:bg-primary-hover transition">
-            Jetzt starten
-          </a>
-          <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition">
-            Log In
-          </a>
-          <button id="language-switch" class="px-3 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-2xl hover:border-white/40 flex items-center gap-2" data-lang="de">
+        <div class="flex items-center space-x-4 ml-auto">
+          <button id="language-switch" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-full hover:border-white/40 flex items-center gap-2 hover:border-white/40 flex items-center gap-2" data-lang="de">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
@@ -121,6 +112,12 @@
             </svg>
             <span>EN</span>
           </button>
+          <a href="/kontakt.html#sales" id="nav-get-started" class="px-6 py-2 text-sm font-medium bg-primary text-white rounded-full hover:bg-primary-hover transition">
+            Jetzt starten
+          </a>
+          <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition">
+            Log In
+          </a>
         </div>
       </div>
     </nav>
@@ -144,7 +141,7 @@
       <div class="grid md:grid-cols-3 gap-8">
         
         <!-- Starter Plan -->
-        <div class="pricing-card bg-white/5 p-8 rounded-3xl border border-white/10 animate-on-scroll delay-100">
+        <div class="pricing-card bg-white/5 p-8 rounded-full border border-white/10 animate-on-scroll delay-100">
           <h3 class="text-2xl font-semibold mb-2">Starter</h3>
           <div class="mb-6">
             <span class="text-4xl font-bold">€49</span>
@@ -168,13 +165,13 @@
               <span class="text-white/80">Content-Verkauf</span>
             </li>
           </ul>
-          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 border border-white/20 text-white rounded-2xl font-semibold hover:border-white/40 transition">
+          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 border border-white/20 text-white rounded-full font-semibold hover:border-white/40 transition">
             Jetzt starten
           </a>
         </div>
 
         <!-- Professional Plan -->
-        <div class="pricing-card bg-white p-8 rounded-3xl border-2 border-primary text-black relative animate-on-scroll delay-200 scale-in shadow-lg shadow-primary/20">
+        <div class="pricing-card bg-white p-8 rounded-full border-2 border-primary text-black relative animate-on-scroll delay-200 scale-in shadow-lg shadow-primary/20">
           <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
             Beliebt
           </div>
@@ -205,13 +202,13 @@
               <span class="text-black/80">Erweiterte Analytics</span>
             </li>
           </ul>
-          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 bg-primary text-white rounded-2xl font-semibold hover:bg-primary-hover transition">
+          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 bg-primary text-white rounded-full font-semibold hover:bg-primary-hover transition">
             Jetzt starten
           </a>
         </div>
 
         <!-- Enterprise Plan -->
-        <div class="pricing-card bg-white/5 p-8 rounded-3xl border border-white/10 animate-on-scroll delay-300">
+        <div class="pricing-card bg-white/5 p-8 rounded-full border border-white/10 animate-on-scroll delay-300">
           <h3 class="text-2xl font-semibold mb-2">Enterprise</h3>
           <div class="mb-6">
             <span class="text-4xl font-bold">Custom</span>
@@ -238,7 +235,7 @@
               <span class="text-white/80">SLA Garantie</span>
             </li>
           </ul>
-          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 border border-white/20 text-white rounded-2xl font-semibold hover:border-white/40 transition">
+          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 border border-white/20 text-white rounded-full font-semibold hover:border-white/40 transition">
             Kontakt aufnehmen
           </a>
         </div>
@@ -282,15 +279,15 @@
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-semibold mb-8 text-center">Häufige Fragen zu den Preisen</h2>
       <div class="space-y-6">
-        <div class="bg-black/50 p-6 rounded-2xl">
+        <div class="bg-black/50 p-6 rounded-full">
           <h3 class="font-semibold mb-2">Kann ich jederzeit upgraden oder downgraden?</h3>
           <p class="text-white/70">Ja, du kannst dein Paket jederzeit anpassen. Änderungen werden anteilig verrechnet.</p>
         </div>
-        <div class="bg-black/50 p-6 rounded-2xl">
+        <div class="bg-black/50 p-6 rounded-full">
           <h3 class="font-semibold mb-2">Gibt es eine Testversion?</h3>
           <p class="text-white/70">Ja, alle Pakete können 14 Tage kostenlos getestet werden. Keine Kreditkarte erforderlich.</p>
         </div>
-        <div class="bg-black/50 p-6 rounded-2xl">
+        <div class="bg-black/50 p-6 rounded-full">
           <h3 class="font-semibold mb-2">Was passiert, wenn ich mein Mitgliederlimit überschreite?</h3>
           <p class="text-white/70">Wir informieren dich rechtzeitig. Du kannst dann upgraden oder zusätzliche Mitglieder einzeln buchen.</p>
         </div>
@@ -310,7 +307,7 @@
       <p class="text-xl text-white/70 mb-8">
         Sprich mit unserem Sales-Team über das passende Paket für dich
       </p>
-      <a href="/kontakt.html#sales" class="inline-block px-8 py-4 bg-primary text-white rounded-3xl font-semibold hover:bg-primary-hover transition text-lg shadow-lg shadow-primary/30">
+      <a href="/kontakt.html#sales" class="inline-block px-8 py-2 bg-primary text-white rounded-full font-semibold hover:bg-primary-hover transition text-lg shadow-lg shadow-primary/30">
         Mit Sales sprechen
       </a>
     </div>
