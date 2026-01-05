@@ -107,6 +107,24 @@
     .bg-primary-light {
       background-color: var(--primary-purple-bg);
     }
+
+    /* Sticky Wireframe Scroll Effect */
+    .sticky-wireframe-container {
+      position: relative;
+      height: 100%;
+    }
+
+    .sticky-wireframe {
+      position: relative;
+      transition: transform 0.1s ease-out;
+      z-index: 10;
+    }
+
+    @media (max-width: 768px) {
+      .sticky-wireframe {
+        position: relative;
+      }
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -381,8 +399,21 @@
   </section>
 
   <!-- App Wireframes Section -->
-  <section class="py-20 bg-gray-950 overflow-x-visible">
-    <div class="w-[120vw] -ml-[10vw]">
+  <section class="py-20 bg-gray-950 overflow-x-visible relative" style="min-height: 200vh;">
+    <!-- Header mit App Icon, Headline und Untertitel -->
+    <div class="max-w-4xl mx-auto text-center mb-16 px-6">
+      <div class="flex justify-center mb-6 animate-on-scroll">
+        <img src="./public/App_Icon.png" alt="App Icon" class="w-28 h-28 rounded-3xl">
+      </div>
+      <h2 class="headline-vanguard text-4xl md:text-5xl font-bold mb-4 text-white animate-on-scroll delay-100">
+        Generiere deine eigene App
+      </h2>
+      <p class="text-lg text-white/80 max-w-2xl mx-auto animate-on-scroll delay-200">
+        Deine personalisierte Community App, die du über den App Store und Google Play Store zur Verfügung stellen kannst
+      </p>
+    </div>
+    
+    <div class="w-[120vw] -ml-[10vw] sticky top-20">
       <div class="grid grid-cols-5 gap-8 mb-8">
         <!-- Obere Reihe: 1, 2, 9, 3, 4 -->
         <div class="animate-on-scroll delay-100">
@@ -391,8 +422,10 @@
         <div class="animate-on-scroll delay-200">
           <img src="./public/App-Wireframe_7.jpeg" alt="App Wireframe" class="w-full h-auto rounded-[3rem] shadow-lg">
         </div>
-        <div class="animate-on-scroll delay-300">
-          <img src="./public/App-Wireframe_7.jpeg" alt="App Wireframe" class="w-full h-auto rounded-[3rem] shadow-lg">
+        <div class="animate-on-scroll delay-300 sticky-wireframe-container">
+          <div class="sticky-wireframe" style="position: relative;">
+            <img src="./public/App-Wireframe_7.jpeg" alt="App Wireframe" class="w-full h-auto rounded-[3rem] shadow-lg">
+          </div>
         </div>
         <div class="animate-on-scroll delay-400">
           <img src="./public/App-Wireframe_7.jpeg" alt="App Wireframe" class="w-full h-auto rounded-[3rem] shadow-lg">
@@ -409,8 +442,8 @@
         <div class="animate-on-scroll delay-700">
           <img src="./public/App-Wireframe_7.jpeg" alt="App Wireframe" class="w-full h-auto rounded-[3rem] shadow-lg">
         </div>
-        <div class="animate-on-scroll delay-800">
-          <!-- Leerer Platz -->
+        <div class="animate-on-scroll delay-800 sticky-wireframe-target">
+          <!-- Leerer Platz - Zielposition für das sticky Wireframe -->
         </div>
         <div class="animate-on-scroll delay-900">
           <img src="./public/App-Wireframe_7.jpeg" alt="App Wireframe" class="w-full h-auto rounded-[3rem] shadow-lg">
@@ -567,6 +600,71 @@
   <script src="./animations.js"></script>
   <script src="./language.js"></script>
   <script src="./cursor-follower.js"></script>
+  <script>
+    // Sticky Wireframe Scroll Effect
+    document.addEventListener('DOMContentLoaded', () => {
+      const stickyWireframe = document.querySelector('.sticky-wireframe');
+      const stickyContainer = document.querySelector('.sticky-wireframe-container');
+      const targetContainer = document.querySelector('.sticky-wireframe-target');
+      const section = document.querySelector('section.bg-gray-950');
+      
+      if (!stickyWireframe || !stickyContainer || !targetContainer || !section) {
+        console.log('Elements not found:', { stickyWireframe, stickyContainer, targetContainer, section });
+        return;
+      }
+
+      // Initial: Wireframe sollte sichtbar sein
+      stickyWireframe.style.transform = 'translate(0, 0)';
+
+      function updateStickyPosition() {
+        const sectionRect = section.getBoundingClientRect();
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const viewportHeight = window.innerHeight;
+        const currentScroll = window.scrollY;
+        
+        // Berechne Scroll-Progress
+        // Start: etwas früher - wenn Section noch 0.3x Viewport-Höhe über dem oberen Rand ist
+        // Ende: wenn Section durchgescrollt ist
+        const scrollStart = sectionTop - viewportHeight * 0.3;
+        const scrollEnd = sectionTop + sectionHeight - viewportHeight;
+        const scrollRange = scrollEnd - scrollStart;
+        
+        if (scrollRange <= 0) {
+          stickyWireframe.style.transform = 'translate(0, 0)';
+          return;
+        }
+        
+        const scrollProgress = Math.max(0, Math.min(1, 
+          (currentScroll - scrollStart) / scrollRange
+        ));
+        
+        // Hole Positionen
+        const stickyRect = stickyContainer.getBoundingClientRect();
+        const targetRect = targetContainer.getBoundingClientRect();
+        
+        // Berechne relative Verschiebung
+        const deltaX = targetRect.left - stickyRect.left;
+        const deltaY = targetRect.top - stickyRect.top;
+        
+        // Interpoliere basierend auf Scroll-Progress
+        const currentX = deltaX * scrollProgress;
+        const currentY = deltaY * scrollProgress;
+        
+        stickyWireframe.style.transform = `translate(${currentX}px, ${currentY}px)`;
+      }
+
+      // Initial call nach kurzer Verzögerung
+      setTimeout(() => {
+        updateStickyPosition();
+      }, 200);
+
+      window.addEventListener('scroll', updateStickyPosition);
+      window.addEventListener('resize', () => {
+        setTimeout(updateStickyPosition, 100);
+      });
+    });
+  </script>
   
   <!-- Footer -->
   <footer class="bg-gray-50 border-t border-black/10 py-12 px-6 lg:px-8">
