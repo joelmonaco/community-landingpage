@@ -60,6 +60,34 @@
     .pricing-card:hover {
       transform: translateY(-4px);
     }
+
+    /* Main Color - Modernes Lila/Flieder */
+    :root {
+      --primary-purple: #8B5CF6;
+      --primary-purple-hover: #7C3AED;
+      --primary-purple-light: #A78BFA;
+      --primary-purple-bg: #F5F3FF;
+    }
+
+    .bg-primary {
+      background-color: var(--primary-purple);
+    }
+
+    .bg-primary-hover:hover {
+      background-color: var(--primary-purple-hover);
+    }
+
+    .text-primary {
+      color: var(--primary-purple);
+    }
+
+    .border-primary {
+      border-color: var(--primary-purple);
+    }
+
+    .bg-primary-light {
+      background-color: var(--primary-purple-bg);
+    }
   </style>
 </head>
 <body class="min-h-screen bg-black text-white">
@@ -79,7 +107,7 @@
           <a href="/kontakt.html#sales" id="nav-talk-to-sales" class="hidden md:block px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-2xl hover:border-white/40">
             Mit Sales sprechen
           </a>
-          <a href="/kontakt.html#sales" id="nav-get-started" class="px-4 py-2 text-sm font-medium bg-white text-black rounded-2xl hover:bg-white/90 transition">
+          <a href="/kontakt.html#sales" id="nav-get-started" class="px-4 py-2 text-sm font-medium bg-primary text-white rounded-2xl hover:bg-primary-hover transition">
             Jetzt starten
           </a>
           <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition">
@@ -146,8 +174,8 @@
         </div>
 
         <!-- Professional Plan -->
-        <div class="pricing-card bg-white p-8 rounded-3xl border-2 border-white text-black relative animate-on-scroll delay-200 scale-in">
-          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-1 rounded-full text-sm font-semibold">
+        <div class="pricing-card bg-white p-8 rounded-3xl border-2 border-primary text-black relative animate-on-scroll delay-200 scale-in shadow-lg shadow-primary/20">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
             Beliebt
           </div>
           <h3 class="text-2xl font-semibold mb-2">Professional</h3>
@@ -177,7 +205,7 @@
               <span class="text-black/80">Erweiterte Analytics</span>
             </li>
           </ul>
-          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 bg-black text-white rounded-2xl font-semibold hover:bg-black/90 transition">
+          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 bg-primary text-white rounded-2xl font-semibold hover:bg-primary-hover transition">
             Jetzt starten
           </a>
         </div>
@@ -282,7 +310,7 @@
       <p class="text-xl text-white/70 mb-8">
         Sprich mit unserem Sales-Team über das passende Paket für dich
       </p>
-      <a href="/kontakt.html#sales" class="inline-block px-8 py-4 bg-white text-black rounded-2xl font-semibold hover:bg-white/90 transition text-lg">
+      <a href="/kontakt.html#sales" class="inline-block px-8 py-4 bg-primary text-white rounded-3xl font-semibold hover:bg-primary-hover transition text-lg shadow-lg shadow-primary/30">
         Mit Sales sprechen
       </a>
     </div>
@@ -332,6 +360,7 @@
 
   <script src="./animations.js"></script>
   <script src="./language.js"></script>
+  <script src="./cursor-follower.js"></script>
 </body>
 </html>
 

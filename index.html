@@ -75,6 +75,34 @@
     .smooth-scroll {
       scroll-behavior: smooth;
     }
+
+    /* Main Color - Modernes Lila/Flieder */
+    :root {
+      --primary-purple: #8B5CF6;
+      --primary-purple-hover: #7C3AED;
+      --primary-purple-light: #A78BFA;
+      --primary-purple-bg: #F5F3FF;
+    }
+
+    .bg-primary {
+      background-color: var(--primary-purple);
+    }
+
+    .bg-primary-hover:hover {
+      background-color: var(--primary-purple-hover);
+    }
+
+    .text-primary {
+      color: var(--primary-purple);
+    }
+
+    .border-primary {
+      border-color: var(--primary-purple);
+    }
+
+    .bg-primary-light {
+      background-color: var(--primary-purple-bg);
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -108,7 +136,7 @@
           <a href="/kontakt.html#sales" id="nav-talk-to-sales" class="hidden md:block px-4 py-2 text-sm font-medium text-black/70 hover:text-black transition border border-black/20 rounded-2xl hover:border-black/40">
             Mit Sales sprechen
           </a>
-          <a href="/kontakt.html#sales" id="nav-get-started" class="px-4 py-2 text-sm font-medium bg-black text-white rounded-2xl hover:bg-black/90 transition">
+          <a href="/kontakt.html#sales" id="nav-get-started" class="px-4 py-2 text-sm font-medium bg-primary text-white rounded-2xl hover:bg-primary-hover transition">
             Jetzt starten
           </a>
           <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-medium text-black/70 hover:text-black transition">
@@ -138,10 +166,10 @@
         Monetarisiere deine Leidenschaft, baue eine lebendige Community auf und verkaufe Content – alles in einer Plattform.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center delay-300">
-        <a href="/kontakt.html#sales" id="hero-cta-start" class="px-8 py-4 bg-black text-white rounded-3xl font-semibold hover:bg-black/90 transition text-lg">
+        <a href="/kontakt.html#sales" id="hero-cta-start" class="px-8 py-4 bg-primary text-white rounded-3xl font-semibold hover:bg-primary-hover transition text-lg shadow-lg shadow-primary/30">
           Kostenlos starten
         </a>
-        <a href="/use-cases.html" id="hero-cta-learn" class="px-8 py-4 border border-black/20 text-black rounded-3xl font-semibold hover:border-black/40 transition text-lg">
+        <a href="/use-cases.html" id="hero-cta-learn" class="px-8 py-4 border-2 border-primary text-primary rounded-3xl font-semibold hover:bg-primary hover:text-white transition text-lg">
           Mehr erfahren
         </a>
       </div>
@@ -218,49 +246,49 @@
       </div>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="feature-card bg-black/5 p-6 rounded-3xl border border-black/10 animate-on-scroll delay-100">
+        <div class="feature-card bg-primary-light p-6 rounded-3xl border-2 border-primary/20 hover:border-primary/40 animate-on-scroll delay-100 transition-all">
           <div class="text-3xl mb-4">🎥</div>
           <h3 class="text-xl font-semibold mb-2 text-black">Live Video & Workshops</h3>
           <p class="text-black/70">Führe Webinare, Bootcamps und virtuelle Treffen mit hochwertigen Video-Tools durch.</p>
         </div>
-        <div class="feature-card bg-black/5 p-6 rounded-3xl border border-black/10 animate-on-scroll delay-200">
+        <div class="feature-card bg-primary-light p-6 rounded-3xl border-2 border-primary/20 hover:border-primary/40 animate-on-scroll delay-200 transition-all">
           <div class="text-3xl mb-4">💬</div>
           <h3 class="text-xl font-semibold mb-2 text-black">Chat & Channels</h3>
           <p class="text-black/70">Einfache Kommunikation in privaten und öffentlichen Gruppen.</p>
         </div>
-        <div class="feature-card bg-black/5 p-6 rounded-3xl border border-black/10 animate-on-scroll delay-300">
+        <div class="feature-card bg-primary-light p-6 rounded-3xl border-2 border-primary/20 hover:border-primary/40 animate-on-scroll delay-300 transition-all">
           <div class="text-3xl mb-4">📁</div>
           <h3 class="text-xl font-semibold mb-2 text-black">Mediathek & Dateiablage</h3>
           <p class="text-black/70">Zentraler Speicherplatz für Videos, Dokumente und Kursmaterialien.</p>
         </div>
-        <div class="feature-card bg-black/5 p-6 rounded-3xl border border-black/10 animate-on-scroll delay-400">
+        <div class="feature-card bg-primary-light p-6 rounded-3xl border-2 border-primary/20 hover:border-primary/40 animate-on-scroll delay-400 transition-all">
           <div class="text-3xl mb-4">🎮</div>
           <h3 class="text-xl font-semibold mb-2 text-black">Gamification & Mitgliedschaften</h3>
           <p class="text-black/70">Motiviere mit spielerischen Elementen und exklusiven Angeboten.</p>
         </div>
-        <div class="feature-card bg-black/5 p-6 rounded-3xl border border-black/10 animate-on-scroll delay-100">
+        <div class="feature-card bg-primary-light p-6 rounded-3xl border-2 border-primary/20 hover:border-primary/40 animate-on-scroll delay-100 transition-all">
           <div class="text-3xl mb-4">📅</div>
           <h3 class="text-xl font-semibold mb-2 text-black">Kalender & Ticketing</h3>
           <p class="text-black/70">Organisiere Events, Manage Zugänge und verkaufe Tickets direkt in der Plattform.</p>
         </div>
-        <div class="feature-card bg-black/5 p-6 rounded-3xl border border-black/10 animate-on-scroll delay-200">
+        <div class="feature-card bg-primary-light p-6 rounded-3xl border-2 border-primary/20 hover:border-primary/40 animate-on-scroll delay-200 transition-all">
           <div class="text-3xl mb-4">📊</div>
           <h3 class="text-xl font-semibold mb-2 text-black">Umfragen & Feedback</h3>
           <p class="text-black/70">Sammle Insights und verbessere deine Angebote kontinuierlich.</p>
         </div>
-        <div class="feature-card bg-black/5 p-6 rounded-3xl border border-black/10 animate-on-scroll delay-300">
+        <div class="feature-card bg-primary-light p-6 rounded-3xl border-2 border-primary/20 hover:border-primary/40 animate-on-scroll delay-300 transition-all">
           <div class="text-3xl mb-4">📈</div>
           <h3 class="text-xl font-semibold mb-2 text-black">Analytics & Dashboard</h3>
           <p class="text-black/70">Behalte den Überblick über Aktivität, Engagement und Wachstum deiner Community.</p>
         </div>
-        <div class="feature-card bg-black/5 p-6 rounded-3xl border border-black/10 animate-on-scroll delay-400">
+        <div class="feature-card bg-primary-light p-6 rounded-3xl border-2 border-primary/20 hover:border-primary/40 animate-on-scroll delay-400 transition-all">
           <div class="text-3xl mb-4">🔒</div>
           <h3 class="text-xl font-semibold mb-2 text-black">Sicherheit & Datenschutz</h3>
           <p class="text-black/70">Modernste Technologie für maximale Sicherheit und DSGVO-Konformität.</p>
         </div>
       </div>
       <div class="text-center mt-12">
-        <a href="/features.html" id="features-view-all" class="text-black/70 hover:text-black transition font-semibold">
+        <a href="/features.html" id="features-view-all" class="text-primary hover:text-primary-hover transition font-semibold">
           Alle Features ansehen →
         </a>
       </div>
@@ -268,7 +296,7 @@
   </section>
 
   <!-- Use Cases Section -->
-  <section id="use-cases" class="py-20 px-6 lg:px-8 bg-gray-50">
+  <section id="use-cases" class="py-20 px-6 lg:px-8 bg-primary-light">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16 animate-on-scroll">
         <h2 id="use-cases-title" class="headline-vanguard text-4xl md:text-6xl font-bold mb-4 text-black">Für jeden das Richtige</h2>
@@ -277,21 +305,21 @@
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-8 mb-12">
-        <div class="bg-white p-8 rounded-3xl border border-black/10 shadow-sm animate-on-scroll slide-in-left">
+        <div class="bg-white p-8 rounded-3xl border-2 border-primary/20 hover:border-primary/40 shadow-sm animate-on-scroll slide-in-left transition-all">
           <h3 id="use-cases-coaches" class="headline-vanguard text-3xl font-bold mb-4 text-black">Für Coaches</h3>
           <p class="text-lg text-black/80 mb-6">
             Dein Netzwerk für nachhaltiges Lernen und Wachstum. Mit teech baust du mehr als nur eine Community – du erschaffst einen lebendigen Ort, an dem Lernen, Austausch und persönliche Entwicklung Hand in Hand gehen.
           </p>
-          <a href="/use-cases.html#coach" class="text-black font-semibold hover:text-black/80 transition">
+          <a href="/use-cases.html#coach" class="text-primary font-semibold hover:text-primary-hover transition">
             Mehr erfahren →
           </a>
         </div>
-        <div class="bg-white p-8 rounded-3xl border border-black/10 shadow-sm animate-on-scroll slide-in-right">
+        <div class="bg-white p-8 rounded-3xl border-2 border-primary/20 hover:border-primary/40 shadow-sm animate-on-scroll slide-in-right transition-all">
           <h3 id="use-cases-creators" class="headline-vanguard text-3xl font-bold mb-4 text-black">Für Creator</h3>
           <p class="text-lg text-black/80 mb-6">
             Monetarisiere deine Leidenschaft und stärke deine Community. Mit teech bist du mehr als nur ein Creator – du bist Gastgeber einer lebendigen Community, die deine Inhalte liebt, teilt und unterstützt.
           </p>
-          <a href="/use-cases.html#creator" class="text-black font-semibold hover:text-black/80 transition">
+          <a href="/use-cases.html#creator" class="text-primary font-semibold hover:text-primary-hover transition">
             Mehr erfahren →
           </a>
         </div>
@@ -392,7 +420,7 @@
       </div>
       
       <div class="text-center animate-on-scroll delay-300">
-        <a href="/preise.html" id="pricing-view" class="inline-block px-8 py-4 bg-black text-white rounded-3xl font-semibold hover:bg-black/90 transition text-lg">
+        <a href="/preise.html" id="pricing-view" class="inline-block px-8 py-4 bg-primary text-white rounded-3xl font-semibold hover:bg-primary-hover transition text-lg shadow-lg shadow-primary/30">
           Preise ansehen
         </a>
       </div>
@@ -468,7 +496,7 @@
       </div>
       
       <div class="text-center animate-on-scroll delay-400">
-        <a href="/customer-stories.html" id="stories-view-all" class="inline-block px-8 py-4 border border-black/20 text-black rounded-3xl font-semibold hover:border-black/40 transition text-lg">
+        <a href="/customer-stories.html" id="stories-view-all" class="inline-block px-8 py-4 border-2 border-primary text-primary rounded-3xl font-semibold hover:bg-primary hover:text-white transition text-lg">
           Alle Stories ansehen
         </a>
       </div>
@@ -483,10 +511,10 @@
         Starte noch heute und baue deine Community auf
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center delay-300">
-        <a href="/kontakt.html#sales" id="cta-start" class="px-8 py-4 bg-black text-white rounded-3xl font-semibold hover:bg-black/90 transition text-lg">
+        <a href="/kontakt.html#sales" id="cta-start" class="px-8 py-4 bg-primary text-white rounded-3xl font-semibold hover:bg-primary-hover transition text-lg shadow-lg shadow-primary/30">
           Kostenlos starten
         </a>
-        <a href="/kontakt.html#sales" id="cta-talk-to-sales" class="px-8 py-4 border border-black/20 text-black rounded-3xl font-semibold hover:border-black/40 transition text-lg">
+        <a href="/kontakt.html#sales" id="cta-talk-to-sales" class="px-8 py-4 border-2 border-primary text-primary rounded-3xl font-semibold hover:bg-primary hover:text-white transition text-lg">
           Mit Sales sprechen
         </a>
       </div>
@@ -494,7 +522,9 @@
   </section>
   
   <script src="./animations.js"></script>
-
+  <script src="./language.js"></script>
+  <script src="./cursor-follower.js"></script>
+  
   <!-- Footer -->
   <footer class="bg-gray-50 border-t border-black/10 py-12 px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">

@@ -1,3 +1,31 @@
+/* Main Color - Modernes Lila/Flieder */
+:root {
+  --primary-purple: #8B5CF6;
+  --primary-purple-hover: #7C3AED;
+  --primary-purple-light: #A78BFA;
+  --primary-purple-bg: #F5F3FF;
+}
+
+.bg-primary {
+  background-color: var(--primary-purple);
+}
+
+.bg-primary-hover:hover {
+  background-color: var(--primary-purple-hover);
+}
+
+.text-primary {
+  color: var(--primary-purple);
+}
+
+.border-primary {
+  border-color: var(--primary-purple);
+}
+
+.bg-primary-light {
+  background-color: var(--primary-purple-bg);
+}
+
 /* Animationen */
 @keyframes fadeInUp {
   from {
