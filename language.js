@@ -202,7 +202,14 @@ function updateLanguageSwitch(lang) {
   if (switchBtn) {
     const span = switchBtn.querySelector('span');
     if (span) {
-      span.textContent = lang === 'de' ? 'EN' : 'DE';
+      // Smooth fade transition
+      span.style.opacity = '0';
+      span.style.transition = 'opacity 0.2s ease';
+      
+      setTimeout(() => {
+        span.textContent = lang === 'de' ? 'EN' : 'DE';
+        span.style.opacity = '1';
+      }, 100);
     }
     switchBtn.setAttribute('data-lang', lang);
   }
@@ -217,6 +224,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const switchBtn = document.getElementById('language-switch');
   if (switchBtn) {
     switchBtn.addEventListener('click', () => {
+      // Add click animation
+      switchBtn.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        switchBtn.style.transform = 'scale(1)';
+      }, 150);
+      
       const currentLang = getCurrentLanguage();
       const newLang = currentLang === 'de' ? 'en' : 'de';
       setLanguage(newLang);
