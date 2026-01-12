@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Teech - Die moderne Community-Plattform für Coaches und Creator. Monetarisiere deine Community, verkaufe Content und baue eine lebendige Community auf.">
+  <meta name="description" content="Glymmer - Die moderne Community-Plattform für Coaches und Creator. Monetarisiere deine Community, verkaufe Content und baue eine lebendige Community auf.">
   <meta name="keywords" content="Community-Plattform, SaaS, Coaching, Creator, Mitgliedschaften, Content-Verkauf">
-  <meta name="author" content="Teech">
-  <meta property="og:title" content="Teech - Deine Community-Plattform">
+  <meta name="author" content="Glymmer">
+  <meta property="og:title" content="Glymmer - Deine Community-Plattform">
   <meta property="og:description" content="Monetarisiere deine Community und baue eine lebendige Plattform auf.">
   <meta property="og:type" content="website">
-  <title>Teech - Deine Community-Plattform für Coaches und Creator</title>
+  <title>Glymmer - Deine Community-Plattform für Coaches und Creator</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./styles.css">
   <link rel="canonical" href="https://teech.com/">
@@ -65,7 +65,7 @@
     }
 
     .gradient-bg {
-      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      background: linear-gradient(135deg, rgba(255, 252, 4, 0.05) 0%, rgba(167, 121, 212, 0.05) 100%);
     }
 
     .feature-card {
@@ -80,31 +80,58 @@
       scroll-behavior: smooth;
     }
 
-    /* Main Color - Modernes Lila/Flieder */
+    /* Main Colors - Gelb und Lila */
     :root {
-      --primary-purple: #8B5CF6;
-      --primary-purple-hover: #7C3AED;
-      --primary-purple-light: #A78BFA;
-      --primary-purple-bg: #F5F3FF;
+      --primary-yellow: #FFFC04;
+      --primary-yellow-hover: #E6E304;
+      --primary-yellow-light: #FFFD80;
+      --primary-yellow-bg: #FFFE99;
+      
+      --primary-purple: #A779D4;
+      --primary-purple-hover: #9568C4;
+      --primary-purple-light: #C5A5E5;
+      --primary-purple-bg: #E8D9F5;
     }
 
+    /* Yellow Classes */
     .bg-primary {
-      background-color: var(--primary-purple);
+      background-color: var(--primary-yellow);
     }
 
     .bg-primary-hover:hover {
-      background-color: var(--primary-purple-hover);
+      background-color: var(--primary-yellow-hover);
     }
 
     .text-primary {
-      color: var(--primary-purple);
+      color: var(--primary-yellow);
     }
 
     .border-primary {
-      border-color: var(--primary-purple);
+      border-color: var(--primary-yellow);
     }
 
     .bg-primary-light {
+      background-color: var(--primary-yellow-bg);
+    }
+
+    /* Purple Classes */
+    .bg-secondary {
+      background-color: var(--primary-purple);
+    }
+
+    .bg-secondary-hover:hover {
+      background-color: var(--primary-purple-hover);
+    }
+
+    .text-secondary {
+      color: var(--primary-purple);
+    }
+
+    .border-secondary {
+      border-color: var(--primary-purple);
+    }
+
+    .bg-secondary-light {
       background-color: var(--primary-purple-bg);
     }
 
@@ -130,7 +157,7 @@
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Teech",
+    "name": "Glymmer",
     "applicationCategory": "BusinessApplication",
     "offers": {
       "@type": "Offer",
@@ -144,10 +171,12 @@
 <body class="min-h-screen bg-white text-black smooth-scroll">
   
   <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-black/10">
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm transition-all duration-300">
     <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
       <div class="flex items-center justify-between relative">
-        <a href="/" class="text-2xl font-bold headline-vanguard">TEECH</a>
+        <a href="/" class="flex items-center">
+          <img src="./public/Glymmer_Logo_schwarz.png" alt="Glymmer" class="h-8 w-auto">
+        </a>
         <div class="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
           <a href="/features.html" id="nav-features" class="text-black/70 hover:text-black transition">Features</a>
           <a href="/use-cases.html" id="nav-use-cases" class="text-black/70 hover:text-black transition">Use Cases</a>
@@ -178,18 +207,21 @@
   <section class="pt-32 pb-20 px-6 lg:px-8 gradient-bg">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16 fade-in">
-      <h1 id="hero-title" class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 leading-tight text-black">
+      <h1 id="hero-title" class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 leading-normal bg-gradient-to-r from-gray-800 via-gray-800/70 to-gray-800/30 bg-clip-text text-transparent pb-2">
         Deine Community-Plattform.<br />Deine Regeln.
     </h1>
-      <p id="hero-subtitle" class="text-xl md:text-2xl text-black/70 max-w-3xl mx-auto mb-12 leading-relaxed delay-200">
+      <p id="hero-subtitle" class="text-base md:text-lg text-black/70 max-w-3xl mx-auto mb-12 leading-relaxed delay-200 font-normal">
         Monetarisiere deine Leidenschaft, baue eine lebendige Community auf und verkaufe Content – alles in einer Plattform.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center delay-300">
-        <a href="/kontakt.html#sales" id="hero-cta-start" class="px-8 py-2 bg-primary text-white rounded-full font-semibold hover:bg-primary-hover transition text-lg shadow-lg shadow-primary/30">
-          Kostenlos starten
+        <a href="/kontakt.html#sales" id="hero-cta-start" class="relative px-8 py-2 bg-primary text-white rounded-full font-normal hover:bg-primary-hover transition text-lg shadow-lg shadow-primary/30">
+          Jetzt starten
+          <svg class="absolute top-0 right-0 w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 17L17 7M7 7h10v10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </a>
-        <a href="/use-cases.html" id="hero-cta-learn" class="px-8 py-2 border-2 border-primary text-primary rounded-full font-semibold hover:bg-primary hover:text-white transition text-lg">
-          Mehr erfahren
+        <a href="/kontakt.html#sales" id="hero-cta-sales" class="px-8 py-2 border-2 border-primary text-primary rounded-full font-normal hover:bg-primary hover:text-white transition text-lg">
+          Sales kontaktieren
         </a>
       </div>
       </div>
@@ -320,7 +352,7 @@
       <div class="text-center mb-16 animate-on-scroll">
         <h2 id="use-cases-title" class="headline-vanguard text-4xl md:text-6xl font-bold mb-4 text-black">Für jeden das Richtige</h2>
         <p id="use-cases-subtitle" class="text-xl text-black/70 max-w-2xl mx-auto">
-          Egal ob Coach oder Creator – Teech passt sich deinen Bedürfnissen an
+          Egal ob Coach oder Creator – Glymmer passt sich deinen Bedürfnissen an
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-8 mb-12">
@@ -601,6 +633,24 @@
   <script src="./language.js"></script>
   <script src="./cursor-follower.js"></script>
   <script>
+    // Header Background on Scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('main-header');
+      if (!header) return;
+
+      function updateHeaderBackground() {
+        if (window.scrollY > 50) {
+          header.classList.add('bg-white/90');
+        } else {
+          header.classList.remove('bg-white/90');
+        }
+      }
+
+      window.addEventListener('scroll', updateHeaderBackground);
+      updateHeaderBackground(); // Initial check
+    });
+  </script>
+  <script>
     // Sticky Wireframe Scroll Effect
     document.addEventListener('DOMContentLoaded', () => {
       const stickyWireframe = document.querySelector('.sticky-wireframe');
@@ -671,7 +721,9 @@
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
-          <h3 class="text-xl font-bold headline-vanguard mb-4 text-black">TEECH</h3>
+          <div class="mb-4">
+            <img src="./public/Glymmer_Logo_schwarz.png" alt="Glymmer" class="h-6 w-auto">
+          </div>
           <p class="text-black/70 text-sm">
             Deine Community-Plattform für Coaches und Creator
           </p>
@@ -703,7 +755,7 @@
         </div>
       </div>
       <div class="border-t border-black/10 pt-8 text-center text-sm text-black/70">
-        <p>&copy; 2024 Teech. Alle Rechte vorbehalten.</p>
+        <p>&copy; 2024 Glymmer. Alle Rechte vorbehalten.</p>
       </div>
     </div>
   </footer>

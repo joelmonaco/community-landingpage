@@ -1,28 +1,55 @@
-/* Main Color - Modernes Lila/Flieder */
+/* Main Colors - Gelb und Lila */
 :root {
-  --primary-purple: #8B5CF6;
-  --primary-purple-hover: #7C3AED;
-  --primary-purple-light: #A78BFA;
-  --primary-purple-bg: #F5F3FF;
+  --primary-yellow: #FFFC04;
+  --primary-yellow-hover: #E6E304;
+  --primary-yellow-light: #FFFD80;
+  --primary-yellow-bg: #FFFE99;
+  
+  --primary-purple: #A779D4;
+  --primary-purple-hover: #9568C4;
+  --primary-purple-light: #C5A5E5;
+  --primary-purple-bg: #E8D9F5;
 }
 
+/* Yellow Classes (Primary) */
 .bg-primary {
-  background-color: var(--primary-purple);
+  background-color: var(--primary-yellow);
 }
 
 .bg-primary-hover:hover {
-  background-color: var(--primary-purple-hover);
+  background-color: var(--primary-yellow-hover);
 }
 
 .text-primary {
-  color: var(--primary-purple);
+  color: var(--primary-yellow);
 }
 
 .border-primary {
-  border-color: var(--primary-purple);
+  border-color: var(--primary-yellow);
 }
 
 .bg-primary-light {
+  background-color: var(--primary-yellow-bg);
+}
+
+/* Purple Classes (Secondary) */
+.bg-secondary {
+  background-color: var(--primary-purple);
+}
+
+.bg-secondary-hover:hover {
+  background-color: var(--primary-purple-hover);
+}
+
+.text-secondary {
+  color: var(--primary-purple);
+}
+
+.border-secondary {
+  border-color: var(--primary-purple);
+}
+
+.bg-secondary-light {
   background-color: var(--primary-purple-bg);
 }
 

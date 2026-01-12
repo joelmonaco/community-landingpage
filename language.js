@@ -13,8 +13,8 @@ const translations = {
     hero: {
       title: 'Deine Community-Plattform.<br />Deine Regeln.',
       subtitle: 'Monetarisiere deine Leidenschaft, baue eine lebendige Community auf und verkaufe Content – alles in einer Plattform.',
-      ctaStart: 'Kostenlos starten',
-      ctaLearn: 'Mehr erfahren'
+      ctaStart: 'Jetzt starten',
+      ctaSales: 'Sales kontaktieren'
     },
     features: {
       title: 'Kernfeatures',
@@ -58,8 +58,8 @@ const translations = {
     hero: {
       title: 'Your Community.<br />Your Rules.',
       subtitle: 'Monetize your passion, build a vibrant community and sell content – all in one platform.',
-      ctaStart: 'Start for free',
-      ctaLearn: 'Learn more'
+      ctaStart: 'Get started',
+      ctaSales: 'Contact Sales'
     },
     features: {
       title: 'Core Features',
@@ -136,8 +136,8 @@ function applyTranslations(lang) {
   const heroCtaStart = document.getElementById('hero-cta-start');
   if (heroCtaStart) heroCtaStart.textContent = t.hero.ctaStart;
   
-  const heroCtaLearn = document.getElementById('hero-cta-learn');
-  if (heroCtaLearn) heroCtaLearn.textContent = t.hero.ctaLearn;
+  const heroCtaSales = document.getElementById('hero-cta-sales');
+  if (heroCtaSales) heroCtaSales.textContent = t.hero.ctaSales;
 
   // Features
   const featuresTitle = document.getElementById('features-title');
