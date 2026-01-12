@@ -67,6 +67,20 @@
 
     .gradient-bg {
       background: linear-gradient(135deg, rgba(167, 121, 212, 0.4) 0%, rgba(255, 252, 4, 0.4) 100%);
+      background-size: 200% 200%;
+      animation: gradientShift 8s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     .feature-card {
