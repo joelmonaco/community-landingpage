@@ -9,7 +9,8 @@
   <meta property="og:title" content="Glymmer - Deine Community-Plattform">
   <meta property="og:description" content="Monetarisiere deine Community und baue eine lebendige Plattform auf.">
   <meta property="og:type" content="website">
-  <title>Glymmer - Deine Community-Plattform für Coaches und Creator</title>
+  <title>Glymmer - Deine Community Plattform</title>
+  <link rel="icon" type="image/png" href="./public/Favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./styles.css">
   <link rel="canonical" href="https://teech.com/">
@@ -65,7 +66,7 @@
     }
 
     .gradient-bg {
-      background: linear-gradient(135deg, rgba(255, 252, 4, 0.05) 0%, rgba(167, 121, 212, 0.05) 100%);
+      background: linear-gradient(135deg, rgba(167, 121, 212, 0.15) 0%, rgba(255, 252, 4, 0.15) 100%);
     }
 
     .feature-card {
@@ -174,16 +175,32 @@
   <header id="main-header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm transition-all duration-300">
     <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
       <div class="flex items-center justify-between relative">
-        <a href="/" class="flex items-center">
-          <img src="./public/Glymmer_Logo_schwarz.png" alt="Glymmer" class="h-8 w-auto">
-        </a>
-        <div class="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
-          <a href="/features.html" id="nav-features" class="text-black/70 hover:text-black transition">Features</a>
-          <a href="/use-cases.html" id="nav-use-cases" class="text-black/70 hover:text-black transition">Use Cases</a>
-          <a href="/preise.html" id="nav-pricing" class="text-black/70 hover:text-black transition">Preise</a>
-          <a href="/customer-stories.html" id="nav-stories" class="text-black/70 hover:text-black transition">Customer Stories</a>
-        </div>
-        <div class="flex items-center space-x-4 ml-auto">
+        <!-- Links: Burger Menu + Language Switch -->
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <button id="burger-menu" class="relative p-2 text-black/70 hover:text-black transition" aria-label="Menu">
+              <div class="relative w-6 h-6">
+                <svg id="burger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute inset-0 transition-opacity duration-300 opacity-100">
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute inset-0 transition-opacity duration-300 opacity-0 pointer-events-none">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </div>
+            </button>
+            <!-- Desktop Dropdown Menu -->
+            <div id="burger-menu-dropdown" class="hidden md:block absolute top-full left-0 mt-2 bg-white rounded-3xl py-4 px-6 min-w-[200px] opacity-0 invisible transition-all duration-300 transform translate-y-2" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);">
+              <nav class="flex flex-col space-y-3">
+                <a href="/features.html" id="nav-features" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Features</a>
+                <a href="/use-cases.html" id="nav-use-cases" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Use Cases</a>
+                <a href="/preise.html" id="nav-pricing" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Preise</a>
+                <a href="/customer-stories.html" id="nav-stories" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Customer Stories</a>
+              </nav>
+            </div>
+          </div>
           <button id="language-switch" class="px-4 py-2 text-sm font-medium text-black/70 hover:text-black transition border border-black/20 rounded-full hover:border-black/40 flex items-center gap-2" data-lang="de">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
@@ -192,12 +209,40 @@
             </svg>
             <span>EN</span>
           </button>
-          <a href="/kontakt.html#sales" id="nav-get-started" class="px-6 py-2 text-sm font-medium bg-primary text-white rounded-full hover:bg-primary-hover transition">
-            Jetzt starten
-          </a>
-          <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-medium text-black/70 hover:text-black transition">
+        </div>
+        
+        <!-- Mitte: Logo -->
+        <a href="/" class="absolute left-1/2 transform -translate-x-1/2 flex items-center">
+          <img src="./public/Glymmer_Logo_schwarz.png" alt="Glymmer" class="h-8 w-auto">
+        </a>
+        
+        <!-- Rechts: Login Button -->
+        <div class="flex items-center ml-auto">
+          <a href="https://app.teech.com/login" id="nav-login" class="px-6 py-2 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition">
             Log In
           </a>
+        </div>
+      </div>
+      
+      <!-- Mobile Burger Menu Overlay -->
+      <div id="burger-menu-overlay" class="md:hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+          <div class="flex justify-between items-center mb-8">
+            <h2 class="text-2xl font-semibold text-black">Menü</h2>
+            <button id="burger-menu-close" class="p-2 text-black/70 hover:text-black transition" aria-label="Close Menu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+          <nav class="flex flex-col space-y-6">
+            <a href="/features.html" id="nav-features-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition">Features</a>
+            <a href="/use-cases.html" id="nav-use-cases-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition">Use Cases</a>
+            <a href="/preise.html" id="nav-pricing-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition">Preise</a>
+            <a href="/customer-stories.html" id="nav-stories-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition">Customer Stories</a>
+            <a href="/kontakt.html#sales" id="nav-get-started-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition mt-4">Jetzt starten</a>
+          </nav>
         </div>
       </div>
     </nav>
@@ -648,6 +693,109 @@
 
       window.addEventListener('scroll', updateHeaderBackground);
       updateHeaderBackground(); // Initial check
+
+      // Burger Menu Toggle
+      const burgerMenu = document.getElementById('burger-menu');
+      const burgerMenuClose = document.getElementById('burger-menu-close');
+      const burgerMenuOverlay = document.getElementById('burger-menu-overlay');
+      const burgerMenuDropdown = document.getElementById('burger-menu-dropdown');
+      const burgerIcon = document.getElementById('burger-icon');
+      const closeIcon = document.getElementById('close-icon');
+      
+      // Function to toggle icon
+      function toggleMenuIcon(isOpen) {
+        if (burgerIcon && closeIcon) {
+          if (isOpen) {
+            burgerIcon.classList.remove('opacity-100');
+            burgerIcon.classList.add('opacity-0');
+            closeIcon.classList.remove('opacity-0', 'pointer-events-none');
+            closeIcon.classList.add('opacity-100');
+          } else {
+            burgerIcon.classList.remove('opacity-0');
+            burgerIcon.classList.add('opacity-100');
+            closeIcon.classList.remove('opacity-100');
+            closeIcon.classList.add('opacity-0', 'pointer-events-none');
+          }
+        }
+      }
+      
+      // Desktop Dropdown
+      if (burgerMenu && burgerMenuDropdown) {
+        let isOpen = false;
+        
+        burgerMenu.addEventListener('click', (e) => {
+          e.stopPropagation();
+          isOpen = !isOpen;
+          
+          if (isOpen) {
+            burgerMenuDropdown.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+            burgerMenuDropdown.classList.add('opacity-100', 'visible', 'translate-y-0');
+          } else {
+            burgerMenuDropdown.classList.add('opacity-0', 'invisible', 'translate-y-2');
+            burgerMenuDropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+          }
+          toggleMenuIcon(isOpen);
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!burgerMenu.contains(e.target) && !burgerMenuDropdown.contains(e.target)) {
+            isOpen = false;
+            burgerMenuDropdown.classList.add('opacity-0', 'invisible', 'translate-y-2');
+            burgerMenuDropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+            toggleMenuIcon(isOpen);
+          }
+        });
+        
+        // Close dropdown when clicking on a link
+        const dropdownLinks = burgerMenuDropdown.querySelectorAll('a');
+        dropdownLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            isOpen = false;
+            burgerMenuDropdown.classList.add('opacity-0', 'invisible', 'translate-y-2');
+            burgerMenuDropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+            toggleMenuIcon(isOpen);
+          });
+        });
+      }
+      
+      // Mobile Overlay
+      if (burgerMenu && burgerMenuOverlay) {
+        let isMobileOpen = false;
+        burgerMenu.addEventListener('click', () => {
+          if (window.innerWidth < 768) {
+            isMobileOpen = !isMobileOpen;
+            if (isMobileOpen) {
+              burgerMenuOverlay.classList.remove('translate-x-full');
+              document.body.style.overflow = 'hidden';
+            } else {
+              burgerMenuOverlay.classList.add('translate-x-full');
+              document.body.style.overflow = '';
+            }
+            toggleMenuIcon(isMobileOpen);
+          }
+        });
+      }
+      
+      if (burgerMenuClose && burgerMenuOverlay) {
+        burgerMenuClose.addEventListener('click', () => {
+          burgerMenuOverlay.classList.add('translate-x-full');
+          document.body.style.overflow = '';
+          toggleMenuIcon(false);
+        });
+      }
+      
+      // Close mobile menu when clicking on a link
+      if (burgerMenuOverlay) {
+        const menuLinks = burgerMenuOverlay.querySelectorAll('a');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            burgerMenuOverlay.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+            toggleMenuIcon(false);
+          });
+        });
+      }
     });
   </script>
   <script>
