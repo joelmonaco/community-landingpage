@@ -19,12 +19,12 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background-color: #8B5CF6;
+      background-color: #A779D4;
       pointer-events: none;
       z-index: 99999;
       transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
       opacity: 1;
-      box-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+      box-shadow: 0 0 8px rgba(167, 121, 212, 0.5);
       left: 0;
       top: 0;
       transform: translate(-50%, -50%);

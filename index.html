@@ -207,9 +207,9 @@
         <!-- Links: Burger Menu + Language Switch -->
         <div class="flex items-center space-x-4">
           <div class="relative">
-            <button id="burger-menu" class="relative p-2 text-black/70 hover:text-black transition" aria-label="Menu">
+            <button id="burger-menu" class="relative p-2 transition" style="color: #2A2A2A;" aria-label="Menu">
               <div class="relative w-6 h-6">
-                <svg id="burger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute inset-0">
+                <svg id="burger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute inset-0">
                   <g id="burger-lines" style="transform-origin: 12px 12px; transition: transform 0.3s ease;">
                     <line id="burger-line-top" x1="3" y1="6" x2="21" y2="6" style="transition: transform 0.3s ease, opacity 0.3s ease;"></line>
                     <line id="burger-line-middle" x1="3" y1="12" x2="21" y2="12" style="transition: opacity 0.2s ease;"></line>
@@ -228,8 +228,8 @@
               </nav>
             </div>
           </div>
-          <button id="language-switch" class="px-4 py-3 text-sm font-normal text-black/70 hover:text-black transition-all duration-300 border border-black/20 rounded-full hover:border-black/40 flex items-center gap-2" style="transform: scale(1); transition: transform 0.15s ease;" data-lang="de">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <button id="language-switch" class="px-4 py-3 text-sm font-normal transition-all duration-300 border border-black/20 rounded-full hover:border-black/40 flex items-center gap-2" style="transform: scale(1); transition: transform 0.15s ease; color: #2A2A2A;" data-lang="de">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
@@ -240,12 +240,12 @@
         
         <!-- Mitte: Logo -->
         <a href="/" class="absolute left-1/2 transform -translate-x-1/2 flex items-center">
-          <img src="./public/Glymmer_Logo_schwarz.png" alt="Glymmer" class="h-8 w-auto">
+          <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
         </a>
         
         <!-- Rechts: Log In + Jetzt starten Buttons -->
         <div class="flex items-center space-x-4 ml-auto">
-          <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-normal text-black/70 hover:text-black transition">
+          <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-normal transition" style="color: #2A2A2A;">
             Log In
           </a>
           <a href="/kontakt.html#sales" id="nav-get-started" class="px-6 py-3 text-sm font-normal bg-secondary text-white rounded-full hover:bg-secondary-hover transition" style="box-shadow: 0 4px 20px rgba(167, 121, 212, 0.5);">
@@ -282,7 +282,7 @@
   <section class="pt-32 pb-20 px-6 lg:px-8 gradient-bg">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16 fade-in">
-      <h1 id="hero-title" class="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 leading-normal bg-gradient-to-r from-black via-black/90 to-black/30 bg-clip-text text-transparent pb-2">
+      <h1 id="hero-title" class="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 leading-normal pb-2" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent;">
         Deine Community-Plattform.<br />Deine Regeln.
     </h1>
       <p id="hero-subtitle" class="text-base md:text-lg text-black/50 max-w-3xl mx-auto mb-12 leading-relaxed delay-200 font-normal">
@@ -295,7 +295,7 @@
             <path d="M7 17L17 7M7 7h10v10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
-        <a href="/kontakt.html#sales" id="hero-cta-sales" class="px-4 py-3 text-sm font-normal bg-white text-black rounded-full hover:bg-gray-50 transition" style="box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
+        <a href="/kontakt.html#sales" id="hero-cta-sales" class="px-4 py-3 text-sm font-normal bg-white rounded-full hover:bg-gray-50 transition" style="color: #2A2A2A; box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
           Sales kontaktieren
         </a>
       </div>
