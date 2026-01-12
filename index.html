@@ -81,6 +81,21 @@
       scroll-behavior: smooth;
     }
 
+    /* Burger Menu Animation */
+    #burger-menu.active #burger-line-top {
+      transform: translateY(6px) rotate(45deg);
+      transform-origin: 12px 6px;
+    }
+
+    #burger-menu.active #burger-line-middle {
+      opacity: 0;
+    }
+
+    #burger-menu.active #burger-line-bottom {
+      transform: translateY(-6px) rotate(-45deg);
+      transform-origin: 12px 18px;
+    }
+
     /* Main Colors - Gelb und Lila */
     :root {
       --primary-yellow: #FFFC04;
@@ -180,14 +195,12 @@
           <div class="relative">
             <button id="burger-menu" class="relative p-2 text-black/70 hover:text-black transition" aria-label="Menu">
               <div class="relative w-6 h-6">
-                <svg id="burger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute inset-0 transition-opacity duration-300 opacity-100">
-                  <line x1="3" y1="12" x2="21" y2="12"></line>
-                  <line x1="3" y1="6" x2="21" y2="6"></line>
-                  <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-                <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute inset-0 transition-opacity duration-300 opacity-0 pointer-events-none">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                <svg id="burger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute inset-0">
+                  <g id="burger-lines" style="transform-origin: 12px 12px; transition: transform 0.3s ease;">
+                    <line id="burger-line-top" x1="3" y1="6" x2="21" y2="6" style="transition: transform 0.3s ease, opacity 0.3s ease;"></line>
+                    <line id="burger-line-middle" x1="3" y1="12" x2="21" y2="12" style="transition: opacity 0.2s ease;"></line>
+                    <line id="burger-line-bottom" x1="3" y1="18" x2="21" y2="18" style="transition: transform 0.3s ease, opacity 0.3s ease;"></line>
+                  </g>
                 </svg>
               </div>
             </button>
@@ -699,22 +712,14 @@
       const burgerMenuClose = document.getElementById('burger-menu-close');
       const burgerMenuOverlay = document.getElementById('burger-menu-overlay');
       const burgerMenuDropdown = document.getElementById('burger-menu-dropdown');
-      const burgerIcon = document.getElementById('burger-icon');
-      const closeIcon = document.getElementById('close-icon');
       
-      // Function to toggle icon
+      // Function to toggle icon animation
       function toggleMenuIcon(isOpen) {
-        if (burgerIcon && closeIcon) {
+        if (burgerMenu) {
           if (isOpen) {
-            burgerIcon.classList.remove('opacity-100');
-            burgerIcon.classList.add('opacity-0');
-            closeIcon.classList.remove('opacity-0', 'pointer-events-none');
-            closeIcon.classList.add('opacity-100');
+            burgerMenu.classList.add('active');
           } else {
-            burgerIcon.classList.remove('opacity-0');
-            burgerIcon.classList.add('opacity-100');
-            closeIcon.classList.remove('opacity-100');
-            closeIcon.classList.add('opacity-0', 'pointer-events-none');
+            burgerMenu.classList.remove('active');
           }
         }
       }
