@@ -177,9 +177,16 @@
   animation-delay: 0.6s;
 }
 
-/* Verstecke Mediathek-Box auf kleineren Bildschirmen */
+#kalender-box {
+  animation-delay: 0.6s;
+}
+
+/* Verstecke Mediathek- und Kalender-Box auf kleineren Bildschirmen */
 @media (max-width: 1400px) {
   #mediathek-box {
+    display: none;
+  }
+  #kalender-box {
     display: none;
   }
 }

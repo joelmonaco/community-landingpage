@@ -248,9 +248,9 @@
           <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-normal transition" style="color: #2A2A2A;">
             Log In
           </a>
-          <a href="/kontakt.html#sales" id="nav-get-started" class="px-6 py-3 text-sm font-normal bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2" style="box-shadow: 0 4px 20px rgba(167, 121, 212, 0.5);">
+          <a href="/kontakt.html#sales" id="nav-get-started" class="px-6 py-3 text-sm font-normal bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(167, 121, 212, 0.5);">
             Jetzt starten
-            <svg style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
               <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
@@ -292,9 +292,9 @@
         Monetarisiere deine Leidenschaft, baue eine lebendige Community auf und verkaufe Content – alles in einer Plattform.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center delay-300">
-        <a href="/kontakt.html#sales" id="hero-cta-start" class="px-6 py-3 text-sm font-normal bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2" style="box-shadow: 0 4px 20px rgba(167, 121, 212, 0.5);">
+        <a href="/kontakt.html#sales" id="hero-cta-start" class="px-6 py-3 text-sm font-normal bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(167, 121, 212, 0.5);">
           Jetzt starten
-          <svg style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+          <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
             <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
@@ -307,7 +307,77 @@
       <!-- Hero Mockup -->
       <div class="max-w-md mx-auto delay-400 -mt-16 relative">
         <div class="animate-on-scroll">
-          <img src="./public/Hero_Wireframe.png" alt="Hero Wireframe" class="w-full h-auto rounded-3xl" style="mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);">
+          <img id="hero-wireframe" src="./public/Hero_Wireframe.png" alt="Hero Wireframe" class="w-full h-auto rounded-3xl" style="mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);">
+        </div>
+        
+        <!-- Kalender Box Right -->
+        <div id="kalender-box" class="floating-user-box absolute top-[170px] -right-80 w-80 h-[360px] rounded-2xl p-4 flex flex-col z-10 overflow-hidden" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
+          <div class="flex justify-between items-center mb-3">
+            <div class="font-semibold text-black text-sm">Kalender</div>
+            <button class="p-1 hover:bg-black/5 rounded-full transition" aria-label="Menü">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black/70">
+                <circle cx="12" cy="12" r="1"></circle>
+                <circle cx="19" cy="12" r="1"></circle>
+                <circle cx="5" cy="12" r="1"></circle>
+              </svg>
+            </button>
+          </div>
+          <div class="flex-1 flex flex-col gap-3 relative">
+            <!-- Video 1 -->
+            <div class="flex gap-3">
+              <div class="relative w-20 h-20 flex-shrink-0">
+                <img src="./public/Thumbnail_1.jpg" alt="Video 1" class="w-20 h-20 rounded-lg object-cover">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-black ml-0.5">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="font-semibold text-black text-xs mb-1">Intensives Krafttraining</div>
+                <div class="font-light text-xs text-black/70 mb-1">Perfekt für den Muskelaufbau und mehr Kraft...</div>
+                <div class="font-light text-xs text-black/50">12:34</div>
+              </div>
+            </div>
+            <!-- Video 2 -->
+            <div class="flex gap-3">
+              <div class="relative w-20 h-20 flex-shrink-0">
+                <img src="./public/Thumbnail_2.jpg" alt="Video 2" class="w-20 h-20 rounded-lg object-cover">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-black ml-0.5">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="font-semibold text-black text-xs mb-1">Cardio-Workout für Anfänger</div>
+                <div class="font-light text-xs text-black/70 mb-1">Sanftes Training für deine Ausdauer...</div>
+                <div class="font-light text-xs text-black/50">08:15</div>
+              </div>
+            </div>
+            <!-- Video 3 -->
+            <div class="flex gap-3" style="mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%);">
+              <div class="relative w-20 h-20 flex-shrink-0">
+                <img src="./public/Thumbnail_3.jpg" alt="Video 3" class="w-20 h-20 rounded-lg object-cover">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-black ml-0.5">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="font-semibold text-black text-xs mb-1">Stretching & Entspannung</div>
+                <div class="font-light text-xs text-black/70 mb-1">Perfekte Balance zwischen Körper und Geist...</div>
+                <div class="font-light text-xs text-black/50">25:42</div>
+              </div>
+            </div>
+          </div>
         </div>
         
         <!-- Floating User Box Right -->
@@ -329,14 +399,30 @@
         </div>
         
         <!-- Mediathek Box Left -->
-        <div id="mediathek-box" class="floating-user-box absolute top-[320px] -left-80 w-80 h-80 rounded-2xl p-4 flex flex-col z-10" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
-          <div class="flex justify-start mb-3">
+        <div id="mediathek-box" class="floating-user-box absolute top-[320px] -left-80 w-80 h-[360px] rounded-2xl p-4 flex flex-col z-10 overflow-hidden" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
+          <div class="flex justify-between items-center mb-3">
             <div class="font-semibold text-black text-sm">Mediathek</div>
+            <button class="p-1 hover:bg-black/5 rounded-full transition" aria-label="Menü">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black/70">
+                <circle cx="12" cy="12" r="1"></circle>
+                <circle cx="19" cy="12" r="1"></circle>
+                <circle cx="5" cy="12" r="1"></circle>
+              </svg>
+            </button>
           </div>
-          <div class="flex-1 flex flex-col gap-3 overflow-y-auto">
+          <div class="flex-1 flex flex-col gap-3 relative">
             <!-- Video 1 -->
             <div class="flex gap-3">
-              <img src="./public/Thumbnail_1.jpg" alt="Video 1" class="w-20 h-20 rounded-lg object-cover flex-shrink-0">
+              <div class="relative w-20 h-20 flex-shrink-0">
+                <img src="./public/Thumbnail_1.jpg" alt="Video 1" class="w-20 h-20 rounded-lg object-cover">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-black ml-0.5">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
               <div class="flex-1 min-w-0">
                 <div class="font-semibold text-black text-xs mb-1">Intensives Krafttraining</div>
                 <div class="font-light text-xs text-black/70 mb-1">Perfekt für den Muskelaufbau und mehr Kraft...</div>
@@ -345,7 +431,16 @@
             </div>
             <!-- Video 2 -->
             <div class="flex gap-3">
-              <img src="./public/Thumbnail_2.jpg" alt="Video 2" class="w-20 h-20 rounded-lg object-cover flex-shrink-0">
+              <div class="relative w-20 h-20 flex-shrink-0">
+                <img src="./public/Thumbnail_2.jpg" alt="Video 2" class="w-20 h-20 rounded-lg object-cover">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-black ml-0.5">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
               <div class="flex-1 min-w-0">
                 <div class="font-semibold text-black text-xs mb-1">Cardio-Workout für Anfänger</div>
                 <div class="font-light text-xs text-black/70 mb-1">Sanftes Training für deine Ausdauer...</div>
@@ -353,8 +448,17 @@
               </div>
             </div>
             <!-- Video 3 -->
-            <div class="flex gap-3">
-              <img src="./public/Thumbnail_3.jpg" alt="Video 3" class="w-20 h-20 rounded-lg object-cover flex-shrink-0">
+            <div class="flex gap-3" style="mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%);">
+              <div class="relative w-20 h-20 flex-shrink-0">
+                <img src="./public/Thumbnail_3.jpg" alt="Video 3" class="w-20 h-20 rounded-lg object-cover">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-black ml-0.5">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
               <div class="flex-1 min-w-0">
                 <div class="font-semibold text-black text-xs mb-1">Stretching & Entspannung</div>
                 <div class="font-light text-xs text-black/70 mb-1">Perfekte Balance zwischen Körper und Geist...</div>

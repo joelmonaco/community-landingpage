@@ -42,12 +42,16 @@ window.addEventListener('load', () => {
   let boxLeft = null;
   let boxRight = null;
   let mediathekBox = null;
+  let kalenderBox = null;
+  let heroWireframe = null;
   let heroSection = null;
   
   function initParallax() {
     boxLeft = document.getElementById('floating-box-left');
     boxRight = document.getElementById('floating-box-right');
     mediathekBox = document.getElementById('mediathek-box');
+    kalenderBox = document.getElementById('kalender-box');
+    heroWireframe = document.getElementById('hero-wireframe');
     heroSection = document.querySelector('.gradient-bg');
     
     if (!boxLeft || !boxRight || !heroSection) {
@@ -60,12 +64,21 @@ window.addEventListener('load', () => {
     if (mediathekBox) {
       mediathekBox.style.opacity = '1';
     }
+    if (kalenderBox) {
+      kalenderBox.style.opacity = '1';
+    }
     
     // Setze will-change für bessere Performance
     boxLeft.style.willChange = 'transform';
     boxRight.style.willChange = 'transform';
     if (mediathekBox) {
       mediathekBox.style.willChange = 'transform';
+    }
+    if (kalenderBox) {
+      kalenderBox.style.willChange = 'transform';
+    }
+    if (heroWireframe) {
+      heroWireframe.style.willChange = 'transform';
     }
     
     // Warte bis Animation abgeschlossen ist, dann starte Parallax
@@ -78,6 +91,10 @@ window.addEventListener('load', () => {
       if (mediathekBox) {
         mediathekBox.style.animation = 'none';
         mediathekBox.style.opacity = '1';
+      }
+      if (kalenderBox) {
+        kalenderBox.style.animation = 'none';
+        kalenderBox.style.opacity = '1';
       }
       updateParallax();
     }, 1000);
@@ -94,6 +111,9 @@ window.addEventListener('load', () => {
     if (mediathekBox) {
       mediathekBox.style.opacity = '1';
     }
+    if (kalenderBox) {
+      kalenderBox.style.opacity = '1';
+    }
     
     const scrollY = window.scrollY || window.pageYOffset;
     const heroTop = heroSection.offsetTop;
@@ -108,17 +128,28 @@ window.addEventListener('load', () => {
     // Linke Box (Leni Welsch): bewegt sich nach OBEN beim Scrollen
     // Rechte Box (Isabel Kohr): bewegt sich nach UNTEN beim Scrollen
     // Mediathek Box: bewegt sich nach OBEN beim Scrollen (wie linke Box)
+    // Kalender Box: bewegt sich nach UNTEN beim Scrollen (wie rechte Box)
+    // Hero Wireframe: bewegt sich langsamer nach unten (inverser Parallax)
     const parallaxStrength = 50; // Sehr subtiler, dezenter Effekt
+    const wireframeParallaxStrength = 30; // Noch subtilerer Effekt für das Wireframe
     
     const offsetLeft = -scrollProgress * parallaxStrength;
     const offsetRight = scrollProgress * parallaxStrength;
     const offsetMediathek = -scrollProgress * parallaxStrength;
+    const offsetKalender = scrollProgress * parallaxStrength;
+    const offsetWireframe = scrollProgress * wireframeParallaxStrength; // Langsamer nach unten
     
     // Setze transform direkt - überschreibt alles
     boxLeft.style.transform = `translateY(${offsetLeft}px)`;
     boxRight.style.transform = `translateY(${offsetRight}px)`;
     if (mediathekBox) {
       mediathekBox.style.transform = `translateY(${offsetMediathek}px)`;
+    }
+    if (kalenderBox) {
+      kalenderBox.style.transform = `translateY(${offsetKalender}px)`;
+    }
+    if (heroWireframe) {
+      heroWireframe.style.transform = `translateY(${offsetWireframe}px)`;
     }
     
     ticking = false;
