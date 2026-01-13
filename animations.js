@@ -127,16 +127,18 @@ window.addEventListener('load', () => {
     // Parallax-Effekt: Sehr subtiler Effekt
     // Linke Box (Leni Welsch): bewegt sich nach OBEN beim Scrollen
     // Rechte Box (Isabel Kohr): bewegt sich nach UNTEN beim Scrollen
-    // Mediathek Box: bewegt sich nach OBEN beim Scrollen (wie linke Box)
-    // Kalender Box: bewegt sich nach UNTEN beim Scrollen (wie rechte Box)
+    // Mediathek Box: bewegt sich nach UNTEN beim Scrollen (entgegengesetzt zur Leni Box, aber schwächer)
+    // Kalender Box: bewegt sich nach OBEN beim Scrollen (entgegengesetzt zur Isabel Box, aber schwächer)
     // Hero Wireframe: bewegt sich langsamer nach unten (inverser Parallax)
     const parallaxStrength = 50; // Sehr subtiler, dezenter Effekt
+    const mediathekParallaxStrength = 30; // Schwächerer Effekt für Mediathek
+    const kalenderParallaxStrength = 30; // Schwächerer Effekt für Kalender
     const wireframeParallaxStrength = 30; // Noch subtilerer Effekt für das Wireframe
     
     const offsetLeft = -scrollProgress * parallaxStrength;
     const offsetRight = scrollProgress * parallaxStrength;
-    const offsetMediathek = -scrollProgress * parallaxStrength;
-    const offsetKalender = scrollProgress * parallaxStrength;
+    const offsetMediathek = scrollProgress * mediathekParallaxStrength; // Nach unten, aber schwächer
+    const offsetKalender = -scrollProgress * kalenderParallaxStrength; // Nach oben, aber schwächer
     const offsetWireframe = scrollProgress * wireframeParallaxStrength; // Langsamer nach unten
     
     // Setze transform direkt - überschreibt alles

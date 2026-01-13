@@ -19,7 +19,7 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background-color: #A779D4;
+      background-color: #7167F5;
       pointer-events: none;
       z-index: 99999;
       transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;

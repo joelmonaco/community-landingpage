@@ -66,7 +66,7 @@
     }
 
     .gradient-bg {
-      background: linear-gradient(135deg, rgba(167, 121, 212, 0.4) 0%, rgba(255, 252, 4, 0.4) 100%);
+      background: linear-gradient(135deg, rgba(113, 103, 245, 0.4) 0%, rgba(255, 252, 4, 0.4) 100%);
       background-size: 200% 200%;
       animation: gradientShift 8s ease infinite;
     }
@@ -117,10 +117,10 @@
       --primary-yellow-light: #FFFD80;
       --primary-yellow-bg: #FFFE99;
       
-      --primary-purple: #A779D4;
-      --primary-purple-hover: #9568C4;
-      --primary-purple-light: #C5A5E5;
-      --primary-purple-bg: #E8D9F5;
+      --primary-purple: #7167F5;
+      --primary-purple-hover: #5F56E0;
+      --primary-purple-light: #9B93F8;
+      --primary-purple-bg: #E8E6FF;
     }
 
     /* Yellow Classes */
@@ -248,7 +248,7 @@
           <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-normal transition" style="color: #2A2A2A;">
             Log In
           </a>
-          <a href="/kontakt.html#sales" id="nav-get-started" class="px-6 py-3 text-sm font-normal bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(167, 121, 212, 0.5);">
+          <a href="/kontakt.html#sales" id="nav-get-started" class="px-6 py-3 text-sm font-normal bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
             Jetzt starten
             <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
               <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -292,7 +292,7 @@
         Monetarisiere deine Leidenschaft, baue eine lebendige Community auf und verkaufe Content – alles in einer Plattform.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center delay-300">
-        <a href="/kontakt.html#sales" id="hero-cta-start" class="px-6 py-3 text-sm font-normal bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(167, 121, 212, 0.5);">
+        <a href="/kontakt.html#sales" id="hero-cta-start" class="px-6 py-3 text-sm font-normal bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
           Jetzt starten
           <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
             <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -311,9 +311,9 @@
         </div>
         
         <!-- Kalender Box Right -->
-        <div id="kalender-box" class="floating-user-box absolute top-[170px] -right-80 w-80 h-[360px] rounded-2xl p-4 flex flex-col z-10 overflow-hidden" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
+        <div id="kalender-box" class="floating-user-box absolute top-[150px] -right-80 w-80 h-[360px] rounded-2xl p-4 flex flex-col z-10 overflow-hidden" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
           <div class="flex justify-between items-center mb-3">
-            <div class="font-semibold text-black text-sm">Kalender</div>
+            <div class="font-medium text-black text-sm">🗓️ Kalender</div>
             <button class="p-1 hover:bg-black/5 rounded-full transition" aria-label="Menü">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black/70">
                 <circle cx="12" cy="12" r="1"></circle>
@@ -323,58 +323,36 @@
             </button>
           </div>
           <div class="flex-1 flex flex-col gap-3 relative">
-            <!-- Video 1 -->
-            <div class="flex gap-3">
-              <div class="relative w-20 h-20 flex-shrink-0">
-                <img src="./public/Thumbnail_1.jpg" alt="Video 1" class="w-20 h-20 rounded-lg object-cover">
-                <div class="absolute inset-0 flex items-center justify-center">
-                  <div class="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-black ml-0.5">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
-                  </div>
-                </div>
+            <!-- Live Session 1 -->
+            <div class="flex gap-3 p-2 rounded-lg hover:bg-black/5 transition">
+              <div class="flex flex-col items-center justify-center w-16 h-16 flex-shrink-0 bg-secondary/10 rounded-lg">
+                <div class="font-semibold text-black text-xs leading-tight">15</div>
+                <div class="font-light text-black/60 text-[10px] uppercase">Jan</div>
+                <div class="font-light text-black/50 text-[10px] mt-1">18:00</div>
               </div>
               <div class="flex-1 min-w-0">
-                <div class="font-semibold text-black text-xs mb-1">Intensives Krafttraining</div>
-                <div class="font-light text-xs text-black/70 mb-1">Perfekt für den Muskelaufbau und mehr Kraft...</div>
-                <div class="font-light text-xs text-black/50">12:34</div>
+                <div class="font-medium text-black text-xs mb-1">Community Training</div>
+                <div class="font-light text-xs text-black/70 mb-1">Live Session für alle Mitglieder...</div>
+                <div class="flex items-center gap-1 mt-1">
+                  <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <div class="font-light text-xs text-black/50">Live</div>
+                </div>
               </div>
             </div>
-            <!-- Video 2 -->
-            <div class="flex gap-3">
-              <div class="relative w-20 h-20 flex-shrink-0">
-                <img src="./public/Thumbnail_2.jpg" alt="Video 2" class="w-20 h-20 rounded-lg object-cover">
-                <div class="absolute inset-0 flex items-center justify-center">
-                  <div class="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-black ml-0.5">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
-                  </div>
-                </div>
+            <!-- Live Session 2 -->
+            <div class="flex gap-3 p-2 rounded-lg hover:bg-black/5 transition" style="mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%);">
+              <div class="flex flex-col items-center justify-center w-16 h-16 flex-shrink-0 bg-secondary/10 rounded-lg">
+                <div class="font-semibold text-black text-xs leading-tight">28</div>
+                <div class="font-light text-black/60 text-[10px] uppercase">Jan</div>
+                <div class="font-light text-black/50 text-[10px] mt-1">10:00</div>
               </div>
               <div class="flex-1 min-w-0">
-                <div class="font-semibold text-black text-xs mb-1">Cardio-Workout für Anfänger</div>
-                <div class="font-light text-xs text-black/70 mb-1">Sanftes Training für deine Ausdauer...</div>
-                <div class="font-light text-xs text-black/50">08:15</div>
-              </div>
-            </div>
-            <!-- Video 3 -->
-            <div class="flex gap-3" style="mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%);">
-              <div class="relative w-20 h-20 flex-shrink-0">
-                <img src="./public/Thumbnail_3.jpg" alt="Video 3" class="w-20 h-20 rounded-lg object-cover">
-                <div class="absolute inset-0 flex items-center justify-center">
-                  <div class="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-black ml-0.5">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
-                  </div>
+                <div class="font-medium text-black text-xs mb-1">Q&A Session</div>
+                <div class="font-light text-xs text-black/70 mb-1">Fragen & Antworten mit der Community...</div>
+                <div class="flex items-center gap-1 mt-1">
+                  <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <div class="font-light text-xs text-black/50">Live</div>
                 </div>
-              </div>
-              <div class="flex-1 min-w-0">
-                <div class="font-semibold text-black text-xs mb-1">Stretching & Entspannung</div>
-                <div class="font-light text-xs text-black/70 mb-1">Perfekte Balance zwischen Körper und Geist...</div>
-                <div class="font-light text-xs text-black/50">25:42</div>
               </div>
             </div>
           </div>
@@ -384,7 +362,7 @@
         <div id="floating-box-right" class="floating-user-box absolute top-[550px] -right-28 w-72 rounded-2xl p-3 flex items-center gap-3 z-10" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
           <img src="./public/User_1.jpg" alt="Isabel Kohr" class="w-14 h-14 rounded-full object-cover flex-shrink-0">
           <div class="flex-1 min-w-0">
-            <div class="font-semibold text-black text-sm">Isabel Kohr</div>
+            <div class="font-medium text-black text-sm">Isabel Kohr</div>
             <div class="font-light text-xs text-black/70 mt-0.5">Endlich wieder eine live Session 🙏</div>
           </div>
         </div>
@@ -393,15 +371,15 @@
         <div id="floating-box-left" class="floating-user-box absolute top-[170px] -left-28 w-auto rounded-2xl p-3 flex items-center gap-3 z-10" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
           <img src="./public/User_2.jpg" alt="Leni Welsch" class="w-14 h-14 rounded-full object-cover flex-shrink-0">
           <div class="flex-shrink-0">
-            <div class="font-semibold text-black text-sm whitespace-nowrap">Leni Welsch</div>
+            <div class="font-medium text-black text-sm whitespace-nowrap">Leni Welsch</div>
             <div class="font-light text-xs text-black/70 mt-0.5 whitespace-nowrap">👏👏👏</div>
           </div>
         </div>
         
         <!-- Mediathek Box Left -->
-        <div id="mediathek-box" class="floating-user-box absolute top-[320px] -left-80 w-80 h-[360px] rounded-2xl p-4 flex flex-col z-10 overflow-hidden" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
+        <div id="mediathek-box" class="floating-user-box absolute top-[290px] -left-80 w-80 h-[360px] rounded-2xl p-4 flex flex-col z-10 overflow-hidden" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
           <div class="flex justify-between items-center mb-3">
-            <div class="font-semibold text-black text-sm">Mediathek</div>
+            <div class="font-medium text-black text-sm">🎥 Mediathek</div>
             <button class="p-1 hover:bg-black/5 rounded-full transition" aria-label="Menü">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black/70">
                 <circle cx="12" cy="12" r="1"></circle>
