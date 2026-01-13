@@ -283,7 +283,7 @@
 
   <!-- Hero Section -->
   <section class="pt-32 pb-20 px-6 lg:px-8 gradient-bg">
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-7xl mx-auto relative">
       <div class="text-center mb-16 fade-in">
       <h1 id="hero-title" class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent;">
         Deine Community-Plattform.<br />Deine Regeln.
@@ -305,9 +305,27 @@
       </div>
       
       <!-- Hero Mockup -->
-      <div class="max-w-md mx-auto delay-400 -mt-16">
+      <div class="max-w-md mx-auto delay-400 -mt-16 relative">
         <div class="animate-on-scroll">
           <img src="./public/Hero_Wireframe.png" alt="Hero Wireframe" class="w-full h-auto rounded-3xl" style="mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);">
+        </div>
+        
+        <!-- Floating User Box Right -->
+        <div class="absolute top-[550px] -right-28 w-72 rounded-2xl p-3 flex items-center gap-3 z-10" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
+          <img src="./public/User_1.jpg" alt="Isabel Kohr" class="w-14 h-14 rounded-full object-cover flex-shrink-0">
+          <div class="flex-1 min-w-0">
+            <div class="font-semibold text-black text-sm">Isabel Kohr</div>
+            <div class="font-light text-xs text-black/70 mt-0.5">Endlich wieder eine live Session 🙏</div>
+          </div>
+        </div>
+        
+        <!-- Floating User Box Left -->
+        <div class="absolute top-[450px] -left-28 w-auto rounded-2xl p-3 flex items-center gap-3 z-10" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
+          <img src="./public/User_2.jpg" alt="Leni Welsch" class="w-14 h-14 rounded-full object-cover flex-shrink-0">
+          <div class="flex-shrink-0">
+            <div class="font-semibold text-black text-sm whitespace-nowrap">Leni Welsch</div>
+            <div class="font-light text-xs text-black/70 mt-0.5 whitespace-nowrap">👏👏👏</div>
+          </div>
         </div>
       </div>
     </div>
