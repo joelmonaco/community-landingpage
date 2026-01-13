@@ -137,6 +137,53 @@
   animation: scaleIn 0.6s ease-out forwards;
 }
 
+/* Floating User Box Animations */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.floating-user-box {
+  opacity: 0;
+  animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  transform-origin: center center;
+}
+
+/* Stelle sicher, dass Boxen nach Animation sichtbar bleiben */
+.floating-user-box[style*="opacity: 1"] {
+  opacity: 1 !important;
+}
+
+#floating-box-left {
+  animation-delay: 0.2s;
+}
+
+#floating-box-right {
+  animation-delay: 0.4s;
+}
+
+#mediathek-box {
+  animation-delay: 0.6s;
+}
+
+/* Verstecke Mediathek-Box auf kleineren Bildschirmen */
+@media (max-width: 1400px) {
+  #mediathek-box {
+    display: none;
+  }
+}
+
 /* Staggered Animation Delays */
 .delay-100 {
   animation-delay: 0.1s;

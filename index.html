@@ -311,7 +311,7 @@
         </div>
         
         <!-- Floating User Box Right -->
-        <div class="absolute top-[550px] -right-28 w-72 rounded-2xl p-3 flex items-center gap-3 z-10" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
+        <div id="floating-box-right" class="floating-user-box absolute top-[550px] -right-28 w-72 rounded-2xl p-3 flex items-center gap-3 z-10" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
           <img src="./public/User_1.jpg" alt="Isabel Kohr" class="w-14 h-14 rounded-full object-cover flex-shrink-0">
           <div class="flex-1 min-w-0">
             <div class="font-semibold text-black text-sm">Isabel Kohr</div>
@@ -320,11 +320,47 @@
         </div>
         
         <!-- Floating User Box Left -->
-        <div class="absolute top-[450px] -left-28 w-auto rounded-2xl p-3 flex items-center gap-3 z-10" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
+        <div id="floating-box-left" class="floating-user-box absolute top-[250px] -left-28 w-auto rounded-2xl p-3 flex items-center gap-3 z-10" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
           <img src="./public/User_2.jpg" alt="Leni Welsch" class="w-14 h-14 rounded-full object-cover flex-shrink-0">
           <div class="flex-shrink-0">
             <div class="font-semibold text-black text-sm whitespace-nowrap">Leni Welsch</div>
             <div class="font-light text-xs text-black/70 mt-0.5 whitespace-nowrap">👏👏👏</div>
+          </div>
+        </div>
+        
+        <!-- Mediathek Box Left -->
+        <div id="mediathek-box" class="floating-user-box absolute top-[400px] -left-80 w-80 h-80 rounded-2xl p-4 flex flex-col z-10" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
+          <div class="flex justify-start mb-3">
+            <div class="font-semibold text-black text-sm">Mediathek</div>
+          </div>
+          <div class="flex-1 flex flex-col gap-3 overflow-y-auto">
+            <!-- Video 1 -->
+            <div class="flex gap-3">
+              <img src="./public/Thumbnail_1.jpg" alt="Video 1" class="w-20 h-20 rounded-lg object-cover flex-shrink-0">
+              <div class="flex-1 min-w-0">
+                <div class="font-semibold text-black text-xs mb-1">Intensives Krafttraining</div>
+                <div class="font-light text-xs text-black/70 mb-1">Perfekt für den Muskelaufbau und mehr Kraft...</div>
+                <div class="font-light text-xs text-black/50">12:34</div>
+              </div>
+            </div>
+            <!-- Video 2 -->
+            <div class="flex gap-3">
+              <img src="./public/Thumbnail_2.jpg" alt="Video 2" class="w-20 h-20 rounded-lg object-cover flex-shrink-0">
+              <div class="flex-1 min-w-0">
+                <div class="font-semibold text-black text-xs mb-1">Cardio-Workout für Anfänger</div>
+                <div class="font-light text-xs text-black/70 mb-1">Sanftes Training für deine Ausdauer...</div>
+                <div class="font-light text-xs text-black/50">08:15</div>
+              </div>
+            </div>
+            <!-- Video 3 -->
+            <div class="flex gap-3">
+              <img src="./public/Thumbnail_3.jpg" alt="Video 3" class="w-20 h-20 rounded-lg object-cover flex-shrink-0">
+              <div class="flex-1 min-w-0">
+                <div class="font-semibold text-black text-xs mb-1">Stretching & Entspannung</div>
+                <div class="font-light text-xs text-black/70 mb-1">Perfekte Balance zwischen Körper und Geist...</div>
+                <div class="font-light text-xs text-black/50">25:42</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

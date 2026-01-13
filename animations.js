@@ -34,6 +34,140 @@ window.addEventListener('load', () => {
   });
 });
 
+// Parallax-Effekt für Floating User Boxes - ROBUSTE IMPLEMENTIERUNG
+(function() {
+  'use strict';
+  
+  let ticking = false;
+  let boxLeft = null;
+  let boxRight = null;
+  let mediathekBox = null;
+  let heroSection = null;
+  
+  function initParallax() {
+    boxLeft = document.getElementById('floating-box-left');
+    boxRight = document.getElementById('floating-box-right');
+    mediathekBox = document.getElementById('mediathek-box');
+    heroSection = document.querySelector('.gradient-bg');
+    
+    if (!boxLeft || !boxRight || !heroSection) {
+      return false;
+    }
+    
+    // WICHTIG: Stelle sicher, dass Boxen sichtbar sind
+    boxLeft.style.opacity = '1';
+    boxRight.style.opacity = '1';
+    if (mediathekBox) {
+      mediathekBox.style.opacity = '1';
+    }
+    
+    // Setze will-change für bessere Performance
+    boxLeft.style.willChange = 'transform';
+    boxRight.style.willChange = 'transform';
+    if (mediathekBox) {
+      mediathekBox.style.willChange = 'transform';
+    }
+    
+    // Warte bis Animation abgeschlossen ist, dann starte Parallax
+    setTimeout(() => {
+      // Entferne Animation, aber behalte Opacity bei 1
+      boxLeft.style.animation = 'none';
+      boxRight.style.animation = 'none';
+      boxLeft.style.opacity = '1';
+      boxRight.style.opacity = '1';
+      if (mediathekBox) {
+        mediathekBox.style.animation = 'none';
+        mediathekBox.style.opacity = '1';
+      }
+      updateParallax();
+    }, 1000);
+    
+    return true;
+  }
+  
+  function updateParallax() {
+    if (!boxLeft || !boxRight || !heroSection) return;
+    
+    // WICHTIG: Stelle sicher, dass Boxen immer sichtbar sind
+    boxLeft.style.opacity = '1';
+    boxRight.style.opacity = '1';
+    if (mediathekBox) {
+      mediathekBox.style.opacity = '1';
+    }
+    
+    const scrollY = window.scrollY || window.pageYOffset;
+    const heroTop = heroSection.offsetTop;
+    const heroHeight = heroSection.offsetHeight;
+    
+    // EINFACHE Berechnung: Direkt basierend auf Scroll-Position
+    // Progress von 0 (oben) bis 1 (unten der Hero-Section)
+    const maxScroll = heroTop + heroHeight;
+    const scrollProgress = Math.max(0, Math.min(1, scrollY / maxScroll));
+    
+    // Parallax-Effekt: Sehr subtiler Effekt
+    // Linke Box (Leni Welsch): bewegt sich nach OBEN beim Scrollen
+    // Rechte Box (Isabel Kohr): bewegt sich nach UNTEN beim Scrollen
+    // Mediathek Box: bewegt sich nach OBEN beim Scrollen (wie linke Box)
+    const parallaxStrength = 50; // Sehr subtiler, dezenter Effekt
+    
+    const offsetLeft = -scrollProgress * parallaxStrength;
+    const offsetRight = scrollProgress * parallaxStrength;
+    const offsetMediathek = -scrollProgress * parallaxStrength;
+    
+    // Setze transform direkt - überschreibt alles
+    boxLeft.style.transform = `translateY(${offsetLeft}px)`;
+    boxRight.style.transform = `translateY(${offsetRight}px)`;
+    if (mediathekBox) {
+      mediathekBox.style.transform = `translateY(${offsetMediathek}px)`;
+    }
+    
+    ticking = false;
+  }
+  
+  function requestParallaxTick() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }
+  
+  // Initialisiere sofort
+  function setupParallax() {
+    if (initParallax()) {
+      // Warte bis Animation abgeschlossen ist, dann starte Parallax
+      setTimeout(() => {
+        // Scroll-Event Listener
+        window.addEventListener('scroll', requestParallaxTick, { passive: true });
+        
+        // Resize-Event Listener
+        window.addEventListener('resize', () => {
+          setTimeout(updateParallax, 50);
+        });
+        
+        // Erste Berechnung nach Animation
+        updateParallax();
+      }, 1100);
+    } else {
+      // Retry wenn Elemente noch nicht geladen sind
+      setTimeout(setupParallax, 100);
+    }
+  }
+  
+  // Starte sofort - mehrfach für maximale Kompatibilität
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupParallax);
+  } else {
+    setupParallax();
+  }
+  
+  window.addEventListener('load', () => {
+    setTimeout(setupParallax, 50);
+  });
+  
+  // Zusätzlicher Start nach kurzer Verzögerung
+  setTimeout(setupParallax, 200);
+})();
+
 
 
 
