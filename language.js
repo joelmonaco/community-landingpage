@@ -123,7 +123,22 @@ function applyTranslations(lang) {
 
   Object.entries(navElements).forEach(([id, text]) => {
     const el = document.getElementById(id);
-    if (el) el.textContent = text;
+    if (el) {
+      // Preserve SVG icons - only update text content
+      const svg = el.querySelector('svg');
+      if (svg) {
+        // Find text node or create one
+        const textNodes = Array.from(el.childNodes).filter(node => node.nodeType === Node.TEXT_NODE);
+        if (textNodes.length > 0) {
+          textNodes[0].textContent = text;
+        } else {
+          // Insert text before SVG
+          el.insertBefore(document.createTextNode(text), svg);
+        }
+      } else {
+        el.textContent = text;
+      }
+    }
   });
 
   // Hero section
@@ -134,7 +149,20 @@ function applyTranslations(lang) {
   if (heroSubtitle) heroSubtitle.textContent = t.hero.subtitle;
   
   const heroCtaStart = document.getElementById('hero-cta-start');
-  if (heroCtaStart) heroCtaStart.textContent = t.hero.ctaStart;
+  if (heroCtaStart) {
+    // Preserve SVG icon - only update text content
+    const svg = heroCtaStart.querySelector('svg');
+    if (svg) {
+      const textNodes = Array.from(heroCtaStart.childNodes).filter(node => node.nodeType === Node.TEXT_NODE);
+      if (textNodes.length > 0) {
+        textNodes[0].textContent = t.hero.ctaStart;
+      } else {
+        heroCtaStart.insertBefore(document.createTextNode(t.hero.ctaStart), svg);
+      }
+    } else {
+      heroCtaStart.textContent = t.hero.ctaStart;
+    }
+  }
   
   const heroCtaSales = document.getElementById('hero-cta-sales');
   if (heroCtaSales) heroCtaSales.textContent = t.hero.ctaSales;
