@@ -14,7 +14,7 @@ const translations = {
       title: 'Deine Community-Plattform.<br />Deine Regeln.',
       subtitle: 'Monetarisiere deine Leidenschaft, baue eine lebendige Community auf und verkaufe Content – alles in einer Plattform.',
       ctaStart: 'Jetzt starten',
-      ctaSales: 'Sales kontaktieren'
+      ctaSales: 'Termin vereinbaren'
     },
     features: {
       title: 'Kernfeatures',
