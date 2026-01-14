@@ -212,6 +212,10 @@
   }
 }
 
+#hero-wireframe-container {
+  position: relative;
+}
+
 /* Staggered Animation Delays */
 .delay-100 {
   animation-delay: 0.1s;
