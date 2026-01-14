@@ -365,3 +365,28 @@
   }
 }
 
+/* Feature Hover Farben */
+.feature-hover-item {
+  display: block;
+}
+
+.feature-hover-purple:hover {
+  color: var(--primary-purple) !important;
+  opacity: 1 !important;
+}
+
+.feature-hover-green:hover {
+  color: #2D8659 !important;
+  opacity: 1 !important;
+}
+
+.feature-hover-red:hover {
+  color: #E63946 !important;
+  opacity: 1 !important;
+}
+
+.feature-hover-yellow:hover {
+  color: var(--primary-yellow-hover) !important;
+  opacity: 1 !important;
+}
+
