@@ -43,6 +43,7 @@ window.addEventListener('load', () => {
   let boxRight = null;
   let mediathekBox = null;
   let kalenderBox = null;
+  let umsatzBox = null;
   let heroWireframe = null;
   let heroSection = null;
   
@@ -51,6 +52,7 @@ window.addEventListener('load', () => {
     boxRight = document.getElementById('floating-box-right');
     mediathekBox = document.getElementById('mediathek-box');
     kalenderBox = document.getElementById('kalender-box');
+    umsatzBox = document.getElementById('umsatz-box');
     heroWireframe = document.getElementById('hero-wireframe');
     heroSection = document.querySelector('.gradient-bg');
     
@@ -67,6 +69,9 @@ window.addEventListener('load', () => {
     if (kalenderBox) {
       kalenderBox.style.opacity = '1';
     }
+    if (umsatzBox) {
+      umsatzBox.style.opacity = '1';
+    }
     
     // Setze will-change für bessere Performance
     boxLeft.style.willChange = 'transform';
@@ -76,6 +81,9 @@ window.addEventListener('load', () => {
     }
     if (kalenderBox) {
       kalenderBox.style.willChange = 'transform';
+    }
+    if (umsatzBox) {
+      umsatzBox.style.willChange = 'transform';
     }
     if (heroWireframe) {
       heroWireframe.style.willChange = 'transform';
@@ -96,6 +104,10 @@ window.addEventListener('load', () => {
         kalenderBox.style.animation = 'none';
         kalenderBox.style.opacity = '1';
       }
+      if (umsatzBox) {
+        umsatzBox.style.animation = 'none';
+        umsatzBox.style.opacity = '1';
+      }
       updateParallax();
     }, 1000);
     
@@ -114,6 +126,9 @@ window.addEventListener('load', () => {
     if (kalenderBox) {
       kalenderBox.style.opacity = '1';
     }
+    if (umsatzBox) {
+      umsatzBox.style.opacity = '1';
+    }
     
     const scrollY = window.scrollY || window.pageYOffset;
     const heroTop = heroSection.offsetTop;
@@ -129,16 +144,19 @@ window.addEventListener('load', () => {
     // Rechte Box (Isabel Kohr): bewegt sich nach UNTEN beim Scrollen
     // Mediathek Box: bewegt sich nach UNTEN beim Scrollen (entgegengesetzt zur Leni Box, aber schwächer)
     // Kalender Box: bewegt sich nach OBEN beim Scrollen (entgegengesetzt zur Isabel Box, aber schwächer)
+    // Umsatz Box: bewegt sich nach OBEN beim Scrollen (entgegengesetzt zur rechten Box)
     // Hero Wireframe: bewegt sich langsamer nach unten (inverser Parallax)
     const parallaxStrength = 50; // Sehr subtiler, dezenter Effekt
     const mediathekParallaxStrength = 30; // Schwächerer Effekt für Mediathek
     const kalenderParallaxStrength = 30; // Schwächerer Effekt für Kalender
+    const umsatzParallaxStrength = 20; // Noch schwächerer Effekt für Umsatz (weniger als Kalender)
     const wireframeParallaxStrength = 30; // Noch subtilerer Effekt für das Wireframe
     
     const offsetLeft = -scrollProgress * parallaxStrength;
     const offsetRight = scrollProgress * parallaxStrength;
     const offsetMediathek = scrollProgress * mediathekParallaxStrength; // Nach unten, aber schwächer
     const offsetKalender = -scrollProgress * kalenderParallaxStrength; // Nach oben, aber schwächer
+    const offsetUmsatz = -scrollProgress * umsatzParallaxStrength; // Nach oben, aber schwächer als Kalender
     const offsetWireframe = scrollProgress * wireframeParallaxStrength; // Langsamer nach unten
     
     // Setze transform direkt - überschreibt alles
@@ -149,6 +167,9 @@ window.addEventListener('load', () => {
     }
     if (kalenderBox) {
       kalenderBox.style.transform = `translateY(${offsetKalender}px)`;
+    }
+    if (umsatzBox) {
+      umsatzBox.style.transform = `translateY(${offsetUmsatz}px)`;
     }
     if (heroWireframe) {
       heroWireframe.style.transform = `translateY(${offsetWireframe}px)`;
