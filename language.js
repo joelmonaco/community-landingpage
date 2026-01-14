@@ -17,8 +17,8 @@ const translations = {
       ctaSales: 'Termin vereinbaren'
     },
     features: {
-      title: 'Kernfeatures',
-      subtitle: 'Alles was du brauchst, um deine Community erfolgreich zu führen',
+      title: 'Community-Management<br />mit Glymmer',
+      subtitle: 'Personalisiere Glymmer so, dass die Plattform perfekt auf die Bedürfnisse von Dir und Deiner Community abgestimmt ist.',
       viewAll: 'Alle Features ansehen →'
     },
     useCases: {
@@ -169,7 +169,7 @@ function applyTranslations(lang) {
 
   // Features
   const featuresTitle = document.getElementById('features-title');
-  if (featuresTitle) featuresTitle.textContent = t.features.title;
+  if (featuresTitle) featuresTitle.innerHTML = t.features.title;
   
   const featuresSubtitle = document.getElementById('features-subtitle');
   if (featuresSubtitle) featuresSubtitle.textContent = t.features.subtitle;
