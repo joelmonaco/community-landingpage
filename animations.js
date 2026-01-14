@@ -60,18 +60,8 @@ window.addEventListener('load', () => {
       return false;
     }
     
-    // WICHTIG: Stelle sicher, dass Boxen sichtbar sind
-    boxLeft.style.opacity = '1';
-    boxRight.style.opacity = '1';
-    if (mediathekBox) {
-      mediathekBox.style.opacity = '1';
-    }
-    if (kalenderBox) {
-      kalenderBox.style.opacity = '1';
-    }
-    if (umsatzBox) {
-      umsatzBox.style.opacity = '1';
-    }
+    // WICHTIG: Lass die CSS Pop-In Animation zuerst ablaufen
+    // Opacity wird durch die CSS Animation gesetzt
     
     // Setze will-change für bessere Performance
     boxLeft.style.willChange = 'transform';
@@ -90,6 +80,7 @@ window.addEventListener('load', () => {
     }
     
     // Warte bis Animation abgeschlossen ist, dann starte Parallax
+    // Warte länger, damit alle Pop-In Animationen abgeschlossen sind (max delay 0.6s + animation 0.6s = 1.2s)
     setTimeout(() => {
       // Entferne Animation, aber behalte Opacity bei 1
       boxLeft.style.animation = 'none';
@@ -109,7 +100,7 @@ window.addEventListener('load', () => {
         umsatzBox.style.opacity = '1';
       }
       updateParallax();
-    }, 1000);
+    }, 1500);
     
     return true;
   }
@@ -117,16 +108,21 @@ window.addEventListener('load', () => {
   function updateParallax() {
     if (!boxLeft || !boxRight || !heroSection) return;
     
-    // WICHTIG: Stelle sicher, dass Boxen immer sichtbar sind
-    boxLeft.style.opacity = '1';
-    boxRight.style.opacity = '1';
-    if (mediathekBox) {
+    // WICHTIG: Stelle sicher, dass Boxen immer sichtbar sind (nach Animation)
+    // Nur setzen wenn Animation bereits abgeschlossen ist
+    if (boxLeft.style.animation === 'none' || !boxLeft.style.animation) {
+      boxLeft.style.opacity = '1';
+    }
+    if (boxRight.style.animation === 'none' || !boxRight.style.animation) {
+      boxRight.style.opacity = '1';
+    }
+    if (mediathekBox && (mediathekBox.style.animation === 'none' || !mediathekBox.style.animation)) {
       mediathekBox.style.opacity = '1';
     }
-    if (kalenderBox) {
+    if (kalenderBox && (kalenderBox.style.animation === 'none' || !kalenderBox.style.animation)) {
       kalenderBox.style.opacity = '1';
     }
-    if (umsatzBox) {
+    if (umsatzBox && (umsatzBox.style.animation === 'none' || !umsatzBox.style.animation)) {
       umsatzBox.style.opacity = '1';
     }
     
@@ -200,7 +196,7 @@ window.addEventListener('load', () => {
         
         // Erste Berechnung nach Animation
         updateParallax();
-      }, 1100);
+      }, 1600);
     } else {
       // Retry wenn Elemente noch nicht geladen sind
       setTimeout(setupParallax, 100);
@@ -220,6 +216,62 @@ window.addEventListener('load', () => {
   
   // Zusätzlicher Start nach kurzer Verzögerung
   setTimeout(setupParallax, 200);
+})();
+
+// Umsatzanzeige Animation - Zahl zählt von 0 bis zur finalen Zahl
+(function() {
+  'use strict';
+  
+  function animateUmsatzNumber() {
+    const umsatzBox = document.getElementById('umsatz-box');
+    const umsatzNumber = document.getElementById('umsatz-number');
+    
+    if (!umsatzBox || !umsatzNumber) {
+      // Retry wenn Elemente noch nicht geladen sind
+      setTimeout(animateUmsatzNumber, 100);
+      return;
+    }
+    
+    // Warte bis die Pop-In Animation abgeschlossen ist (0.3s delay + 0.6s animation = 0.9s)
+    // Starte die Zahlenanimation parallel mit den Linien (bei 0.9s)
+    setTimeout(() => {
+      const targetValue = 42163;
+      const duration = 1200; // 1.2s - parallel zu den Linien
+      const startTime = performance.now();
+      
+      function updateNumber(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing-Funktion für smooth counting
+        const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+        const currentValue = Math.floor(easeOutCubic * targetValue);
+        
+        // Formatiere die Zahl mit Tausender-Trennzeichen
+        const formattedValue = currentValue.toLocaleString('de-DE');
+        umsatzNumber.textContent = formattedValue + '€';
+        
+        if (progress < 1) {
+          requestAnimationFrame(updateNumber);
+        } else {
+          // Stelle sicher, dass die finale Zahl korrekt angezeigt wird
+          umsatzNumber.textContent = '42.163€';
+        }
+      }
+      
+      requestAnimationFrame(updateNumber);
+    }, 900); // Start nach Pop-In Animation
+  }
+  
+  // Starte Animation wenn DOM geladen ist
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', animateUmsatzNumber);
+  } else {
+    animateUmsatzNumber();
+  }
+  
+  // Zusätzlicher Start nach kurzer Verzögerung
+  setTimeout(animateUmsatzNumber, 200);
 })();
 
 

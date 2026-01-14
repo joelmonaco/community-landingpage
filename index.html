@@ -316,7 +316,7 @@
             <div class="font-medium text-black text-sm">Umsatzanzeige</div>
             <div class="text-right">
               <div class="font-light text-xs text-black/70 mb-1">Gesamtumsatz</div>
-              <div class="font-semibold text-black text-lg">42.163€</div>
+              <div id="umsatz-number" class="font-semibold text-black text-lg">0€</div>
             </div>
           </div>
           <div class="flex-1 relative min-h-[60px] mb-2">
@@ -326,19 +326,21 @@
               <line x1="0" y1="30" x2="280" y2="30" stroke="#E5E5E5" stroke-width="1"/>
               <line x1="0" y1="10" x2="280" y2="10" stroke="#E5E5E5" stroke-width="1"/>
               <!-- Silber-Abonnenten Linie -->
-              <polyline points="0,50 40,47 80,43 120,38 160,33 200,28 240,24 280,20" 
+              <polyline id="silber-line" points="0,50 40,47 80,43 120,38 160,33 200,28 240,24 280,20" 
                         fill="none" 
                         stroke="#7167F5" 
                         stroke-width="2" 
                         stroke-linecap="round" 
-                        stroke-linejoin="round"/>
+                        stroke-linejoin="round"
+                        style="stroke-dasharray: 500; stroke-dashoffset: 500;"/>
               <!-- Gold-Abonnenten Linie -->
-              <polyline points="0,50 40,45 80,38 120,28 160,18 200,10 240,5 280,2" 
+              <polyline id="gold-line" points="0,50 40,45 80,38 120,28 160,18 200,10 240,5 280,2" 
                         fill="none" 
                         stroke="#B8B0FF" 
                         stroke-width="2" 
                         stroke-linecap="round" 
-                        stroke-linejoin="round"/>
+                        stroke-linejoin="round"
+                        style="stroke-dasharray: 500; stroke-dashoffset: 500;"/>
             </svg>
           </div>
           <div class="flex items-center gap-4">
