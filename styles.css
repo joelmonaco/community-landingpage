@@ -365,6 +365,38 @@
   }
 }
 
+/* Chat Mockup Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-message-1 {
+  animation: fadeInUp 0.5s ease-out 0.5s forwards;
+}
+
+.chat-message-2 {
+  animation: fadeInUp 0.5s ease-out 1s forwards;
+}
+
+.chat-message-3 {
+  animation: fadeInUp 0.5s ease-out 1.5s forwards;
+}
+
+.chat-message-4 {
+  animation: fadeInUp 0.5s ease-out 2s forwards;
+}
+
+.chat-message-5 {
+  animation: fadeInUp 0.5s ease-out 2.5s forwards;
+}
+
 /* Feature Hover Farben */
 .feature-hover-item {
   display: block;

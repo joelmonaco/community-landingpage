@@ -509,7 +509,7 @@
       </div>
       
       <div class="flex flex-col gap-6 mb-16">
-        <div class="grid md:grid-cols-12 gap-6">
+        <div class="grid md:grid-cols-12 gap-6 items-start">
           <div class="md:col-span-8 feature-card rounded-3xl animate-on-scroll delay-100 transition-all overflow-hidden" style="background: linear-gradient(135deg, #6B63D4 0%, #6B63D4 50%, #D4CC00 100%); box-shadow: 0 10px 40px rgba(107, 99, 212, 0.4), 0 10px 40px rgba(212, 204, 0, 0.3); padding: 3rem 3rem 0 3rem;">
             <h3 class="text-xl font-medium mb-2 text-white" style="font-family: 'Suisse Intl', sans-serif;">Live Video & Workshops</h3>
             <p class="text-white/90 mb-4" style="font-family: 'Suisse Intl', sans-serif;">Führe Webinare, Bootcamps und virtuelle Treffen mit hochwertigen Video-Tools durch.</p>
@@ -532,7 +532,64 @@
           </div>
           <div class="md:col-span-4 feature-card p-12 rounded-3xl animate-on-scroll delay-200 transition-all" style="background: linear-gradient(45deg, #6B63D4 0%, #6B63D4 55%, #D4CC00 100%); box-shadow: 0 10px 40px rgba(107, 99, 212, 0.4), 0 10px 40px rgba(212, 204, 0, 0.3);">
             <h3 class="text-xl font-medium mb-2 text-white" style="font-family: 'Suisse Intl', sans-serif;">Chat & Channels</h3>
-            <p class="text-white/90" style="font-family: 'Suisse Intl', sans-serif;">Einfache Kommunikation in privaten und öffentlichen Gruppen.</p>
+            <p class="text-white/90 mb-4" style="font-family: 'Suisse Intl', sans-serif;">Einfache Kommunikation in privaten und öffentlichen Gruppen.</p>
+            <!-- Chat Mockup -->
+            <div class="chat-mockup mt-4 bg-black/20 rounded-xl flex flex-col" style="min-height: 500px;">
+              <div class="flex-1 p-3 space-y-3 overflow-y-auto">
+                <!-- Nachricht 1 - Leni -->
+                <div class="flex items-start gap-2 chat-message-1 opacity-0">
+                  <img src="./public/User_2.jpg" alt="Leni Welsch" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
+                  <div class="flex-1">
+                    <div class="text-xs text-white/70 mb-1">Leni Welsch</div>
+                    <div class="bg-white/20 rounded-lg px-3 py-2 text-sm text-white">Hey, wie war das Webinar? 👏</div>
+                  </div>
+                </div>
+                <!-- Nachricht 2 - Isabel -->
+                <div class="flex items-start gap-2 chat-message-2 opacity-0">
+                  <img src="./public/User_1.jpg" alt="Isabel Kohr" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
+                  <div class="flex-1">
+                    <div class="text-xs text-white/70 mb-1">Isabel Kohr</div>
+                    <div class="bg-white/20 rounded-lg px-3 py-2 text-sm text-white">Super interessant! 🙏</div>
+                  </div>
+                </div>
+                <!-- Nachricht 3 - Leni -->
+                <div class="flex items-start gap-2 chat-message-3 opacity-0">
+                  <img src="./public/User_2.jpg" alt="Leni Welsch" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
+                  <div class="flex-1">
+                    <div class="text-xs text-white/70 mb-1">Leni Welsch</div>
+                    <div class="bg-white/20 rounded-lg px-3 py-2 text-sm text-white">Können wir das nochmal machen?</div>
+                  </div>
+                </div>
+                <!-- Nachricht 4 - Isabel -->
+                <div class="flex items-start gap-2 chat-message-4 opacity-0">
+                  <img src="./public/User_1.jpg" alt="Isabel Kohr" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
+                  <div class="flex-1">
+                    <div class="text-xs text-white/70 mb-1">Isabel Kohr</div>
+                    <div class="bg-white/20 rounded-lg px-3 py-2 text-sm text-white">Ja, definitiv! 💭</div>
+                  </div>
+                </div>
+                <!-- Nachricht 5 - Leni -->
+                <div class="flex items-start gap-2 chat-message-5 opacity-0">
+                  <img src="./public/User_2.jpg" alt="Leni Welsch" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
+                  <div class="flex-1">
+                    <div class="text-xs text-white/70 mb-1">Leni Welsch</div>
+                    <div class="bg-white/20 rounded-lg px-3 py-2 text-sm text-white">Perfekt, dann bis nächste Woche!</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Chat Eingabefeld -->
+              <div class="border-t border-white/20 p-3">
+                <div class="flex items-center gap-2">
+                  <input type="text" placeholder="Nachricht schreiben..." class="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-sm text-white placeholder-white/50 focus:outline-none focus:border-white/40" style="font-family: 'Suisse Intl', sans-serif;">
+                  <button class="bg-white/20 hover:bg-white/30 rounded-lg p-2 transition-colors">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="feature-card p-12 rounded-3xl animate-on-scroll delay-300 transition-all max-w-2xl mx-auto" style="background: linear-gradient(90deg, #6B63D4 0%, #6B63D4 50%, #D4CC00 100%); box-shadow: 0 10px 40px rgba(107, 99, 212, 0.4), 0 10px 40px rgba(212, 204, 0, 0.3);">
