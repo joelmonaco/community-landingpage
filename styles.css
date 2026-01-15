@@ -397,6 +397,45 @@
   animation: fadeInUp 0.5s ease-out 2.5s forwards;
 }
 
+/* Dateiablage Mockup Animation */
+@keyframes dragToFolder {
+  0% {
+    top: 20px;
+    left: 20px;
+    opacity: 1;
+  }
+  50% {
+    top: 60px;
+    left: 60px;
+    opacity: 0.8;
+  }
+  100% {
+    top: 120px;
+    left: 200px;
+    opacity: 0;
+  }
+}
+
+.file-storage-mockup {
+  position: relative;
+  overflow: hidden;
+}
+
+.cursor-with-file {
+  animation: dragToFolder 3s ease-in-out infinite;
+  top: 20px;
+  left: 20px;
+}
+
+.file-icon-1, .file-icon-2 {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.folder-icon {
+  animation: fadeInUp 0.5s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
 /* Feature Hover Farben */
 .feature-hover-item {
   display: block;
