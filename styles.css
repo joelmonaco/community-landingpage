@@ -436,6 +436,33 @@
   opacity: 0;
 }
 
+/* Logo Slider Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-slider-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.logo-slider {
+  display: flex;
+  width: fit-content;
+  animation: scroll 30s linear infinite;
+  will-change: transform;
+}
+
+
 /* Feature Hover Farben */
 .feature-hover-item {
   display: block;
