@@ -444,9 +444,7 @@
   100% {
     transform: translateX(-50%);
   }
-}
-
-.logo-slider-container {
+}.logo-slider-container {
   width: 100vw;
   position: relative;
   left: 50%;
