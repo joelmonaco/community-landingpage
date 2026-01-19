@@ -50,7 +50,8 @@
       font-style: normal;
     }
 
-    html, body {
+    html {
+      scroll-behavior: smooth;
       overflow-x: hidden;
     }
 
@@ -59,6 +60,7 @@
       -webkit-text-size-adjust: 100%;
       background: #ffffff;
       color: #1a1a1a;
+      overflow-x: hidden;
     }
 
     .headline-vanguard {
@@ -182,6 +184,29 @@
         position: relative;
       }
     }
+
+    .use-cases-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 0.5rem;
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1rem;
+      min-width: 220px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    .use-cases-menu-item:hover .use-cases-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -222,7 +247,20 @@
             <div id="burger-menu-dropdown" class="hidden md:block absolute top-full left-0 mt-2 bg-white rounded-3xl py-4 px-6 min-w-[200px] opacity-0 invisible transition-all duration-300 transform translate-y-2" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);">
               <nav class="flex flex-col space-y-3">
                 <a href="/features.html" id="nav-features" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Features</a>
-                <a href="/use-cases.html" id="nav-use-cases" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Use Cases</a>
+                <div class="use-cases-menu-item relative">
+                  <a href="/#use-cases" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-1">
+                    Use Cases
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </a>
+                  <div class="use-cases-dropdown">
+                    <a href="/coaches.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Coaches</a>
+                    <a href="/creator.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Creator</a>
+                    <a href="/bootcamps.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Bootcamps</a>
+                    <a href="/lernraum.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Lernräume</a>
+                  </div>
+                </div>
                 <a href="/preise.html" id="nav-pricing" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Preise</a>
                 <a href="/updates.html" id="nav-updates" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Updates</a>
               </nav>
@@ -271,7 +309,15 @@
           </div>
           <nav class="flex flex-col space-y-6">
             <a href="/features.html" id="nav-features-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition">Features</a>
-            <a href="/use-cases.html" id="nav-use-cases-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition">Use Cases</a>
+            <div class="space-y-3">
+              <a href="/#use-cases" class="text-2xl font-medium text-black/70 font-semibold hover:text-black transition">Use Cases</a>
+              <div class="ml-4 space-y-3">
+                <a href="/coaches.html" class="block text-xl font-medium text-black/70 hover:text-black transition">Für Coaches</a>
+                <a href="/creator.html" class="block text-xl font-medium text-black/70 hover:text-black transition">Für Creator</a>
+                <a href="/bootcamps.html" class="block text-xl font-medium text-black/70 hover:text-black transition">Für Bootcamps</a>
+                <a href="/lernraum.html" class="block text-xl font-medium text-black/70 hover:text-black transition">Für Lernräume</a>
+              </div>
+            </div>
             <a href="/preise.html" id="nav-pricing-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition">Preise</a>
             <a href="/updates.html" id="nav-updates-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition">Updates</a>
             <a href="/kontakt.html#sales" id="nav-get-started-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition mt-4">Jetzt starten</a>
@@ -727,7 +773,7 @@
           Für jeden das Richtige
         </h2>
         <p id="use-cases-subtitle" class="text-base md:text-lg text-black/50 max-w-3xl mx-auto mb-6 leading-relaxed font-normal">
-          Egal ob Coach oder Creator – Glymmer passt sich deinen Bedürfnissen an
+          Egal ob Coach, Creator, Bootcamp oder Lernraum – Glymmer passt sich deinen Bedürfnissen an
         </p>
       </div>
       <div class="grid md:grid-cols-2 gap-6 mb-12">
@@ -736,7 +782,7 @@
           <p class="text-white/90 mb-6" style="font-family: 'Suisse Intl', sans-serif;">
             Dein Netzwerk für nachhaltiges Lernen und Wachstum. Mit teech baust du mehr als nur eine Community – du erschaffst einen lebendigen Ort, an dem Lernen, Austausch und persönliche Entwicklung Hand in Hand gehen.
           </p>
-          <a href="/use-cases.html#coach" class="text-white font-semibold hover:text-white/80 transition inline-flex items-center gap-2" style="font-family: 'Suisse Intl', sans-serif;">
+          <a href="/coaches.html" class="text-white font-semibold hover:text-white/80 transition inline-flex items-center gap-2" style="font-family: 'Suisse Intl', sans-serif;">
             Mehr erfahren →
           </a>
         </div>
@@ -745,7 +791,25 @@
           <p class="text-white/90 mb-6" style="font-family: 'Suisse Intl', sans-serif;">
             Monetarisiere deine Leidenschaft und stärke deine Community. Mit teech bist du mehr als nur ein Creator – du bist Gastgeber einer lebendigen Community, die deine Inhalte liebt, teilt und unterstützt.
           </p>
-          <a href="/use-cases.html#creator" class="text-white font-semibold hover:text-white/80 transition inline-flex items-center gap-2" style="font-family: 'Suisse Intl', sans-serif;">
+          <a href="/creator.html" class="text-white font-semibold hover:text-white/80 transition inline-flex items-center gap-2" style="font-family: 'Suisse Intl', sans-serif;">
+            Mehr erfahren →
+          </a>
+        </div>
+        <div class="p-12 rounded-3xl animate-on-scroll slide-in-left delay-200 transition-all" style="background: linear-gradient(180deg, #6B63D4 0%, #6B63D4 60%, #D4CC00 100%); box-shadow: 0 10px 40px rgba(107, 99, 212, 0.4), 0 10px 40px rgba(212, 204, 0, 0.3);">
+          <h3 id="use-cases-bootcamps" class="text-xl font-medium mb-2 text-white" style="font-family: 'Suisse Intl', sans-serif;">Für Bootcamps</h3>
+          <p class="text-white/90 mb-6" style="font-family: 'Suisse Intl', sans-serif;">
+            Dein Motor für Programme, die durchgezogen werden. Mit der Plattform skalierst du intensive Kurse – Feedback-Loops, Gamification und Workbooks boosten Abschlussraten.
+          </p>
+          <a href="/bootcamps.html" class="text-white font-semibold hover:text-white/80 transition inline-flex items-center gap-2" style="font-family: 'Suisse Intl', sans-serif;">
+            Mehr erfahren →
+          </a>
+        </div>
+        <div class="p-12 rounded-3xl animate-on-scroll slide-in-right delay-200 transition-all" style="background: linear-gradient(225deg, #6B63D4 0%, #6B63D4 65%, #D4CC00 100%); box-shadow: 0 10px 40px rgba(107, 99, 212, 0.4), 0 10px 40px rgba(212, 204, 0, 0.3);">
+          <h3 id="use-cases-lernraum" class="text-xl font-medium mb-2 text-white" style="font-family: 'Suisse Intl', sans-serif;">Für Lernräume</h3>
+          <p class="text-white/90 mb-6" style="font-family: 'Suisse Intl', sans-serif;">
+            Dein Raum für interaktives, skalierbares Lernen. Mit der Plattform gestaltest du 1:1-Sessions und Gruppen – Tafeln, Foren und Materialien machen Wissen greifbar.
+          </p>
+          <a href="/lernraum.html" class="text-white font-semibold hover:text-white/80 transition inline-flex items-center gap-2" style="font-family: 'Suisse Intl', sans-serif;">
             Mehr erfahren →
           </a>
         </div>
@@ -904,6 +968,33 @@
         <a href="/customer-stories.html" id="stories-view-all" class="inline-block px-8 py-2 border-2 border-primary text-primary rounded-full font-semibold hover:bg-primary hover:text-white transition text-lg">
           Alle Stories ansehen
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Community 2026 Section -->
+  <section class="py-20 px-6 lg:px-8 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="animate-on-scroll delay-100 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-3xl p-8 md:p-12 shadow-lg border border-secondary/20">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 text-black" style="font-family: 'Suisse Intl', sans-serif;">
+          Warum ab 2026 eine eigene Community unverzichtbar ist
+        </h2>
+        <div class="space-y-4 text-base md:text-lg text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+          <p>
+            Ab Januar 2026 wird personalisierte Werbung in Europa immer stärker eingeschränkt: Tracking-Cookies sind standardmäßig aus, viele Nutzer klicken „Nein" – deine Anzeigen auf Instagram & Co. verpuffen, ohne dass du es merkst.
+          </p>
+          <p class="font-medium text-black/80 mt-6">
+            Mit einer eigenen Community bei glymmer:
+          </p>
+          <ul class="space-y-3 ml-4 list-disc list-outside">
+            <li>Du erreichst deine Follower direkt – ohne Cookies, ohne Algorithmen.</li>
+            <li>Deine Mitglieder sagen aktiv „Ja" zu deinen Inhalten – rechtssicher und transparent.</li>
+            <li>Du besitzt deinen Zugang zu Kunden selbst – egal, was Social-Media-Plattformen morgen ändern.</li>
+          </ul>
+          <p class="text-xl font-medium text-black mt-8 italic text-center border-t border-black/10 pt-6">
+            „Social Media kann dich jederzeit verstecken. Deine eigene Community nicht."
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -1109,6 +1200,81 @@
       });
     });
   </script>
+  <script>
+    // Smooth scroll to anchor links
+    document.addEventListener('DOMContentLoaded', () => {
+      // Handle all anchor links including /# links
+      document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          
+          // Skip if it's just "#" or empty
+          if (href === '#' || href === '' || !href.includes('#')) return;
+          
+          // Handle /# links (links to homepage with anchor)
+          if (href.startsWith('/#')) {
+            const targetId = href.substring(2); // Remove "/#"
+            
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+              // Already on homepage, prevent default and scroll
+              e.preventDefault();
+              const targetElement = document.getElementById(targetId);
+              if (targetElement) {
+                const headerOffset = 100; // Height of fixed header
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                });
+              }
+            } else {
+              // Not on homepage, navigate first
+              // Store the target ID to scroll after page load
+              sessionStorage.setItem('scrollTo', targetId);
+              // Let the navigation happen naturally
+            }
+          } 
+          // Handle # links (same page anchors)
+          else if (href.startsWith('#')) {
+            const targetId = href.substring(1); // Remove "#"
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              e.preventDefault();
+              const headerOffset = 100; // Height of fixed header
+              const elementPosition = targetElement.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+              });
+            }
+          }
+        });
+      });
+
+      // Handle hash in URL on page load or after navigation
+      const scrollToId = sessionStorage.getItem('scrollTo') || window.location.hash.substring(1);
+      if (scrollToId) {
+        sessionStorage.removeItem('scrollTo');
+        setTimeout(() => {
+          const targetElement = document.getElementById(scrollToId);
+          if (targetElement) {
+            const headerOffset = 100;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }, 100);
+      }
+    });
+  </script>
   
   <!-- Footer -->
   <footer class="bg-gray-50 border-t border-black/10 py-12 px-6 lg:px-8">
@@ -1126,7 +1292,7 @@
           <h4 class="font-semibold mb-4 text-black">Produkt</h4>
           <ul class="space-y-2 text-sm text-black/70">
             <li><a href="/features.html" class="hover:text-black transition">Features</a></li>
-            <li><a href="/use-cases.html" class="hover:text-black transition">Use Cases</a></li>
+            <li><a href="/coaches.html" class="hover:text-black transition">Use Cases</a></li>
             <li><a href="/preise.html" class="hover:text-black transition">Preise</a></li>
             <li><a href="/updates.html" class="hover:text-black transition">Updates</a></li>
           </ul>
