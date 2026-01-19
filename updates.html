@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plattform-Updates von Glymmer - Bleibe auf dem Laufenden über neue Features und Verbesserungen.">
+  <meta name="keywords" content="Glymmer Updates, Plattform-Updates, Neue Features, Changelog">
+  <meta name="author" content="Glymmer">
+  <meta property="og:title" content="Updates - Glymmer">
+  <meta property="og:description" content="Bleibe auf dem Laufenden über neue Features und Verbesserungen.">
+  <meta property="og:type" content="website">
+  <title>Updates - Glymmer</title>
+  <link rel="icon" type="image/png" href="./public/Favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="canonical" href="https://teech.com/updates.html">
+  <style>
+    @font-face {
+      font-family: 'Vanguard CF';
+      src: url('./fonts/Vanguard-CF-Bold.otf') format('opentype');
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-Medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-SemiBold.otf') format('opentype');
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    html, body {
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Suisse Intl', sans-serif;
+      -webkit-text-size-adjust: 100%;
+      background: #ffffff;
+      color: #1a1a1a;
+    }
+
+    .headline-vanguard {
+      font-family: 'Vanguard CF', sans-serif;
+    }
+
+    .smooth-scroll {
+      scroll-behavior: smooth;
+    }
+
+    /* Burger Menu Animation */
+    #burger-menu.active #burger-line-top {
+      transform: translateY(6px) rotate(45deg);
+      transform-origin: 12px 6px;
+    }
+
+    #burger-menu.active #burger-line-middle {
+      opacity: 0;
+    }
+
+    #burger-menu.active #burger-line-bottom {
+      transform: translateY(-6px) rotate(-45deg);
+      transform-origin: 12px 18px;
+    }
+
+    /* Main Colors - Gelb und Lila */
+    :root {
+      --primary-yellow: #FFFC04;
+      --primary-yellow-hover: #E6E304;
+      --primary-yellow-light: #FFFD80;
+      --primary-yellow-bg: #FFFE99;
+      
+      --primary-purple: #7167F5;
+      --primary-purple-hover: #5F56E0;
+      --primary-purple-light: #9B93F8;
+      --primary-purple-bg: #E8E6FF;
+    }
+
+    /* Yellow Classes */
+    .bg-primary {
+      background-color: var(--primary-yellow);
+    }
+
+    .bg-primary-hover:hover {
+      background-color: var(--primary-yellow-hover);
+    }
+
+    .text-primary {
+      color: var(--primary-yellow);
+    }
+
+    .border-primary {
+      border-color: var(--primary-yellow);
+    }
+
+    .bg-primary-light {
+      background-color: var(--primary-yellow-bg);
+    }
+
+    /* Purple Classes */
+    .bg-secondary {
+      background-color: var(--primary-purple);
+    }
+
+    .bg-secondary-hover:hover {
+      background-color: var(--primary-purple-hover);
+    }
+
+    .text-secondary {
+      color: var(--primary-purple);
+    }
+
+    .border-secondary {
+      border-color: var(--primary-purple);
+    }
+
+    .bg-secondary-light {
+      background-color: var(--primary-purple-bg);
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-black smooth-scroll">
+  
+  <!-- Header -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
+      <div class="flex items-center justify-between relative">
+        <!-- Links: Burger Menu + Language Switch -->
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <button id="burger-menu" class="relative p-2 transition" style="color: #2A2A2A;" aria-label="Menu">
+              <div class="relative w-6 h-6">
+                <svg id="burger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute inset-0">
+                  <g id="burger-lines" style="transform-origin: 12px 12px; transition: transform 0.3s ease;">
+                    <line id="burger-line-top" x1="3" y1="6" x2="21" y2="6" style="transition: transform 0.3s ease, opacity 0.3s ease;"></line>
+                    <line id="burger-line-middle" x1="3" y1="12" x2="21" y2="12" style="transition: opacity 0.2s ease;"></line>
+                    <line id="burger-line-bottom" x1="3" y1="18" x2="21" y2="18" style="transition: transform 0.3s ease, opacity 0.3s ease;"></line>
+                  </g>
+                </svg>
+              </div>
+            </button>
+            <!-- Desktop Dropdown Menu -->
+            <div id="burger-menu-dropdown" class="hidden md:block absolute top-full left-0 mt-2 bg-white rounded-3xl py-4 px-6 min-w-[200px] opacity-0 invisible transition-all duration-300 transform translate-y-2" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);">
+              <nav class="flex flex-col space-y-3">
+                <a href="/features.html" id="nav-features" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Features</a>
+                <a href="/use-cases.html" id="nav-use-cases" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Use Cases</a>
+                <a href="/preise.html" id="nav-pricing" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Preise</a>
+                <a href="/updates.html" id="nav-updates" class="text-sm font-medium text-black font-semibold transition whitespace-nowrap">Updates</a>
+              </nav>
+            </div>
+          </div>
+          <button id="language-switch" class="px-4 py-3 text-sm font-normal transition-all duration-300 border border-black/20 rounded-full hover:border-black/40 flex items-center gap-2" style="transform: scale(1); transition: transform 0.15s ease; color: #2A2A2A;" data-lang="de">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span style="transition: opacity 0.2s ease;">EN</span>
+          </button>
+        </div>
+        
+        <!-- Mitte: Logo -->
+        <a href="/" class="absolute left-1/2 transform -translate-x-1/2 flex items-center">
+          <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
+        </a>
+        
+        <!-- Rechts: Log In + Jetzt starten Buttons -->
+        <div class="flex items-center space-x-4 ml-auto">
+          <a href="https://app.teech.com/login" id="nav-login" class="px-4 py-2 text-sm font-normal transition" style="color: #2A2A2A;">
+            Log In
+          </a>
+          <a href="/kontakt.html#sales" id="nav-get-started" class="px-6 py-3 text-sm font-normal bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
+            Jetzt starten
+            <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Mobile Burger Menu Overlay -->
+      <div id="burger-menu-overlay" class="md:hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+          <div class="flex justify-between items-center mb-8">
+            <h2 class="text-2xl font-semibold text-black">Menü</h2>
+            <button id="burger-menu-close" class="p-2 text-black/70 hover:text-black transition" aria-label="Close Menu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+          <nav class="flex flex-col space-y-6">
+            <a href="/features.html" id="nav-features-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition">Features</a>
+            <a href="/use-cases.html" id="nav-use-cases-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition">Use Cases</a>
+            <a href="/preise.html" id="nav-pricing-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition">Preise</a>
+            <a href="/updates.html" id="nav-updates-mobile" class="text-2xl font-medium text-black font-semibold transition">Updates</a>
+            <a href="/kontakt.html#sales" id="nav-get-started-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition mt-4">Jetzt starten</a>
+          </nav>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-12 px-6 lg:px-8 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 animate-on-scroll pt-12">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent;">
+          Updates
+        </h1>
+        <p class="text-base md:text-lg text-black/50 max-w-3xl mx-auto mb-6 leading-relaxed font-normal">
+          Bleibe auf dem Laufenden über neue Features und Verbesserungen
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Updates List -->
+  <section class="py-12 px-6 lg:px-8 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="space-y-12">
+        
+        <!-- Update 1 -->
+        <article class="animate-on-scroll delay-100 border-b border-black/10 pb-12">
+          <div class="flex flex-col md:flex-row md:items-start gap-6">
+            <div class="md:w-32 flex-shrink-0">
+              <time class="text-sm font-medium text-black/60" style="font-family: 'Suisse Intl', sans-serif;">
+                Jan 08, 2026
+              </time>
+            </div>
+            <div class="flex-1">
+              <h2 class="text-2xl font-medium mb-3 text-black" style="font-family: 'Suisse Intl', sans-serif;">
+                Stärkere Stabilität & verbesserte Performance
+              </h2>
+              <p class="text-base text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                Wir haben die technische Grundlage unserer Plattform weiter optimiert, um dir ein noch stabileres und schnelleres Erlebnis zu bieten. Zahlreiche Fehlerbehebungen und Backend-Verfeinerungen sorgen dafür, dass alles flüssiger läuft — besonders bei hoher Nutzung oder großen Datenmengen.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Update 2 -->
+        <article class="animate-on-scroll delay-200 border-b border-black/10 pb-12">
+          <div class="flex flex-col md:flex-row md:items-start gap-6">
+            <div class="md:w-32 flex-shrink-0">
+              <time class="text-sm font-medium text-black/60" style="font-family: 'Suisse Intl', sans-serif;">
+                Nov 19, 2025
+              </time>
+            </div>
+            <div class="flex-1">
+              <h2 class="text-2xl font-medium mb-3 text-black" style="font-family: 'Suisse Intl', sans-serif;">
+                Kalender: Offline-Events jetzt verfügbar
+              </h2>
+              <p class="text-base text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                Ab sofort kannst du in deinem Kalender Offline-Events anlegen und verwalten. So behältst du auch bei Präsenz-Terminen den Überblick und kannst sie wie gewohnt planen und mit der Community teilen.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Update 3 -->
+        <article class="animate-on-scroll delay-300 border-b border-black/10 pb-12">
+          <div class="flex flex-col md:flex-row md:items-start gap-6">
+            <div class="md:w-32 flex-shrink-0">
+              <time class="text-sm font-medium text-black/60" style="font-family: 'Suisse Intl', sans-serif;">
+                Oct 02, 2025
+              </time>
+            </div>
+            <div class="flex-1">
+              <h2 class="text-2xl font-medium mb-3 text-black" style="font-family: 'Suisse Intl', sans-serif;">
+                User-to-User Anrufe direkt auf der Plattform
+              </h2>
+              <p class="text-base text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                Wir freuen uns, eine neue Kommunikationsfunktion einzuführen: Nutzer können sich jetzt direkt gegenseitig anrufen — ohne externe Tools, direkt über die Plattform.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Update 4 -->
+        <article class="animate-on-scroll delay-400 pb-12">
+          <div class="flex flex-col md:flex-row md:items-start gap-6">
+            <div class="md:w-32 flex-shrink-0">
+              <time class="text-sm font-medium text-black/60" style="font-family: 'Suisse Intl', sans-serif;">
+                Aug 27, 2025
+              </time>
+            </div>
+            <div class="flex-1">
+              <h2 class="text-2xl font-medium mb-3 text-black" style="font-family: 'Suisse Intl', sans-serif;">
+                Mehr Flexibilität in der Mediathek
+              </h2>
+              <p class="text-base text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                Die Mediathek unterstützt nun eine größere Auswahl an Dateiformaten. Du kannst ab sofort noch mehr Inhalte hochladen und abrufen — darunter Formate, die bisher nicht unterstützt wurden, um deine Ressourcen vielseitiger zu nutzen.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-50 border-t border-black/10 py-12 px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="mb-4">
+            <img src="./public/Glymmer_Logo_schwarz.png" alt="Glymmer" class="h-6 w-auto">
+          </div>
+          <p class="text-black/70 text-sm">
+            Deine Community-Plattform für Coaches und Creator
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-black">Produkt</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a href="/features.html" class="hover:text-black transition">Features</a></li>
+            <li><a href="/use-cases.html" class="hover:text-black transition">Use Cases</a></li>
+            <li><a href="/preise.html" class="hover:text-black transition">Preise</a></li>
+            <li><a href="/updates.html" class="hover:text-black transition">Updates</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-black">Unternehmen</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a href="/kontakt.html" class="hover:text-black transition">Kontakt</a></li>
+            <li><a href="/kontakt.html#unternehmen" class="hover:text-black transition">Über uns</a></li>
+            <li><a href="/faq.html" class="hover:text-black transition">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-black">Rechtliches</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a href="/impressum.html" class="hover:text-black transition">Impressum</a></li>
+            <li><a href="/datenschutz.html" class="hover:text-black transition">Datenschutz</a></li>
+            <li><a href="/agb.html" class="hover:text-black transition">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-black/10 pt-8 text-center text-sm text-black/70">
+        <p>&copy; 2024 Glymmer. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./animations.js"></script>
+  <script src="./language.js"></script>
+  <script>
+    // Burger Menu Toggle
+    const burgerMenu = document.getElementById('burger-menu');
+    const burgerMenuDropdown = document.getElementById('burger-menu-dropdown');
+    const burgerMenuOverlay = document.getElementById('burger-menu-overlay');
+    const burgerMenuClose = document.getElementById('burger-menu-close');
+
+    if (burgerMenu) {
+      burgerMenu.addEventListener('click', () => {
+        burgerMenu.classList.toggle('active');
+        if (window.innerWidth >= 768) {
+          // Desktop: Toggle dropdown
+          if (burgerMenuDropdown) {
+            const isVisible = !burgerMenuDropdown.classList.contains('opacity-0');
+            if (isVisible) {
+              burgerMenuDropdown.classList.add('opacity-0', 'invisible', 'translate-y-2');
+            } else {
+              burgerMenuDropdown.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+            }
+          }
+        } else {
+          // Mobile: Toggle overlay
+          if (burgerMenuOverlay) {
+            burgerMenuOverlay.classList.toggle('translate-x-full');
+          }
+        }
+      });
+    }
+
+    if (burgerMenuClose) {
+      burgerMenuClose.addEventListener('click', () => {
+        if (burgerMenuOverlay) {
+          burgerMenuOverlay.classList.add('translate-x-full');
+        }
+        if (burgerMenu) {
+          burgerMenu.classList.remove('active');
+        }
+      });
+    }
+
+    // Close overlay when clicking outside
+    if (burgerMenuOverlay) {
+      burgerMenuOverlay.addEventListener('click', (e) => {
+        if (e.target === burgerMenuOverlay) {
+          burgerMenuOverlay.classList.add('translate-x-full');
+          if (burgerMenu) {
+            burgerMenu.classList.remove('active');
+          }
+        }
+      });
+    }
+
+    // Header scroll effect
+    const header = document.getElementById('main-header');
+    if (header) {
+      let lastScroll = 0;
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll > 100) {
+          header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+          header.style.borderBottom = '1px solid rgba(0, 0, 0, 0.1)';
+        } else {
+          header.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+          header.style.borderBottom = 'none';
+        }
+        lastScroll = currentScroll;
+      });
+    }
+  </script>
+
+</body>
+</html>

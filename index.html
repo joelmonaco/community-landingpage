@@ -311,20 +311,20 @@
         </div>
         
         <!-- Umsatzanzeige Box Right -->
-        <div id="umsatz-box" class="floating-user-box absolute top-[60px] -right-80 w-80 h-[180px] rounded-2xl p-4 flex flex-col z-10" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
+        <div id="umsatz-box" class="floating-user-box absolute top-[60px] -right-80 w-80 h-[180px] rounded-2xl p-4 flex flex-col z-10" style="background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);">
           <div class="flex justify-between items-start mb-2" style="overflow: hidden;">
-            <div class="font-medium text-black text-sm">Umsatzanzeige</div>
+            <div class="font-medium text-white text-sm">Umsatzanzeige</div>
             <div class="text-right">
-              <div class="font-light text-xs text-black/70 mb-1">Gesamtumsatz</div>
-              <div id="umsatz-number" class="font-semibold text-black text-lg">0€</div>
+              <div class="font-light text-xs text-white/70 mb-1">Gesamtumsatz</div>
+              <div id="umsatz-number" class="font-semibold text-white text-lg">0€</div>
             </div>
           </div>
           <div class="flex-1 relative min-h-[60px] mb-2">
             <svg width="100%" height="60" viewBox="0 0 280 60" preserveAspectRatio="none" style="overflow: visible;">
               <!-- Grid Lines -->
-              <line x1="0" y1="50" x2="280" y2="50" stroke="#E5E5E5" stroke-width="1"/>
-              <line x1="0" y1="30" x2="280" y2="30" stroke="#E5E5E5" stroke-width="1"/>
-              <line x1="0" y1="10" x2="280" y2="10" stroke="#E5E5E5" stroke-width="1"/>
+              <line x1="0" y1="50" x2="280" y2="50" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
+              <line x1="0" y1="30" x2="280" y2="30" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
+              <line x1="0" y1="10" x2="280" y2="10" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1"/>
               <!-- Silber-Abonnenten Linie -->
               <polyline id="silber-line" points="0,50 40,47 80,43 120,38 160,33 200,28 240,24 280,20" 
                         fill="none" 
@@ -346,21 +346,21 @@
           <div class="flex items-center gap-4">
             <div class="flex items-center gap-1.5">
               <div class="w-3 h-0.5 bg-secondary"></div>
-              <div class="font-light text-xs text-black/70">Silber-Abonnenten</div>
+              <div class="font-light text-xs text-white/70">Silber-Abonnenten</div>
             </div>
             <div class="flex items-center gap-1.5">
               <div class="w-3 h-0.5" style="background-color: #B8B0FF;"></div>
-              <div class="font-light text-xs text-black/70">Gold-Abonnenten</div>
+              <div class="font-light text-xs text-white/70">Gold-Abonnenten</div>
             </div>
           </div>
         </div>
         
         <!-- Kalender Box Right -->
-        <div id="kalender-box" class="floating-user-box absolute top-[280px] -right-80 w-80 h-[260px] rounded-2xl p-4 flex flex-col z-10" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
+        <div id="kalender-box" class="floating-user-box absolute top-[280px] -right-80 w-80 h-[260px] rounded-2xl p-4 flex flex-col z-10" style="background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);">
           <div class="flex justify-between items-center mb-3" style="overflow: hidden;">
-            <div class="font-medium text-black text-sm">🗓️ Kalender</div>
-            <button class="p-1 hover:bg-black/5 rounded-full transition" aria-label="Menü">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black/70">
+            <div class="font-medium text-white text-sm">🗓️ Kalender</div>
+            <button class="p-1 hover:bg-white/10 rounded-full transition" aria-label="Menü">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/70">
                 <circle cx="12" cy="12" r="1"></circle>
                 <circle cx="19" cy="12" r="1"></circle>
                 <circle cx="5" cy="12" r="1"></circle>
@@ -369,15 +369,15 @@
           </div>
           <div class="flex-1 flex flex-col gap-3 relative">
             <!-- Live Session 1 -->
-            <div class="flex gap-3 p-2 rounded-lg hover:bg-black/5 transition">
-              <div class="flex flex-col items-center justify-center w-16 h-16 flex-shrink-0 bg-gray-100 rounded-lg p-2">
-                <div class="font-semibold text-black text-xs leading-tight">15</div>
-                <div class="font-light text-black/60 text-[10px] uppercase">Jan</div>
-                <div class="font-light text-black/50 text-[10px] mt-1">18:00</div>
+            <div class="flex gap-3 p-2 rounded-lg hover:bg-white/10 transition">
+              <div class="flex flex-col items-center justify-center w-16 h-16 flex-shrink-0 bg-white/10 rounded-lg p-2">
+                <div class="font-semibold text-white text-xs leading-tight">15</div>
+                <div class="font-light text-white/60 text-[10px] uppercase">Jan</div>
+                <div class="font-light text-white/50 text-[10px] mt-1">18:00</div>
               </div>
               <div class="flex-1 min-w-0">
-                <div class="font-medium text-black text-xs mb-1">Community Training</div>
-                <div class="font-light text-xs text-black/70 mb-1">Live Session für alle Mitglieder...</div>
+                <div class="font-medium text-white text-xs mb-1">Community Training</div>
+                <div class="font-light text-xs text-white/70 mb-1">Live Session für alle Mitglieder...</div>
                 <div class="flex items-center -space-x-2 mt-2">
                   <img src="./public/participant_1.jpg" alt="Participant 1" class="w-6 h-6 rounded-full object-cover border-2 border-white">
                   <img src="./public/participant_2.jpg" alt="Participant 2" class="w-6 h-6 rounded-full object-cover border-2 border-white">
@@ -386,15 +386,15 @@
               </div>
             </div>
             <!-- Live Session 2 -->
-            <div class="flex gap-3 p-2 rounded-lg hover:bg-black/5 transition" style="mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%);">
-              <div class="flex flex-col items-center justify-center w-16 h-16 flex-shrink-0 bg-gray-100 rounded-lg p-2">
-                <div class="font-semibold text-black text-xs leading-tight">28</div>
-                <div class="font-light text-black/60 text-[10px] uppercase">Jan</div>
-                <div class="font-light text-black/50 text-[10px] mt-1">10:00</div>
+            <div class="flex gap-3 p-2 rounded-lg hover:bg-white/10 transition" style="mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.3) 80%, rgba(0,0,0,0) 100%);">
+              <div class="flex flex-col items-center justify-center w-16 h-16 flex-shrink-0 bg-white/10 rounded-lg p-2">
+                <div class="font-semibold text-white text-xs leading-tight">28</div>
+                <div class="font-light text-white/60 text-[10px] uppercase">Jan</div>
+                <div class="font-light text-white/50 text-[10px] mt-1">10:00</div>
               </div>
               <div class="flex-1 min-w-0">
-                <div class="font-medium text-black text-xs mb-1">Q&A Session</div>
-                <div class="font-light text-xs text-black/70 mb-1">Fragen & Antworten mit der Community...</div>
+                <div class="font-medium text-white text-xs mb-1">Q&A Session</div>
+                <div class="font-light text-xs text-white/70 mb-1">Fragen & Antworten mit der Community...</div>
                 <div class="flex items-center -space-x-2 mt-2">
                   <img src="./public/participant_4.jpg" alt="Participant 4" class="w-6 h-6 rounded-full object-cover border-2 border-white">
                   <img src="./public/participant_5.jpg" alt="Participant 5" class="w-6 h-6 rounded-full object-cover border-2 border-white">
@@ -424,11 +424,11 @@
         </div>
         
         <!-- Mediathek Box Left -->
-        <div id="mediathek-box" class="floating-user-box absolute top-[290px] -left-80 w-80 h-[360px] rounded-2xl p-4 flex flex-col z-10" style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
+        <div id="mediathek-box" class="floating-user-box absolute top-[290px] -left-80 w-80 h-[360px] rounded-2xl p-4 flex flex-col z-10" style="background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);">
           <div class="flex justify-between items-center mb-3" style="overflow: hidden;">
-            <div class="font-medium text-black text-sm">🎥 Mediathek</div>
-            <button class="p-1 hover:bg-black/5 rounded-full transition" aria-label="Menü">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-black/70">
+            <div class="font-medium text-white text-sm">🎥 Mediathek</div>
+            <button class="p-1 hover:bg-white/10 rounded-full transition" aria-label="Menü">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white/70">
                 <circle cx="12" cy="12" r="1"></circle>
                 <circle cx="19" cy="12" r="1"></circle>
                 <circle cx="5" cy="12" r="1"></circle>
@@ -449,9 +449,9 @@
                 </div>
               </div>
               <div class="flex-1 min-w-0">
-                <div class="font-semibold text-black text-xs mb-1">Intensives Krafttraining</div>
-                <div class="font-light text-xs text-black/70 mb-1">Perfekt für den Muskelaufbau und mehr Kraft...</div>
-                <div class="font-light text-xs text-black/50">12:34</div>
+                <div class="font-semibold text-white text-xs mb-1">Intensives Krafttraining</div>
+                <div class="font-light text-xs text-white/70 mb-1">Perfekt für den Muskelaufbau und mehr Kraft...</div>
+                <div class="font-light text-xs text-white/50">12:34</div>
               </div>
             </div>
             <!-- Video 2 -->
@@ -467,9 +467,9 @@
                 </div>
               </div>
               <div class="flex-1 min-w-0">
-                <div class="font-semibold text-black text-xs mb-1">Cardio-Workout für Anfänger</div>
-                <div class="font-light text-xs text-black/70 mb-1">Sanftes Training für deine Ausdauer...</div>
-                <div class="font-light text-xs text-black/50">08:15</div>
+                <div class="font-semibold text-white text-xs mb-1">Cardio-Workout für Anfänger</div>
+                <div class="font-light text-xs text-white/70 mb-1">Sanftes Training für deine Ausdauer...</div>
+                <div class="font-light text-xs text-white/50">08:15</div>
               </div>
             </div>
             <!-- Video 3 -->
@@ -485,9 +485,9 @@
                 </div>
               </div>
               <div class="flex-1 min-w-0">
-                <div class="font-semibold text-black text-xs mb-1">Stretching & Entspannung</div>
-                <div class="font-light text-xs text-black/70 mb-1">Perfekte Balance zwischen Körper und Geist...</div>
-                <div class="font-light text-xs text-black/50">25:42</div>
+                <div class="font-semibold text-white text-xs mb-1">Stretching & Entspannung</div>
+                <div class="font-light text-xs text-white/70 mb-1">Perfekte Balance zwischen Körper und Geist...</div>
+                <div class="font-light text-xs text-white/50">25:42</div>
               </div>
             </div>
           </div>
@@ -854,61 +854,45 @@
         </p>
       </div>
       
-      <!-- Stories Mockup Grid -->
-      <div class="grid md:grid-cols-3 gap-6 mb-12">
-        <div class="animate-on-scroll delay-100">
-          <div class="mockup-container">
-            <div class="mockup-screen">
-              <div class="mockup-content">
-                <div class="mockup-header">
-                  <div class="mockup-avatar"></div>
-                  <div class="flex-1">
-                    <div class="mockup-line short"></div>
-                    <div class="mockup-line medium"></div>
-                  </div>
-                </div>
-                <div class="mockup-line long"></div>
-                <div class="mockup-line long"></div>
-                <div class="mockup-line medium"></div>
-              </div>
-            </div>
-          </div>
+      <!-- Stories Grid -->
+      <div class="grid md:grid-cols-3 gap-8 mb-12">
+        <!-- Story 1: Biyon Kattilathu -->
+        <div class="animate-on-scroll delay-100 bg-white rounded-2xl p-6 shadow-sm">
+          <h3 class="text-xl font-medium mb-2 text-black" style="font-family: 'Suisse Intl', sans-serif;">
+            Biyon Kattilathu baut seine Community auf
+          </h3>
+          <p class="text-sm font-medium text-black/60 mb-4" style="font-family: 'Suisse Intl', sans-serif;">
+            Team Selbstliebe – Exklusiver Raum für Wachstum und echte Verbindungen.
+          </p>
+          <p class="text-sm text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+            Biyon Kattilathu hat mit gylimmer seine "Team Selbstliebe" Community aufgebaut – einen geschützten Ort voller Inspiration, Austausch und exklusiver Inhalte. Er nutzt die Plattform für monatliche Live-Sessions, Videos, Voice-Nachrichten und Chats, um Mitglieder auf ihrem Weg zu mehr Selbstliebe zu stärken. So entstand aus seiner Vision rund um Achtsamkeit und Lebensfreude eine Community, die Vertrauen und gegenseitige Unterstützung fördert.
+          </p>
         </div>
-        <div class="animate-on-scroll delay-200">
-          <div class="mockup-container">
-            <div class="mockup-screen">
-              <div class="mockup-content">
-                <div class="mockup-header">
-                  <div class="mockup-avatar"></div>
-                  <div class="flex-1">
-                    <div class="mockup-line short"></div>
-                    <div class="mockup-line medium"></div>
-                  </div>
-                </div>
-                <div class="mockup-line long"></div>
-                <div class="mockup-line long"></div>
-                <div class="mockup-line medium"></div>
-              </div>
-            </div>
-          </div>
+        
+        <!-- Story 2: Baby got Business -->
+        <div class="animate-on-scroll delay-200 bg-white rounded-2xl p-6 shadow-sm">
+          <h3 class="text-xl font-medium mb-2 text-black" style="font-family: 'Suisse Intl', sans-serif;">
+            Baby got Business nutzt gylmmer für ihre intensiven Bootcamps
+          </h3>
+          <p class="text-sm font-medium text-black/60 mb-4" style="font-family: 'Suisse Intl', sans-serif;">
+            Social-Media-Bootcamps – Live-Sessions, Feedback und Community in einem.
+          </p>
+          <p class="text-sm text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+            Baby got Business hat mit glymmer ihre 10-wöchigen Social-Media-Bootcamps umgesetzt – ein Programm mit Live-Intensiv-Sessions, Workbooks und persönlichem Feedback. Sie veranstalten die Kurse über die Plattform, um Professionals, Gründern und Creatorn topaktuelles Wissen zu Strategy, Content und KPIs zu vermitteln. So schaffen sie nahtlosen Austausch, Alumni-Netzwerk und effizientes Lernen für nachhaltigen Erfolg.
+          </p>
         </div>
-        <div class="animate-on-scroll delay-300">
-          <div class="mockup-container">
-            <div class="mockup-screen">
-              <div class="mockup-content">
-                <div class="mockup-header">
-                  <div class="mockup-avatar"></div>
-                  <div class="flex-1">
-                    <div class="mockup-line short"></div>
-                    <div class="mockup-line medium"></div>
-                  </div>
-                </div>
-                <div class="mockup-line long"></div>
-                <div class="mockup-line long"></div>
-                <div class="mockup-line medium"></div>
-              </div>
-            </div>
-          </div>
+        
+        <!-- Story 3: MAK Nachhilfe -->
+        <div class="animate-on-scroll delay-300 bg-white rounded-2xl p-6 shadow-sm">
+          <h3 class="text-xl font-medium mb-2 text-black" style="font-family: 'Suisse Intl', sans-serif;">
+            MAK Nachhilfe digitalisiert Lernförderung
+          </h3>
+          <p class="text-sm font-medium text-black/60 mb-4" style="font-family: 'Suisse Intl', sans-serif;">
+            Digitale Nachhilfe – Individuelle Sessions und Gruppenunterricht online.
+          </p>
+          <p class="text-sm text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+            MAK Nachhilfe setzt glymmer für ihre Online-Nachhilfe ein – vom 1-zu-1-Unterricht bis zu Gruppenkursen mit interaktiver Tafel und Materialien. Sie nutzen den Live Room, um Wissen aufzubauen, Selbstvertrauen zu stärken und flexibel von zu Hause aus zu unterrichten. So entsteht eine nahtlose Plattform für Schüler und Lehrer mit einfachem Zugriff auf alle Inhalte.
+          </p>
         </div>
       </div>
       
