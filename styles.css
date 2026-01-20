@@ -451,9 +451,7 @@
   transform: translateX(-50%);
   margin-left: 0;
   margin-right: 0;
-}
-
-.logo-slider {
+}.logo-slider {
   display: flex;
   width: fit-content;
   animation: scroll 30s linear infinite;
