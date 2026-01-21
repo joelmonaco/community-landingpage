@@ -896,9 +896,9 @@
   </section>
 
   <!-- Customer Stories Section -->
-  <section id="stories" class="py-20 px-6 lg:px-8 bg-gray-50">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16 animate-on-scroll pt-4">
+  <section id="stories" class="py-20 px-0 bg-white">
+    <div class="w-full">
+      <div class="text-center mb-16 animate-on-scroll pt-4 px-6 lg:px-8">
         <h2 id="stories-title" class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Cal Sans', sans-serif;">
           Customer Stories
         </h2>
@@ -908,44 +908,83 @@
       </div>
       
       <!-- Stories Grid -->
-      <div class="grid md:grid-cols-3 gap-8 mb-12">
+      <div class="grid md:grid-cols-3 gap-0">
         <!-- Story 1: Biyon Kattilathu -->
-        <div class="animate-on-scroll delay-100 bg-white rounded-2xl p-6 shadow-sm">
-          <h3 class="text-xl font-medium mb-2 text-black" style="font-family: 'Suisse Intl', sans-serif;">
-            Biyon Kattilathu baut seine Community auf
-          </h3>
-          <p class="text-sm font-medium text-black/60 mb-4" style="font-family: 'Suisse Intl', sans-serif;">
-            Team Selbstliebe – Exklusiver Raum für Wachstum und echte Verbindungen.
-          </p>
-          <p class="text-sm text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
-            Biyon Kattilathu hat mit gylimmer seine "Team Selbstliebe" Community aufgebaut – einen geschützten Ort voller Inspiration, Austausch und exklusiver Inhalte. Er nutzt die Plattform für monatliche Live-Sessions, Videos, Voice-Nachrichten und Chats, um Mitglieder auf ihrem Weg zu mehr Selbstliebe zu stärken. So entstand aus seiner Vision rund um Achtsamkeit und Lebensfreude eine Community, die Vertrauen und gegenseitige Unterstützung fördert.
-          </p>
+        <div class="customer-story-card relative h-[500px] overflow-hidden group cursor-pointer" style="background-image: url('./public/Customers/Biyon_Profil.jpg'); background-size: cover; background-position: center;">
+          <div class="absolute inset-0 bg-black/40"></div>
+          <div class="relative h-full flex flex-col">
+            <div class="flex-1"></div>
+            <div class="relative p-8 pb-8">
+              <div class="customer-story-header absolute bottom-8 left-8 right-8 transition-transform duration-500 ease-out group-hover:-translate-y-64">
+                <div class="mb-4">
+                  <img src="./public/Customers/Biyon_Logo.png" alt="Biyon Logo" class="h-16 w-auto object-contain">
+                </div>
+                <h3 class="text-2xl font-normal text-white" style="font-family: 'Cal Sans', sans-serif;">
+                  Biyon Kattilathu baut seine Community auf
+                </h3>
+              </div>
+              <div class="customer-story-text opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute bottom-8 left-8 right-8">
+                <p class="text-base font-medium text-white mb-4" style="font-family: 'Suisse Intl', sans-serif;">
+                  Team Selbstliebe – Exklusiver Raum für Wachstum und echte Verbindungen.
+                </p>
+                <p class="text-sm text-white/90 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  Biyon Kattilathu hat mit gylimmer seine "Team Selbstliebe" Community aufgebaut – einen geschützten Ort voller Inspiration, Austausch und exklusiver Inhalte. Er nutzt die Plattform für monatliche Live-Sessions, Videos, Voice-Nachrichten und Chats, um Mitglieder auf ihrem Weg zu mehr Selbstliebe zu stärken. So entstand aus seiner Vision rund um Achtsamkeit und Lebensfreude eine Community, die Vertrauen und gegenseitige Unterstützung fördert.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         
         <!-- Story 2: Baby got Business -->
-        <div class="animate-on-scroll delay-200 bg-white rounded-2xl p-6 shadow-sm">
-          <h3 class="text-xl font-medium mb-2 text-black" style="font-family: 'Suisse Intl', sans-serif;">
-            Baby got Business nutzt gylmmer für ihre intensiven Bootcamps
-          </h3>
-          <p class="text-sm font-medium text-black/60 mb-4" style="font-family: 'Suisse Intl', sans-serif;">
-            Social-Media-Bootcamps – Live-Sessions, Feedback und Community in einem.
-          </p>
-          <p class="text-sm text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
-            Baby got Business hat mit glymmer ihre 10-wöchigen Social-Media-Bootcamps umgesetzt – ein Programm mit Live-Intensiv-Sessions, Workbooks und persönlichem Feedback. Sie veranstalten die Kurse über die Plattform, um Professionals, Gründern und Creatorn topaktuelles Wissen zu Strategy, Content und KPIs zu vermitteln. So schaffen sie nahtlosen Austausch, Alumni-Netzwerk und effizientes Lernen für nachhaltigen Erfolg.
-          </p>
+        <div class="customer-story-card relative h-[500px] overflow-hidden group cursor-pointer" style="background-image: url('./public/Customers/BGB_Profil.jpg'); background-size: cover; background-position: center;">
+          <div class="absolute inset-0 bg-black/40"></div>
+          <div class="relative h-full flex flex-col">
+            <div class="flex-1"></div>
+            <div class="relative p-8 pb-8">
+              <div class="customer-story-header absolute bottom-2 left-8 right-8 transition-transform duration-500 ease-out group-hover:-translate-y-64">
+                <div class="mb-4">
+                  <img src="./public/Customers/BGB_Logo.png" alt="Baby got Business Logo" class="h-16 w-auto object-contain">
+                </div>
+                <h3 class="text-2xl font-normal text-white" style="font-family: 'Cal Sans', sans-serif;">
+                  Baby got Business nutzt gylmmer für ihre intensiven Bootcamps
+                </h3>
+              </div>
+              <div class="customer-story-text opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute bottom-2 left-8 right-8">
+                <p class="text-base font-medium text-white mb-4" style="font-family: 'Suisse Intl', sans-serif;">
+                  Social-Media-Bootcamps – Live-Sessions, Feedback und Community in einem.
+                </p>
+                <p class="text-sm text-white/90 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  Baby got Business hat mit glymmer ihre 10-wöchigen Social-Media-Bootcamps umgesetzt – ein Programm mit Live-Intensiv-Sessions, Workbooks und persönlichem Feedback. Sie veranstalten die Kurse über die Plattform, um Professionals, Gründern und Creatorn topaktuelles Wissen zu Strategy, Content und KPIs zu vermitteln. So schaffen sie nahtlosen Austausch, Alumni-Netzwerk und effizientes Lernen für nachhaltigen Erfolg.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         
         <!-- Story 3: MAK Nachhilfe -->
-        <div class="animate-on-scroll delay-300 bg-white rounded-2xl p-6 shadow-sm">
-          <h3 class="text-xl font-medium mb-2 text-black" style="font-family: 'Suisse Intl', sans-serif;">
-            MAK Nachhilfe digitalisiert Lernförderung
-          </h3>
-          <p class="text-sm font-medium text-black/60 mb-4" style="font-family: 'Suisse Intl', sans-serif;">
-            Digitale Nachhilfe – Individuelle Sessions und Gruppenunterricht online.
-          </p>
-          <p class="text-sm text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
-            MAK Nachhilfe setzt glymmer für ihre Online-Nachhilfe ein – vom 1-zu-1-Unterricht bis zu Gruppenkursen mit interaktiver Tafel und Materialien. Sie nutzen den Live Room, um Wissen aufzubauen, Selbstvertrauen zu stärken und flexibel von zu Hause aus zu unterrichten. So entsteht eine nahtlose Plattform für Schüler und Lehrer mit einfachem Zugriff auf alle Inhalte.
-          </p>
+        <div class="customer-story-card relative h-[500px] overflow-hidden group cursor-pointer" style="background-image: url('./public/Customers/MAK_Profil.png'); background-size: cover; background-position: center;">
+          <div class="absolute inset-0 bg-black/40"></div>
+          <div class="relative h-full flex flex-col">
+            <div class="flex-1"></div>
+            <div class="relative p-8 pb-8">
+              <div class="customer-story-header absolute bottom-8 left-8 right-8 transition-transform duration-500 ease-out group-hover:-translate-y-64">
+                <div class="mb-4">
+                  <img src="./public/Customers/MAK_Logo.png" alt="MAK Nachhilfe Logo" class="h-16 w-auto object-contain">
+                </div>
+                <h3 class="text-2xl font-normal text-white" style="font-family: 'Cal Sans', sans-serif;">
+                  MAK Nachhilfe digitalisiert Lernförderung
+                </h3>
+              </div>
+              <div class="customer-story-text opacity-0 group-hover:opacity-100 transition-opacity duration-500 absolute bottom-8 left-8 right-8">
+                <p class="text-base font-medium text-white mb-4" style="font-family: 'Suisse Intl', sans-serif;">
+                  Digitale Nachhilfe – Individuelle Sessions und Gruppenunterricht online.
+                </p>
+                <p class="text-sm text-white/90 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  MAK Nachhilfe setzt glymmer für ihre Online-Nachhilfe ein – vom 1-zu-1-Unterricht bis zu Gruppenkursen mit interaktiver Tafel und Materialien. Sie nutzen den Live Room, um Wissen aufzubauen, Selbstvertrauen zu stärken und flexibel von zu Hause aus zu unterrichten. So entsteht eine nahtlose Plattform für Schüler und Lehrer mit einfachem Zugriff auf alle Inhalte.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
