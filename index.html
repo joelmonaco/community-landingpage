@@ -857,7 +857,7 @@
   </section>
 
   <!-- App Wireframes Section -->
-  <section class="pt-20 pb-8 bg-white overflow-x-visible relative">
+  <section class="pt-20 pb-8 bg-white overflow-x-visible relative" style="min-height: 150vh;">
     <!-- Header mit App Icon, Headline und Untertitel -->
     <div class="max-w-4xl mx-auto text-center mb-16 px-6">
       <div class="flex justify-center mb-6 animate-on-scroll">
@@ -871,21 +871,24 @@
       </p>
     </div>
     
-    <div class="w-[120vw] -ml-[10vw] sticky top-20">
-      <div class="grid grid-cols-5 gap-8">
-        <div class="animate-on-scroll delay-100">
+    <div class="w-full sticky top-20 overflow-hidden" id="app-slider-container" style="height: calc(100vh - 5rem);">
+      <div class="flex gap-8 app-slider" id="app-slider" style="width: fit-content;">
+        <div class="flex-shrink-0" style="width: calc((100vw - 6rem) / 4);">
           <img src="./public/App-Wireframe_7.jpeg" alt="App Wireframe" class="w-full h-auto rounded-[3rem] shadow-lg">
         </div>
-        <div class="animate-on-scroll delay-200">
+        <div class="flex-shrink-0" style="width: calc((100vw - 6rem) / 4);">
           <img src="./public/App-Wireframe_7.jpeg" alt="App Wireframe" class="w-full h-auto rounded-[3rem] shadow-lg">
         </div>
-        <div class="animate-on-scroll delay-300">
+        <div class="flex-shrink-0" style="width: calc((100vw - 6rem) / 4);">
           <img src="./public/App-Wireframe_7.jpeg" alt="App Wireframe" class="w-full h-auto rounded-[3rem] shadow-lg">
         </div>
-        <div class="animate-on-scroll delay-400">
+        <div class="flex-shrink-0" style="width: calc((100vw - 6rem) / 4);">
           <img src="./public/App-Wireframe_7.jpeg" alt="App Wireframe" class="w-full h-auto rounded-[3rem] shadow-lg">
         </div>
-        <div class="animate-on-scroll delay-500">
+        <div class="flex-shrink-0" style="width: calc((100vw - 6rem) / 4);">
+          <img src="./public/App-Wireframe_7.jpeg" alt="App Wireframe" class="w-full h-auto rounded-[3rem] shadow-lg">
+        </div>
+        <div class="flex-shrink-0" style="width: calc((100vw - 6rem) / 4);">
           <img src="./public/App-Wireframe_7.jpeg" alt="App Wireframe" class="w-full h-auto rounded-[3rem] shadow-lg">
         </div>
       </div>
@@ -1004,6 +1007,65 @@
   <script src="./animations.js"></script>
   <script src="./language.js"></script>
   <script src="./cursor-follower.js"></script>
+  <script>
+    // App Slider Scroll Animation
+    (function() {
+      const appSection = document.querySelector('#app-slider-container')?.closest('section');
+      const slider = document.getElementById('app-slider');
+      
+      if (!appSection || !slider) return;
+      
+      let lastScrollY = window.scrollY;
+      let scrollOffset = 0;
+      
+      function updateSlider() {
+        const rect = appSection.getBoundingClientRect();
+        const sectionTop = rect.top;
+        const sectionHeight = rect.height;
+        const viewportHeight = window.innerHeight;
+        
+        // Berechne, ob die Section sichtbar ist
+        if (sectionTop < viewportHeight && sectionTop + sectionHeight > 0) {
+          // Berechne die maximale Verschiebung
+          const sliderWidth = slider.scrollWidth;
+          const containerWidth = window.innerWidth;
+          const maxTranslate = Math.max(0, sliderWidth - containerWidth);
+          
+          // Verschiebe basierend auf Scroll-Richtung
+          const currentScrollY = window.scrollY;
+          const scrollDelta = currentScrollY - lastScrollY;
+          
+          if (scrollDelta > 0) {
+            // Nach unten scrollen = nach links bewegen
+            scrollOffset = Math.min(maxTranslate, scrollOffset + scrollDelta * 0.3);
+          } else if (scrollDelta < 0) {
+            // Nach oben scrollen = nach rechts bewegen
+            scrollOffset = Math.max(0, scrollOffset + scrollDelta * 0.3);
+          }
+          
+          lastScrollY = currentScrollY;
+          
+          // Wende die Transformation an
+          slider.style.transform = `translateX(-${scrollOffset}px)`;
+        }
+      }
+      
+      let ticking = false;
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            updateSlider();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+      
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', updateSlider, { passive: true });
+      updateSlider(); // Initial update
+    })();
+  </script>
   <script>
     // Header Background on Scroll
     document.addEventListener('DOMContentLoaded', () => {
