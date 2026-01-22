@@ -995,7 +995,7 @@
     <div class="max-w-4xl mx-auto">
       <div class="animate-on-scroll delay-100 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-3xl p-8 md:p-12 shadow-lg border border-secondary/20">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 text-black" style="font-family: 'Suisse Intl', sans-serif;">
-          Warum ab 2026 eine eigene Community unverzichtbar ist
+          Darum ist deine eigene Community ab 2026 unverzichtbar
         </h2>
         <div class="space-y-4 text-base md:text-lg text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
           <p>
@@ -1048,9 +1048,6 @@
       
       if (!appSection || !slider) return;
       
-      let lastScrollY = window.scrollY;
-      let scrollOffset = 0;
-      
       function updateSlider() {
         const rect = appSection.getBoundingClientRect();
         const sectionTop = rect.top;
@@ -1064,19 +1061,16 @@
           const containerWidth = window.innerWidth;
           const maxTranslate = Math.max(0, sliderWidth - containerWidth);
           
-          // Verschiebe basierend auf Scroll-Richtung
-          const currentScrollY = window.scrollY;
-          const scrollDelta = currentScrollY - lastScrollY;
+          // Berechne den Fortschritt basierend auf der Position der Section im Viewport
+          // Wenn sectionTop = viewportHeight (Section gerade sichtbar), progress = 0 (ganz rechts)
+          // Wenn sectionTop + sectionHeight = 0 (Section komplett durchgescrollt), progress = 1 (ganz links)
+          const scrollableRange = sectionHeight + viewportHeight;
+          const scrolledDistance = viewportHeight - sectionTop;
+          const progress = Math.max(0, Math.min(1, scrolledDistance / Math.max(scrollableRange, 1)));
           
-          if (scrollDelta > 0) {
-            // Nach unten scrollen = nach links bewegen
-            scrollOffset = Math.min(maxTranslate, scrollOffset + scrollDelta * 0.3);
-          } else if (scrollDelta < 0) {
-            // Nach oben scrollen = nach rechts bewegen
-            scrollOffset = Math.max(0, scrollOffset + scrollDelta * 0.3);
-          }
-          
-          lastScrollY = currentScrollY;
+          // Mappe den Fortschritt auf den Slider-Offset
+          // 0 = ganz rechts (kein Offset), 1 = ganz links (maxTranslate)
+          const scrollOffset = progress * maxTranslate;
           
           // Wende die Transformation an
           slider.style.transform = `translateX(-${scrollOffset}px)`;
