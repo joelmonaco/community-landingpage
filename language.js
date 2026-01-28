@@ -41,7 +41,7 @@ const translations = {
     cta: {
       title: 'Bereit loszulegen?',
       subtitle: 'Starte noch heute und baue deine Community auf',
-      start: 'Kostenlos starten',
+      start: 'Jetzt starten',
       talkToSales: 'Mit Sales sprechen'
     }
   },
@@ -218,7 +218,20 @@ function applyTranslations(lang) {
   if (ctaSubtitle) ctaSubtitle.textContent = t.cta.subtitle;
   
   const ctaStart = document.getElementById('cta-start');
-  if (ctaStart) ctaStart.textContent = t.cta.start;
+  if (ctaStart) {
+    // Preserve SVG icon - only update text content
+    const svg = ctaStart.querySelector('svg');
+    if (svg) {
+      const textNodes = Array.from(ctaStart.childNodes).filter(node => node.nodeType === Node.TEXT_NODE);
+      if (textNodes.length > 0) {
+        textNodes[0].textContent = t.cta.start;
+      } else {
+        ctaStart.insertBefore(document.createTextNode(t.cta.start), svg);
+      }
+    } else {
+      ctaStart.textContent = t.cta.start;
+    }
+  }
   
   const ctaTalkToSales = document.getElementById('cta-talk-to-sales');
   if (ctaTalkToSales) ctaTalkToSales.textContent = t.cta.talkToSales;
