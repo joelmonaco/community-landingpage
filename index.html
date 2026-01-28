@@ -58,6 +58,7 @@
         transform: translateX(-50%);
       }
     }
+    
   </style>
   <link rel="canonical" href="https://teech.com/">
   <style>
@@ -728,6 +729,14 @@
                   <video autoplay loop muted playsinline class="w-full h-full object-cover" style="border-radius: 2rem 2rem 0 0;">
                     <source src="./public/Videos/Videocall_1.mp4" type="video/mp4">
                   </video>
+                  <!-- Viewers Count Pill -->
+                  <div class="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 rounded-full" style="background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(8px);">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    <span id="viewers-count" class="text-white text-sm font-medium">214</span>
+                  </div>
                 </div>
                 <!-- Kleine Videofenster (Teilnehmer) -->
                 <div class="absolute top-8 right-8 w-32 h-24 overflow-hidden" style="border-radius: 0.75rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);">
@@ -1897,6 +1906,31 @@
       
       // Initial state
       updateButtonState();
+    })();
+
+    // Viewers Count Animation
+    (function() {
+      const viewersCountElement = document.getElementById('viewers-count');
+      if (!viewersCountElement) return;
+      
+      let currentCount = 214;
+      const baseCount = 214;
+      const variation = 6; // ±6 from base (210-220)
+      
+      function updateViewersCount() {
+        // Langsam zwischen verschiedenen Werten schwanken
+        // Zufällige Änderung zwischen -2 und +2
+        const change = Math.floor(Math.random() * 5) - 2; // -2, -1, 0, 1, 2
+        currentCount = Math.max(baseCount - variation, Math.min(baseCount + variation, currentCount + change));
+        viewersCountElement.textContent = currentCount;
+        
+        // Nächste Änderung nach 2-4 Sekunden (langsam)
+        const nextUpdate = 2000 + Math.random() * 2000;
+        setTimeout(updateViewersCount, nextUpdate);
+      }
+      
+      // Start nach kurzer Verzögerung
+      setTimeout(updateViewersCount, 1000);
     })();
   </script>
 
