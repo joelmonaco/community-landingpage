@@ -879,6 +879,7 @@
               <div class="flex flex-col relative">
                 <!-- File 1: Trainingsplan -->
                 <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition border-b" style="border-color: rgba(255, 255, 255, 0.1);">
+                  <div class="flex items-center justify-center w-6 h-6 rounded-full text-white text-sm font-medium flex-shrink-0" style="background: rgba(255, 255, 255, 0.2); font-family: 'Suisse Intl', sans-serif;">1</div>
                   <img src="./public/Files/File_1.png" alt="Trainingsplan" class="w-16 h-16 rounded" style="flex-shrink: 0; object-fit: contain; background: rgba(255, 255, 255, 0.05);">
                   <div class="flex-1 min-w-0">
                     <h4 class="text-sm font-medium text-white mb-1" style="font-family: 'Suisse Intl', sans-serif;">Trainingsplan</h4>
@@ -888,6 +889,7 @@
                 
                 <!-- File 2: Trainingsstatistiken -->
                 <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition border-b" style="border-color: rgba(255, 255, 255, 0.1);">
+                  <div class="flex items-center justify-center w-6 h-6 rounded-full text-white text-sm font-medium flex-shrink-0" style="background: rgba(255, 255, 255, 0.2); font-family: 'Suisse Intl', sans-serif;">2</div>
                   <img src="./public/Files/File_2.png" alt="Trainingsstatistiken" class="w-16 h-16 rounded" style="flex-shrink: 0; object-fit: contain; background: rgba(255, 255, 255, 0.05);">
                   <div class="flex-1 min-w-0">
                     <h4 class="text-sm font-medium text-white mb-1" style="font-family: 'Suisse Intl', sans-serif;">Trainingsstatistiken</h4>
@@ -897,10 +899,11 @@
                 
                 <!-- File 3: Bizeps Trainingsvideo (wird animiert eingefügt) -->
                 <div id="file-3-container" class="flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition opacity-0" style="transform: translateY(-20px);">
+                  <div id="file-3-number" class="flex items-center justify-center w-6 h-6 rounded-full text-white text-sm font-medium flex-shrink-0 opacity-0" style="background: rgba(255, 255, 255, 0.2); font-family: 'Suisse Intl', sans-serif;">3</div>
                   <img id="file-3-image" src="./public/Files/File_3.png" alt="Bizeps Trainingsvideo" class="w-16 h-16 rounded" style="flex-shrink: 0; opacity: 0; object-fit: contain; background: rgba(255, 255, 255, 0.05);">
-                  <div class="flex-1 min-w-0">
-                    <h4 id="file-3-title" class="text-sm font-medium text-white mb-1" style="font-family: 'Suisse Intl', sans-serif;"></h4>
-                    <p id="file-3-description" class="text-xs text-white/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;"></p>
+                  <div class="flex-1 min-w-0" style="min-height: 60px;">
+                    <h4 id="file-3-title" class="text-sm font-medium text-white mb-1" style="font-family: 'Suisse Intl', sans-serif; min-height: 20px;"></h4>
+                    <p id="file-3-description" class="text-xs text-white/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif; min-height: 36px;"></p>
                   </div>
                 </div>
                 
@@ -1985,10 +1988,11 @@
       const file3Image = document.getElementById('file-3-image');
       const file3Title = document.getElementById('file-3-title');
       const file3Description = document.getElementById('file-3-description');
+      const file3Number = document.getElementById('file-3-number');
       const cursorWithFile = document.getElementById('cursor-with-file-3');
       const fileStorageMockup = document.querySelector('.file-storage-mockup');
       
-      if (!file3Container || !file3Image || !file3Title || !file3Description || !cursorWithFile || !fileStorageMockup) return;
+      if (!file3Container || !file3Image || !file3Title || !file3Description || !file3Number || !cursorWithFile || !fileStorageMockup) return;
       
       // Warte bis die Section sichtbar ist
       function startAnimation() {
@@ -2019,10 +2023,12 @@
             file3Container.style.opacity = '1';
             file3Container.style.transform = 'translateY(0)';
             
-            // File 3 Bild erscheint leicht verzögert
+            // File 3 Bild und Nummer erscheinen leicht verzögert
             setTimeout(() => {
               file3Image.style.transition = 'opacity 0.4s ease';
               file3Image.style.opacity = '1';
+              file3Number.style.transition = 'opacity 0.4s ease';
+              file3Number.style.opacity = '1';
             }, 200);
             
             // Phase 3: Titel wird eingetippt (langsamer)
@@ -2032,25 +2038,34 @@
               
               function typeTitle() {
                 if (titleIndex < titleText.length) {
-                  file3Title.textContent = titleText.substring(0, titleIndex + 1);
-                  titleIndex++;
-                  setTimeout(typeTitle, 150);
-                } else {
-                  // Phase 4: Beschreibung wird eingetippt (langsamer)
-                  setTimeout(() => {
-                    const descriptionText = 'Intensives Bizeps-Training mit verschiedenen Übungen für maximales Muskelwachstum.';
-                    let descIndex = 0;
-                    
-                    function typeDescription() {
-                      if (descIndex < descriptionText.length) {
-                        file3Description.textContent = descriptionText.substring(0, descIndex + 1);
-                        descIndex++;
-                        setTimeout(typeDescription, 60);
-                      }
+                  // Verwende requestAnimationFrame für flüssigere Animation
+                  requestAnimationFrame(() => {
+                    file3Title.textContent = titleText.substring(0, titleIndex + 1);
+                    titleIndex++;
+                    if (titleIndex < titleText.length) {
+                      setTimeout(typeTitle, 150);
+                    } else {
+                      // Phase 4: Beschreibung wird eingetippt (langsamer)
+                      setTimeout(() => {
+                        const descriptionText = 'Intensives Bizeps-Training mit verschiedenen Übungen für maximales Muskelwachstum.';
+                        let descIndex = 0;
+                        
+                        function typeDescription() {
+                          if (descIndex < descriptionText.length) {
+                            requestAnimationFrame(() => {
+                              file3Description.textContent = descriptionText.substring(0, descIndex + 1);
+                              descIndex++;
+                              if (descIndex < descriptionText.length) {
+                                setTimeout(typeDescription, 60);
+                              }
+                            });
+                          }
+                        }
+                        
+                        typeDescription();
+                      }, 800);
                     }
-                    
-                    typeDescription();
-                  }, 800);
+                  });
                 }
               }
               
