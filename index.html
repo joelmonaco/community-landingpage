@@ -875,41 +875,41 @@
             <h3 class="text-3xl font-medium mb-2 text-white" style="font-family: 'Suisse Intl', sans-serif;">Mediathek & Dateiablage</h3>
             <p class="text-white/90 mb-4" style="font-family: 'Suisse Intl', sans-serif;">Zentraler Speicherplatz für Videos, Dokumente und Kursmaterialien.</p>
             <!-- Dateiablage Mockup -->
-            <div class="file-storage-mockup mt-4 bg-black/20 rounded-xl p-4" style="min-height: 200px;">
-              <div class="relative h-full">
-                <!-- Ordner -->
-                <div class="absolute bottom-4 right-4 folder-icon">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.7">
-                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-                  </svg>
-                  <div class="text-xs text-white/70 mt-1 text-center">Ordner</div>
+            <div class="file-storage-mockup mt-4 bg-black/20 rounded-xl p-4 relative" style="min-height: 300px;">
+              <div class="flex flex-col relative">
+                <!-- File 1: Trainingsplan -->
+                <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition border-b" style="border-color: rgba(255, 255, 255, 0.1);">
+                  <img src="./public/Files/File_1.png" alt="Trainingsplan" class="w-16 h-16 rounded" style="flex-shrink: 0; object-fit: contain; background: rgba(255, 255, 255, 0.05);">
+                  <div class="flex-1 min-w-0">
+                    <h4 class="text-sm font-medium text-white mb-1" style="font-family: 'Suisse Intl', sans-serif;">Trainingsplan</h4>
+                    <p class="text-xs text-white/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">Strukturierter 8-Wochen-Plan für optimales Muskelwachstum und Kraftaufbau.</p>
+                  </div>
                 </div>
-                <!-- Dateien oben -->
-                <div class="absolute top-4 left-4 file-icon-1">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6">
-                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-                    <polyline points="13 2 13 9 20 9"></polyline>
-                  </svg>
-                  <div class="text-xs text-white/70 mt-1 text-center">Video.mp4</div>
+                
+                <!-- File 2: Trainingsstatistiken -->
+                <div class="flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition border-b" style="border-color: rgba(255, 255, 255, 0.1);">
+                  <img src="./public/Files/File_2.png" alt="Trainingsstatistiken" class="w-16 h-16 rounded" style="flex-shrink: 0; object-fit: contain; background: rgba(255, 255, 255, 0.05);">
+                  <div class="flex-1 min-w-0">
+                    <h4 class="text-sm font-medium text-white mb-1" style="font-family: 'Suisse Intl', sans-serif;">Trainingsstatistiken</h4>
+                    <p class="text-xs text-white/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">Detaillierte Auswertung deiner Fortschritte und Leistungsdaten.</p>
+                  </div>
                 </div>
-                <div class="absolute top-4 left-20 file-icon-2">
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6">
-                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-                    <polyline points="13 2 13 9 20 9"></polyline>
-                  </svg>
-                  <div class="text-xs text-white/70 mt-1 text-center">Dokument.pdf</div>
+                
+                <!-- File 3: Bizeps Trainingsvideo (wird animiert eingefügt) -->
+                <div id="file-3-container" class="flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition opacity-0" style="transform: translateY(-20px);">
+                  <img id="file-3-image" src="./public/Files/File_3.png" alt="Bizeps Trainingsvideo" class="w-16 h-16 rounded" style="flex-shrink: 0; opacity: 0; object-fit: contain; background: rgba(255, 255, 255, 0.05);">
+                  <div class="flex-1 min-w-0">
+                    <h4 id="file-3-title" class="text-sm font-medium text-white mb-1" style="font-family: 'Suisse Intl', sans-serif;"></h4>
+                    <p id="file-3-description" class="text-xs text-white/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;"></p>
+                  </div>
                 </div>
-                <!-- Animierter Cursor mit Datei -->
-                <div class="absolute cursor-with-file">
+                
+                <!-- Animierter Cursor mit File 3 -->
+                <div id="cursor-with-file-3" class="absolute pointer-events-none" style="top: -50px; left: 50%; transform: translateX(-50%); z-index: 20; opacity: 0;">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"></path>
                   </svg>
-                  <div class="absolute -top-2 -left-2 file-dragged">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8">
-                      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-                      <polyline points="13 2 13 9 20 9"></polyline>
-                    </svg>
-                  </div>
+                  <img src="./public/Files/File_3.png" alt="" class="absolute -top-2 -left-2 w-12 h-12 object-cover rounded" style="opacity: 0.9;">
                 </div>
               </div>
             </div>
@@ -1977,6 +1977,103 @@
       
       // Start nach kurzer Verzögerung
       setTimeout(updateViewersCount, 1000);
+    })();
+
+    // File 3 Drop Animation
+    (function() {
+      const file3Container = document.getElementById('file-3-container');
+      const file3Image = document.getElementById('file-3-image');
+      const file3Title = document.getElementById('file-3-title');
+      const file3Description = document.getElementById('file-3-description');
+      const cursorWithFile = document.getElementById('cursor-with-file-3');
+      const fileStorageMockup = document.querySelector('.file-storage-mockup');
+      
+      if (!file3Container || !file3Image || !file3Title || !file3Description || !cursorWithFile || !fileStorageMockup) return;
+      
+      // Warte bis die Section sichtbar ist
+      function startAnimation() {
+        const rect = fileStorageMockup.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (!isVisible) {
+          setTimeout(startAnimation, 500);
+          return;
+        }
+        
+        // Starte Animation nach 2 Sekunden
+        setTimeout(() => {
+          // Phase 1: Cursor bewegt sich nach unten mit natürlicher Bewegung
+          cursorWithFile.style.transition = 'all 1.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+          cursorWithFile.style.top = '180px';
+          cursorWithFile.style.left = '20%';
+          cursorWithFile.style.opacity = '1';
+          
+          // Phase 2: File 3 wird gedroppt mit Bounce-Effekt
+          setTimeout(() => {
+            // Cursor verschwindet
+            cursorWithFile.style.opacity = '0';
+            cursorWithFile.style.transition = 'opacity 0.2s ease';
+            
+            // File 3 Container erscheint mit Drop-Animation
+            file3Container.style.transition = 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+            file3Container.style.opacity = '1';
+            file3Container.style.transform = 'translateY(0)';
+            
+            // File 3 Bild erscheint leicht verzögert
+            setTimeout(() => {
+              file3Image.style.transition = 'opacity 0.4s ease';
+              file3Image.style.opacity = '1';
+            }, 200);
+            
+            // Phase 3: Titel wird eingetippt (langsamer)
+            setTimeout(() => {
+              const titleText = 'Bizeps Trainingsvideo';
+              let titleIndex = 0;
+              
+              function typeTitle() {
+                if (titleIndex < titleText.length) {
+                  file3Title.textContent = titleText.substring(0, titleIndex + 1);
+                  titleIndex++;
+                  setTimeout(typeTitle, 150);
+                } else {
+                  // Phase 4: Beschreibung wird eingetippt (langsamer)
+                  setTimeout(() => {
+                    const descriptionText = 'Intensives Bizeps-Training mit verschiedenen Übungen für maximales Muskelwachstum.';
+                    let descIndex = 0;
+                    
+                    function typeDescription() {
+                      if (descIndex < descriptionText.length) {
+                        file3Description.textContent = descriptionText.substring(0, descIndex + 1);
+                        descIndex++;
+                        setTimeout(typeDescription, 60);
+                      }
+                    }
+                    
+                    typeDescription();
+                  }, 800);
+                }
+              }
+              
+              typeTitle();
+            }, 600);
+          }, 1800);
+        }, 2000);
+      }
+      
+      // Starte Animation
+      startAnimation();
+      
+      // Auch bei Scroll prüfen
+      let hasStarted = false;
+      window.addEventListener('scroll', () => {
+        if (!hasStarted) {
+          const rect = fileStorageMockup.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            hasStarted = true;
+            startAnimation();
+          }
+        }
+      });
     })();
   </script>
 
