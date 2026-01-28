@@ -722,18 +722,24 @@
             <p class="text-white/90 mb-4" style="font-family: 'Suisse Intl', sans-serif;">Führe Webinare, Bootcamps und virtuelle Treffen mit hochwertigen Video-Tools durch.</p>
             <!-- Videocall Visualisierung -->
             <div class="video-call-visualization mt-4 -mb-0">
-              <div class="relative bg-black/20 rounded-t-xl p-3" style="aspect-ratio: 16/9; border-radius: 0.75rem 0.75rem 0 0;">
+              <div class="relative bg-black/20 rounded-t-xl p-3" style="aspect-ratio: 16/9; border-radius: 2rem 2rem 0 0;">
                 <!-- Haupt-Videofenster -->
-                <div class="absolute inset-2 bg-gradient-to-br from-white/10 to-white/5 rounded-lg border border-white/20 flex items-center justify-center">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6">
-                    <path d="M23 7l-7 5 7 5V7z"></path>
-                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
-                  </svg>
+                <div class="absolute inset-2 bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center overflow-hidden" style="border-radius: 2rem;">
+                  <video autoplay loop muted playsinline class="w-full h-full object-cover" style="border-radius: 2rem;">
+                    <source src="./public/Videos/Videocall_1.mp4" type="video/mp4">
+                  </video>
                 </div>
                 <!-- Kleine Videofenster (Teilnehmer) -->
-                <div class="absolute top-3 right-3 w-16 h-12 bg-gradient-to-br from-white/15 to-white/5 rounded border border-white/20"></div>
-                <div class="absolute bottom-3 right-3 w-16 h-12 bg-gradient-to-br from-white/15 to-white/5 rounded border border-white/20"></div>
-                <div class="absolute bottom-3 left-3 w-16 h-12 bg-gradient-to-br from-white/15 to-white/5 rounded border border-white/20"></div>
+                <div class="absolute top-8 right-8 w-32 h-24 overflow-hidden" style="border-radius: 0.75rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);">
+                  <video autoplay loop muted playsinline class="w-full h-full object-cover" style="border-radius: 0.75rem;">
+                    <source src="./public/Videos/Videocall_2.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="absolute bottom-8 right-8 w-32 h-24 overflow-hidden" style="border-radius: 0.75rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);">
+                  <video autoplay loop muted playsinline class="w-full h-full object-cover" style="border-radius: 0.75rem;">
+                    <source src="./public/Videos/Videocall_3.mp4" type="video/mp4">
+                  </video>
+                </div>
               </div>
             </div>
           </div>
@@ -955,12 +961,12 @@
             <p class="text-gray-400 text-sm leading-relaxed mb-4" style="font-family: 'Suisse Intl', sans-serif;">
               Dein Netzwerk für nachhaltiges Lernen und Wachstum. Mit Glymmer baust du mehr als nur eine Community.
             </p>
-            <div class="flex items-center gap-1 mt-auto">
+            <a href="/coaches.html" class="flex items-center gap-1 mt-auto hover:opacity-80 transition">
               <span class="font-bold text-secondary" style="font-family: 'Suisse Intl', sans-serif;">Mehr</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 12h14M12 5l7 7-7 7" stroke="#7167F5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </div>
+            </a>
           </div>
         </div>
         
@@ -973,12 +979,12 @@
               <p class="text-gray-400 text-sm leading-relaxed mb-4" style="font-family: 'Suisse Intl', sans-serif;">
                 Monetarisiere deine Leidenschaft und stärke deine Community.
               </p>
-              <div class="flex items-center gap-1 mt-auto">
+              <a href="/creator.html" class="flex items-center gap-1 mt-auto hover:opacity-80 transition">
                 <span class="font-bold text-secondary" style="font-family: 'Suisse Intl', sans-serif;">Mehr</span>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 12h14M12 5l7 7-7 7" stroke="#7167F5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-              </div>
+              </a>
             </div>
           </div>
           <div class="relative" style="margin-top: 2rem;">
@@ -994,12 +1000,12 @@
             <p class="text-gray-400 text-sm leading-relaxed mb-4" style="font-family: 'Suisse Intl', sans-serif;">
               Dein Motor für Programme, die durchgezogen werden. Mit der Plattform skalierst du intensive Kurse.
             </p>
-            <div class="flex items-center gap-1 mt-auto">
+            <a href="/bootcamps.html" class="flex items-center gap-1 mt-auto hover:opacity-80 transition">
               <span class="font-bold text-secondary" style="font-family: 'Suisse Intl', sans-serif;">Mehr</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 12h14M12 5l7 7-7 7" stroke="#7167F5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </div>
+            </a>
           </div>
         </div>
         
@@ -1011,12 +1017,12 @@
             <p class="text-gray-400 text-sm leading-relaxed mb-4" style="font-family: 'Suisse Intl', sans-serif;">
               Dein Raum für interaktives, skalierbares Lernen. Mit Glymmer gestaltest du 1:1-Sessions und Gruppen.
             </p>
-            <div class="flex items-center gap-1 mt-auto">
+            <a href="/lernraum.html" class="flex items-center gap-1 mt-auto hover:opacity-80 transition">
               <span class="font-bold text-secondary" style="font-family: 'Suisse Intl', sans-serif;">Mehr</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M5 12h14M12 5l7 7-7 7" stroke="#7167F5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </div>
+            </a>
           </div>
         </div>
       </div>
