@@ -1023,25 +1023,12 @@
           <img src="./public/Users/User_6.jpg" alt="User 6" class="w-20 h-20 rounded-full object-cover border-4 border-white">
         </div>
         <div class="flex justify-center mt-6 mb-6">
-          <button class="px-6 py-3 text-sm rounded-full font-medium transition flex items-center gap-2 group" style="color: #2A2A2A; border: 2px solid #2A2A2A; background: transparent;">
+          <button id="mehr-dazu-button" class="px-6 py-3 text-sm rounded-full font-medium transition flex items-center gap-2 group" style="color: #2A2A2A; border: 2px solid #2A2A2A; background: transparent;">
             Mehr dazu
             <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
               <path d="M5 12h14M12 5l7 7-7 7" stroke="#2A2A2A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
-        </div>
-        <div class="space-y-4 text-base md:text-lg leading-relaxed" style="color: #2A2A2A; font-family: 'Suisse Intl', sans-serif;">
-          <p>
-            Ab Januar 2026 wird personalisierte Werbung in Europa immer stärker eingeschränkt: Tracking-Cookies sind standardmäßig aus, viele Nutzer klicken „Nein" – deine Anzeigen auf Instagram & Co. verpuffen, ohne dass du es merkst.
-          </p>
-          <p class="font-medium mt-6">
-            Mit einer eigenen Community bei glymmer:
-          </p>
-          <ul class="space-y-3 ml-4 list-disc list-outside" style="color: #2A2A2A;">
-            <li>Du erreichst deine Follower direkt – ohne Cookies, ohne Algorithmen.</li>
-            <li>Deine Mitglieder sagen aktiv „Ja" zu deinen Inhalten – rechtssicher und transparent.</li>
-            <li>Du besitzt deinen Zugang zu Kunden selbst – egal, was Social-Media-Plattformen morgen ändern.</li>
-          </ul>
         </div>
       </div>
     </div>
@@ -1429,6 +1416,34 @@
     </div>
   </footer>
 
+  <!-- Mehr dazu Modal -->
+  <div id="mehr-dazu-modal" class="fixed inset-0 bg-secondary z-50 hidden items-center justify-center" style="background-color: #7167F5;">
+    <div class="relative w-full h-full flex items-center justify-center px-6 lg:px-8">
+      <!-- Close Button -->
+      <button id="close-modal" class="absolute top-6 right-6 text-white hover:text-white/80 transition" aria-label="Schließen">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      
+      <!-- Content -->
+      <div class="max-w-3xl mx-auto text-center text-white">
+        <p class="text-base md:text-lg mb-6 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+          Ab Januar 2026 wird personalisierte Werbung in Europa immer stärker eingeschränkt: Tracking-Cookies sind standardmäßig aus, viele Nutzer klicken „Nein" – deine Anzeigen auf Instagram & Co. verpuffen, ohne dass du es merkst.
+        </p>
+        <p class="text-base md:text-lg font-medium mb-6" style="font-family: 'Suisse Intl', sans-serif;">
+          Mit einer eigenen Community bei glymmer:
+        </p>
+        <ul class="text-base md:text-lg space-y-3 text-left max-w-2xl mx-auto" style="font-family: 'Suisse Intl', sans-serif;">
+          <li>Du erreichst deine Follower direkt – ohne Cookies, ohne Algorithmen.</li>
+          <li>Deine Mitglieder sagen aktiv „Ja" zu deinen Inhalten – rechtssicher und transparent.</li>
+          <li>Du besitzt deinen Zugang zu Kunden selbst – egal, was Social-Media-Plattformen morgen ändern.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <script>
     // Quote Text Word-by-Word Animation on Scroll
     (function() {
@@ -1482,6 +1497,45 @@
       
       window.addEventListener('scroll', onScroll, { passive: true });
       animateWords(); // Initial check
+    })();
+  </script>
+  <script>
+    // Mehr dazu Modal
+    (function() {
+      const mehrDazuButton = document.getElementById('mehr-dazu-button');
+      const modal = document.getElementById('mehr-dazu-modal');
+      const closeButton = document.getElementById('close-modal');
+      
+      if (!mehrDazuButton || !modal || !closeButton) return;
+      
+      function openModal() {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+      
+      function closeModal() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+      
+      mehrDazuButton.addEventListener('click', openModal);
+      closeButton.addEventListener('click', closeModal);
+      
+      // Close on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+      
+      // Close on click outside content
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
     })();
   </script>
 
