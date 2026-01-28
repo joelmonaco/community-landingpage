@@ -1451,7 +1451,14 @@
 
   <!-- Mehr dazu Modal -->
   <div id="mehr-dazu-modal" class="fixed inset-0 bg-secondary z-50 hidden items-center justify-center modal-overlay" style="background-color: #7167F5;">
-    <div class="relative w-full h-full flex items-center justify-center px-3 lg:px-6">
+    <!-- Background NEWS Text -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none" style="z-index: 1;">
+      <span class="text-[20rem] md:text-[30rem] lg:text-[40rem] font-black leading-none" style="font-family: 'Cal Sans', sans-serif; color: rgba(0, 0, 0, 0.03);">
+        NEWS
+      </span>
+    </div>
+    
+    <div class="relative w-full h-full flex items-center justify-center px-3 lg:px-6" style="z-index: 2;">
       <!-- Close Button -->
       <button id="close-modal" class="absolute top-6 right-6 text-white hover:text-white/80 transition transform hover:rotate-90 duration-300" aria-label="Schließen">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
