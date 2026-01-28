@@ -127,13 +127,15 @@ function applyTranslations(lang) {
       // Preserve SVG icons - only update text content
       const svg = el.querySelector('svg');
       if (svg) {
-        // Find text node or create one
+        // Remove all existing text nodes to avoid duplicates
         const textNodes = Array.from(el.childNodes).filter(node => node.nodeType === Node.TEXT_NODE);
-        if (textNodes.length > 0) {
-          textNodes[0].textContent = text;
+        textNodes.forEach(node => node.remove());
+        
+        // Insert text after SVG
+        if (svg.nextSibling) {
+          el.insertBefore(document.createTextNode(' ' + text), svg.nextSibling);
         } else {
-          // Insert text before SVG
-          el.insertBefore(document.createTextNode(text), svg);
+          el.appendChild(document.createTextNode(' ' + text));
         }
       } else {
         el.textContent = text;

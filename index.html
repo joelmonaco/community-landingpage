@@ -292,23 +292,77 @@
             <!-- Desktop Dropdown Menu -->
             <div id="burger-menu-dropdown" class="hidden md:block absolute top-full left-0 mt-2 bg-white rounded-3xl py-4 px-6 min-w-[200px] opacity-0 invisible transition-all duration-300 transform translate-y-2" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);">
               <nav class="flex flex-col space-y-3">
-                <a href="/features.html" id="nav-features" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Features</a>
+                <a href="/features.html" id="nav-features" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  Features
+                </a>
                 <div class="use-cases-menu-item relative">
                   <a href="/#use-cases" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
                     Use Cases
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                   </a>
                   <div class="use-cases-dropdown">
-                    <a href="/coaches.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Coaches</a>
-                    <a href="/creator.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Creator</a>
-                    <a href="/bootcamps.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Bootcamps</a>
-                    <a href="/lernraum.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Lernräume</a>
+                    <a href="/coaches.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                      </svg>
+                      Für Coaches
+                    </a>
+                    <a href="/creator.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                      </svg>
+                      Für Creator
+                    </a>
+                    <a href="/bootcamps.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        <line x1="8" y1="7" x2="18" y2="7"></line>
+                        <line x1="8" y1="11" x2="18" y2="11"></line>
+                        <line x1="8" y1="15" x2="14" y2="15"></line>
+                      </svg>
+                      Für Bootcamps
+                    </a>
+                    <a href="/lernraum.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                      </svg>
+                      Für Lernräume
+                    </a>
                   </div>
                 </div>
-                <a href="/preise.html" id="nav-pricing" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Preise</a>
-                <a href="/updates.html" id="nav-updates" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Updates</a>
+                <a href="/preise.html" id="nav-pricing" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                  Preise
+                </a>
+                <a href="/updates.html" id="nav-updates" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg>
+                  Updates
+                </a>
               </nav>
             </div>
           </div>
@@ -354,19 +408,80 @@
             </button>
           </div>
           <nav class="flex flex-col space-y-6">
-            <a href="/features.html" id="nav-features-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition">Features</a>
+            <a href="/features.html" id="nav-features-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              Features
+            </a>
             <div class="space-y-3">
-              <a href="/#use-cases" class="text-2xl font-medium text-black/70 font-semibold hover:text-black transition">Use Cases</a>
+              <a href="/#use-cases" class="text-2xl font-medium text-black/70 font-semibold hover:text-black transition flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Use Cases
+              </a>
               <div class="ml-4 space-y-3">
-                <a href="/coaches.html" class="block text-xl font-medium text-black/70 hover:text-black transition">Für Coaches</a>
-                <a href="/creator.html" class="block text-xl font-medium text-black/70 hover:text-black transition">Für Creator</a>
-                <a href="/bootcamps.html" class="block text-xl font-medium text-black/70 hover:text-black transition">Für Bootcamps</a>
-                <a href="/lernraum.html" class="block text-xl font-medium text-black/70 hover:text-black transition">Für Lernräume</a>
+                <a href="/coaches.html" class="block text-xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  Für Coaches
+                </a>
+                <a href="/creator.html" class="block text-xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                  </svg>
+                  Für Creator
+                </a>
+                <a href="/bootcamps.html" class="block text-xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    <line x1="8" y1="7" x2="18" y2="7"></line>
+                    <line x1="8" y1="11" x2="18" y2="11"></line>
+                    <line x1="8" y1="15" x2="14" y2="15"></line>
+                  </svg>
+                  Für Bootcamps
+                </a>
+                <a href="/lernraum.html" class="block text-xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                  </svg>
+                  Für Lernräume
+                </a>
               </div>
             </div>
-            <a href="/preise.html" id="nav-pricing-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition">Preise</a>
-            <a href="/updates.html" id="nav-updates-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition">Updates</a>
-            <a href="/kontakt.html#sales" id="nav-get-started-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition mt-4">Jetzt starten</a>
+            <a href="/preise.html" id="nav-pricing-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              Preise
+            </a>
+            <a href="/updates.html" id="nav-updates-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+              Updates
+            </a>
+            <a href="/kontakt.html#sales" id="nav-get-started-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition mt-4 flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+              Jetzt starten
+            </a>
           </nav>
         </div>
       </div>
@@ -603,7 +718,7 @@
       <div class="flex flex-col mb-40">
         <div class="grid md:grid-cols-12 gap-6 items-start mb-0">
           <div class="md:col-span-8 feature-card rounded-3xl animate-on-scroll delay-100 transition-all overflow-hidden" style="background: linear-gradient(135deg, #6B63D4 0%, #6B63D4 50%, #D4CC00 100%); box-shadow: 0 10px 40px rgba(107, 99, 212, 0.4), 0 10px 40px rgba(212, 204, 0, 0.3); padding: 3rem 3rem 0 3rem;">
-            <h3 class="text-xl font-medium mb-2 text-white" style="font-family: 'Suisse Intl', sans-serif;">Live Video & Workshops</h3>
+            <h3 class="text-3xl font-medium mb-2 text-white" style="font-family: 'Suisse Intl', sans-serif;">Live Video & Workshops</h3>
             <p class="text-white/90 mb-4" style="font-family: 'Suisse Intl', sans-serif;">Führe Webinare, Bootcamps und virtuelle Treffen mit hochwertigen Video-Tools durch.</p>
             <!-- Videocall Visualisierung -->
             <div class="video-call-visualization mt-4 -mb-0">
@@ -623,12 +738,10 @@
             </div>
           </div>
           <div class="md:col-span-4 feature-card p-12 rounded-3xl animate-on-scroll delay-200 transition-all" style="background: linear-gradient(45deg, #6B63D4 0%, #6B63D4 55%, #D4CC00 100%); box-shadow: 0 10px 40px rgba(107, 99, 212, 0.4), 0 10px 40px rgba(212, 204, 0, 0.3);">
-            <h3 class="text-xl font-medium mb-2 text-white" style="font-family: 'Suisse Intl', sans-serif;">Chat & Channels</h3>
-            <p class="text-white/90 mb-4" style="font-family: 'Suisse Intl', sans-serif;">Einfache Kommunikation in privaten und öffentlichen Gruppen.</p>
             <!-- Chat Mockup -->
-            <div class="chat-mockup mt-4 bg-black/20 rounded-xl flex flex-col" style="min-height: 500px;">
-              <div class="flex-1 p-3 space-y-3 overflow-y-auto">
-                <!-- Nachricht 1 - Leni -->
+            <div class="chat-mockup mb-4 bg-black/20 flex flex-col" style="height: 500px; margin-top: -3rem; border-radius: 0 0 1.5rem 1.5rem;">
+              <div id="chat-messages-container" class="flex-1 p-3 space-y-3 overflow-y-auto" style="max-height: calc(500px - 80px);">
+                <!-- Nachricht 1 - Leni (links) -->
                 <div class="flex items-start gap-2 chat-message-1 opacity-0">
                   <img src="./public/User_2.jpg" alt="Leni Welsch" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
                   <div class="flex-1">
@@ -636,15 +749,15 @@
                     <div class="bg-white/20 rounded-lg px-3 py-2 text-sm text-white">Hey, wie war das Webinar? 👏</div>
                   </div>
                 </div>
-                <!-- Nachricht 2 - Isabel -->
-                <div class="flex items-start gap-2 chat-message-2 opacity-0">
+                <!-- Nachricht 2 - Isabel (rechts) -->
+                <div class="flex items-start gap-2 chat-message-2 opacity-0 flex-row-reverse">
                   <img src="./public/User_1.jpg" alt="Isabel Kohr" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
                   <div class="flex-1">
-                    <div class="text-xs text-white/70 mb-1">Isabel Kohr</div>
+                    <div class="text-xs text-white/70 mb-1 text-right">Isabel Kohr</div>
                     <div class="bg-white/20 rounded-lg px-3 py-2 text-sm text-white">Super interessant! 🙏</div>
                   </div>
                 </div>
-                <!-- Nachricht 3 - Leni -->
+                <!-- Nachricht 3 - Leni (links) -->
                 <div class="flex items-start gap-2 chat-message-3 opacity-0">
                   <img src="./public/User_2.jpg" alt="Leni Welsch" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
                   <div class="flex-1">
@@ -652,15 +765,15 @@
                     <div class="bg-white/20 rounded-lg px-3 py-2 text-sm text-white">Können wir das nochmal machen?</div>
                   </div>
                 </div>
-                <!-- Nachricht 4 - Isabel -->
-                <div class="flex items-start gap-2 chat-message-4 opacity-0">
+                <!-- Nachricht 4 - Isabel (rechts) -->
+                <div class="flex items-start gap-2 chat-message-4 opacity-0 flex-row-reverse">
                   <img src="./public/User_1.jpg" alt="Isabel Kohr" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
                   <div class="flex-1">
-                    <div class="text-xs text-white/70 mb-1">Isabel Kohr</div>
+                    <div class="text-xs text-white/70 mb-1 text-right">Isabel Kohr</div>
                     <div class="bg-white/20 rounded-lg px-3 py-2 text-sm text-white">Ja, definitiv! 💭</div>
                   </div>
                 </div>
-                <!-- Nachricht 5 - Leni -->
+                <!-- Nachricht 5 - Leni (links) -->
                 <div class="flex items-start gap-2 chat-message-5 opacity-0">
                   <img src="./public/User_2.jpg" alt="Leni Welsch" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
                   <div class="flex-1">
@@ -672,8 +785,17 @@
               <!-- Chat Eingabefeld -->
               <div class="border-t border-white/20 p-3">
                 <div class="flex items-center gap-2">
-                  <input type="text" placeholder="Nachricht schreiben..." class="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-sm text-white placeholder-white/50 focus:outline-none focus:border-white/40" style="font-family: 'Suisse Intl', sans-serif;">
-                  <button class="bg-white/20 hover:bg-white/30 rounded-lg p-2 transition-colors">
+                  <button class="bg-white/10 hover:bg-white/20 rounded-lg p-2 transition-colors relative group" aria-label="Datei anheften">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="12" y1="5" x2="12" y2="19"></line>
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    <span class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 text-xs text-white bg-black/80 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                      Datei anheften
+                    </span>
+                  </button>
+                  <input id="chat-input" type="text" placeholder="Nachricht schreiben..." class="flex-1 bg-white/10 border-0 rounded-lg px-4 py-2 text-sm text-white placeholder-white/50 focus:outline-none" style="font-family: 'Suisse Intl', sans-serif;">
+                  <button id="chat-send-button" class="bg-white/20 rounded-lg p-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed" disabled>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <line x1="22" y1="2" x2="11" y2="13"></line>
                       <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
@@ -682,12 +804,14 @@
                 </div>
               </div>
             </div>
+            <h3 class="text-3xl font-medium mb-2 text-white" style="font-family: 'Suisse Intl', sans-serif;">Chat & Channels</h3>
+            <p class="text-white/90 mb-4" style="font-family: 'Suisse Intl', sans-serif;">Einfache Kommunikation in privaten und öffentlichen Gruppen.</p>
           </div>
         </div>
-        <div class="grid md:grid-cols-12 gap-6 -mt-32">
+        <div class="grid md:grid-cols-12 gap-6 -mt-24">
           <div class="md:col-span-2"></div>
           <div class="md:col-span-6 feature-card p-12 rounded-3xl animate-on-scroll delay-300 transition-all" style="background: linear-gradient(90deg, #6B63D4 0%, #6B63D4 50%, #D4CC00 100%); box-shadow: 0 10px 40px rgba(107, 99, 212, 0.4), 0 10px 40px rgba(212, 204, 0, 0.3);">
-            <h3 class="text-xl font-medium mb-2 text-white" style="font-family: 'Suisse Intl', sans-serif;">Mediathek & Dateiablage</h3>
+            <h3 class="text-3xl font-medium mb-2 text-white" style="font-family: 'Suisse Intl', sans-serif;">Mediathek & Dateiablage</h3>
             <p class="text-white/90 mb-4" style="font-family: 'Suisse Intl', sans-serif;">Zentraler Speicherplatz für Videos, Dokumente und Kursmaterialien.</p>
             <!-- Dateiablage Mockup -->
             <div class="file-storage-mockup mt-4 bg-black/20 rounded-xl p-4" style="min-height: 200px;">
@@ -1657,6 +1781,72 @@
           closeModal();
         }
       });
+    })();
+  </script>
+  <script>
+    // Chat Send Functionality
+    (function() {
+      const chatInput = document.getElementById('chat-input');
+      const chatSendButton = document.getElementById('chat-send-button');
+      const chatMessagesContainer = document.getElementById('chat-messages-container');
+      
+      if (!chatInput || !chatSendButton || !chatMessagesContainer) return;
+      
+      function updateButtonState() {
+        const hasText = chatInput.value.trim().length > 0;
+        
+        if (hasText) {
+          chatSendButton.disabled = false;
+          chatSendButton.classList.remove('bg-white/20');
+          chatSendButton.classList.add('bg-secondary', 'hover:bg-secondary-hover');
+          chatSendButton.style.boxShadow = '0 4px 20px rgba(113, 103, 245, 0.5)';
+          chatSendButton.querySelector('svg').setAttribute('stroke', 'white');
+        } else {
+          chatSendButton.disabled = true;
+          chatSendButton.classList.remove('bg-secondary', 'hover:bg-secondary-hover');
+          chatSendButton.classList.add('bg-white/20');
+          chatSendButton.style.boxShadow = 'none';
+          chatSendButton.querySelector('svg').setAttribute('stroke', 'white');
+        }
+      }
+      
+      function sendMessage() {
+        const messageText = chatInput.value.trim();
+        if (!messageText) return;
+        
+        // Erstelle neue Nachricht (rechts, wie Isabel)
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'flex items-start gap-2 flex-row-reverse';
+        messageDiv.innerHTML = `
+          <img src="./public/User_1.jpg" alt="Isabel Kohr" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
+          <div class="flex-1">
+            <div class="text-xs text-white/70 mb-1 text-right">Isabel Kohr</div>
+            <div class="bg-white/20 rounded-lg px-3 py-2 text-sm text-white">${messageText}</div>
+          </div>
+        `;
+        
+        // Füge Nachricht hinzu
+        chatMessagesContainer.appendChild(messageDiv);
+        
+        // Leere Input-Feld
+        chatInput.value = '';
+        updateButtonState();
+        
+        // Scrolle nach unten
+        chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+      }
+      
+      chatInput.addEventListener('input', updateButtonState);
+      chatSendButton.addEventListener('click', sendMessage);
+      
+      chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && chatInput.value.trim()) {
+          sendMessage();
+        }
+      });
+      
+      // Initial state
+      updateButtonState();
     })();
   </script>
 
