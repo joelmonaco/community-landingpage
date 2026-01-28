@@ -16,6 +16,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./styles.css">
+  <style>
+    /* Modal Animation */
+    .modal-overlay {
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .modal-overlay.show {
+      opacity: 1;
+    }
+    
+    .modal-content {
+      opacity: 0;
+      transform: scale(0.9) translateY(20px);
+      transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+    }
+    
+    .modal-overlay.show .modal-content {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    
+    #close-modal {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    }
+    
+    .modal-overlay.show #close-modal {
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
   <link rel="canonical" href="https://teech.com/">
   <style>
     @font-face {
@@ -1417,10 +1450,10 @@
   </footer>
 
   <!-- Mehr dazu Modal -->
-  <div id="mehr-dazu-modal" class="fixed inset-0 bg-secondary z-50 hidden items-center justify-center" style="background-color: #7167F5;">
+  <div id="mehr-dazu-modal" class="fixed inset-0 bg-secondary z-50 hidden items-center justify-center modal-overlay" style="background-color: #7167F5;">
     <div class="relative w-full h-full flex items-center justify-center px-6 lg:px-8">
       <!-- Close Button -->
-      <button id="close-modal" class="absolute top-6 right-6 text-white hover:text-white/80 transition" aria-label="Schließen">
+      <button id="close-modal" class="absolute top-6 right-6 text-white hover:text-white/80 transition transform hover:rotate-90 duration-300" aria-label="Schließen">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -1428,7 +1461,7 @@
       </button>
       
       <!-- Content -->
-      <div class="max-w-3xl mx-auto text-center text-white">
+      <div class="max-w-3xl mx-auto text-center text-white modal-content">
         <p class="text-base md:text-lg mb-6 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
           Ab Januar 2026 wird personalisierte Werbung in Europa immer stärker eingeschränkt: Tracking-Cookies sind standardmäßig aus, viele Nutzer klicken „Nein" – deine Anzeigen auf Instagram & Co. verpuffen, ohne dass du es merkst.
         </p>
@@ -1512,12 +1545,20 @@
         modal.classList.remove('hidden');
         modal.classList.add('flex');
         document.body.style.overflow = 'hidden';
+        // Trigger animation
+        setTimeout(() => {
+          modal.classList.add('show');
+        }, 10);
       }
       
       function closeModal() {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-        document.body.style.overflow = '';
+        modal.classList.remove('show');
+        // Wait for animation to complete before hiding
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          document.body.style.overflow = '';
+        }, 500);
       }
       
       mehrDazuButton.addEventListener('click', openModal);
