@@ -857,7 +857,7 @@
   </section>
 
   <!-- App Wireframes Section -->
-  <section class="pt-20 pb-8 bg-white overflow-x-visible relative" style="min-height: 150vh;">
+  <section id="app-wireframes-section" class="pt-20 bg-white overflow-x-visible relative">
     <!-- Header mit App Icon, Headline und Untertitel -->
     <div class="max-w-4xl mx-auto text-center mb-16 px-6">
       <div class="flex justify-center mb-6 animate-on-scroll">
@@ -871,28 +871,34 @@
       </p>
     </div>
     
-    <div class="w-full sticky top-20 overflow-hidden" id="app-slider-container" style="height: calc(100vh - 5rem);">
-      <div class="flex gap-0.5 app-slider" id="app-slider" style="width: fit-content;">
-        <div class="flex-shrink-0" style="width: calc((100vw - 4rem) / 3.5);">
-          <img src="./public/App_Wireframe_1.png" alt="App Wireframe" class="w-full h-auto rounded-[3rem]">
-        </div>
-        <div class="flex-shrink-0" style="width: calc((100vw - 4rem) / 3.5);">
-          <img src="./public/App_Wireframe_2.png" alt="App Wireframe" class="w-full h-auto rounded-[3rem]">
-        </div>
-        <div class="flex-shrink-0" style="width: calc((100vw - 4rem) / 3.5);">
-          <img src="./public/App_Wireframe_3.png" alt="App Wireframe" class="w-full h-auto rounded-[3rem]">
-        </div>
-        <div class="flex-shrink-0" style="width: calc((100vw - 4rem) / 3.5);">
-          <img src="./public/App_Wireframe_4.png" alt="App Wireframe" class="w-full h-auto rounded-[3rem]">
-        </div>
-        <div class="flex-shrink-0" style="width: calc((100vw - 4rem) / 3.5);">
-          <img src="./public/App_Wireframe_5.png" alt="App Wireframe" class="w-full h-auto rounded-[3rem]">
-        </div>
-        <div class="flex-shrink-0" style="width: calc((100vw - 4rem) / 3.5);">
-          <img src="./public/App_Wireframe_6.png" alt="App Wireframe" class="w-full h-auto rounded-[3rem]">
+    <!-- Slider Container mit ausreichend Platz -->
+    <div class="w-full relative" id="app-slider-wrapper">
+      <div class="w-full sticky top-20 overflow-x-hidden overflow-y-hidden" id="app-slider-container" style="height: auto; padding-bottom: 4rem;">
+        <div class="flex gap-0 app-slider items-start" id="app-slider" style="width: fit-content; will-change: transform;">
+          <div class="flex-shrink-0" style="width: calc((100vw - 2rem) / 3); margin-right: -8rem;">
+            <img src="./public/App_Wireframe_1.png" alt="App Wireframe" class="w-full h-auto rounded-[3rem] object-contain" style="max-height: calc(100vh - 9rem);">
+          </div>
+          <div class="flex-shrink-0" style="width: calc((100vw - 2rem) / 3); margin-right: -8rem;">
+            <img src="./public/App_Wireframe_2.png" alt="App Wireframe" class="w-full h-auto rounded-[3rem] object-contain" style="max-height: calc(100vh - 9rem);">
+          </div>
+          <div class="flex-shrink-0" style="width: calc((100vw - 2rem) / 3); margin-right: -8rem;">
+            <img src="./public/App_Wireframe_3.png" alt="App Wireframe" class="w-full h-auto rounded-[3rem] object-contain" style="max-height: calc(100vh - 9rem);">
+          </div>
+          <div class="flex-shrink-0" style="width: calc((100vw - 2rem) / 3); margin-right: -8rem;">
+            <img src="./public/App_Wireframe_4.png" alt="App Wireframe" class="w-full h-auto rounded-[3rem] object-contain" style="max-height: calc(100vh - 9rem);">
+          </div>
+          <div class="flex-shrink-0" style="width: calc((100vw - 2rem) / 3); margin-right: -8rem;">
+            <img src="./public/App_Wireframe_5.png" alt="App Wireframe" class="w-full h-auto rounded-[3rem] object-contain" style="max-height: calc(100vh - 9rem);">
+          </div>
+          <div class="flex-shrink-0" style="width: calc((100vw - 2rem) / 3);">
+            <img src="./public/App_Wireframe_6.png" alt="App Wireframe" class="w-full h-auto rounded-[3rem] object-contain" style="max-height: calc(100vh - 9rem);">
+          </div>
         </div>
       </div>
+      <!-- Spacer für Scroll-Bereich -->
+      <div class="h-[200vh]"></div>
     </div>
+    <div class="pb-32"></div>
   </section>
 
   <!-- Customer Stories Section -->
@@ -1043,37 +1049,41 @@
   <script>
     // App Slider Scroll Animation
     (function() {
-      const appSection = document.querySelector('#app-slider-container')?.closest('section');
+      const appSection = document.getElementById('app-wireframes-section');
+      const sliderWrapper = document.getElementById('app-slider-wrapper');
       const slider = document.getElementById('app-slider');
       
-      if (!appSection || !slider) return;
+      if (!appSection || !sliderWrapper || !slider) return;
       
       function updateSlider() {
-        const rect = appSection.getBoundingClientRect();
-        const sectionTop = rect.top;
-        const sectionHeight = rect.height;
+        const sectionRect = appSection.getBoundingClientRect();
+        const wrapperRect = sliderWrapper.getBoundingClientRect();
+        const sectionTop = sectionRect.top;
+        const sectionBottom = sectionRect.bottom;
         const viewportHeight = window.innerHeight;
         
         // Berechne, ob die Section sichtbar ist
-        if (sectionTop < viewportHeight && sectionTop + sectionHeight > 0) {
+        if (sectionBottom > 0 && sectionTop < viewportHeight) {
           // Berechne die maximale Verschiebung
           const sliderWidth = slider.scrollWidth;
           const containerWidth = window.innerWidth;
           const maxTranslate = Math.max(0, sliderWidth - containerWidth);
           
-          // Berechne den Fortschritt basierend auf der Position der Section im Viewport
-          // Wenn sectionTop = viewportHeight (Section gerade sichtbar), progress = 0 (ganz rechts)
-          // Wenn sectionTop + sectionHeight = 0 (Section komplett durchgescrollt), progress = 1 (ganz links)
-          const scrollableRange = sectionHeight + viewportHeight;
-          const scrolledDistance = viewportHeight - sectionTop;
-          const progress = Math.max(0, Math.min(1, scrolledDistance / Math.max(scrollableRange, 1)));
+          // Berechne den Fortschritt basierend auf dem Scroll-Progress durch die Section
+          // Start: wenn Section oben im Viewport erscheint
+          // Ende: wenn Section komplett durchgescrollt ist
+          const sectionStart = sectionRect.top;
+          const sectionEnd = sectionRect.bottom - viewportHeight;
+          const scrollRange = sectionEnd - sectionStart;
           
-          // Mappe den Fortschritt auf den Slider-Offset
-          // 0 = ganz rechts (kein Offset), 1 = ganz links (maxTranslate)
-          const scrollOffset = progress * maxTranslate;
-          
-          // Wende die Transformation an
-          slider.style.transform = `translateX(-${scrollOffset}px)`;
+          if (scrollRange > 0) {
+            const scrollProgress = Math.max(0, Math.min(1, (viewportHeight - sectionStart) / scrollRange));
+            const scrollOffset = scrollProgress * maxTranslate;
+            slider.style.transform = `translateX(-${scrollOffset}px)`;
+          } else {
+            // Fallback wenn Section zu klein ist
+            slider.style.transform = 'translateX(0)';
+          }
         }
       }
       
@@ -1348,15 +1358,15 @@
   </script>
   
   <!-- Footer -->
-  <footer class="bg-gray-50 border-t border-black/10 py-12 px-6 lg:px-8">
+  <footer class="bg-gray-50 py-12 px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
           <div class="mb-4">
-            <img src="./public/Glymmer_Logo_schwarz.png" alt="Glymmer" class="h-6 w-auto">
+            <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
           </div>
           <p class="text-black/70 text-sm">
-            Deine Community-Plattform für Coaches und Creator
+            Die Community-Plattform für Coaches und Creator
           </p>
         </div>
         <div>
@@ -1372,21 +1382,21 @@
           <h4 class="font-semibold mb-4 text-black">Unternehmen</h4>
           <ul class="space-y-2 text-sm text-black/70">
             <li><a href="/kontakt.html" class="hover:text-black transition">Kontakt</a></li>
-            <li><a href="/kontakt.html#unternehmen" class="hover:text-black transition">Über uns</a></li>
+            <li><a href="https://teech.de/das-sind-wir/" target="_blank" rel="noopener noreferrer" class="hover:text-black transition">Über uns</a></li>
             <li><a href="/faq.html" class="hover:text-black transition">FAQ</a></li>
           </ul>
         </div>
         <div>
           <h4 class="font-semibold mb-4 text-black">Rechtliches</h4>
           <ul class="space-y-2 text-sm text-black/70">
-            <li><a href="/impressum.html" class="hover:text-black transition">Impressum</a></li>
-            <li><a href="/datenschutz.html" class="hover:text-black transition">Datenschutz</a></li>
-            <li><a href="/agb.html" class="hover:text-black transition">AGB</a></li>
+            <li><a href="https://teech.de/impressum/" target="_blank" rel="noopener noreferrer" class="hover:text-black transition">Impressum</a></li>
+            <li><a href="https://teech.de/datenschutz/" target="_blank" rel="noopener noreferrer" class="hover:text-black transition">Datenschutz</a></li>
+            <li><a href="https://teech.de/agb/" target="_blank" rel="noopener noreferrer" class="hover:text-black transition">AGB</a></li>
           </ul>
         </div>
       </div>
       <div class="border-t border-black/10 pt-8 text-center text-sm text-black/70">
-        <p>&copy; 2024 Glymmer. Alle Rechte vorbehalten.</p>
+        <p>&copy; 2026 Glymmer. Alle Rechte vorbehalten.</p>
       </div>
     </div>
   </footer>
