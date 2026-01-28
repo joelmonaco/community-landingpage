@@ -48,6 +48,16 @@
       opacity: 1;
       transform: scale(1);
     }
+    
+    /* Banner Animation */
+    @keyframes scrollBanner {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
   </style>
   <link rel="canonical" href="https://teech.com/">
   <style>
@@ -1068,8 +1078,60 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="py-40 px-6 lg:px-8" style="background-color: #2A2A2A;">
-    <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+  <section class="py-40 px-6 lg:px-8 relative overflow-hidden" style="background-color: #2A2A2A;">
+    <!-- Animated Banner -->
+    <div class="absolute inset-0 flex items-start pointer-events-none overflow-hidden" style="z-index: 9999;">
+      <div class="banner-container" style="position: absolute; width: 200%; top: -30px; left: -50%; transform: rotate(-2deg); background-color: #7167F5; padding: 40px 0;">
+        <div class="banner-content flex items-center whitespace-nowrap" style="animation: scrollBanner 20s linear infinite;">
+          <span class="banner-text" style="display: inline-flex; align-items: center; gap: 12px; padding: 0 40px; font-size: 2rem; font-weight: 700; color: #2A2A2A; font-family: 'Cal Sans', sans-serif;">
+            GROW YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            GROW YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            GROW YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            GROW YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            GROW YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <!-- Duplikat für nahtlose Animation -->
+          <span class="banner-text" style="display: inline-flex; align-items: center; gap: 12px; padding: 0 40px; font-size: 2rem; font-weight: 700; color: #2A2A2A; font-family: 'Cal Sans', sans-serif;">
+            GROW YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            GROW YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            GROW YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            GROW YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            GROW YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-4xl mx-auto text-center animate-on-scroll relative" style="z-index: 1;">
       <h2 id="cta-title" class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="color: #ffffff; font-family: 'Cal Sans', sans-serif;">
         Bereit loszulegen?
       </h2>
