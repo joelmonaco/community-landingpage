@@ -150,8 +150,13 @@ function applyTranslations(lang) {
   const heroSubtitle = document.getElementById('hero-subtitle');
   if (heroSubtitle) heroSubtitle.textContent = t.hero.subtitle;
   
-  const heroCtaStart = document.getElementById('hero-cta-start');
-  if (heroCtaStart) {
+  // Update both "Jetzt starten" buttons (header and hero)
+  const heroCtaStartButtons = [
+    document.getElementById('hero-cta-start'),
+    document.getElementById('hero-cta-start-hero')
+  ].filter(Boolean);
+  
+  heroCtaStartButtons.forEach(heroCtaStart => {
     // Preserve SVG icon - only update text content
     const svg = heroCtaStart.querySelector('svg');
     if (svg) {
@@ -164,7 +169,7 @@ function applyTranslations(lang) {
     } else {
       heroCtaStart.textContent = t.hero.ctaStart;
     }
-  }
+  });
   
   const heroCtaSales = document.getElementById('hero-cta-sales');
   if (heroCtaSales) heroCtaSales.textContent = t.hero.ctaSales;
