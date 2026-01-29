@@ -377,32 +377,60 @@
 
 /* ===== Platform Preview (Personalisiere Deine Plattform) ===== */
 
-/* Einzelne Boxen – gleiche Füllfarbe wie CTA „Bereit loszulegen?“ (#2A2A2A), Schatten gleichmäßig */
+/* Einzelne Boxen – Hintergrund #eceaf5, ohne Schatten */
 .platform-control-box {
   border: none;
-  background-color: #2A2A2A;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.04), 0 0 40px rgba(0, 0, 0, 0.02);
+  background-color: #eceaf5;
+  box-shadow: none;
 }
 
-.platform-control-box label,
-.platform-control-box .text-black\/70,
-.platform-control-box .text-black\/60,
-.platform-control-box .text-black\/50 {
-  color: rgba(255, 255, 255, 0.9) !important;
+/* Farbfelder Button-Farbe & Hintergrundfarbe: ohne Rand, weicher Schatten, größer, runde Ecken */
+.platform-color-input {
+  width: 4rem;
+  height: 4rem;
+  min-width: 4rem;
+  min-height: 4rem;
+  padding: 0;
+  border: none !important;
+  background: transparent !important;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08), 0 4px 24px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.platform-color-input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+.platform-color-input::-webkit-color-swatch {
+  border: none;
+  border-radius: 1rem;
+}
+.platform-color-input::-moz-color-swatch {
+  border: none;
+  border-radius: 1rem;
 }
 
-.platform-control-box button#platform-logo-reset {
-  color: rgba(255, 255, 255, 0.6);
+/* Logo-Hochladen-Button: gleiche Größe und Form wie Farbfelder, mit Hochladen-Icon */
+.platform-logo-upload {
+  width: 4rem;
+  height: 4rem;
+  min-width: 4rem;
+  min-height: 4rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08), 0 4px 24px rgba(0, 0, 0, 0.05);
+}
+.platform-logo-upload:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 6px 28px rgba(0, 0, 0, 0.06);
 }
 
-.platform-control-box button#platform-logo-reset:hover {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* Mockup: kein Rand, Schatten gleichmäßig um das Mockup herum, minimal breiter */
+/* Mockup: kein Rand, Schatten minimal kräftiger */
 .platform-preview-shadow {
   border: none;
-  box-shadow: 0 0 32px rgba(0, 0, 0, 0.05), 0 0 64px rgba(0, 0, 0, 0.025);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.08), 0 0 80px rgba(0, 0, 0, 0.04);
 }
 
 #platform-preview-frame {
@@ -464,6 +492,74 @@
 
 .platform-preview-frame .platform-composer [contenteditable] {
   cursor: default;
+}
+
+/* Dark Mode Vorschau */
+#platform-preview-frame.platform-preview-dark #platform-preview-inner,
+#platform-preview-frame.platform-preview-dark #platform-main-bg {
+  background: linear-gradient(to bottom, #1a1a2e 0%, #16213e 100%);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-sidebar {
+  background: rgba(22, 33, 62, 0.98);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-nav-channel,
+#platform-preview-frame.platform-preview-dark .platform-nav-item,
+#platform-preview-frame.platform-preview-dark .platform-sidebar .platform-nav-channel,
+#platform-preview-frame.platform-preview-dark .platform-sidebar .platform-nav-item {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-nav-channel:hover,
+#platform-preview-frame.platform-preview-dark .platform-nav-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-nav-channel:first-of-type {
+  color: var(--platform-btn);
+  background: color-mix(in srgb, var(--platform-btn) 20%, transparent);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-sidebar .p-3.border-t span,
+#platform-preview-frame.platform-preview-dark .platform-events,
+#platform-preview-frame.platform-preview-dark .platform-events h4,
+#platform-preview-frame.platform-preview-dark .platform-events p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-events {
+  background: rgba(22, 33, 62, 0.9);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-composer,
+#platform-preview-frame.platform-preview-dark .platform-post {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-composer [contenteditable],
+#platform-preview-frame.platform-preview-dark .platform-post p,
+#platform-preview-frame.platform-preview-dark .platform-post .text-black\/80 {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-post .text-black\/50,
+#platform-preview-frame.platform-preview-dark input[type="search"] {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#platform-preview-frame.platform-preview-dark input[type="search"] {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-messages-toggle {
+  background: rgba(22, 33, 62, 0.98);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 @media (max-width: 1024px) {
@@ -681,10 +777,10 @@
   box-shadow: 0 4px 20px rgba(230, 227, 4, 0.5);
 }
 
-/* Customer Stories: Name transparent wenn nicht ausgewählt, dunkel wenn ausgewählt (heller Kasten) */
+/* Customer Stories: Name transparent wenn nicht ausgewählt, weiß wenn ausgewählt (dunkler Kasten #2A2A2A) */
 .customer-story-trigger .customer-story-name {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.6);
 }
 .customer-story-trigger[aria-pressed="true"] .customer-story-name {
-  color: #000;
+  color: #fff;
 }

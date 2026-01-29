@@ -1031,7 +1031,7 @@
         <!-- Creator 1 & 2 übereinander -->
         <div class="flex flex-col gap-0 animate-on-scroll slide-in-right" style="flex: 0 0 auto;">
           <div class="relative">
-            <img src="./public/Use%20Cases/Creator_1.png" alt="Für Creator" class="rounded-[2.5rem]" style="filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.15)); width: 300px; height: auto; object-fit: cover;">
+            <img src="./public/Use%20Cases/Creator_2.png" alt="Für Creator" class="rounded-[2.5rem]" style="filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.15)); width: 300px; height: auto; object-fit: cover;">
             <div class="absolute bottom-6 left-6 right-6 bg-white rounded-[2rem] p-6 flex flex-col" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12), 0 4px 15px rgba(0, 0, 0, 0.08);">
               <h3 class="text-2xl font-medium mb-2 text-black" style="font-family: 'Suisse Intl', sans-serif;">Für Creator</h3>
               <p class="text-gray-400 text-sm leading-relaxed mb-4" style="font-family: 'Suisse Intl', sans-serif;">
@@ -1046,7 +1046,7 @@
             </div>
           </div>
           <div class="relative" style="margin-top: 2rem;">
-            <img src="./public/Use%20Cases/Creator_2.png" alt="Creator" class="rounded-[2.5rem]" style="filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.15)); width: 300px; height: auto; object-fit: cover;">
+            <img src="./public/Use%20Cases/Creator_1.png" alt="Creator" class="rounded-[2.5rem]" style="filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.15)); width: 300px; height: auto; object-fit: cover;">
           </div>
         </div>
         
@@ -1088,7 +1088,7 @@
   </section>
 
   <!-- Personalisiere Deine Plattform Section -->
-  <section id="personalize" class="py-20 px-6 lg:px-8 bg-white">
+  <section id="personalize" class="pt-28 pb-20 px-6 lg:px-8 bg-white">
     <div class="max-w-[81rem] mx-auto">
       <div class="text-center mb-16 animate-on-scroll pt-12">
         <h2 id="personalize-title" class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Cal Sans', sans-serif;">
@@ -1100,46 +1100,75 @@
       </div>
       
       <!-- Personalization Controls -->
-      <div class="platform-personalize-controls mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 animate-on-scroll delay-100">
-        <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-center">
-          <label class="block text-sm font-medium mb-3" style="font-family: 'Suisse Intl', sans-serif;">Button-Farbe</label>
+      <div class="platform-personalize-controls mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 animate-on-scroll delay-100">
+        <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-start">
+          <label class="block text-lg font-medium text-black/70 mb-3" style="font-family: 'Cal Sans', sans-serif;">Button-Farbe</label>
           <div class="flex items-center justify-center">
-            <input type="color" id="platform-btn-color" value="#7167F5" class="w-10 h-10 rounded-lg border border-black/15 cursor-pointer bg-transparent">
+            <input type="color" id="platform-btn-color" value="#7167F5" class="platform-color-input">
           </div>
         </div>
-        <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-center">
-          <label class="block text-sm font-medium mb-3" style="font-family: 'Suisse Intl', sans-serif;">Hintergrund-Verlauf (oben)</label>
+        <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-start">
+          <label class="block text-lg font-medium text-black/70 mb-3" style="font-family: 'Cal Sans', sans-serif;">Hintergrundfarbe</label>
           <div class="flex items-center justify-center gap-2">
-            <input type="color" id="platform-bg-top" value="#f0eeff" class="w-10 h-10 rounded-lg border border-black/15 cursor-pointer bg-transparent">
+            <input type="color" id="platform-bg-top" value="#f0eeff" class="platform-color-input">
           </div>
         </div>
-        <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-center">
-          <label class="block text-sm font-medium mb-3" style="font-family: 'Suisse Intl', sans-serif;">Logo</label>
-          <div class="flex items-center justify-center gap-2 flex-wrap">
-            <label for="platform-logo-file" class="platform-logo-upload cursor-pointer px-3 py-2 rounded-lg border border-white/30 text-sm hover:bg-white/10 transition-colors" style="font-family: 'Suisse Intl', sans-serif;">Hochladen</label>
+        <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-start">
+          <label class="block text-lg font-medium text-black/70 mb-3" style="font-family: 'Cal Sans', sans-serif;">Logo</label>
+          <div class="flex items-center justify-center">
+            <label for="platform-logo-file" class="platform-logo-upload cursor-pointer flex items-center justify-center text-black/60 hover:text-black/80 hover:bg-black/5 transition-colors">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            </label>
             <input type="file" id="platform-logo-file" accept="image/*" class="hidden">
-            <button type="button" id="platform-logo-reset" class="text-sm">Zurücksetzen</button>
           </div>
         </div>
-        <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-center">
-          <label class="block text-sm font-medium mb-3" style="font-family: 'Suisse Intl', sans-serif;">Menüpunkte</label>
-          <div class="flex flex-wrap gap-3 justify-center">
-            <label class="flex items-center gap-1.5 cursor-pointer text-sm">
-              <input type="checkbox" id="platform-menu-kalender" checked class="rounded border-white/40">
+        <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-start">
+          <label class="block text-lg font-medium text-black/70 mb-3" style="font-family: 'Cal Sans', sans-serif;">Menüpunkte</label>
+          <div class="flex flex-col gap-2.5 items-start">
+            <label class="platform-menu-check flex items-center gap-3 cursor-pointer text-sm text-black/70">
+              <input type="checkbox" id="platform-menu-kalender" checked class="sr-only peer">
+              <span class="platform-menu-check-btn w-6 h-6 rounded-full border-2 border-black/20 flex items-center justify-center flex-shrink-0 transition-colors peer-checked:bg-[#7167F5] peer-checked:border-[#7167F5] peer-checked:[&_svg]:opacity-100 peer-checked:[&_svg]:text-white">
+                <svg class="w-3.5 h-3.5 opacity-0 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
               Kalender
             </label>
-            <label class="flex items-center gap-1.5 cursor-pointer text-sm">
-              <input type="checkbox" id="platform-menu-mediathek" checked class="rounded border-white/40">
+            <label class="platform-menu-check flex items-center gap-3 cursor-pointer text-sm text-black/70">
+              <input type="checkbox" id="platform-menu-mediathek" checked class="sr-only peer">
+              <span class="platform-menu-check-btn w-6 h-6 rounded-full border-2 border-black/20 flex items-center justify-center flex-shrink-0 transition-colors peer-checked:bg-[#7167F5] peer-checked:border-[#7167F5] peer-checked:[&_svg]:opacity-100 peer-checked:[&_svg]:text-white">
+                <svg class="w-3.5 h-3.5 opacity-0 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
               Mediathek
             </label>
-            <label class="flex items-center gap-1.5 cursor-pointer text-sm">
-              <input type="checkbox" id="platform-menu-benachrichtigung" checked class="rounded border-white/40">
+            <label class="platform-menu-check flex items-center gap-3 cursor-pointer text-sm text-black/70">
+              <input type="checkbox" id="platform-menu-benachrichtigung" checked class="sr-only peer">
+              <span class="platform-menu-check-btn w-6 h-6 rounded-full border-2 border-black/20 flex items-center justify-center flex-shrink-0 transition-colors peer-checked:bg-[#7167F5] peer-checked:border-[#7167F5] peer-checked:[&_svg]:opacity-100 peer-checked:[&_svg]:text-white">
+                <svg class="w-3.5 h-3.5 opacity-0 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
               Benachrichtigungen
             </label>
-            <label class="flex items-center gap-1.5 cursor-pointer text-sm">
-              <input type="checkbox" id="platform-menu-chat" checked class="rounded border-white/40">
+            <label class="platform-menu-check flex items-center gap-3 cursor-pointer text-sm text-black/70">
+              <input type="checkbox" id="platform-menu-chat" checked class="sr-only peer">
+              <span class="platform-menu-check-btn w-6 h-6 rounded-full border-2 border-black/20 flex items-center justify-center flex-shrink-0 transition-colors peer-checked:bg-[#7167F5] peer-checked:border-[#7167F5] peer-checked:[&_svg]:opacity-100 peer-checked:[&_svg]:text-white">
+                <svg class="w-3.5 h-3.5 opacity-0 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
               Chat
             </label>
+          </div>
+        </div>
+        <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-start">
+          <label class="block text-lg font-medium text-black/70 mb-3" style="font-family: 'Cal Sans', sans-serif;">Darstellung</label>
+          <div class="flex items-center justify-center gap-3">
+            <span class="text-black/60" aria-hidden="true">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </span>
+            <label class="relative inline-flex h-8 w-14 flex-shrink-0 cursor-pointer items-center platform-dark-mode-switch">
+              <input type="checkbox" id="platform-dark-mode" class="sr-only peer" value="dark">
+              <div class="h-8 w-14 rounded-full bg-black/15 transition-colors peer-checked:bg-[#2a2a2a]"></div>
+              <div class="absolute left-1 top-1 h-6 w-6 rounded-full border border-black/10 bg-white shadow-sm transition-transform peer-checked:translate-x-6"></div>
+            </label>
+            <span class="text-black/60" aria-hidden="true">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </span>
           </div>
         </div>
       </div>
@@ -1372,71 +1401,71 @@
       </p>
     </div>
   </div>
-  <section id="stories" class="pt-20 pb-20 px-6 lg:px-8 relative z-10 bg-white">
-    <div class="absolute left-6 lg:left-8 right-6 lg:right-8 top-0 bottom-0 overflow-hidden bg-gray-50 rounded-[3rem] shadow-lg" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);"></div>
+  <section id="stories" class="pt-16 pb-16 px-6 lg:px-8 relative z-10 bg-white">
+    <div class="absolute left-6 lg:left-8 right-6 lg:right-8 top-0 bottom-0 overflow-hidden rounded-[3rem]" style="background: linear-gradient(180deg, #262626 0%, #2A2A2A 50%, #2E2E2E 100%); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);"></div>
     <div class="w-full relative z-10" style="overflow: hidden; border-radius: 3rem;">
       <div class="grid md:grid-cols-12 gap-8 px-6 lg:px-8 py-8">
         <!-- Links: Namen + Headlines -->
-        <div class="md:col-span-4 flex flex-col gap-6">
+        <div class="md:col-span-5 flex flex-col gap-6 justify-center">
           <button type="button" class="customer-story-trigger text-left pl-5 py-3 focus:outline-none focus:ring-0 border-l-4 transition-colors duration-200" data-story="biyon" aria-pressed="true" style="border-color: #7167F5;">
             <span class="customer-story-name text-2xl font-normal block mb-1 transition-colors duration-200" style="font-family: 'Cal Sans', sans-serif;">Biyon Kattilathu</span>
-            <span class="text-base md:text-lg font-normal text-black/70" style="font-family: 'Suisse Intl', sans-serif;">baut seine Community auf</span>
+            <span class="text-base md:text-lg font-normal text-white/80" style="font-family: 'Suisse Intl', sans-serif;">baut seine Community auf</span>
           </button>
-          <button type="button" class="customer-story-trigger text-left pl-5 py-3 focus:outline-none focus:ring-0 border-l-4 transition-colors duration-200" data-story="bgb" aria-pressed="false" style="border-color: rgba(0, 0, 0, 0.15);">
+          <button type="button" class="customer-story-trigger text-left pl-5 py-3 focus:outline-none focus:ring-0 border-l-4 transition-colors duration-200" data-story="bgb" aria-pressed="false" style="border-color: rgba(255, 255, 255, 0.3);">
             <span class="customer-story-name text-2xl font-normal block mb-1 transition-colors duration-200" style="font-family: 'Cal Sans', sans-serif;">Baby Got Business</span>
-            <span class="text-base md:text-lg font-normal text-black/70" style="font-family: 'Suisse Intl', sans-serif;">nutzt gylmmer für ihre intensiven Bootcamps</span>
+            <span class="text-base md:text-lg font-normal text-white/80" style="font-family: 'Suisse Intl', sans-serif;">nutzt gylmmer für ihre intensiven Bootcamps</span>
           </button>
-          <button type="button" class="customer-story-trigger text-left pl-5 py-3 focus:outline-none focus:ring-0 border-l-4 transition-colors duration-200" data-story="mak" aria-pressed="false" style="border-color: rgba(0, 0, 0, 0.15);">
+          <button type="button" class="customer-story-trigger text-left pl-5 py-3 focus:outline-none focus:ring-0 border-l-4 transition-colors duration-200" data-story="mak" aria-pressed="false" style="border-color: rgba(255, 255, 255, 0.3);">
             <span class="customer-story-name text-2xl font-normal block mb-1 transition-colors duration-200" style="font-family: 'Cal Sans', sans-serif;">MAK Nachhilfe</span>
-            <span class="text-base md:text-lg font-normal text-black/70" style="font-family: 'Suisse Intl', sans-serif;">digitalisiert Lernförderung</span>
+            <span class="text-base md:text-lg font-normal text-white/80" style="font-family: 'Suisse Intl', sans-serif;">digitalisiert Lernförderung</span>
           </button>
         </div>
         <!-- Rechts: Bild oben, Beschreibung darunter -->
-        <div class="md:col-span-8 relative min-h-[400px]">
-          <div id="story-content-biyon" class="customer-story-content absolute inset-0 flex flex-col gap-6 transition-opacity duration-300" data-story="biyon">
-            <div class="w-24 h-24 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
+        <div class="md:col-span-7 relative min-h-[520px] py-2 lg:py-3">
+          <div id="story-content-biyon" class="customer-story-content absolute inset-0 flex flex-col gap-6 justify-center items-center text-center transition-opacity duration-300 p-6 rounded-2xl" data-story="biyon" style="background-color: #7167F5;">
+            <div class="w-40 h-40 rounded-full overflow-hidden bg-white/20 flex-shrink-0">
               <img src="./public/Customers/Biyon_Profil.jpg" alt="Biyon Kattilathu" class="w-full h-full object-cover">
             </div>
             <div class="flex-shrink-0">
               <img src="./public/Customers/Biyon_Logo.png" alt="Biyon Logo" class="h-12 w-auto object-contain">
             </div>
             <div>
-              <p class="text-base font-medium text-black mb-3" style="font-family: 'Suisse Intl', sans-serif;">
+              <p class="text-base font-medium text-white mb-3" style="font-family: 'Suisse Intl', sans-serif;">
                 Team Selbstliebe – Exklusiver Raum für Wachstum und echte Verbindungen.
               </p>
-              <p class="text-sm text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+              <p class="text-sm text-white/90 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
                 Biyon Kattilathu hat mit gylimmer seine "Team Selbstliebe" Community aufgebaut – einen geschützten Ort voller Inspiration, Austausch und exklusiver Inhalte. Er nutzt die Plattform für monatliche Live-Sessions, Videos, Voice-Nachrichten und Chats, um Mitglieder auf ihrem Weg zu mehr Selbstliebe zu stärken. So entstand aus seiner Vision rund um Achtsamkeit und Lebensfreude eine Community, die Vertrauen und gegenseitige Unterstützung fördert.
               </p>
             </div>
           </div>
-          <div id="story-content-bgb" class="customer-story-content absolute inset-0 flex flex-col gap-6 opacity-0 pointer-events-none transition-opacity duration-300" data-story="bgb">
-            <div class="w-24 h-24 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
+          <div id="story-content-bgb" class="customer-story-content absolute inset-0 flex flex-col gap-6 justify-center items-center text-center opacity-0 pointer-events-none transition-opacity duration-300 p-6 rounded-2xl" data-story="bgb" style="background-color: #c18bd0;">
+            <div class="w-40 h-40 rounded-full overflow-hidden bg-white/20 flex-shrink-0">
               <img src="./public/Customers/BGB_Profil.jpg" alt="Baby got Business" class="w-full h-full object-cover">
             </div>
             <div class="flex-shrink-0">
               <img src="./public/Customers/BGB_Logo.png" alt="Baby got Business Logo" class="h-12 w-auto object-contain">
             </div>
             <div>
-              <p class="text-base font-medium text-black mb-3" style="font-family: 'Suisse Intl', sans-serif;">
+              <p class="text-base font-medium text-white mb-3" style="font-family: 'Suisse Intl', sans-serif;">
                 Social-Media-Bootcamps – Live-Sessions, Feedback und Community in einem.
               </p>
-              <p class="text-sm text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+              <p class="text-sm text-white/90 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
                 Baby got Business hat mit glymmer ihre 10-wöchigen Social-Media-Bootcamps umgesetzt – ein Programm mit Live-Intensiv-Sessions, Workbooks und persönlichem Feedback. Sie veranstalten die Kurse über die Plattform, um Professionals, Gründern und Creatorn topaktuelles Wissen zu Strategy, Content und KPIs zu vermitteln. So schaffen sie nahtlosen Austausch, Alumni-Netzwerk und effizientes Lernen für nachhaltigen Erfolg.
               </p>
             </div>
           </div>
-          <div id="story-content-mak" class="customer-story-content absolute inset-0 flex flex-col gap-6 opacity-0 pointer-events-none transition-opacity duration-300" data-story="mak">
-            <div class="w-24 h-24 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
+          <div id="story-content-mak" class="customer-story-content absolute inset-0 flex flex-col gap-6 justify-center items-center text-center opacity-0 pointer-events-none transition-opacity duration-300 p-6 rounded-2xl" data-story="mak" style="background-color: #c3b34b;">
+            <div class="w-40 h-40 rounded-full overflow-hidden bg-white/20 flex-shrink-0">
               <img src="./public/Customers/MAK_Profil.png" alt="MAK Nachhilfe" class="w-full h-full object-cover">
             </div>
             <div class="flex-shrink-0">
               <img src="./public/Customers/MAK_Logo.png" alt="MAK Nachhilfe Logo" class="h-12 w-auto object-contain">
             </div>
             <div>
-              <p class="text-base font-medium text-black mb-3" style="font-family: 'Suisse Intl', sans-serif;">
+              <p class="text-base font-medium text-white mb-3" style="font-family: 'Suisse Intl', sans-serif;">
                 Digitale Nachhilfe – Individuelle Sessions und Gruppenunterricht online.
               </p>
-              <p class="text-sm text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+              <p class="text-sm text-white/90 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
                 MAK Nachhilfe setzt glymmer für ihre Online-Nachhilfe ein – vom 1-zu-1-Unterricht bis zu Gruppenkursen mit interaktiver Tafel und Materialien. Sie nutzen den Live Room, um Wissen aufzubauen, Selbstvertrauen zu stärken und flexibel von zu Hause aus zu unterrichten. So entsteht eine nahtlose Plattform für Schüler und Lehrer mit einfachem Zugriff auf alle Inhalte.
               </p>
             </div>
@@ -1635,13 +1664,14 @@
       const btnColor = document.getElementById('platform-btn-color');
       const bgTop = document.getElementById('platform-bg-top');
       const logoFile = document.getElementById('platform-logo-file');
-      const logoReset = document.getElementById('platform-logo-reset');
       const previewLogo = document.getElementById('platform-preview-logo');
-      const defaultLogoUrl = './public/Glymmer_Logo_Dunkel.png';
+      const defaultLogoDark = './public/Glymmer_Logo_Dunkel.png';
+      const defaultLogoLight = './public/Glymmer_Logo_weiss.png';
       const menuKalender = document.getElementById('platform-menu-kalender');
       const menuMediathek = document.getElementById('platform-menu-mediathek');
       const menuBenachrichtigung = document.getElementById('platform-menu-benachrichtigung');
       const menuChat = document.getElementById('platform-menu-chat');
+      const darkMode = document.getElementById('platform-dark-mode');
 
       if (!frame) return;
 
@@ -1672,16 +1702,6 @@
           }
         });
       }
-      if (logoReset && previewLogo) {
-        logoReset.addEventListener('click', function() {
-          if (previewLogo.dataset.customUrl) {
-            URL.revokeObjectURL(previewLogo.dataset.customUrl);
-            delete previewLogo.dataset.customUrl;
-          }
-          previewLogo.src = defaultLogoUrl;
-          if (logoFile) logoFile.value = '';
-        });
-      }
 
       function toggleMenuItem(checkbox, selector, alsoHide) {
         if (!checkbox || !frame) return;
@@ -1699,6 +1719,19 @@
       toggleMenuItem(menuMediathek, '.platform-nav-item.platform-menu-mediathek');
       toggleMenuItem(menuBenachrichtigung, '.platform-nav-item.platform-menu-benachrichtigung');
       toggleMenuItem(menuChat, '.platform-nav-item.platform-menu-chat', '#platform-messages-area');
+
+      if (darkMode && previewLogo) {
+        function updateDarkMode() {
+          const isDark = darkMode.checked;
+          frame.classList.toggle('platform-preview-dark', isDark);
+          if (previewLogo.dataset.customUrl) {
+            return;
+          }
+          previewLogo.src = isDark ? defaultLogoLight : defaultLogoDark;
+        }
+        darkMode.addEventListener('change', updateDarkMode);
+        updateDarkMode();
+      }
     })();
   </script>
   <script>
@@ -2246,7 +2279,7 @@
         triggers.forEach(function(btn) {
           const isActive = btn.getAttribute('data-story') === storyId;
           btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-          btn.style.borderColor = isActive ? '#7167F5' : 'rgba(0, 0, 0, 0.15)';
+          btn.style.borderColor = isActive ? '#7167F5' : 'rgba(255, 255, 255, 0.3)';
         });
       }
 
