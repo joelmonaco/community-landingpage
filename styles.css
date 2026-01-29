@@ -450,6 +450,11 @@
   background: linear-gradient(to bottom, var(--platform-bg-top) 0%, #ffffff 100%);
 }
 
+/* Weicher dunkler Schatten nur auf der rechten Seite der Sidebar */
+.platform-sidebar-shadow {
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.12), 8px 0 40px rgba(0, 0, 0, 0.1), 12px 0 56px rgba(0, 0, 0, 0.06);
+}
+
 #platform-main-bg {
   background: linear-gradient(to bottom, var(--platform-bg-top) 0%, #ffffff 100%);
 }
