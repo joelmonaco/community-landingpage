@@ -284,6 +284,36 @@
     #platform-control-button-farbe.platform-wiggle {
       animation: platform-wiggle 0.6s ease-in-out;
     }
+
+    /* FAQ Accordion: weiße Boxen, nur Frage sichtbar, Antwort smooth ausklappbar */
+    .faq-accordion-item summary::-webkit-details-marker { display: none; }
+    .faq-accordion-item summary::marker { content: none; }
+    .faq-accordion-item[open] .faq-accordion-icon { transform: rotate(180deg); }
+    .faq-accordion-icon { transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    .faq-accordion-answer-wrapper {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .faq-accordion-answer-inner {
+      display: block;
+    }
+    .faq-accordion-answer-inner .faq-accordion-answer {
+      opacity: 0;
+      transition: opacity 0.4s ease-out 0.1s;
+    }
+    .faq-accordion-item[open] .faq-accordion-answer-inner .faq-accordion-answer {
+      opacity: 1;
+    }
+    .faq-accordion-item {
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+    .faq-accordion-answer {
+      border: none !important;
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -2350,49 +2380,115 @@
     </div>
   </div>
 
-  <!-- FAQ Modal (lila wie Mehr dazu) -->
+  <!-- FAQ Modal (lila wie Mehr dazu, Content vertikal zentriert) -->
   <div id="faq-modal" class="fixed inset-0 z-50 hidden items-center justify-center modal-overlay overflow-y-auto" style="background-color: #7167F5;">
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none" style="z-index: 1;">
-      <span class="text-[15rem] md:text-[25rem] lg:text-[35rem] font-black leading-none" style="font-family: 'Cal Sans', sans-serif; color: rgba(0, 0, 0, 0.03);">
+      <span class="text-[22rem] md:text-[32rem] lg:text-[42rem] xl:text-[52rem] font-black leading-none" style="font-family: 'Cal Sans', sans-serif; color: rgba(0, 0, 0, 0.03);">
         FAQ
       </span>
     </div>
-    <div class="relative w-full min-h-full flex items-center justify-center px-3 lg:px-6 py-24" style="z-index: 2;">
-      <button id="close-faq-modal" class="fixed top-6 right-6 text-white hover:text-white/80 transition transform hover:rotate-90 duration-300 z-[60] p-2 rounded-full hover:bg-white/10" aria-label="Schließen">
+    <div class="relative w-full flex items-center justify-center px-3 lg:px-6 py-12 min-h-full" style="z-index: 2;">
+      <button id="close-faq-modal" class="fixed top-6 right-6 text-white z-[60] p-2 rounded-full" aria-label="Schließen">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
       </button>
-      <div class="max-w-4xl mx-auto text-left text-white modal-content w-full">
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-10 leading-normal" style="font-family: 'Cal Sans', sans-serif; color: white;">
-          FAQ zu Glymmer
+      <div class="max-w-4xl mx-auto text-left modal-content w-full">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 leading-normal text-white" style="font-family: 'Cal Sans', sans-serif;">
+          Frequently Asked Questions
         </h2>
-        <div class="space-y-6">
-          <div class="faq-modal-item">
-            <h3 class="text-xl font-semibold mb-2" style="font-family: 'Suisse Intl', sans-serif;">Was ist Glymmer?</h3>
-            <p class="text-white/90 text-base leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">Glymmer ist eine moderne Community-Plattform für Coaches und Creator. Du kannst damit eine lebendige Community aufbauen, Content verkaufen und deine Mitglieder engagieren – alles in einer Plattform.</p>
-          </div>
-          <div class="faq-modal-item">
-            <h3 class="text-xl font-semibold mb-2" style="font-family: 'Suisse Intl', sans-serif;">Wie funktioniert die Anmeldung?</h3>
-            <p class="text-white/90 text-base leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">Die Anmeldung ist einfach und schnell. Klicke auf „Jetzt starten“, erstelle dein Konto und wähle dein passendes Paket. Du kannst 14 Tage kostenlos testen, ohne Kreditkarte.</p>
-          </div>
-          <div class="faq-modal-item">
-            <h3 class="text-xl font-semibold mb-2" style="font-family: 'Suisse Intl', sans-serif;">Kann ich meine Community personalisieren?</h3>
-            <p class="text-white/90 text-base leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">Ja, Glymmer bietet umfangreiche Personalisierungsmöglichkeiten. Du kannst das Design anpassen, eigene Domains verwenden und die Plattform nach deinen Wünschen gestalten.</p>
-          </div>
-          <div class="faq-modal-item">
-            <h3 class="text-xl font-semibold mb-2" style="font-family: 'Suisse Intl', sans-serif;">Wie funktioniert der Content-Verkauf?</h3>
-            <p class="text-white/90 text-base leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">Du kannst einmalige Produkte oder Abos direkt in deiner Community verkaufen. Das integrierte Payment-System unterstützt verschiedene Zahlungsmethoden. Die Abrechnung erfolgt automatisch.</p>
-          </div>
-          <div class="faq-modal-item">
-            <h3 class="text-xl font-semibold mb-2" style="font-family: 'Suisse Intl', sans-serif;">Ist Glymmer DSGVO-konform?</h3>
-            <p class="text-white/90 text-base leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">Ja, Datenschutz und Sicherheit haben bei uns höchste Priorität. Glymmer ist vollständig DSGVO-konform und nutzt modernste Sicherheitstechnologien zum Schutz deiner Daten und der deiner Community.</p>
-          </div>
-          <div class="faq-modal-item">
-            <h3 class="text-xl font-semibold mb-2" style="font-family: 'Suisse Intl', sans-serif;">Kann ich mein Paket später ändern?</h3>
-            <p class="text-white/90 text-base leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">Ja, du kannst jederzeit upgraden oder downgraden. Änderungen werden anteilig verrechnet. Bei einem Upgrade stehen dir sofort alle neuen Features zur Verfügung.</p>
-          </div>
+        <div class="faq-accordion-list space-y-2">
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Was ist Glymmer?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  Glymmer ist eine moderne Community-Plattform für Coaches und Creator. Du kannst damit eine lebendige Community aufbauen, Content verkaufen und deine Mitglieder engagieren – alles in einer Plattform.
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Wie funktioniert die Anmeldung?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  Die Anmeldung ist einfach und schnell. Klicke auf „Jetzt starten“, erstelle dein Konto und wähle dein passendes Paket. Du kannst 14 Tage kostenlos testen, ohne Kreditkarte.
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Kann ich meine Community personalisieren?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  Ja, Glymmer bietet umfangreiche Personalisierungsmöglichkeiten. Du kannst das Design anpassen, eigene Domains verwenden und die Plattform nach deinen Wünschen gestalten.
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Wie funktioniert der Content-Verkauf?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  Du kannst einmalige Produkte oder Abos direkt in deiner Community verkaufen. Das integrierte Payment-System unterstützt verschiedene Zahlungsmethoden. Die Abrechnung erfolgt automatisch.
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Ist Glymmer DSGVO-konform?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  Ja, Datenschutz und Sicherheit haben bei uns höchste Priorität. Glymmer ist vollständig DSGVO-konform und nutzt modernste Sicherheitstechnologien zum Schutz deiner Daten und der deiner Community.
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Kann ich mein Paket später ändern?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  Ja, du kannst jederzeit upgraden oder downgraden. Änderungen werden anteilig verrechnet. Bei einem Upgrade stehen dir sofort alle neuen Features zur Verfügung.
+                </div>
+              </div>
+            </div>
+          </details>
         </div>
       </div>
     </div>
@@ -2549,6 +2645,84 @@
       });
       faqModal.addEventListener('click', (e) => {
         if (e.target === faqModal) closeFaqModal();
+      });
+    })();
+  </script>
+  <script>
+    // FAQ Accordion: Smooth Ausklapp-Animation mit gemessener Höhe - nur eine gleichzeitig offen
+    (function() {
+      const faqItems = document.querySelectorAll('.faq-accordion-item');
+      if (faqItems.length === 0) return;
+
+      const TRANSITION_MS = 500;
+
+      // Funktion zum Schließen eines FAQ-Items (smooth wie Ausklappen)
+      function closeFaqItem(item) {
+        const wrapper = item.querySelector('.faq-accordion-answer-wrapper');
+        const answerInner = item.querySelector('.faq-accordion-answer-inner');
+        if (!wrapper || !answerInner || !item.hasAttribute('open')) return;
+        
+        // Aktuelle Höhe messen – Inhalt ist sichtbar, solange open gesetzt ist
+        wrapper.style.maxHeight = 'none';
+        const measuredHeight = answerInner.scrollHeight;
+        wrapper.style.maxHeight = measuredHeight + 'px';
+        
+        // Force reflow, damit der Browser den Wert übernimmt
+        void wrapper.offsetHeight;
+        
+        // Jetzt smooth zu 0 animieren
+        requestAnimationFrame(function() {
+          wrapper.style.maxHeight = '0px';
+        });
+        
+        // open erst NACH der Animation entfernen – sonst blendet der Browser
+        // den Inhalt sofort aus und die Einklapp-Animation ist nicht sichtbar
+        setTimeout(function() {
+          item.removeAttribute('open');
+          wrapper.style.maxHeight = '0px';
+        }, TRANSITION_MS + 20);
+      }
+
+      faqItems.forEach(function(item) {
+        const summary = item.querySelector('summary');
+        const wrapper = item.querySelector('.faq-accordion-answer-wrapper');
+        const answerInner = item.querySelector('.faq-accordion-answer-inner');
+        
+        if (!summary || !wrapper || !answerInner) return;
+
+        // Initial: geschlossen
+        wrapper.style.maxHeight = '0px';
+
+        summary.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const isOpen = item.hasAttribute('open');
+          
+          if (isOpen) {
+            // Schließen: von aktueller Höhe zu 0
+            closeFaqItem(item);
+          } else {
+            // Alle anderen schließen
+            faqItems.forEach(function(otherItem) {
+              if (otherItem !== item && otherItem.hasAttribute('open')) {
+                closeFaqItem(otherItem);
+              }
+            });
+            
+            // Öffnen: von 0 zu gemessener Höhe
+            item.setAttribute('open', '');
+            // Temporär auf auto setzen um Höhe zu messen
+            wrapper.style.maxHeight = 'none';
+            const targetHeight = answerInner.scrollHeight;
+            wrapper.style.maxHeight = '0px';
+            // Force reflow
+            void wrapper.offsetHeight;
+            // Jetzt animieren zur Zielhöhe
+            requestAnimationFrame(function() {
+              wrapper.style.maxHeight = targetHeight + 'px';
+            });
+          }
+        });
       });
     })();
   </script>
