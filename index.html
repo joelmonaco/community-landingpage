@@ -1360,7 +1360,7 @@
     <!-- Header mit App Icon, Headline und Untertitel -->
     <div class="max-w-4xl mx-auto text-center mb-16 px-6">
       <div class="flex justify-center mb-6 animate-on-scroll">
-        <img src="./public/App_Icon.png" alt="App Icon" class="w-32 h-32 rounded-3xl object-contain">
+        <img id="app-icon-cycle" src="./public/App_Icon.png" alt="App Icon" class="w-32 h-32 rounded-3xl object-contain">
       </div>
       <h2 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2 animate-on-scroll delay-100" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Cal Sans', sans-serif;">
         Generiere deine eigene App
@@ -1672,6 +1672,53 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       window.addEventListener('resize', updateSlider, { passive: true });
       updateSlider(); // Initial update
+    })();
+  </script>
+  <script>
+    // App Icon Cycle: beim Erreichen der Sektion durchflippen, dann alle 5 Sekunden wiederholen
+    (function() {
+      const section = document.getElementById('app-wireframes-section');
+      const img = document.getElementById('app-icon-cycle');
+      if (!section || !img) return;
+
+      const icons = [
+        './public/App_1.png',
+        './public/App_2.png',
+        './public/App_3.png',
+        './public/App_4.png',
+        './public/App_5.png',
+        './public/App_Icon.png'
+      ];
+      const flipIntervalMs = 120;
+      const repeatEveryMs = 5000;
+      let repeatTimer = null;
+
+      function runFlip() {
+        let i = 0;
+        const step = setInterval(function() {
+          img.src = icons[i];
+          i++;
+          if (i >= icons.length) clearInterval(step);
+        }, flipIntervalMs);
+      }
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            runFlip();
+            if (!repeatTimer) {
+              repeatTimer = setInterval(runFlip, repeatEveryMs);
+            }
+          } else {
+            if (repeatTimer) {
+              clearInterval(repeatTimer);
+              repeatTimer = null;
+            }
+          }
+        });
+      }, { rootMargin: '0px', threshold: 0.2 });
+
+      observer.observe(section);
     })();
   </script>
   <script>
