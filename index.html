@@ -271,6 +271,19 @@
       visibility: visible;
       transform: translateY(0);
     }
+
+    /* Wackeln für Button-Farbe, wenn Sektion sichtbar und 3s keine Interaktion */
+    @keyframes platform-wiggle {
+      0%, 100% { transform: translateX(0); }
+      15% { transform: translateX(-6px); }
+      30% { transform: translateX(6px); }
+      45% { transform: translateX(-4px); }
+      60% { transform: translateX(4px); }
+      75% { transform: translateX(-2px); }
+    }
+    #platform-control-button-farbe.platform-wiggle {
+      animation: platform-wiggle 0.6s ease-in-out;
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -1125,7 +1138,7 @@
     <div class="max-w-[81rem] mx-auto">
       <div class="text-center mb-16 animate-on-scroll pt-12">
         <h2 id="personalize-title" class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Cal Sans', sans-serif;">
-          Personalisiere Deine Plattform
+          Personalisiere hier Deine Plattform
         </h2>
         <p id="personalize-subtitle" class="text-base md:text-lg text-black/50 max-w-3xl mx-auto mb-6 leading-relaxed font-normal">
           Passe Farben, Features, Logo, Domain-Namen und vieles mehr an, um Glymmer zu <strong>Deiner</strong> Plattform zu machen.
@@ -1134,7 +1147,7 @@
       
       <!-- Personalization Controls -->
       <div class="platform-personalize-controls mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 animate-on-scroll delay-100">
-        <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-start">
+        <div id="platform-control-button-farbe" class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-start">
           <label class="block text-lg font-medium text-black/70 mb-3" style="font-family: 'Cal Sans', sans-serif;">Button-Farbe</label>
           <div class="flex-1 flex items-center justify-center min-h-0">
             <input type="color" id="platform-btn-color" value="#7167F5" class="platform-color-input">
@@ -1947,6 +1960,60 @@
     })();
   </script>
   <script>
+    // Button-Farbe: Wackeln nach 3s Inaktivität – stoppt dauerhaft, sobald etwas eingestellt wurde
+    (function() {
+      const section = document.getElementById('personalize');
+      const buttonFarbeBox = document.getElementById('platform-control-button-farbe');
+      const controlsContainer = document.querySelector('.platform-personalize-controls');
+      if (!section || !buttonFarbeBox || !controlsContainer) return;
+
+      const WIGGLE_DELAY_MS = 3000;
+      const WIGGLE_ANIMATION_MS = 600;
+      let idleTimer = null;
+      let isInView = false;
+      let userHasInteracted = false;
+
+      function wiggle() {
+        if (userHasInteracted) return;
+        buttonFarbeBox.classList.add('platform-wiggle');
+        setTimeout(function() {
+          buttonFarbeBox.classList.remove('platform-wiggle');
+          if (isInView && !userHasInteracted) scheduleNext();
+        }, WIGGLE_ANIMATION_MS);
+      }
+
+      function scheduleNext() {
+        if (userHasInteracted) return;
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(wiggle, WIGGLE_DELAY_MS);
+      }
+
+      function onUserInteraction() {
+        userHasInteracted = true;
+        clearTimeout(idleTimer);
+        idleTimer = null;
+      }
+
+      ['input', 'change', 'click'].forEach(function(ev) {
+        controlsContainer.addEventListener(ev, onUserInteraction);
+      });
+
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          isInView = entry.isIntersecting;
+          if (isInView && !userHasInteracted) {
+            scheduleNext();
+          } else {
+            clearTimeout(idleTimer);
+            idleTimer = null;
+          }
+        });
+      }, { rootMargin: '0px', threshold: 0.2 });
+
+      io.observe(section);
+    })();
+  </script>
+  <script>
     // Header Background on Scroll
     document.addEventListener('DOMContentLoaded', () => {
       const header = document.getElementById('main-header');
@@ -2291,7 +2358,7 @@
       </span>
     </div>
     <div class="relative w-full min-h-full flex items-center justify-center px-3 lg:px-6 py-24" style="z-index: 2;">
-      <button id="close-faq-modal" class="absolute top-6 right-6 text-white hover:text-white/80 transition transform hover:rotate-90 duration-300 z-10" aria-label="Schließen">
+      <button id="close-faq-modal" class="fixed top-6 right-6 text-white hover:text-white/80 transition transform hover:rotate-90 duration-300 z-[60] p-2 rounded-full hover:bg-white/10" aria-label="Schließen">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
