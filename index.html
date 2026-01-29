@@ -1267,16 +1267,25 @@
                       <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
                       Video
                     </button>
+                    <button type="button" class="platform-btn-icon p-2 rounded-lg border border-black/10 text-black/60 hover:bg-black/5 flex items-center gap-1 text-xs">
+                      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                      Umfragen
+                    </button>
                     <select class="text-xs border border-black/10 rounded-lg px-2 py-1.5 text-black/70 bg-white focus:outline-none focus:ring-1 focus:ring-black/10">
-                      <option>Kategorie wählen</option>
+                      <option>Kategorie auswählen</option>
                       <option>Allgemein</option>
                       <option>Updates</option>
                     </select>
-                    <label class="flex items-center gap-2 text-xs text-black/70 cursor-pointer">
-                      <input type="checkbox" class="rounded border-black/20">
-                      Kostenpflichtig
-                    </label>
-                    <button type="button" class="platform-btn-primary ml-auto px-4 py-2 rounded-lg text-xs font-medium text-white border-0" style="background: var(--platform-btn, #7167F5);">Posten</button>
+                    <div class="flex flex-wrap items-center gap-2 ml-auto">
+                      <label class="flex items-center gap-2 text-xs text-black/70 cursor-pointer">
+                        <input type="checkbox" class="rounded border-black/20">
+                        Kostenpflichtig
+                      </label>
+                      <button type="button" class="platform-btn-primary flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-medium text-white border-0" style="background: var(--platform-btn, #7167F5);">
+                        Posten
+                        <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg>
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <!-- Feed Posts -->
