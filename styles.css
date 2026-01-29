@@ -386,10 +386,10 @@
 
 /* Farbfelder Button-Farbe & Hintergrundfarbe: ohne Rand, weicher Schatten, größer, runde Ecken */
 .platform-color-input {
-  width: 4rem;
-  height: 4rem;
-  min-width: 4rem;
-  min-height: 4rem;
+  width: 5.5rem;
+  height: 5.5rem;
+  min-width: 5.5rem;
+  min-height: 5.5rem;
   padding: 0;
   border: none !important;
   background: transparent !important;
@@ -418,15 +418,16 @@
 
 /* Logo-Hochladen-Button: gleiche Größe und Form wie Farbfelder, mit Hochladen-Icon */
 .platform-logo-upload {
-  width: 4rem;
-  height: 4rem;
-  min-width: 4rem;
-  min-height: 4rem;
+  width: 5.5rem;
+  height: 5.5rem;
+  min-width: 5.5rem;
+  min-height: 5.5rem;
   padding: 0;
   border: none;
   background: #fff;
   border-radius: 1rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08), 0 4px 24px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .platform-logo-upload:hover {
   background: #7167F5;
