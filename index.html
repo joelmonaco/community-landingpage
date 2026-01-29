@@ -1089,7 +1089,7 @@
 
   <!-- Personalisiere Deine Plattform Section -->
   <section id="personalize" class="py-20 px-6 lg:px-8 bg-white">
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-[81rem] mx-auto">
       <div class="text-center mb-16 animate-on-scroll pt-12">
         <h2 id="personalize-title" class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Cal Sans', sans-serif;">
           Personalisiere Deine Plattform
@@ -1099,24 +1099,210 @@
         </p>
       </div>
       
-      <!-- Personalization Mockup -->
-      <div class="mb-12 max-w-4xl mx-auto animate-on-scroll delay-200">
-        <div class="mockup-container">
-          <div class="mockup-screen">
-            <div class="mockup-content">
-              <div class="grid grid-cols-2 gap-4">
-                <div class="mockup-card">
-                  <div class="mockup-line short"></div>
-                  <div class="mockup-line long"></div>
-                  <div class="mockup-line medium"></div>
+      <!-- Personalization Controls -->
+      <div class="platform-personalize-controls mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 animate-on-scroll delay-100">
+        <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-center">
+          <label class="block text-sm font-medium mb-3" style="font-family: 'Suisse Intl', sans-serif;">Button-Farbe</label>
+          <div class="flex items-center justify-center">
+            <input type="color" id="platform-btn-color" value="#7167F5" class="w-10 h-10 rounded-lg border border-black/15 cursor-pointer bg-transparent">
+          </div>
+        </div>
+        <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-center">
+          <label class="block text-sm font-medium mb-3" style="font-family: 'Suisse Intl', sans-serif;">Hintergrund-Verlauf (oben)</label>
+          <div class="flex items-center justify-center gap-2">
+            <input type="color" id="platform-bg-top" value="#f0eeff" class="w-10 h-10 rounded-lg border border-black/15 cursor-pointer bg-transparent">
+          </div>
+        </div>
+        <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-center">
+          <label class="block text-sm font-medium mb-3" style="font-family: 'Suisse Intl', sans-serif;">Logo</label>
+          <div class="flex items-center justify-center gap-2 flex-wrap">
+            <label for="platform-logo-file" class="platform-logo-upload cursor-pointer px-3 py-2 rounded-lg border border-white/30 text-sm hover:bg-white/10 transition-colors" style="font-family: 'Suisse Intl', sans-serif;">Hochladen</label>
+            <input type="file" id="platform-logo-file" accept="image/*" class="hidden">
+            <button type="button" id="platform-logo-reset" class="text-sm">Zurücksetzen</button>
+          </div>
+        </div>
+        <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-center">
+          <label class="block text-sm font-medium mb-3" style="font-family: 'Suisse Intl', sans-serif;">Menüpunkte</label>
+          <div class="flex flex-wrap gap-3 justify-center">
+            <label class="flex items-center gap-1.5 cursor-pointer text-sm">
+              <input type="checkbox" id="platform-menu-kalender" checked class="rounded border-white/40">
+              Kalender
+            </label>
+            <label class="flex items-center gap-1.5 cursor-pointer text-sm">
+              <input type="checkbox" id="platform-menu-mediathek" checked class="rounded border-white/40">
+              Mediathek
+            </label>
+            <label class="flex items-center gap-1.5 cursor-pointer text-sm">
+              <input type="checkbox" id="platform-menu-benachrichtigung" checked class="rounded border-white/40">
+              Benachrichtigungen
+            </label>
+            <label class="flex items-center gap-1.5 cursor-pointer text-sm">
+              <input type="checkbox" id="platform-menu-chat" checked class="rounded border-white/40">
+              Chat
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Platform Preview (interactive) – gleicher seitlicher Abstand wie die vier Kästen -->
+      <div class="platform-preview-wrapper w-full animate-on-scroll delay-200" id="platform-preview-wrapper">
+        <div class="platform-preview-frame rounded-2xl overflow-hidden platform-preview-shadow" id="platform-preview-frame">
+          <div class="platform-preview-inner flex min-h-[640px]" id="platform-preview-inner">
+            <!-- Sidebar -->
+            <aside class="platform-sidebar w-[220px] flex-shrink-0 flex flex-col border-r border-black/10 bg-white/95">
+              <div class="p-4 border-b border-black/5">
+                <img id="platform-preview-logo" src="./public/Glymmer_Logo_Dunkel.png" alt="Logo" class="h-8 w-auto object-contain object-left">
+              </div>
+              <nav class="flex-1 p-3 space-y-0.5">
+                <a href="#" class="platform-nav-channel block px-3 py-2 rounded-lg text-sm font-medium text-black/90 hover:bg-black/5">#Announcements</a>
+                <a href="#" class="platform-nav-channel block px-3 py-2 rounded-lg text-sm font-medium text-black/70 hover:bg-black/5">#Team-Updates</a>
+                <a href="#" class="platform-nav-channel block px-3 py-2 rounded-lg text-sm font-medium text-black/70 hover:bg-black/5">#AskMeAnything</a>
+                <button type="button" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium text-black/70 hover:bg-black/5 mt-2">
+                  Alle Channels
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7h-6M17 7v6"/></svg>
+                </button>
+                <div class="border-t border-black/5 my-2"></div>
+                <a href="#" class="platform-nav-item platform-menu-kalender flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-black/70 hover:bg-black/5">
+                  <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                  Kalender
+                </a>
+                <a href="#" class="platform-nav-item platform-menu-mediathek flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-black/70 hover:bg-black/5">
+                  <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/></svg>
+                  Mediathek
+                </a>
+                <a href="#" class="platform-nav-item platform-menu-benachrichtigung flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-black/70 hover:bg-black/5">
+                  <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                  Benachrichtigung
+                </a>
+                <a href="#" class="platform-nav-item platform-menu-chat flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-black/70 hover:bg-black/5">
+                  <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  Chat
+                </a>
+                <a href="#" class="platform-nav-item flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-black/70 hover:bg-black/5">
+                  <svg class="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                  Einstellungen
+                </a>
+              </nav>
+              <div class="p-3 border-t border-black/5 flex items-center gap-2">
+                <img src="./public/Users/User_1.jpg" alt="Isabel Kohr" class="w-8 h-8 rounded-full object-cover flex-shrink-0">
+                <span class="text-sm font-medium text-black/80 truncate">Isabel Kohr</span>
+              </div>
+            </aside>
+            <!-- Main Feed -->
+            <main class="platform-main flex-1 flex flex-col min-w-0" id="platform-main-bg">
+              <div class="p-3 border-b border-black/5">
+                <input type="search" placeholder="Feed durchsuchen…" class="w-full px-4 py-2 rounded-lg border border-black/10 bg-black/[0.02] text-sm placeholder:text-black/40 focus:outline-none focus:ring-2 focus:ring-black/10">
+              </div>
+              <div class="flex-1 overflow-y-auto p-4 space-y-4">
+                <!-- Post Composer -->
+                <div class="platform-composer rounded-xl border border-black/10 bg-white p-4 shadow-sm">
+                  <div class="platform-composer-toolbar flex flex-wrap gap-1 mb-2">
+                    <button type="button" class="platform-btn-icon w-8 h-8 rounded flex items-center justify-center text-black/60 hover:bg-black/5" title="Fett"><b>B</b></button>
+                    <button type="button" class="platform-btn-icon w-8 h-8 rounded flex items-center justify-center italic text-black/60 hover:bg-black/5" title="Kursiv"><i>I</i></button>
+                    <button type="button" class="platform-btn-icon w-8 h-8 rounded flex items-center justify-center text-black/60 hover:bg-black/5 underline" title="Unterstrichen">U</button>
+                  </div>
+                  <div contenteditable="true" class="min-h-[72px] text-sm text-black/80 focus:outline-none mb-3 px-1" data-placeholder="Was möchtest du teilen?"></div>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <button type="button" class="platform-btn-icon p-2 rounded-lg border border-black/10 text-black/60 hover:bg-black/5 flex items-center gap-1 text-xs">
+                      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                      Anhang
+                    </button>
+                    <button type="button" class="platform-btn-icon p-2 rounded-lg border border-black/10 text-black/60 hover:bg-black/5 flex items-center gap-1 text-xs">
+                      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                      Link
+                    </button>
+                    <button type="button" class="platform-btn-icon p-2 rounded-lg border border-black/10 text-black/60 hover:bg-black/5 flex items-center gap-1 text-xs">
+                      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                      Video
+                    </button>
+                    <select class="text-xs border border-black/10 rounded-lg px-2 py-1.5 text-black/70 bg-white focus:outline-none focus:ring-1 focus:ring-black/10">
+                      <option>Kategorie wählen</option>
+                      <option>Allgemein</option>
+                      <option>Updates</option>
+                    </select>
+                    <label class="flex items-center gap-2 text-xs text-black/70 cursor-pointer">
+                      <input type="checkbox" class="rounded border-black/20">
+                      Kostenpflichtig
+                    </label>
+                    <button type="button" class="platform-btn-primary ml-auto px-4 py-2 rounded-lg text-xs font-medium text-white border-0" style="background: var(--platform-btn, #7167F5);">Posten</button>
+                  </div>
                 </div>
-                <div class="mockup-card">
-                  <div class="mockup-line short"></div>
-                  <div class="mockup-line long"></div>
-                  <div class="mockup-line medium"></div>
+                <!-- Feed Posts -->
+                <article class="platform-post rounded-xl border border-black/10 bg-white p-4 shadow-sm">
+                  <div class="flex gap-3">
+                    <img src="./public/Users/User_2.jpg" alt="" class="w-10 h-10 rounded-full object-cover flex-shrink-0">
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center gap-2 flex-wrap">
+                        <span class="font-medium text-sm text-black/90">Sarah M.</span>
+                        <span class="text-xs text-black/50">#Team-Updates · vor 2 Std.</span>
+                      </div>
+                      <p class="text-sm text-black/80 mt-1">Unser neues Feature ist live: Ihr könnt jetzt Umfragen direkt im Feed erstellen. Probiert es aus!</p>
+                      <div class="flex items-center gap-4 mt-3 text-black/50">
+                        <button type="button" class="flex items-center gap-1 text-xs hover:text-black/70"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> 12</button>
+                        <button type="button" class="flex items-center gap-1 text-xs hover:text-black/70"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Kommentieren</button>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="platform-post rounded-xl border border-black/10 bg-white p-4 shadow-sm">
+                  <div class="flex gap-3">
+                    <img src="./public/Users/User_3.jpg" alt="" class="w-10 h-10 rounded-full object-cover flex-shrink-0">
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center gap-2 flex-wrap">
+                        <span class="font-medium text-sm text-black/90">Tom K.</span>
+                        <span class="text-xs text-black/50">#AskMeAnything · gestern</span>
+                      </div>
+                      <p class="text-sm text-black/80 mt-1">Frage an alle: Welche Tools nutzt ihr für Projektmanagement? Wir evaluieren gerade neue Optionen.</p>
+                      <div class="flex items-center gap-4 mt-3 text-black/50">
+                        <button type="button" class="flex items-center gap-1 text-xs hover:text-black/70"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> 5</button>
+                        <button type="button" class="flex items-center gap-1 text-xs hover:text-black/70"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Kommentieren</button>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </main>
+            <!-- Right: Upcoming Events -->
+            <aside class="platform-events w-[240px] flex-shrink-0 border-l border-black/10 p-4 bg-white/80">
+              <h4 class="text-sm font-semibold text-black/80 mb-3">Upcoming Events</h4>
+              <div class="space-y-3">
+                <div class="flex gap-2 items-start">
+                  <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center text-xs font-medium text-white bg-black/20">Mo</div>
+                  <div class="min-w-0">
+                    <p class="text-sm font-medium text-black/80">Team Sync</p>
+                    <p class="text-xs text-black/50">10:00</p>
+                    <div class="flex -space-x-1.5 mt-1">
+                      <img src="./public/Users/User_1.jpg" alt="" class="w-5 h-5 rounded-full border-2 border-white object-cover"><img src="./public/Users/User_2.jpg" alt="" class="w-5 h-5 rounded-full border-2 border-white object-cover"><img src="./public/Users/User_3.jpg" alt="" class="w-5 h-5 rounded-full border-2 border-white object-cover">
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-2 items-start">
+                  <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center text-xs font-medium text-white platform-events-date" style="background: var(--platform-btn, #7167F5);">Di</div>
+                  <div class="min-w-0">
+                    <p class="text-sm font-medium text-black/80">Q1 Review</p>
+                    <p class="text-xs text-black/50">14:00</p>
+                    <div class="flex -space-x-1.5 mt-1">
+                      <img src="./public/Users/User_4.jpg" alt="" class="w-5 h-5 rounded-full border-2 border-white object-cover"><img src="./public/Users/Users/User_5.jpg" alt="" class="w-5 h-5 rounded-full border-2 border-white object-cover">
+                    </div>
+                  </div>
+                </div>
+                <div class="flex gap-2 items-start">
+                  <div class="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center text-xs font-medium text-white bg-black/20">Mi</div>
+                  <div class="min-w-0">
+                    <p class="text-sm font-medium text-black/80">Workshop</p>
+                    <p class="text-xs text-black/50">09:00</p>
+                    <div class="flex -space-x-1.5 mt-1">
+                      <img src="./public/Users/User_6.jpg" alt="" class="w-5 h-5 rounded-full border-2 border-white object-cover">
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </aside>
+          </div>
+          <!-- Messages (collapsed) -->
+          <div class="platform-messages-toggle flex items-center justify-between px-4 py-2 border-t border-black/10 bg-white/95 cursor-pointer hover:bg-black/5 transition-colors" id="platform-messages-area">
+            <span class="text-sm font-medium text-black/70">Messages</span>
+            <svg class="w-4 h-4 text-black/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
           </div>
         </div>
       </div>
@@ -1176,7 +1362,7 @@
   </section>
 
   <!-- Customer Stories Section -->
-  <div class="px-6 lg:px-8 -mt-[190vh] relative z-10">
+  <div class="px-6 lg:px-8 -mt-[190vh] relative z-10 bg-white">
     <div class="text-center mb-8 animate-on-scroll pt-16">
       <h2 id="stories-title" class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Cal Sans', sans-serif;">
         Customer Stories
@@ -1186,70 +1372,71 @@
       </p>
     </div>
   </div>
-  <section id="stories" class="pt-20 pb-20 px-6 lg:px-8 relative z-10" style="background: none !important;">
-    <div class="absolute left-6 lg:left-8 right-6 lg:right-8 top-0 bottom-0 overflow-hidden" style="background-image: url('./public/Customers/Biyon_BG.png'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 3rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);">
-      <div class="absolute inset-0 bg-black/60" style="border-radius: 3rem;"></div>
-    </div>
+  <section id="stories" class="pt-20 pb-20 px-6 lg:px-8 relative z-10 bg-white">
+    <div class="absolute left-6 lg:left-8 right-6 lg:right-8 top-0 bottom-0 overflow-hidden bg-gray-50 rounded-[3rem] shadow-lg" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);"></div>
     <div class="w-full relative z-10" style="overflow: hidden; border-radius: 3rem;">
       <div class="grid md:grid-cols-12 gap-8 px-6 lg:px-8 py-8">
-        <!-- Links: Logos + Headlines -->
+        <!-- Links: Namen + Headlines -->
         <div class="md:col-span-4 flex flex-col gap-6">
           <button type="button" class="customer-story-trigger text-left pl-5 py-3 focus:outline-none focus:ring-0 border-l-4 transition-colors duration-200" data-story="biyon" aria-pressed="true" style="border-color: #7167F5;">
-            <img src="./public/Customers/Biyon_Logo.png" alt="Biyon Logo" class="h-14 w-auto object-contain mb-3">
-            <h3 class="text-xl font-normal text-white" style="font-family: 'Cal Sans', sans-serif;">
-              Biyon Kattilathu baut seine Community auf
-            </h3>
+            <span class="customer-story-name text-2xl font-normal block mb-1 transition-colors duration-200" style="font-family: 'Cal Sans', sans-serif;">Biyon Kattilathu</span>
+            <span class="text-base md:text-lg font-normal text-black/70" style="font-family: 'Suisse Intl', sans-serif;">baut seine Community auf</span>
           </button>
-          <button type="button" class="customer-story-trigger text-left pl-5 py-3 focus:outline-none focus:ring-0 border-l-4 transition-colors duration-200" data-story="bgb" aria-pressed="false" style="border-color: rgba(255, 255, 255, 0.4);">
-            <img src="./public/Customers/BGB_Logo.png" alt="Baby got Business Logo" class="h-14 w-auto object-contain mb-3">
-            <h3 class="text-xl font-normal text-white" style="font-family: 'Cal Sans', sans-serif;">
-              Baby got Business nutzt gylmmer für ihre intensiven Bootcamps
-            </h3>
+          <button type="button" class="customer-story-trigger text-left pl-5 py-3 focus:outline-none focus:ring-0 border-l-4 transition-colors duration-200" data-story="bgb" aria-pressed="false" style="border-color: rgba(0, 0, 0, 0.15);">
+            <span class="customer-story-name text-2xl font-normal block mb-1 transition-colors duration-200" style="font-family: 'Cal Sans', sans-serif;">Baby Got Business</span>
+            <span class="text-base md:text-lg font-normal text-black/70" style="font-family: 'Suisse Intl', sans-serif;">nutzt gylmmer für ihre intensiven Bootcamps</span>
           </button>
-          <button type="button" class="customer-story-trigger text-left pl-5 py-3 focus:outline-none focus:ring-0 border-l-4 transition-colors duration-200" data-story="mak" aria-pressed="false" style="border-color: rgba(255, 255, 255, 0.4);">
-            <img src="./public/Customers/MAK_Logo.png" alt="MAK Nachhilfe Logo" class="h-14 w-auto object-contain mb-3">
-            <h3 class="text-xl font-normal text-white" style="font-family: 'Cal Sans', sans-serif;">
-              MAK Nachhilfe digitalisiert Lernförderung
-            </h3>
+          <button type="button" class="customer-story-trigger text-left pl-5 py-3 focus:outline-none focus:ring-0 border-l-4 transition-colors duration-200" data-story="mak" aria-pressed="false" style="border-color: rgba(0, 0, 0, 0.15);">
+            <span class="customer-story-name text-2xl font-normal block mb-1 transition-colors duration-200" style="font-family: 'Cal Sans', sans-serif;">MAK Nachhilfe</span>
+            <span class="text-base md:text-lg font-normal text-black/70" style="font-family: 'Suisse Intl', sans-serif;">digitalisiert Lernförderung</span>
           </button>
         </div>
         <!-- Rechts: Bild oben, Beschreibung darunter -->
         <div class="md:col-span-8 relative min-h-[400px]">
           <div id="story-content-biyon" class="customer-story-content absolute inset-0 flex flex-col gap-6 transition-opacity duration-300" data-story="biyon">
-            <div class="w-full h-64 md:h-80 rounded-2xl overflow-hidden bg-black/20 flex-shrink-0">
+            <div class="w-24 h-24 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
               <img src="./public/Customers/Biyon_Profil.jpg" alt="Biyon Kattilathu" class="w-full h-full object-cover">
             </div>
+            <div class="flex-shrink-0">
+              <img src="./public/Customers/Biyon_Logo.png" alt="Biyon Logo" class="h-12 w-auto object-contain">
+            </div>
             <div>
-              <p class="text-base font-medium text-white mb-3" style="font-family: 'Suisse Intl', sans-serif;">
+              <p class="text-base font-medium text-black mb-3" style="font-family: 'Suisse Intl', sans-serif;">
                 Team Selbstliebe – Exklusiver Raum für Wachstum und echte Verbindungen.
               </p>
-              <p class="text-sm text-white/90 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+              <p class="text-sm text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
                 Biyon Kattilathu hat mit gylimmer seine "Team Selbstliebe" Community aufgebaut – einen geschützten Ort voller Inspiration, Austausch und exklusiver Inhalte. Er nutzt die Plattform für monatliche Live-Sessions, Videos, Voice-Nachrichten und Chats, um Mitglieder auf ihrem Weg zu mehr Selbstliebe zu stärken. So entstand aus seiner Vision rund um Achtsamkeit und Lebensfreude eine Community, die Vertrauen und gegenseitige Unterstützung fördert.
               </p>
             </div>
           </div>
           <div id="story-content-bgb" class="customer-story-content absolute inset-0 flex flex-col gap-6 opacity-0 pointer-events-none transition-opacity duration-300" data-story="bgb">
-            <div class="w-full h-64 md:h-80 rounded-2xl overflow-hidden bg-black/20 flex-shrink-0">
+            <div class="w-24 h-24 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
               <img src="./public/Customers/BGB_Profil.jpg" alt="Baby got Business" class="w-full h-full object-cover">
             </div>
+            <div class="flex-shrink-0">
+              <img src="./public/Customers/BGB_Logo.png" alt="Baby got Business Logo" class="h-12 w-auto object-contain">
+            </div>
             <div>
-              <p class="text-base font-medium text-white mb-3" style="font-family: 'Suisse Intl', sans-serif;">
+              <p class="text-base font-medium text-black mb-3" style="font-family: 'Suisse Intl', sans-serif;">
                 Social-Media-Bootcamps – Live-Sessions, Feedback und Community in einem.
               </p>
-              <p class="text-sm text-white/90 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+              <p class="text-sm text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
                 Baby got Business hat mit glymmer ihre 10-wöchigen Social-Media-Bootcamps umgesetzt – ein Programm mit Live-Intensiv-Sessions, Workbooks und persönlichem Feedback. Sie veranstalten die Kurse über die Plattform, um Professionals, Gründern und Creatorn topaktuelles Wissen zu Strategy, Content und KPIs zu vermitteln. So schaffen sie nahtlosen Austausch, Alumni-Netzwerk und effizientes Lernen für nachhaltigen Erfolg.
               </p>
             </div>
           </div>
           <div id="story-content-mak" class="customer-story-content absolute inset-0 flex flex-col gap-6 opacity-0 pointer-events-none transition-opacity duration-300" data-story="mak">
-            <div class="w-full h-64 md:h-80 rounded-2xl overflow-hidden bg-black/20 flex-shrink-0">
+            <div class="w-24 h-24 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
               <img src="./public/Customers/MAK_Profil.png" alt="MAK Nachhilfe" class="w-full h-full object-cover">
             </div>
+            <div class="flex-shrink-0">
+              <img src="./public/Customers/MAK_Logo.png" alt="MAK Nachhilfe Logo" class="h-12 w-auto object-contain">
+            </div>
             <div>
-              <p class="text-base font-medium text-white mb-3" style="font-family: 'Suisse Intl', sans-serif;">
+              <p class="text-base font-medium text-black mb-3" style="font-family: 'Suisse Intl', sans-serif;">
                 Digitale Nachhilfe – Individuelle Sessions und Gruppenunterricht online.
               </p>
-              <p class="text-sm text-white/90 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+              <p class="text-sm text-black/70 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
                 MAK Nachhilfe setzt glymmer für ihre Online-Nachhilfe ein – vom 1-zu-1-Unterricht bis zu Gruppenkursen mit interaktiver Tafel und Materialien. Sie nutzen den Live Room, um Wissen aufzubauen, Selbstvertrauen zu stärken und flexibel von zu Hause aus zu unterrichten. So entsteht eine nahtlose Plattform für Schüler und Lehrer mit einfachem Zugriff auf alle Inhalte.
               </p>
             </div>
@@ -1439,6 +1626,79 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       window.addEventListener('resize', updateSlider, { passive: true });
       updateSlider(); // Initial update
+    })();
+  </script>
+  <script>
+    // Platform Preview Personalization
+    (function() {
+      const frame = document.getElementById('platform-preview-frame');
+      const btnColor = document.getElementById('platform-btn-color');
+      const bgTop = document.getElementById('platform-bg-top');
+      const logoFile = document.getElementById('platform-logo-file');
+      const logoReset = document.getElementById('platform-logo-reset');
+      const previewLogo = document.getElementById('platform-preview-logo');
+      const defaultLogoUrl = './public/Glymmer_Logo_Dunkel.png';
+      const menuKalender = document.getElementById('platform-menu-kalender');
+      const menuMediathek = document.getElementById('platform-menu-mediathek');
+      const menuBenachrichtigung = document.getElementById('platform-menu-benachrichtigung');
+      const menuChat = document.getElementById('platform-menu-chat');
+
+      if (!frame) return;
+
+      function hex(val) {
+        const h = val.replace('#', '');
+        return h.length === 3 ? '#' + [h[0],h[0],h[1],h[1],h[2],h[2]].join('') : '#' + h;
+      }
+
+      if (btnColor) {
+        btnColor.addEventListener('input', function() {
+          frame.style.setProperty('--platform-btn', hex(this.value));
+        });
+      }
+
+      if (bgTop) {
+        bgTop.addEventListener('input', function() {
+          frame.style.setProperty('--platform-bg-top', hex(this.value));
+        });
+      }
+
+      if (logoFile && previewLogo) {
+        logoFile.addEventListener('change', function() {
+          const f = this.files && this.files[0];
+          if (f) {
+            const url = URL.createObjectURL(f);
+            previewLogo.src = url;
+            previewLogo.dataset.customUrl = url;
+          }
+        });
+      }
+      if (logoReset && previewLogo) {
+        logoReset.addEventListener('click', function() {
+          if (previewLogo.dataset.customUrl) {
+            URL.revokeObjectURL(previewLogo.dataset.customUrl);
+            delete previewLogo.dataset.customUrl;
+          }
+          previewLogo.src = defaultLogoUrl;
+          if (logoFile) logoFile.value = '';
+        });
+      }
+
+      function toggleMenuItem(checkbox, selector, alsoHide) {
+        if (!checkbox || !frame) return;
+        const el = frame.querySelector(selector);
+        const extra = alsoHide ? frame.querySelector(alsoHide) : null;
+        function update() {
+          const hide = !checkbox.checked;
+          if (el) el.classList.toggle('platform-menu-hidden', hide);
+          if (extra) extra.classList.toggle('platform-menu-hidden', hide);
+        }
+        checkbox.addEventListener('change', update);
+        update();
+      }
+      toggleMenuItem(menuKalender, '.platform-nav-item.platform-menu-kalender');
+      toggleMenuItem(menuMediathek, '.platform-nav-item.platform-menu-mediathek');
+      toggleMenuItem(menuBenachrichtigung, '.platform-nav-item.platform-menu-benachrichtigung');
+      toggleMenuItem(menuChat, '.platform-nav-item.platform-menu-chat', '#platform-messages-area');
     })();
   </script>
   <script>
@@ -1986,7 +2246,7 @@
         triggers.forEach(function(btn) {
           const isActive = btn.getAttribute('data-story') === storyId;
           btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-          btn.style.borderColor = isActive ? '#7167F5' : 'rgba(255, 255, 255, 0.4)';
+          btn.style.borderColor = isActive ? '#7167F5' : 'rgba(0, 0, 0, 0.15)';
         });
       }
 

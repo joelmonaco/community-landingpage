@@ -375,6 +375,139 @@
   }
 }
 
+/* ===== Platform Preview (Personalisiere Deine Plattform) ===== */
+
+/* Einzelne Boxen – gleiche Füllfarbe wie CTA „Bereit loszulegen?“ (#2A2A2A), Schatten gleichmäßig */
+.platform-control-box {
+  border: none;
+  background-color: #2A2A2A;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.04), 0 0 40px rgba(0, 0, 0, 0.02);
+}
+
+.platform-control-box label,
+.platform-control-box .text-black\/70,
+.platform-control-box .text-black\/60,
+.platform-control-box .text-black\/50 {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.platform-control-box button#platform-logo-reset {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.platform-control-box button#platform-logo-reset:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Mockup: kein Rand, Schatten gleichmäßig um das Mockup herum, minimal breiter */
+.platform-preview-shadow {
+  border: none;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.05), 0 0 64px rgba(0, 0, 0, 0.025);
+}
+
+#platform-preview-frame {
+  --platform-btn: #7167F5;
+  --platform-bg-top: #f0eeff;
+}
+
+#platform-preview-inner {
+  background: linear-gradient(to bottom, var(--platform-bg-top) 0%, #ffffff 100%);
+}
+
+#platform-main-bg {
+  background: linear-gradient(to bottom, var(--platform-bg-top) 0%, #ffffff 100%);
+}
+
+.platform-sidebar,
+.platform-events {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.platform-btn-icon.platform-primary,
+.platform-nav-channel[style*="color: var(--platform-btn)"],
+.platform-events-date,
+.platform-btn-primary {
+  background: var(--platform-btn) !important;
+  color: white !important;
+  border-color: transparent !important;
+}
+
+.platform-nav-channel:first-of-type {
+  color: var(--platform-btn);
+  background: color-mix(in srgb, var(--platform-btn) 12%, transparent);
+}
+
+.platform-composer [contenteditable]:empty::before {
+  content: attr(data-placeholder);
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.platform-nav-item.platform-menu-hidden {
+  display: none !important;
+}
+
+#platform-messages-area.platform-menu-hidden {
+  display: none !important;
+}
+
+.platform-preview-wrapper {
+  pointer-events: auto;
+}
+
+.platform-preview-frame .platform-composer [contenteditable],
+.platform-preview-frame input,
+.platform-preview-frame select,
+.platform-preview-frame button {
+  pointer-events: none;
+  user-select: none;
+}
+
+.platform-preview-frame .platform-composer [contenteditable] {
+  cursor: default;
+}
+
+@media (max-width: 1024px) {
+  .platform-preview-inner .platform-events {
+    display: none;
+  }
+  .platform-sidebar {
+    width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .platform-personalize-controls {
+    grid-template-columns: 1fr;
+  }
+  .platform-preview-inner {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .platform-sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 0.5rem;
+  }
+  .platform-sidebar .p-4.border-b,
+  .platform-sidebar nav,
+  .platform-sidebar .p-3.border-t {
+    width: 100%;
+  }
+  .platform-sidebar nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  .platform-sidebar .platform-nav-channel,
+  .platform-sidebar .platform-nav-item {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
 /* Chat Mockup Animation */
 @keyframes fadeInUp {
   from {
@@ -546,4 +679,12 @@
   background-color: var(--primary-yellow-hover);
   color: black;
   box-shadow: 0 4px 20px rgba(230, 227, 4, 0.5);
+}
+
+/* Customer Stories: Name transparent wenn nicht ausgewählt, dunkel wenn ausgewählt (heller Kasten) */
+.customer-story-trigger .customer-story-name {
+  color: rgba(0, 0, 0, 0.5);
+}
+.customer-story-trigger[aria-pressed="true"] .customer-story-name {
+  color: #000;
 }
