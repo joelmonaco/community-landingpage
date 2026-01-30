@@ -531,14 +531,40 @@
   cursor: default;
 }
 
-/* Dark Mode Vorschau */
+/* Smooth Dark-Mode-Übergang */
+#platform-preview-frame #platform-preview-inner,
+#platform-preview-frame #platform-main-bg,
+#platform-preview-frame .platform-sidebar,
+#platform-preview-frame .platform-nav-channel,
+#platform-preview-frame .platform-nav-item,
+#platform-preview-frame .platform-sidebar .p-3.border-t span,
+#platform-preview-frame .platform-events,
+#platform-preview-frame .platform-events h4,
+#platform-preview-frame .platform-events p,
+#platform-preview-frame .platform-composer,
+#platform-preview-frame .platform-post,
+#platform-preview-frame .platform-composer [contenteditable],
+#platform-preview-frame .platform-post p,
+#platform-preview-frame .platform-post .text-black\/80,
+#platform-preview-frame .platform-post .text-black\/50,
+#platform-preview-frame input[type="search"],
+#platform-preview-frame .platform-messages-toggle {
+  transition: background 0.5s ease, background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+#platform-preview-frame .platform-nav-channel:hover,
+#platform-preview-frame .platform-nav-item:hover {
+  transition: background 0.5s ease, background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* Dark Mode Vorschau – dunkelgrau/schwarz statt bläulich */
 #platform-preview-frame.platform-preview-dark #platform-preview-inner,
 #platform-preview-frame.platform-preview-dark #platform-main-bg {
-  background: linear-gradient(to bottom, #1a1a2e 0%, #16213e 100%);
+  background: linear-gradient(to bottom, #1a1a1a 0%, #0d0d0d 100%);
 }
 
 #platform-preview-frame.platform-preview-dark .platform-sidebar {
-  background: rgba(22, 33, 62, 0.98);
+  background: rgba(26, 26, 26, 0.98);
   border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -567,13 +593,13 @@
 }
 
 #platform-preview-frame.platform-preview-dark .platform-events {
-  background: rgba(22, 33, 62, 0.9);
+  background: rgba(30, 30, 30, 0.9);
   border-color: rgba(255, 255, 255, 0.1);
 }
 
 #platform-preview-frame.platform-preview-dark .platform-composer,
 #platform-preview-frame.platform-preview-dark .platform-post {
-  background: rgba(30, 41, 59, 0.95);
+  background: rgba(30, 30, 30, 0.95);
   border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -594,7 +620,7 @@
 }
 
 #platform-preview-frame.platform-preview-dark .platform-messages-toggle {
-  background: rgba(22, 33, 62, 0.98);
+  background: rgba(26, 26, 26, 0.98);
   border-color: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.85);
 }
@@ -815,9 +841,87 @@
 }
 
 /* Customer Stories: Name transparent wenn nicht ausgewählt, weiß wenn ausgewählt (dunkler Kasten #2A2A2A) */
+.customer-story-trigger {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0.75rem;
+  margin-left: 0.5rem;
+}
+
+.customer-story-trigger:hover {
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.03);
+}
+
 .customer-story-trigger .customer-story-name {
   color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
 }
+
+.customer-story-trigger[aria-pressed="true"] {
+  background: rgba(255, 255, 255, 0.05);
+}
+
 .customer-story-trigger[aria-pressed="true"] .customer-story-name {
   color: #fff;
+}
+
+/* Customer Story Content moderne Animationen */
+.customer-story-content {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+.customer-story-content.opacity-0 {
+  transform: scale(0.96) translateY(10px);
+  filter: blur(4px);
+}
+
+.customer-story-content:not(.opacity-0) {
+  transform: scale(1) translateY(0);
+  filter: blur(0);
+}
+
+/* Verbesserte Profilbilder */
+.customer-story-content .w-44.h-44 {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.customer-story-content:not(.opacity-0) .w-44.h-44:hover {
+  transform: scale(1.08) rotate(2deg);
+}
+
+/* Decorative background animation */
+.customer-story-content > div[style*="position: absolute"] {
+  animation: float 20s ease-in-out infinite;
+}
+
+.customer-story-content > div[style*="position: absolute"]:nth-child(2) {
+  animation-delay: -10s;
+  animation-duration: 25s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* Text shadow animation on active story */
+.customer-story-content:not(.opacity-0) p[style*="Cal Sans"] {
+  animation: subtleGlow 3s ease-in-out infinite;
+}
+
+@keyframes subtleGlow {
+  0%, 100% {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15), 0 0 20px rgba(255, 255, 255, 0.1);
+  }
 }
