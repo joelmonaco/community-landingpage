@@ -612,6 +612,15 @@
   border-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Upcoming Events im Dark Mode: Trennlinien hell, Profilbild-Rahmen dunkel */
+#platform-preview-frame.platform-preview-dark .platform-events .border-b {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-events img.rounded-full {
+  border-color: rgba(0, 0, 0, 0.45) !important;
+}
+
 #platform-preview-frame.platform-preview-dark .platform-composer,
 #platform-preview-frame.platform-preview-dark .platform-post {
   background: rgba(255, 255, 255, 0.1);
@@ -621,6 +630,55 @@
 #platform-preview-frame.platform-preview-dark .platform-composer [contenteditable],
 #platform-preview-frame.platform-preview-dark .platform-post p,
 #platform-preview-frame.platform-preview-dark .platform-post .text-black\/80 {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Post-erstellen-Box im Dark Mode: Toolbar-Buttons (B, I, U, Aufzählung etc.) weiß */
+#platform-preview-frame.platform-preview-dark .platform-composer .platform-composer-toolbar .platform-btn-icon,
+#platform-preview-frame.platform-preview-dark .platform-composer .platform-composer-toolbar .platform-btn-icon svg,
+#platform-preview-frame.platform-preview-dark .platform-composer .platform-composer-toolbar .platform-btn-icon b,
+#platform-preview-frame.platform-preview-dark .platform-composer .platform-composer-toolbar .platform-btn-icon i,
+#platform-preview-frame.platform-preview-dark .platform-composer .platform-composer-toolbar .platform-btn-icon u {
+  color: #ffffff !important;
+}
+
+#platform-preview-frame.platform-preview-dark .platform-composer .platform-composer-toolbar .platform-btn-icon:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Anhang, Link, Video, Umfragen: Icons, Text und Rahmen hell */
+#platform-preview-frame.platform-preview-dark .platform-composer .platform-btn-icon.border {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+}
+
+#platform-preview-frame.platform-preview-dark .platform-composer .platform-btn-icon.border svg {
+  color: #ffffff;
+}
+
+#platform-preview-frame.platform-preview-dark .platform-composer .platform-btn-icon:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Kostenpflichtig-Label und Checkbox-Rahmen hell */
+#platform-preview-frame.platform-preview-dark .platform-composer label.text-black\/70,
+#platform-preview-frame.platform-preview-dark .platform-composer label .text-black\/70 {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+#platform-preview-frame.platform-preview-dark .platform-composer label span.w-5.h-5.rounded-full.border-2 {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* „Was möchtest du teilen?“-Placeholder im Dark Mode hell */
+#platform-preview-frame.platform-preview-dark .platform-composer [contenteditable]:empty::before {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Kategorie auswählen: Füllfarbe leicht transparent, Text hell */
+#platform-preview-frame.platform-preview-dark .platform-composer select {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -640,11 +698,12 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Nachrichten-Bereich: alle Texte und Icons hell für Lesbarkeit */
+/* Nachrichten-Bereich: Namen (Isabel Kohr, Tom K., Sarah M. etc.) in Weiß */
 #platform-preview-frame.platform-preview-dark .platform-messages-toggle .text-black\/80,
 #platform-preview-frame.platform-preview-dark .platform-messages-toggle .text-black\/90,
-#platform-preview-frame.platform-preview-dark .platform-messages-toggle span {
-  color: rgba(255, 255, 255, 0.9) !important;
+#platform-preview-frame.platform-preview-dark .platform-messages-toggle span,
+#platform-preview-frame.platform-preview-dark .platform-messages-toggle .min-w-0 > div.text-sm.font-medium {
+  color: #ffffff !important;
 }
 
 #platform-preview-frame.platform-preview-dark .platform-messages-toggle .text-black\/50,
