@@ -600,6 +600,11 @@
   background: color-mix(in srgb, var(--platform-btn) 20%, transparent);
 }
 
+/* Sidebar-Footer: „Isabel Kohr“ im Dark Mode weiß */
+#platform-preview-frame.platform-preview-dark .platform-sidebar .text-black\/80 {
+  color: #ffffff !important;
+}
+
 #platform-preview-frame.platform-preview-dark .platform-sidebar .p-3.border-t span,
 #platform-preview-frame.platform-preview-dark .platform-events,
 #platform-preview-frame.platform-preview-dark .platform-events h4,
@@ -631,6 +636,11 @@
 #platform-preview-frame.platform-preview-dark .platform-post p,
 #platform-preview-frame.platform-preview-dark .platform-post .text-black\/80 {
   color: rgba(255, 255, 255, 0.9);
+}
+
+/* Feed-Posts: Autor-Namen (Sarah M., Tom K. etc.) im Dark Mode weiß */
+#platform-preview-frame.platform-preview-dark .platform-post .text-black\/90 {
+  color: #ffffff !important;
 }
 
 /* Post-erstellen-Box im Dark Mode: Toolbar-Buttons (B, I, U, Aufzählung etc.) weiß */
