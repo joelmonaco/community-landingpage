@@ -548,7 +548,8 @@
 #platform-preview-frame .platform-post .text-black\/80,
 #platform-preview-frame .platform-post .text-black\/50,
 #platform-preview-frame input[type="search"],
-#platform-preview-frame .platform-messages-toggle {
+#platform-preview-frame .platform-messages-toggle,
+#platform-preview-frame .platform-alle-channels {
   transition: background 0.5s ease, background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
 
@@ -557,10 +558,15 @@
   transition: background 0.5s ease, background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
 }
 
-/* Dark Mode Vorschau – dunkelgrau/schwarz statt bläulich */
+/* Dark Mode Vorschau – gewählte Farbe oben, Verlauf ins Dunkle */
 #platform-preview-frame.platform-preview-dark #platform-preview-inner,
 #platform-preview-frame.platform-preview-dark #platform-main-bg {
-  background: linear-gradient(to bottom, #1a1a1a 0%, #0d0d0d 100%);
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--platform-bg-top) 45%, #0d0d0d) 0%,
+    #1a1a1a 35%,
+    #0d0d0d 100%
+  );
 }
 
 #platform-preview-frame.platform-preview-dark .platform-sidebar {
@@ -580,6 +586,15 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
+#platform-preview-frame.platform-preview-dark .platform-alle-channels,
+#platform-preview-frame.platform-preview-dark .platform-alle-channels svg {
+  color: #ffffff;
+}
+
+#platform-preview-frame.platform-preview-dark .platform-alle-channels:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
 #platform-preview-frame.platform-preview-dark .platform-nav-channel:first-of-type {
   color: var(--platform-btn);
   background: color-mix(in srgb, var(--platform-btn) 20%, transparent);
@@ -593,13 +608,13 @@
 }
 
 #platform-preview-frame.platform-preview-dark .platform-events {
-  background: rgba(30, 30, 30, 0.9);
+  background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.1);
 }
 
 #platform-preview-frame.platform-preview-dark .platform-composer,
 #platform-preview-frame.platform-preview-dark .platform-post {
-  background: rgba(30, 30, 30, 0.95);
+  background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -622,7 +637,32 @@
 #platform-preview-frame.platform-preview-dark .platform-messages-toggle {
   background: rgba(26, 26, 26, 0.98);
   border-color: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Nachrichten-Bereich: alle Texte und Icons hell für Lesbarkeit */
+#platform-preview-frame.platform-preview-dark .platform-messages-toggle .text-black\/80,
+#platform-preview-frame.platform-preview-dark .platform-messages-toggle .text-black\/90,
+#platform-preview-frame.platform-preview-dark .platform-messages-toggle span {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+#platform-preview-frame.platform-preview-dark .platform-messages-toggle .text-black\/50,
+#platform-preview-frame.platform-preview-dark .platform-messages-toggle .text-xs {
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+#platform-preview-frame.platform-preview-dark .platform-messages-toggle svg,
+#platform-preview-frame.platform-preview-dark .platform-messages-toggle button {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-messages-toggle .flex.items-center.gap-2.px-3.py-2:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-messages-toggle button:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 1024px) {
