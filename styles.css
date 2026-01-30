@@ -692,14 +692,34 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-#platform-preview-frame.platform-preview-dark .platform-post .text-black\/50,
-#platform-preview-frame.platform-preview-dark input[type="search"] {
+#platform-preview-frame.platform-preview-dark .platform-post .text-black\/50 {
   color: rgba(255, 255, 255, 0.6);
 }
 
-#platform-preview-frame.platform-preview-dark input[type="search"] {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.15);
+/* Search Bar im Dark Mode: 90 % transparent, Text und Icons hell */
+#platform-preview-frame.platform-preview-dark .platform-feed-search {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+
+#platform-preview-frame.platform-preview-dark .platform-feed-search input[type="search"] {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  border-color: transparent;
+}
+
+#platform-preview-frame.platform-preview-dark .platform-feed-search input[type="search"]::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-feed-search svg,
+#platform-preview-frame.platform-preview-dark .platform-feed-search button {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-feed-search button:hover {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 #platform-preview-frame.platform-preview-dark .platform-messages-toggle {
