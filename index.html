@@ -300,12 +300,27 @@
     }
     .faq-accordion-answer-inner .faq-accordion-answer {
       opacity: 0;
-      transition: opacity 0.4s ease-out 0.1s;
+      transform-origin: top right;
+      transform: scale(0.96, 0) translateX(12px);
+      transition: opacity 0.35s ease-out 0.08s, transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .faq-accordion-item[open] .faq-accordion-answer-inner .faq-accordion-answer {
       opacity: 1;
+      transform: scale(1, 1) translateX(0);
+    }
+    .faq-accordion-list {
+      column-count: 1;
+      column-gap: 0.5rem;
+    }
+    @media (min-width: 640px) {
+      .faq-accordion-list { column-count: 2; }
+    }
+    @media (min-width: 1024px) {
+      .faq-accordion-list { column-count: 4; }
     }
     .faq-accordion-item {
+      break-inside: avoid;
+      margin-bottom: 0.5rem;
       background: rgba(255, 255, 255, 0.55);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -2403,7 +2418,7 @@
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 leading-normal text-white" style="font-family: 'Cal Sans', sans-serif;">
           Frequently Asked Questions
         </h2>
-        <div class="faq-accordion-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
+        <div class="faq-accordion-list">
           <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
             <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
               <span>Was ist glymmer eigentlich genau?</span>
@@ -2738,37 +2753,72 @@
     })();
   </script>
   <script>
-    // FAQ Accordion: Smooth Ausklapp-Animation mit gemessener Höhe - nur eine gleichzeitig offen
+    // FAQ Accordion: Smooth Ausklapp-Animation + FLIP für sanftes Nachrücken der anderen Boxen
     (function() {
       const faqItems = document.querySelectorAll('.faq-accordion-item');
       if (faqItems.length === 0) return;
 
       const TRANSITION_MS = 500;
+      const FLIP_DURATION_MS = 420;
+      const FLIP_EASING = 'cubic-bezier(0.25, 0.46, 0.45, 0.94)';
 
-      // Funktion zum Schließen eines FAQ-Items (smooth wie Ausklappen)
-      function closeFaqItem(item) {
+      function getRects(elements) {
+        return Array.from(elements).map(function(el) { return el.getBoundingClientRect(); });
+      }
+
+      function applyFlipAnimation(items, rectsBefore, rectsAfter, excludeItem, onEnd) {
+        var toClean = [];
+        items.forEach(function(el, i) {
+          if (el === excludeItem) return;
+          var before = rectsBefore[i];
+          var after = rectsAfter[i];
+          var dx = before.left - after.left;
+          var dy = before.top - after.top;
+          if (Math.abs(dx) < 0.1 && Math.abs(dy) < 0.1) return;
+          el.style.willChange = 'transform';
+          el.style.backfaceVisibility = 'hidden';
+          el.style.transition = 'transform ' + (FLIP_DURATION_MS / 1000) + 's ' + FLIP_EASING;
+          el.style.transform = 'translate3d(' + dx + 'px, ' + dy + 'px, 0)';
+          toClean.push(el);
+        });
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            toClean.forEach(function(el) {
+              el.style.transform = 'translate3d(0, 0, 0)';
+            });
+            setTimeout(function() {
+              toClean.forEach(function(el) {
+                el.style.willChange = '';
+                el.style.backfaceVisibility = '';
+                el.style.transition = '';
+                el.style.transform = '';
+              });
+              if (onEnd) onEnd();
+            }, FLIP_DURATION_MS + 30);
+          });
+        });
+      }
+
+      function closeFaqItem(item, withFlip, done) {
         const wrapper = item.querySelector('.faq-accordion-answer-wrapper');
         const answerInner = item.querySelector('.faq-accordion-answer-inner');
         if (!wrapper || !answerInner || !item.hasAttribute('open')) return;
-        
-        // Aktuelle Höhe messen – Inhalt ist sichtbar, solange open gesetzt ist
+        var rectsBefore = getRects(faqItems);
         wrapper.style.maxHeight = 'none';
-        const measuredHeight = answerInner.scrollHeight;
+        var measuredHeight = answerInner.scrollHeight;
         wrapper.style.maxHeight = measuredHeight + 'px';
-        
-        // Force reflow, damit der Browser den Wert übernimmt
         void wrapper.offsetHeight;
-        
-        // Jetzt smooth zu 0 animieren
         requestAnimationFrame(function() {
           wrapper.style.maxHeight = '0px';
         });
-        
-        // open erst NACH der Animation entfernen – sonst blendet der Browser
-        // den Inhalt sofort aus und die Einklapp-Animation ist nicht sichtbar
         setTimeout(function() {
           item.removeAttribute('open');
           wrapper.style.maxHeight = '0px';
+          if (withFlip) {
+            void item.offsetHeight;
+            var rectsAfter = getRects(faqItems);
+            applyFlipAnimation(faqItems, rectsBefore, rectsAfter, null, done);
+          } else if (done) done();
         }, TRANSITION_MS + 20);
       }
 
@@ -2776,40 +2826,30 @@
         const summary = item.querySelector('summary');
         const wrapper = item.querySelector('.faq-accordion-answer-wrapper');
         const answerInner = item.querySelector('.faq-accordion-answer-inner');
-        
         if (!summary || !wrapper || !answerInner) return;
 
-        // Initial: geschlossen
         wrapper.style.maxHeight = '0px';
 
         summary.addEventListener('click', function(e) {
           e.preventDefault();
-          
-          const isOpen = item.hasAttribute('open');
-          
+          var isOpen = item.hasAttribute('open');
+
           if (isOpen) {
-            // Schließen: von aktueller Höhe zu 0
-            closeFaqItem(item);
+            closeFaqItem(item, true);
           } else {
-            // Alle anderen schließen
             faqItems.forEach(function(otherItem) {
               if (otherItem !== item && otherItem.hasAttribute('open')) {
-                closeFaqItem(otherItem);
+                var ow = otherItem.querySelector('.faq-accordion-answer-wrapper');
+                otherItem.removeAttribute('open');
+                if (ow) ow.style.maxHeight = '0px';
               }
             });
-            
-            // Öffnen: von 0 zu gemessener Höhe
+            void item.offsetHeight;
+
             item.setAttribute('open', '');
-            // Temporär auf auto setzen um Höhe zu messen
             wrapper.style.maxHeight = 'none';
-            const targetHeight = answerInner.scrollHeight;
-            wrapper.style.maxHeight = '0px';
-            // Force reflow
-            void wrapper.offsetHeight;
-            // Jetzt animieren zur Zielhöhe
-            requestAnimationFrame(function() {
-              wrapper.style.maxHeight = targetHeight + 'px';
-            });
+            var targetHeight = answerInner.scrollHeight;
+            wrapper.style.maxHeight = targetHeight + 'px';
           }
         });
       });
