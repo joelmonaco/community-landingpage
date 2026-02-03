@@ -88,6 +88,13 @@
 
     @font-face {
       font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-Light.otf') format('opentype');
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
       src: url('./fonts/suisse/SuisseIntl-Regular.otf') format('opentype');
       font-weight: 400;
       font-style: normal;
@@ -1621,52 +1628,46 @@
     <div class="w-full flex flex-col gap-6 px-6 lg:px-8">
       <!-- Zeile 1: Biyon – dunkle Box links (Logo + Text), lila Box rechts (nur Bild) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 story-row min-h-[420px] md:min-h-[380px]">
-        <div class="story-dark-box flex flex-col justify-between p-8 lg:p-10 rounded-2xl" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1f1f1f 100%); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 16px 64px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.06);">
+        <div class="story-dark-box flex flex-col justify-between p-8 lg:p-10 rounded-2xl" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1f1f1f 100%); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 16px 64px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.06); border-left: 4px solid #7167F5;">
           <div class="text-left">
-            <img src="./public/Customers/Biyon_Logo.png" alt="Biyon Logo" class="h-12 md:h-14 w-auto object-contain mb-4">
-            <p class="text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-3 leading-tight" style="font-family: 'Cal Sans', sans-serif;">Team Selbstliebe – Exklusiver Raum für Wachstum und echte Verbindungen.</p>
+            <p class="text-2xl md:text-3xl lg:text-4xl font-medium text-white mb-3 leading-tight" style="font-family: 'Suisse Intl', sans-serif; font-weight: 500;">Team Selbstliebe – Exklusiver Raum für Wachstum und echte Verbindungen.</p>
             <p class="text-sm md:text-base text-white/80 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">Biyon Kattilathu hat mit gylimmer seine "Team Selbstliebe" Community aufgebaut – einen geschützten Ort voller Inspiration, Austausch und exklusiver Inhalte.</p>
           </div>
         </div>
-        <div class="story-colored-box flex justify-center items-center p-8 lg:p-10 rounded-2xl relative overflow-hidden" style="background: linear-gradient(135deg, #7167F5 0%, #8577ff 100%); box-shadow: 0 10px 40px rgba(113, 103, 245, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
-          <div style="position: absolute; top: -50%; right: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-          <div style="position: absolute; bottom: -30%; left: -10%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-          <div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden flex-shrink-0 relative z-10" style="border: 4px solid rgba(255, 255, 255, 0.3); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);">
-            <img src="./public/Customers/Biyon_Profil.jpg" alt="Biyon Kattilathu" class="w-full h-full object-cover">
+        <div class="story-colored-box relative rounded-2xl overflow-hidden min-h-[320px]" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);">
+          <img src="./public/Customers/Biyon_Profil.jpg" alt="Biyon Kattilathu" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 flex items-center justify-center z-10" style="background: rgba(0, 0, 0, 0.45);">
+            <img src="./public/Customers/Biyon_Logo.png" alt="Biyon Logo" class="h-16 md:h-20 w-auto object-contain drop-shadow-lg">
           </div>
         </div>
       </div>
       <!-- Zeile 2: Baby Got Business – dunkle Box links (Logo + Text), rosa Box rechts (nur Bild) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 story-row min-h-[420px] md:min-h-[380px]">
-        <div class="story-dark-box flex flex-col justify-between p-8 lg:p-10 rounded-2xl" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1f1f1f 100%); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 16px 64px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.06);">
+        <div class="story-dark-box flex flex-col justify-between p-8 lg:p-10 rounded-2xl" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1f1f1f 100%); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 16px 64px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.06); border-left: 4px solid #c18bd0;">
           <div class="text-left">
-            <img src="./public/Customers/BGB_Logo.png" alt="Baby Got Business Logo" class="h-12 md:h-14 w-auto object-contain mb-4">
-            <p class="text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-3 leading-tight" style="font-family: 'Cal Sans', sans-serif;">Social-Media-Bootcamps – Live-Sessions, Feedback und Community in einem.</p>
+            <p class="text-2xl md:text-3xl lg:text-4xl font-medium text-white mb-3 leading-tight" style="font-family: 'Suisse Intl', sans-serif; font-weight: 500;">Social-Media-Bootcamps – Live-Sessions, Feedback und Community in einem.</p>
             <p class="text-sm md:text-base text-white/80 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">Baby got Business hat mit glymmer ihre 10-wöchigen Social-Media-Bootcamps umgesetzt – Live-Intensiv-Sessions, Workbooks und persönliches Feedback.</p>
           </div>
         </div>
-        <div class="story-colored-box flex justify-center items-center p-8 lg:p-10 rounded-2xl relative overflow-hidden" style="background: linear-gradient(135deg, #c18bd0 0%, #d39ee3 100%); box-shadow: 0 10px 40px rgba(193, 139, 208, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
-          <div style="position: absolute; top: -50%; right: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-          <div style="position: absolute; bottom: -30%; left: -10%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-          <div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden flex-shrink-0 relative z-10" style="border: 4px solid rgba(255, 255, 255, 0.3); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);">
-            <img src="./public/Customers/BGB_Profil.jpg" alt="Baby Got Business" class="w-full h-full object-cover">
+        <div class="story-colored-box relative rounded-2xl overflow-hidden min-h-[320px]" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);">
+          <img src="./public/Customers/BGB_Profil.jpg" alt="Baby Got Business" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 flex items-center justify-center z-10" style="background: rgba(0, 0, 0, 0.45);">
+            <img src="./public/Customers/BGB_Logo.png" alt="Baby Got Business Logo" class="h-16 md:h-20 w-auto object-contain drop-shadow-lg">
           </div>
         </div>
       </div>
       <!-- Zeile 3: MAK Nachhilfe – dunkle Box links (Logo + Text), gelbe Box rechts (nur Bild) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 story-row min-h-[420px] md:min-h-[380px]">
-        <div class="story-dark-box flex flex-col justify-between p-8 lg:p-10 rounded-2xl" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1f1f1f 100%); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 16px 64px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.06);">
+        <div class="story-dark-box flex flex-col justify-between p-8 lg:p-10 rounded-2xl" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1f1f1f 100%); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 16px 64px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.05), inset 0 -1px 0 rgba(0, 0, 0, 0.25); border: 1px solid rgba(255, 255, 255, 0.06); border-left: 4px solid #c3b34b;">
           <div class="text-left">
-            <img src="./public/Customers/MAK_Logo.png" alt="MAK Nachhilfe Logo" class="h-12 md:h-14 w-auto object-contain mb-4">
-            <p class="text-xl md:text-2xl lg:text-3xl font-semibold text-white mb-3 leading-tight" style="font-family: 'Cal Sans', sans-serif;">Digitale Nachhilfe – Individuelle Sessions und Gruppenunterricht online.</p>
+            <p class="text-2xl md:text-3xl lg:text-4xl font-medium text-white mb-3 leading-tight" style="font-family: 'Suisse Intl', sans-serif; font-weight: 500;">Digitale Nachhilfe – Individuelle Sessions und Gruppenunterricht online.</p>
             <p class="text-sm md:text-base text-white/80 leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">MAK Nachhilfe setzt glymmer für ihre Online-Nachhilfe ein – vom 1-zu-1-Unterricht bis zu Gruppenkursen mit interaktiver Tafel und Materialien.</p>
           </div>
         </div>
-        <div class="story-colored-box flex justify-center items-center p-8 lg:p-10 rounded-2xl relative overflow-hidden" style="background: linear-gradient(135deg, #c3b34b 0%, #d4c65d 100%); box-shadow: 0 10px 40px rgba(195, 179, 75, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
-          <div style="position: absolute; top: -50%; right: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-          <div style="position: absolute; bottom: -30%; left: -10%; width: 250px; height: 250px; background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-          <div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden flex-shrink-0 relative z-10" style="border: 4px solid rgba(255, 255, 255, 0.3); box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);">
-            <img src="./public/Customers/MAK_Profil.png" alt="MAK Nachhilfe" class="w-full h-full object-cover">
+        <div class="story-colored-box relative rounded-2xl overflow-hidden min-h-[320px]" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);">
+          <img src="./public/Customers/MAK_Profil.png" alt="MAK Nachhilfe" class="absolute inset-0 w-full h-full object-cover">
+          <div class="absolute inset-0 flex items-center justify-center z-10" style="background: rgba(0, 0, 0, 0.45);">
+            <img src="./public/Customers/MAK_Logo.png" alt="MAK Nachhilfe Logo" class="h-16 md:h-20 w-auto object-contain drop-shadow-lg">
           </div>
         </div>
       </div>
