@@ -19,6 +19,38 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.animate-on-scroll').forEach(el => {
     observer.observe(el);
   });
+
+  // „Für jeden das Richtige“ – Boxen nacheinander beim Scrollen einblenden
+  const useCasesSection = document.getElementById('use-cases');
+  if (useCasesSection) {
+    const useCasesObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+    );
+    useCasesObserver.observe(useCasesSection);
+  }
+
+  // Customer Stories – graue Boxen und Bild-Boxen beim Scrollen einblenden
+  const storiesSection = document.getElementById('stories');
+  if (storiesSection) {
+    const storiesObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    storiesObserver.observe(storiesSection);
+  }
 });
 
 // Page Load Animationen

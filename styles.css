@@ -171,6 +171,44 @@
   animation: scaleIn 0.6s ease-out forwards;
 }
 
+/* Use Cases „Für jeden das Richtige“ – Scroll-Animation */
+.use-case-box {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#use-cases.in-view .use-case-box {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#use-cases.in-view .use-case-box:nth-child(1) { transition-delay: 0ms; }
+#use-cases.in-view .use-case-box:nth-child(2) { transition-delay: 120ms; }
+#use-cases.in-view .use-case-box:nth-child(3) { transition-delay: 240ms; }
+#use-cases.in-view .use-case-box:nth-child(4) { transition-delay: 360ms; }
+
+/* Customer Stories – Scroll-Animation (graue Boxen + Bild-Boxen) */
+#stories .story-dark-box,
+#stories .story-colored-box {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#stories.in-view .story-dark-box,
+#stories.in-view .story-colored-box {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#stories.in-view .story-row:nth-child(1) .story-dark-box { transition-delay: 0ms; }
+#stories.in-view .story-row:nth-child(1) .story-colored-box { transition-delay: 120ms; }
+#stories.in-view .story-row:nth-child(2) .story-dark-box { transition-delay: 240ms; }
+#stories.in-view .story-row:nth-child(2) .story-colored-box { transition-delay: 360ms; }
+#stories.in-view .story-row:nth-child(3) .story-dark-box { transition-delay: 480ms; }
+#stories.in-view .story-row:nth-child(3) .story-colored-box { transition-delay: 600ms; }
+
 /* Floating User Box Animations */
 @keyframes popIn {
   0% {
