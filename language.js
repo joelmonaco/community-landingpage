@@ -106,7 +106,39 @@ const translations = {
       kalender: 'Kalender',
       mediathek: 'Mediathek',
       benach: 'Benach...',
-      chat: 'Chat'
+      chat: 'Chat',
+      mockup: {
+        allChannels: 'Alle Channels',
+        navBenach: 'Benachrichtigung',
+        settings: 'Einstellungen',
+        searchPlaceholder: 'Feed durchsuchen…',
+        sharePlaceholder: 'Was möchtest du teilen?',
+        attachment: 'Anhang',
+        surveys: 'Umfragen',
+        selectCategory: 'Kategorie auswählen',
+        general: 'Allgemein',
+        post: 'Posten',
+        paid: 'Kostenpflichtig',
+        post1Meta: '#Team-Updates · vor 2 Std.',
+        post1Text: 'Unser neues Feature ist live: Ihr könnt jetzt Umfragen direkt im Feed erstellen. Probiert es aus!',
+        comment: 'Kommentieren',
+        post2Meta: '#AskMeAnything · gestern',
+        post2Text: 'Frage an alle: Welche Tools nutzt ihr für Projektmanagement? Wir evaluieren gerade neue Optionen.',
+        upcomingEvents: 'Kommende Events',
+        event1Time: '10:00 – 12:00 Uhr',
+        event2Time: '14:00 – 15:00 Uhr',
+        event3Time: '09:00 – 11:00 Uhr',
+        messages: 'Nachrichten',
+        newMessage: 'Neue Nachricht',
+        msg1: 'Kannst du mir das schicken?',
+        msg2: 'Bis morgen dann 👍',
+        msg3: 'Die Session war mega!',
+        msg4: 'Hast du den Link?',
+        msg5: 'Passt 14 Uhr bei dir?',
+        msg6: 'Danke für die Infos 🙏',
+        msg7: 'Alles klar, mache ich',
+        msg8: 'Bis gleich im Call!'
+      }
     },
     whyCommunity: {
       title: 'Darum ist deine eigene Community ab 2026 unverzichtbar',
@@ -244,7 +276,39 @@ const translations = {
       kalender: 'Calendar',
       mediathek: 'Media library',
       benach: 'Notif...',
-      chat: 'Chat'
+      chat: 'Chat',
+      mockup: {
+        allChannels: 'All Channels',
+        navBenach: 'Notifications',
+        settings: 'Settings',
+        searchPlaceholder: 'Search feed…',
+        sharePlaceholder: 'What do you want to share?',
+        attachment: 'Attachment',
+        surveys: 'Surveys',
+        selectCategory: 'Select category',
+        general: 'General',
+        post: 'Post',
+        paid: 'Paid',
+        post1Meta: '#Team-Updates · 2 hrs ago',
+        post1Text: 'Our new feature is live: You can now create surveys directly in the feed. Try it out!',
+        comment: 'Comment',
+        post2Meta: '#AskMeAnything · yesterday',
+        post2Text: 'Question for everyone: What tools do you use for project management? We\'re currently evaluating new options.',
+        upcomingEvents: 'Upcoming Events',
+        event1Time: '10:00 – 12:00',
+        event2Time: '2:00 – 3:00 pm',
+        event3Time: '9:00 – 11:00 am',
+        messages: 'Messages',
+        newMessage: 'New message',
+        msg1: 'Can you send me that?',
+        msg2: 'See you tomorrow then 👍',
+        msg3: 'The session was great!',
+        msg4: 'Do you have the link?',
+        msg5: 'Does 2 pm work for you?',
+        msg6: 'Thanks for the info 🙏',
+        msg7: 'All good, will do',
+        msg8: 'See you in the call!'
+      }
     },
     whyCommunity: {
       title: 'Why your own community is essential from 2026',
@@ -565,6 +629,65 @@ function applyTranslations(lang) {
   if (menuBenach) menuBenach.textContent = t.personalize.benach;
   const menuChat = document.getElementById('platform-menu-chat-label');
   if (menuChat) menuChat.textContent = t.personalize.chat;
+
+  // Platform mockup (Customize section) – all texts inside the preview
+  const m = t.personalize.mockup;
+  if (m) {
+    const mockupAllChannels = document.getElementById('mockup-all-channels');
+    if (mockupAllChannels) mockupAllChannels.textContent = m.allChannels;
+    const mockupNavKalender = document.getElementById('mockup-nav-kalender');
+    if (mockupNavKalender) mockupNavKalender.textContent = t.personalize.kalender;
+    const mockupNavMediathek = document.getElementById('mockup-nav-mediathek');
+    if (mockupNavMediathek) mockupNavMediathek.textContent = t.personalize.mediathek;
+    const mockupNavBenach = document.getElementById('mockup-nav-benach');
+    if (mockupNavBenach) mockupNavBenach.textContent = m.navBenach;
+    const mockupNavChat = document.getElementById('mockup-nav-chat');
+    if (mockupNavChat) mockupNavChat.textContent = t.personalize.chat;
+    const mockupNavSettings = document.getElementById('mockup-nav-settings');
+    if (mockupNavSettings) mockupNavSettings.textContent = m.settings;
+    const mockupSearch = document.getElementById('mockup-search');
+    if (mockupSearch) mockupSearch.placeholder = m.searchPlaceholder;
+    const mockupComposer = document.getElementById('mockup-composer');
+    if (mockupComposer) mockupComposer.setAttribute('data-placeholder', m.sharePlaceholder);
+    const mockupAttachment = document.getElementById('mockup-attachment');
+    if (mockupAttachment) mockupAttachment.textContent = m.attachment;
+    const mockupSurveys = document.getElementById('mockup-surveys');
+    if (mockupSurveys) mockupSurveys.textContent = m.surveys;
+    const mockupOptionCategory = document.getElementById('mockup-option-category');
+    if (mockupOptionCategory) mockupOptionCategory.textContent = m.selectCategory;
+    const mockupOptionGeneral = document.getElementById('mockup-option-general');
+    if (mockupOptionGeneral) mockupOptionGeneral.textContent = m.general;
+    const mockupPostBtn = document.getElementById('mockup-post-btn');
+    if (mockupPostBtn) mockupPostBtn.textContent = m.post;
+    const mockupPaid = document.getElementById('mockup-paid');
+    if (mockupPaid) mockupPaid.textContent = m.paid;
+    const mockupPost1Meta = document.getElementById('mockup-post1-meta');
+    if (mockupPost1Meta) mockupPost1Meta.textContent = m.post1Meta;
+    const mockupPost1Text = document.getElementById('mockup-post1-text');
+    if (mockupPost1Text) mockupPost1Text.textContent = m.post1Text;
+    const mockupComment1 = document.getElementById('mockup-comment1');
+    if (mockupComment1) mockupComment1.textContent = m.comment;
+    const mockupPost2Meta = document.getElementById('mockup-post2-meta');
+    if (mockupPost2Meta) mockupPost2Meta.textContent = m.post2Meta;
+    const mockupPost2Text = document.getElementById('mockup-post2-text');
+    if (mockupPost2Text) mockupPost2Text.textContent = m.post2Text;
+    const mockupComment2 = document.getElementById('mockup-comment2');
+    if (mockupComment2) mockupComment2.textContent = m.comment;
+    const mockupUpcomingEvents = document.getElementById('mockup-upcoming-events');
+    if (mockupUpcomingEvents) mockupUpcomingEvents.textContent = m.upcomingEvents;
+    const mockupEvent1Time = document.getElementById('mockup-event1-time');
+    if (mockupEvent1Time) mockupEvent1Time.textContent = m.event1Time;
+    const mockupEvent2Time = document.getElementById('mockup-event2-time');
+    if (mockupEvent2Time) mockupEvent2Time.textContent = m.event2Time;
+    const mockupEvent3Time = document.getElementById('mockup-event3-time');
+    if (mockupEvent3Time) mockupEvent3Time.textContent = m.event3Time;
+    const mockupMessagesTitle = document.getElementById('mockup-messages-title');
+    if (mockupMessagesTitle) mockupMessagesTitle.textContent = m.messages;
+    ['mockup-msg1', 'mockup-msg2', 'mockup-msg3', 'mockup-msg4', 'mockup-msg5', 'mockup-msg6', 'mockup-msg7', 'mockup-msg8'].forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (el && m['msg' + (i + 1)]) el.textContent = m['msg' + (i + 1)];
+    });
+  }
 
   // Why Community + Quote
   const whyTitle = document.getElementById('why-community-title');
