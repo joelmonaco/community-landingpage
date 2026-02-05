@@ -57,12 +57,15 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
   document.body.classList.add('loaded');
   
-  // Hero Animationen
-  const heroElements = document.querySelectorAll('.fade-in, .delay-100, .delay-200, .delay-300, .delay-400, .delay-500, .delay-600');
+  // Hero Animationen: nur Hero-Inhalt, mit sanftem Einblenden (Transition)
+  const hero = document.getElementById('hero');
+  const heroElements = hero ? hero.querySelectorAll('.fade-in, .delay-200, .delay-300, .delay-400') : [];
+  const stagger = 100;
   heroElements.forEach((el, index) => {
     setTimeout(() => {
       el.style.opacity = '1';
-    }, index * 100);
+      el.style.transform = 'translateY(0)';
+    }, 20 + index * stagger);
   });
 });
 
