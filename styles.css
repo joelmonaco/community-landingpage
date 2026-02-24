@@ -1155,3 +1155,13 @@
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 .faq-accordion-answer { border: none !important; }
+
+/* Header Mobile: Log In + Jetzt starten immer nebeneinander, keine Zeilenumbrüche */
+@media (max-width: 767px) {
+  #main-header nav > div:last-of-type {
+    flex-wrap: nowrap;
+  }
+  #main-header .flex-nowrap.ml-auto {
+    flex-wrap: nowrap;
+  }
+}

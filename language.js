@@ -168,6 +168,40 @@ const translations = {
       privacy: 'Datenschutz',
       terms: 'AGB',
       copyright: '© 2026 Glymmer - A teech Product. Alle Rechte vorbehalten.'
+    },
+    terminModal: {
+      title: 'Rückruf vereinbaren',
+      closeAria: 'Schließen',
+      labelFirstname: 'Vorname *',
+      labelLastname: 'Nachname *',
+      labelPhone: 'Telefonnummer *',
+      labelEmail: 'E-Mail *',
+      labelComment: 'Kommentar (optional)',
+      placeholderComment: 'Wann passt es Ihnen? Weitere Wünsche?',
+      checkboxLabel: 'Ich akzeptiere die <a href="/terms.html" target="_blank" rel="noopener">AGB</a> und die <a href="/privacy.html" target="_blank" rel="noopener">Datenschutzerklärung</a> *',
+      submitBtn: 'Anfrage senden',
+      sendingBtn: 'Wird gesendet…',
+      successMessage: 'Vielen Dank! Wir melden uns in Kürze bei Ihnen.',
+      errorAccept: 'Bitte AGB und Datenschutzerklärung akzeptieren.',
+      errorSend: 'Fehler beim Senden. Bitte später erneut versuchen.'
+    },
+    faq: {
+      title: 'Häufige Fragen',
+      closeAria: 'Schließen',
+      viewAllLink: 'Alle FAQs ansehen →',
+      questions: [
+        { q: 'Was ist glymmer eigentlich genau?', a: 'glymmer ist deine Community-Plattform, auf der du Inhalte, Austausch und Umsatz an einem Ort bündelst – unter deiner eigenen Marke.<br><br>Du kannst Communities für Coaches, Creator, Bootcamps oder Lernräume aufbauen, Live-Sessions hosten, Kurse anbieten, Mitgliedschaften verkaufen, Events organisieren und alles über ein zentrales Dashboard steuern – DSGVO-konform und Made in Germany.' },
+        { q: 'Für wen ist glymmer geeignet?', a: 'glymmer ist für alle, die mehr wollen als eine lose Follower-Liste:<br><strong>Coaches & Trainer</strong>, die aus Kunden eine echte Community machen wollen.<br><strong>Creator</strong>, die ihre Inhalte und Fans in ein eigenes, monetarisierbares Ökosystem holen möchten.<br><strong>Bootcamps & Bildungsanbieter</strong>, die Programme mit Struktur, Live-Sessions und Community kombinieren.<br><strong>Lernräume, Nachhilfe & Academies</strong>, die Online-Unterricht, Gruppen und Materialien an einem Ort organisieren wollen.' },
+        { q: 'Was kann ich mit glymmer konkret machen?', a: 'Du kannst: <strong>Community aufbauen</strong> – Channels, Gruppenchats, Feeds, Events, Live-Sessions. <strong>Content strukturieren</strong> – Mediathek, Dateiablage, Kursbereiche, Workbooks. <strong>Monetarisieren</strong> – Mitgliedschaften, einmalige Produktverkäufe, Tickets für Events. <strong>Lernen & Engagement stärken</strong> – Gamification, Challenges, Feedback, Umfragen. <strong>Alles steuern</strong> – Analytics, Admin-Dashboard, Rollen & Berechtigungen.' },
+        { q: 'Wie verdiene ich Geld mit glymmer?', a: 'glymmer wurde dafür gebaut, dass sich deine Community rechnet: Erstelle <strong>Mitgliedschaften</strong> mit unterschiedlichen Zugangslevels (z.B. Basic, Premium, VIP). Verkaufe <strong>Programme, Kurse, Bootcamps oder Einzelprodukte</strong> direkt in deiner Community. Nutze <strong>Events & Ticketing</strong>, um Workshops, Live-Formate oder Challenges zu monetarisieren. Deine Zahlungen laufen zentral über die Plattform – wiederkehrende Einnahmen inklusive.' },
+        { q: 'Kann ich glymmer kostenlos testen?', a: 'Klar! <a href="/kontakt.html#sales" class="underline font-medium hover:no-underline">Jetzt testen für 14 Tage kostenlos</a>.' },
+        { q: 'Ist glymmer DSGVO-konform und wo liegen die Daten?', a: 'Ja, glymmer ist eine deutsche SaaS-Plattform mit Hosting und Infrastruktur, die auf Datenschutz und Sicherheit ausgelegt ist.<br><br>Deine Community-Daten gehören dir – du behältst die Kontrolle über Mitglieder, Inhalte und Kommunikation und reduzierst deine Abhängigkeit von Social-Media-Plattformen und deren Geschäftsmodellen.' },
+        { q: 'Brauche ich noch andere Tools wie Zoom, WhatsApp oder Mailchimp?', a: 'Viele unserer Kunden verschlanken mit glymmer ihre komplette Tool-Landschaft: Live-Sessions und Workshops laufen direkt in glymmer – externe Tools wie Zoom, Teams oder Miro werden nicht mehr gebraucht. Community-Chat und Channels bündeln die Kommunikation und ersetzen verstreute WhatsApp-, Slack- oder Discord-Gruppen. Gezielte Push-Benachrichtigungen und automatisierte E-Mail-Updates machen separate Newsletter-Tools wie Mailchimp überflüssig. Events, Ticketing und Mitgliedschaften werden zentral in der Plattform organisiert und abgerechnet.<br><br>Weniger Tools, weniger Brüche – mehr Fokus auf deine Community.' },
+        { q: 'Wie schnell kann ich mit glymmer starten?', a: 'In der Regel kannst du deine Community innerhalb weniger Minuten aufsetzen: Template oder Struktur auswählen, Branding hinzufügen (Logo, Farben, Domain). Erste Channels, Events und Inhalte anlegen. Mitglieder einladen oder bestehende Kontakte importieren.<br><br>Auf Wunsch begleiten wir dich mit einem individuellen Migrationsservice, damit du deine ersten Launches, Kurse oder Memberships direkt sauber strukturierst.' },
+        { q: 'Kann ich glymmer in meinem eigenen Branding nutzen – inklusive App?', a: 'Ja, glymmer ist als White-Label-Lösung gedacht: Du nutzt deine Farben, dein Logo und auf Wunsch deine eigene Domain. Deine Community fühlt sich wie deine eigene Plattform an – nicht wie ein fremdes Netzwerk. Zusätzlich kannst du dir eine eigene Community-App bereitstellen lassen, die deine Mitglieder über App Store und Google Play nutzen.' },
+        { q: 'Welche Preismodelle gibt es und wie funktionieren die Gebühren?', a: 'glymmer bietet verschiedene Pakete für unterschiedliche Wachstumsphasen – von kleineren Communities bis zu großen Programmen.<br><br>Du zahlst eine monatliche Plattformgebühr und eine faire Transaktionsgebühr auf Umsätze, die über glymmer laufen. So kannst du klein starten und die Kosten wachsen mit deinem Erfolg, nicht andersherum.' },
+        { q: 'Was passiert, wenn meine Community stark wächst oder ich mehrere Projekte habe?', a: 'glymmer ist darauf ausgelegt, mit dir mitzuwachsen: Du kannst mehr Mitglieder, zusätzliche Programme und Events abbilden, ohne dein Setup komplett neu zu denken. Für größere Communities oder Bootcamps stehen dir erweiterte Admin-Features, mehr Speicher, Integrationen und individuelle Lösungen zur Verfügung. Wenn du merkst, dass du aus einem Paket „herausgewachsen“ bist, kannst du unkompliziert upgraden – die Community bleibt, du schaltest nur mehr Möglichkeiten frei.' }
+      ]
     }
   },
   en: {
@@ -338,6 +372,40 @@ const translations = {
       privacy: 'Privacy',
       terms: 'Terms',
       copyright: '© 2026 Glymmer - A teech Product. All rights reserved.'
+    },
+    terminModal: {
+      title: 'Request a callback',
+      closeAria: 'Close',
+      labelFirstname: 'First name *',
+      labelLastname: 'Last name *',
+      labelPhone: 'Phone number *',
+      labelEmail: 'Email *',
+      labelComment: 'Comment (optional)',
+      placeholderComment: 'When does it suit you? Any other requests?',
+      checkboxLabel: 'I accept the <a href="/terms.html" target="_blank" rel="noopener">Terms</a> and the <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> *',
+      submitBtn: 'Send request',
+      sendingBtn: 'Sending…',
+      successMessage: 'Thank you! We will get back to you shortly.',
+      errorAccept: 'Please accept the Terms and Privacy Policy.',
+      errorSend: 'Error sending. Please try again later.'
+    },
+    faq: {
+      title: 'Frequently Asked Questions',
+      closeAria: 'Close',
+      viewAllLink: 'View all FAQs →',
+      questions: [
+        { q: 'What exactly is glymmer?', a: 'glymmer is your community platform where you bring together content, engagement and revenue in one place – under your own brand.<br><br>You can build communities for coaches, creators, bootcamps or learning spaces, host live sessions, offer courses, sell memberships, organise events and manage everything from one dashboard – GDPR-compliant and Made in Germany.' },
+        { q: 'Who is glymmer for?', a: 'glymmer is for everyone who wants more than a loose follower list:<br><strong>Coaches & trainers</strong> who want to turn clients into a real community.<br><strong>Creators</strong> who want to bring their content and fans into their own monetisable ecosystem.<br><strong>Bootcamps & education providers</strong> who combine programmes with structure, live sessions and community.<br><strong>Learning spaces, tutoring & academies</strong> who want to organise online teaching, groups and materials in one place.' },
+        { q: 'What can I actually do with glymmer?', a: 'You can: <strong>Build community</strong> – channels, group chats, feeds, events, live sessions. <strong>Structure content</strong> – media library, file storage, course areas, workbooks. <strong>Monetise</strong> – memberships, one-off product sales, event tickets. <strong>Boost learning & engagement</strong> – gamification, challenges, feedback, surveys. <strong>Control everything</strong> – analytics, admin dashboard, roles & permissions.' },
+        { q: 'How do I make money with glymmer?', a: 'glymmer was built so your community pays off: Create <strong>memberships</strong> with different access levels (e.g. Basic, Premium, VIP). Sell <strong>programmes, courses, bootcamps or single products</strong> directly in your community. Use <strong>events & ticketing</strong> to monetise workshops, live formats or challenges. Payments run centrally through the platform – including recurring revenue.' },
+        { q: 'Can I try glymmer for free?', a: 'Yes! <a href="/kontakt.html#sales" class="underline font-medium hover:no-underline">Try free for 14 days</a>.' },
+        { q: 'Is glymmer GDPR-compliant and where is data stored?', a: 'Yes, glymmer is a German SaaS platform with hosting and infrastructure designed for data protection and security.<br><br>Your community data belongs to you – you keep control over members, content and communication and reduce your dependence on social media platforms and their business models.' },
+        { q: 'Do I still need other tools like Zoom, WhatsApp or Mailchimp?', a: 'Many of our customers streamline their entire tool landscape with glymmer: live sessions and workshops run directly in glymmer – external tools like Zoom, Teams or Miro are no longer needed. Community chat and channels centralise communication and replace scattered WhatsApp, Slack or Discord groups. Targeted push notifications and automated email updates make separate newsletter tools like Mailchimp unnecessary. Events, ticketing and memberships are organised and billed centrally on the platform.<br><br>Fewer tools, fewer gaps – more focus on your community.' },
+        { q: 'How quickly can I get started with glymmer?', a: 'You can usually set up your community in minutes: choose a template or structure, add branding (logo, colours, domain). Create your first channels, events and content. Invite members or import existing contacts.<br><br>We can support you with an individual migration service so you structure your first launches, courses or memberships clearly from the start.' },
+        { q: 'Can I use glymmer with my own branding – including an app?', a: 'Yes, glymmer is designed as a white-label solution: you use your colours, your logo and optionally your own domain. Your community feels like your own platform – not someone else\'s network. You can also have your own community app provided for your members via the App Store and Google Play.' },
+        { q: 'What pricing models are there and how do fees work?', a: 'glymmer offers different packages for different growth phases – from smaller communities to large programmes.<br><br>You pay a monthly platform fee and a fair transaction fee on revenue generated through glymmer. So you can start small and costs grow with your success, not the other way around.' },
+        { q: 'What happens when my community grows a lot or I have multiple projects?', a: 'glymmer is built to grow with you: you can add more members, programmes and events without rethinking your whole setup. For larger communities or bootcamps you get extended admin features, more storage, integrations and individual solutions. When you outgrow a package, you can upgrade easily – the community stays, you just unlock more options.' }
+      ]
     }
   }
 };
@@ -359,6 +427,11 @@ function setLanguage(lang) {
 function applyTranslations(lang) {
   const t = translations[lang];
   if (!t) return;
+
+  if (typeof window !== 'undefined') {
+    window.__currentTranslations = t;
+    if (t.terminModal) window.terminModalTranslations = t.terminModal;
+  }
 
   // Navigation
   const navElements = {
@@ -579,6 +652,62 @@ function applyTranslations(lang) {
   
   const ctaTalkToSales = document.getElementById('cta-talk-to-sales') || document.getElementById('cta-sales');
   if (ctaTalkToSales) ctaTalkToSales.textContent = t.cta.talkToSales;
+
+  // All "Termin vereinbaren" / "Talk to Sales" buttons (including in modals and CTAs)
+  document.querySelectorAll('[data-termin-modal="open"]').forEach(function(el) {
+    const textNodes = Array.from(el.childNodes).filter(function(n) { return n.nodeType === Node.TEXT_NODE; });
+    if (textNodes.length > 0) {
+      textNodes[0].textContent = t.cta.talkToSales;
+      textNodes.slice(1).forEach(function(n) { n.remove(); });
+    } else {
+      el.appendChild(document.createTextNode(t.cta.talkToSales));
+    }
+  });
+
+  // Termin modal (injected by termin-modal.js) – update when present
+  if (t.terminModal) {
+    const termTitle = document.getElementById('termin-modal-title');
+    if (termTitle) termTitle.textContent = t.terminModal.title;
+    const termClose = document.getElementById('termin-modal-close');
+    if (termClose) termClose.setAttribute('aria-label', t.terminModal.closeAria);
+    const termLabelVorname = document.getElementById('termin-modal-label-vorname');
+    if (termLabelVorname) termLabelVorname.textContent = t.terminModal.labelFirstname;
+    const termLabelNachname = document.getElementById('termin-modal-label-nachname');
+    if (termLabelNachname) termLabelNachname.textContent = t.terminModal.labelLastname;
+    const termLabelTelefon = document.getElementById('termin-modal-label-telefon');
+    if (termLabelTelefon) termLabelTelefon.textContent = t.terminModal.labelPhone;
+    const termLabelEmail = document.getElementById('termin-modal-label-email');
+    if (termLabelEmail) termLabelEmail.textContent = t.terminModal.labelEmail;
+    const termLabelKommentar = document.getElementById('termin-modal-label-kommentar');
+    if (termLabelKommentar) termLabelKommentar.textContent = t.terminModal.labelComment;
+    const termKommentar = document.getElementById('termin-kommentar');
+    if (termKommentar) termKommentar.placeholder = t.terminModal.placeholderComment;
+    const termCheckboxLabel = document.getElementById('termin-modal-label-checkbox');
+    if (termCheckboxLabel) termCheckboxLabel.innerHTML = t.terminModal.checkboxLabel;
+    const termSubmit = document.getElementById('termin-modal-submit');
+    if (termSubmit) termSubmit.textContent = t.terminModal.submitBtn;
+  }
+
+  // FAQ modal (index, preise, or injected by faq-modal.js)
+  if (t.faq) {
+    const faqTitle = document.getElementById('faq-modal-title');
+    if (faqTitle) faqTitle.textContent = t.faq.title;
+    const faqClose = document.getElementById('close-faq-modal');
+    if (faqClose) faqClose.setAttribute('aria-label', t.faq.closeAria);
+    const openFaqLink = document.getElementById('open-faq-modal-link');
+    if (openFaqLink && t.faq.viewAllLink) openFaqLink.textContent = t.faq.viewAllLink;
+    if (t.faq.questions && t.faq.questions.length) {
+      t.faq.questions.forEach(function(item, i) {
+        const detail = document.getElementById('faq-item-' + (i + 1));
+        if (detail) {
+          const qEl = detail.querySelector('summary .faq-q-text');
+          const aEl = detail.querySelector('.faq-accordion-answer');
+          if (qEl) qEl.textContent = item.q;
+          if (aEl) aEl.innerHTML = item.a;
+        }
+      });
+    }
+  }
 
   // Customer Stories (3 boxes)
   const story1Headline = document.getElementById('story1-headline');

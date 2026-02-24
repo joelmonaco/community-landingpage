@@ -33,32 +33,53 @@
     document.head.appendChild(style);
   }
 
+  var defaultStrings = {
+    title: 'Rückruf vereinbaren',
+    closeAria: 'Schließen',
+    labelFirstname: 'Vorname *',
+    labelLastname: 'Nachname *',
+    labelPhone: 'Telefonnummer *',
+    labelEmail: 'E-Mail *',
+    labelComment: 'Kommentar (optional)',
+    placeholderComment: 'Wann passt es Ihnen? Weitere Wünsche?',
+    checkboxLabel: 'Ich akzeptiere die <a href="/terms.html" target="_blank" rel="noopener">AGB</a> und die <a href="/privacy.html" target="_blank" rel="noopener">Datenschutzerklärung</a> *',
+    submitBtn: 'Anfrage senden',
+    sendingBtn: 'Wird gesendet…',
+    successMessage: 'Vielen Dank! Wir melden uns in Kürze bei Ihnen.',
+    errorAccept: 'Bitte AGB und Datenschutzerklärung akzeptieren.',
+    errorSend: 'Fehler beim Senden. Bitte später erneut versuchen.'
+  };
+
+  function getModalStrings() {
+    return (typeof window !== 'undefined' && window.terminModalTranslations) ? window.terminModalTranslations : defaultStrings;
+  }
+
   function getModalHTML() {
-    var base = document.querySelector('base') ? (document.querySelector('base').href.replace(/\/[^/]*$/, '/') || '') : '';
+    var s = getModalStrings();
     return (
       '<div id="' +
       MODAL_ID +
       '" class="termin-modal-overlay" aria-hidden="true">' +
       '<div id="termin-modal-box" class="termin-modal-box" role="dialog" aria-labelledby="termin-modal-title">' +
-      '<button type="button" id="termin-modal-close" aria-label="Schließen">&times;</button>' +
-      '<h2 id="termin-modal-title" style="font-size:1.25rem;font-weight:600;margin-bottom:1rem;">Rückruf vereinbaren</h2>' +
+      '<button type="button" id="termin-modal-close" aria-label="' + (s.closeAria || 'Schließen') + '">&times;</button>' +
+      '<h2 id="termin-modal-title" style="font-size:1.25rem;font-weight:600;margin-bottom:1rem;">' + (s.title || 'Rückruf vereinbaren') + '</h2>' +
       '<form id="' +
       FORM_ID +
       '">' +
-      '<label for="termin-vorname">Vorname *</label>' +
+      '<label id="termin-modal-label-vorname" for="termin-vorname">' + (s.labelFirstname || 'Vorname *') + '</label>' +
       '<input type="text" id="termin-vorname" name="vorname" required autocomplete="given-name">' +
-      '<label for="termin-nachname">Nachname *</label>' +
+      '<label id="termin-modal-label-nachname" for="termin-nachname">' + (s.labelLastname || 'Nachname *') + '</label>' +
       '<input type="text" id="termin-nachname" name="nachname" required autocomplete="family-name">' +
-      '<label for="termin-telefon">Telefonnummer *</label>' +
+      '<label id="termin-modal-label-telefon" for="termin-telefon">' + (s.labelPhone || 'Telefonnummer *') + '</label>' +
       '<input type="tel" id="termin-telefon" name="telefon" required autocomplete="tel">' +
-      '<label for="termin-email">E-Mail *</label>' +
+      '<label id="termin-modal-label-email" for="termin-email">' + (s.labelEmail || 'E-Mail *') + '</label>' +
       '<input type="email" id="termin-email" name="email" required autocomplete="email">' +
-      '<label for="termin-kommentar">Kommentar (optional)</label>' +
-      '<textarea id="termin-kommentar" name="kommentar" placeholder="Wann passt es Ihnen? Weitere Wünsche?"></textarea>' +
+      '<label id="termin-modal-label-kommentar" for="termin-kommentar">' + (s.labelComment || 'Kommentar (optional)') + '</label>' +
+      '<textarea id="termin-kommentar" name="kommentar" placeholder="' + (s.placeholderComment || '') + '"></textarea>' +
       '<div class="checkbox-group">' +
-      '<label><input type="checkbox" name="agb_datenschutz" required> Ich akzeptiere die <a href="/terms.html" target="_blank" rel="noopener">AGB</a> und die <a href="/privacy.html" target="_blank" rel="noopener">Datenschutzerklärung</a> *</label>' +
+      '<label><input type="checkbox" name="agb_datenschutz" required> <span id="termin-modal-label-checkbox">' + (s.checkboxLabel || 'Ich akzeptiere die <a href="/terms.html" target="_blank" rel="noopener">AGB</a> und die <a href="/privacy.html" target="_blank" rel="noopener">Datenschutzerklärung</a> *') + '</span></label>' +
       '</div>' +
-      '<button type="submit">Anfrage senden</button>' +
+      '<button type="submit" id="termin-modal-submit">' + (s.submitBtn || 'Anfrage senden') + '</button>' +
       '<div class="message" id="termin-form-message" role="alert"></div>' +
       '</form>' +
       '</div>' +
@@ -111,14 +132,15 @@
     var email = (form.email && form.email.value) || '';
     var kommentar = (form.kommentar && form.kommentar.value) || '';
     var agbDatenschutz = form.agb_datenschutz && form.agb_datenschutz.checked;
+    var s = getModalStrings();
     if (!agbDatenschutz) {
-      showMessage('error', 'Bitte AGB und Datenschutzerklärung akzeptieren.');
+      showMessage('error', s.errorAccept || 'Bitte AGB und Datenschutzerklärung akzeptieren.');
       return;
     }
     var btn = form.querySelector('button[type=submit]');
     if (btn) {
       btn.disabled = true;
-      btn.textContent = 'Wird gesendet…';
+      btn.textContent = s.sendingBtn || 'Wird gesendet…';
     }
     fetch('/api/termin', {
       method: 'POST',
@@ -135,24 +157,24 @@
     })
       .then(function (res) {
         if (res.ok) {
-          showMessage('success', 'Vielen Dank! Wir melden uns in Kürze bei Ihnen.');
+          showMessage('success', s.successMessage || 'Vielen Dank! Wir melden uns in Kürze bei Ihnen.');
           form.reset();
           setTimeout(closeModal, 2000);
         } else {
           return res.json().then(function (data) {
-            throw new Error(data.message || 'Fehler beim Senden.');
+            throw new Error(data.message || s.errorSend);
           }, function () {
-            throw new Error('Fehler beim Senden. Bitte später erneut versuchen.');
+            throw new Error(s.errorSend);
           });
         }
       })
       .catch(function (err) {
-        showMessage('error', err.message || 'Fehler beim Senden. Bitte später erneut versuchen.');
+        showMessage('error', err.message || s.errorSend);
       })
       .finally(function () {
         if (btn) {
           btn.disabled = false;
-          btn.textContent = 'Anfrage senden';
+          btn.textContent = s.submitBtn || 'Anfrage senden';
         }
       });
   }

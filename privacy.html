@@ -40,19 +40,19 @@
             </button>
             <div id="burger-menu-dropdown" class="hidden md:block absolute top-full left-0 mt-2 bg-white rounded-3xl py-4 px-6 min-w-[200px] opacity-0 invisible transition-all duration-300 transform translate-y-2" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);">
               <nav class="flex flex-col space-y-3">
-                <a href="/features.html" class="text-sm font-medium text-black/70 hover:text-black transition">Features</a>
+                <a href="/features.html" id="nav-features" class="text-sm font-medium text-black/70 hover:text-black transition">Features</a>
                 <div class="use-cases-menu-item relative">
-                  <a href="/#use-cases" class="text-sm font-medium text-black/70 hover:text-black transition flex items-center gap-1">Use Cases ▾</a>
+                  <a href="/#use-cases" id="nav-use-cases" class="text-sm font-medium text-black/70 hover:text-black transition flex items-center gap-1">Use Cases ▾</a>
                   <div class="use-cases-dropdown">
-                    <a href="/coaches.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Coaches</a>
-                    <a href="/creator.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Creator</a>
-                    <a href="/bootcamps.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Bootcamps</a>
-                    <a href="/lernraum.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Lernräume</a>
+                    <a href="/coaches.html" id="nav-uc-coaches" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Coaches</a>
+                    <a href="/creator.html" id="nav-uc-creators" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Creator</a>
+                    <a href="/bootcamps.html" id="nav-uc-bootcamps" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Bootcamps</a>
+                    <a href="/lernraum.html" id="nav-uc-lernraeume" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Lernräume</a>
                   </div>
                 </div>
-                <a href="/preise.html" class="text-sm font-medium text-black/70 hover:text-black transition">Preise</a>
-                <a href="/updates.html" class="text-sm font-medium text-black/70 hover:text-black transition">Updates</a>
-                <a href="/faq.html" class="text-sm font-medium text-black/70 hover:text-black transition">FAQ</a>
+                <a href="/preise.html" id="nav-pricing" class="text-sm font-medium text-black/70 hover:text-black transition">Preise</a>
+                <a href="/updates.html" id="nav-updates" class="text-sm font-medium text-black/70 hover:text-black transition">Updates</a>
+                <a href="/faq.html" id="nav-faq" class="text-sm font-medium text-black/70 hover:text-black transition">FAQ</a>
               </nav>
             </div>
           </div>
@@ -63,26 +63,26 @@
         </div>
         <a href="/" class="absolute left-1/2 transform -translate-x-1/2"><img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto"></a>
         <div class="flex items-center space-x-4 ml-auto">
-          <a href="https://app.glymmer.io/auth/login" class="px-4 py-2 text-sm" style="color: #2A2A2A;">Log In</a>
-          <a href="/preise.html" class="px-6 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition inline-flex items-center gap-2" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">Jetzt starten →</a>
+          <a href="https://app.glymmer.io/auth/login" id="nav-login" class="px-4 py-2 text-sm" style="color: #2A2A2A;">Log In</a>
+          <a href="/preise.html" id="hero-cta-start" class="px-6 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition inline-flex items-center gap-2" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">Jetzt starten →</a>
         </div>
       </div>
       <div id="burger-menu-overlay" class="md:hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transform translate-x-full transition-transform duration-300">
         <div class="max-w-7xl mx-auto px-6 py-8">
           <div class="flex justify-between items-center mb-8">
-            <h2 class="text-2xl font-semibold text-black">Menü</h2>
+            <h2 id="mobile-menu-title" class="text-2xl font-semibold text-black">Menü</h2>
             <button id="burger-menu-close" class="p-2 text-black/70 hover:text-black" aria-label="Schließen">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
           </div>
           <nav class="flex flex-col space-y-4">
-            <a href="/features.html" class="text-xl font-medium text-black/70 hover:text-black">Features</a>
-            <a href="/coaches.html" class="text-xl font-medium text-black/70 hover:text-black">Use Cases – Coaches</a>
-            <a href="/creator.html" class="text-xl font-medium text-black/70 hover:text-black">Use Cases – Creator</a>
-            <a href="/preise.html" class="text-xl font-medium text-black/70 hover:text-black">Preise</a>
-            <a href="/updates.html" class="text-xl font-medium text-black/70 hover:text-black">Updates</a>
-            <a href="/faq.html" class="text-xl font-medium text-black/70 hover:text-black">FAQ</a>
-            <a href="/preise.html" class="text-xl font-medium text-black/70 hover:text-black mt-4">Jetzt starten</a>
+            <a href="/features.html" id="nav-features-mobile" class="text-xl font-medium text-black/70 hover:text-black">Features</a>
+            <a href="/coaches.html" id="nav-uc-coaches-mobile" class="text-xl font-medium text-black/70 hover:text-black">Use Cases – Coaches</a>
+            <a href="/creator.html" id="nav-uc-creators-mobile" class="text-xl font-medium text-black/70 hover:text-black">Use Cases – Creator</a>
+            <a href="/preise.html" id="nav-pricing-mobile" class="text-xl font-medium text-black/70 hover:text-black">Preise</a>
+            <a href="/updates.html" id="nav-updates-mobile" class="text-xl font-medium text-black/70 hover:text-black">Updates</a>
+            <a href="/faq.html" id="nav-faq-mobile" class="text-xl font-medium text-black/70 hover:text-black">FAQ</a>
+            <a href="/preise.html" id="nav-get-started-mobile" class="text-xl font-medium text-black/70 hover:text-black mt-4">Jetzt starten</a>
           </nav>
         </div>
       </div>

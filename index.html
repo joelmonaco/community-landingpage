@@ -356,7 +356,7 @@
   
   <!-- Header -->
   <header id="main-header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm transition-all duration-300">
-    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
       <!-- Mobile: Logo oben in eigener Zeile -->
       <div class="flex justify-center pt-2 pb-1 md:hidden">
         <a href="/" class="flex items-center">
@@ -463,8 +463,8 @@
               </nav>
             </div>
           </div>
-          <button id="language-switch" class="px-4 py-3 text-sm font-normal transition-all duration-300 border border-black/20 rounded-full hover:border-black/40 flex items-center gap-2" style="transform: scale(1); transition: transform 0.15s ease; color: #2A2A2A;" data-lang="de">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <button id="language-switch" class="px-3 py-2 md:px-4 md:py-3 text-xs md:text-sm font-normal transition-all duration-300 border border-black/20 rounded-full hover:border-black/40 flex items-center justify-center gap-1.5 md:gap-2 shrink-0" style="transform: scale(1); transition: transform 0.15s ease; color: #2A2A2A;" data-lang="de">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 md:w-4 md:h-4" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
@@ -478,14 +478,14 @@
           <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
         </a>
         
-        <!-- Rechts: Log In + Jetzt starten Buttons -->
-        <div class="flex items-center space-x-4 ml-auto">
-          <a href="https://app.glymmer.io/auth/login" id="nav-login" class="px-4 py-2 text-sm font-normal transition" style="color: #2A2A2A;">
+        <!-- Rechts: Log In + Jetzt starten Buttons (immer nebeneinander, kompakt auf kleinen Screens) -->
+        <div class="flex items-center flex-nowrap gap-2 sm:gap-4 ml-auto shrink-0 min-w-0">
+          <a href="https://app.glymmer.io/auth/login" id="nav-login" class="px-3 py-2 md:px-4 text-xs md:text-sm font-normal transition whitespace-nowrap" style="color: #2A2A2A;">
             Log In
           </a>
-          <a href="/preise.html" id="hero-cta-start" class="px-6 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
+          <a href="/preise.html" id="hero-cta-start" class="inline-flex items-center justify-center gap-1.5 md:gap-2 px-3 py-2 md:px-6 md:py-3 text-xs md:text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition group whitespace-nowrap" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
             Jetzt starten
-            <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <svg class="transition-transform duration-300 group-hover:translate-x-1 shrink-0 w-4 h-4 md:w-[18px] md:h-[18px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
               <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
@@ -604,9 +604,9 @@
         Monetarisiere deine Leidenschaft, baue eine lebendige Community auf und verkaufe Content – alles in einer Plattform.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center delay-300">
-        <a href="/preise.html" id="hero-cta-start-hero" class="px-6 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
+        <a href="/preise.html" id="hero-cta-start-hero" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition group text-center" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
           Jetzt starten
-          <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+          <svg class="transition-transform duration-300 group-hover:translate-x-1 shrink-0 w-[18px] h-[18px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
             <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
@@ -2445,13 +2445,13 @@
         </svg>
       </button>
       <div class="max-w-7xl mx-auto text-left modal-content w-full">
-        <h2 class="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 leading-normal text-white" style="font-family: 'Cal Sans', sans-serif;">
+        <h2 id="faq-modal-title" class="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 leading-normal text-white" style="font-family: 'Cal Sans', sans-serif;">
           Häufige Fragen
         </h2>
         <div class="faq-accordion-list">
-          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+          <details id="faq-item-1" class="faq-accordion-item rounded-2xl overflow-hidden text-black">
             <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
-              <span>Was ist glymmer eigentlich genau?</span>
+              <span class="faq-q-text">Was ist glymmer eigentlich genau?</span>
               <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </span>
@@ -2465,9 +2465,9 @@
               </div>
             </div>
           </details>
-          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+          <details id="faq-item-2" class="faq-accordion-item rounded-2xl overflow-hidden text-black">
             <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
-              <span>Für wen ist glymmer geeignet?</span>
+              <span class="faq-q-text">Für wen ist glymmer geeignet?</span>
               <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </span>
@@ -2484,9 +2484,9 @@
               </div>
             </div>
           </details>
-          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+          <details id="faq-item-3" class="faq-accordion-item rounded-2xl overflow-hidden text-black">
             <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
-              <span>Was kann ich mit glymmer konkret machen?</span>
+              <span class="faq-q-text">Was kann ich mit glymmer konkret machen?</span>
               <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </span>
@@ -2499,9 +2499,9 @@
               </div>
             </div>
           </details>
-          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+          <details id="faq-item-4" class="faq-accordion-item rounded-2xl overflow-hidden text-black">
             <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
-              <span>Wie verdiene ich Geld mit glymmer?</span>
+              <span class="faq-q-text">Wie verdiene ich Geld mit glymmer?</span>
               <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </span>
@@ -2514,9 +2514,9 @@
               </div>
             </div>
           </details>
-          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+          <details id="faq-item-5" class="faq-accordion-item rounded-2xl overflow-hidden text-black">
             <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
-              <span>Kann ich glymmer kostenlos testen?</span>
+              <span class="faq-q-text">Kann ich glymmer kostenlos testen?</span>
               <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </span>
@@ -2529,9 +2529,9 @@
               </div>
             </div>
           </details>
-          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+          <details id="faq-item-6" class="faq-accordion-item rounded-2xl overflow-hidden text-black">
             <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
-              <span>Ist glymmer DSGVO-konform und wo liegen die Daten?</span>
+              <span class="faq-q-text">Ist glymmer DSGVO-konform und wo liegen die Daten?</span>
               <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </span>
@@ -2545,9 +2545,9 @@
               </div>
             </div>
           </details>
-          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+          <details id="faq-item-7" class="faq-accordion-item rounded-2xl overflow-hidden text-black">
             <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
-              <span>Brauche ich noch andere Tools wie Zoom, WhatsApp oder Mailchimp?</span>
+              <span class="faq-q-text">Brauche ich noch andere Tools wie Zoom, WhatsApp oder Mailchimp?</span>
               <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </span>
@@ -2561,9 +2561,9 @@
               </div>
             </div>
           </details>
-          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+          <details id="faq-item-8" class="faq-accordion-item rounded-2xl overflow-hidden text-black">
             <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
-              <span>Wie schnell kann ich mit glymmer starten?</span>
+              <span class="faq-q-text">Wie schnell kann ich mit glymmer starten?</span>
               <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </span>
@@ -2577,9 +2577,9 @@
               </div>
             </div>
           </details>
-          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+          <details id="faq-item-9" class="faq-accordion-item rounded-2xl overflow-hidden text-black">
             <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
-              <span>Kann ich glymmer in meinem eigenen Branding nutzen – inklusive App?</span>
+              <span class="faq-q-text">Kann ich glymmer in meinem eigenen Branding nutzen – inklusive App?</span>
               <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </span>
@@ -2592,9 +2592,9 @@
               </div>
             </div>
           </details>
-          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+          <details id="faq-item-10" class="faq-accordion-item rounded-2xl overflow-hidden text-black">
             <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
-              <span>Welche Preismodelle gibt es und wie funktionieren die Gebühren?</span>
+              <span class="faq-q-text">Welche Preismodelle gibt es und wie funktionieren die Gebühren?</span>
               <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </span>
@@ -2608,9 +2608,9 @@
               </div>
             </div>
           </details>
-          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+          <details id="faq-item-11" class="faq-accordion-item rounded-2xl overflow-hidden text-black">
             <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
-              <span>Was passiert, wenn meine Community stark wächst oder ich mehrere Projekte habe?</span>
+              <span class="faq-q-text">Was passiert, wenn meine Community stark wächst oder ich mehrere Projekte habe?</span>
               <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
               </span>
