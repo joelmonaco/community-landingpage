@@ -6,6 +6,9 @@
   <meta name="description" content="Monetarisierte Fan-Communities launchen mit Glymmer - Für Creator">
   <title>Für Creator - Glymmer</title>
   <link rel="icon" type="image/png" href="./public/Favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./styles.css">
   <link rel="canonical" href="https://teech.com/creator.html">
@@ -14,6 +17,13 @@
       font-family: 'Vanguard CF';
       src: url('./fonts/Vanguard-CF-Bold.otf') format('opentype');
       font-weight: bold;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-Light.otf') format('opentype');
+      font-weight: 300;
       font-style: normal;
     }
 
@@ -45,7 +55,8 @@
       font-style: normal;
     }
 
-    html, body {
+    html {
+      scroll-behavior: smooth;
       overflow-x: hidden;
     }
 
@@ -54,6 +65,7 @@
       -webkit-text-size-adjust: 100%;
       background: #ffffff;
       color: #1a1a1a;
+      overflow-x: hidden;
     }
 
     .headline-vanguard {
@@ -81,25 +93,24 @@
     :root {
       --primary-yellow: #FFFC04;
       --primary-yellow-hover: #E6E304;
+      --primary-yellow-light: #FFFD80;
+      --primary-yellow-bg: #FFFE99;
       --primary-purple: #7167F5;
       --primary-purple-hover: #5F56E0;
+      --primary-purple-light: #9B93F8;
+      --primary-purple-bg: #E8E6FF;
     }
 
-    .bg-secondary {
-      background-color: var(--primary-purple);
-    }
-
-    .bg-secondary-hover:hover {
-      background-color: var(--primary-purple-hover);
-    }
-
-    .bg-primary {
-      background-color: var(--primary-yellow);
-    }
-
-    .bg-primary-hover:hover {
-      background-color: var(--primary-yellow-hover);
-    }
+    .bg-primary { background-color: var(--primary-yellow); }
+    .bg-primary-hover:hover { background-color: var(--primary-yellow-hover); }
+    .text-primary { color: var(--primary-yellow); }
+    .border-primary { border-color: var(--primary-yellow); }
+    .bg-primary-light { background-color: var(--primary-yellow-bg); }
+    .bg-secondary { background-color: var(--primary-purple); }
+    .bg-secondary-hover:hover { background-color: var(--primary-purple-hover); }
+    .text-secondary { color: var(--primary-purple); }
+    .border-secondary { border-color: var(--primary-purple); }
+    .bg-secondary-light { background-color: var(--primary-purple-bg); }
 
     .use-cases-dropdown {
       position: absolute;
@@ -146,33 +157,95 @@
             </button>
             <div id="burger-menu-dropdown" class="hidden md:block absolute top-full left-0 mt-2 bg-white rounded-3xl py-4 px-6 min-w-[200px] opacity-0 invisible transition-all duration-300 transform translate-y-2" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);">
               <nav class="flex flex-col space-y-3">
-                <a href="/features.html" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Features</a>
+                <a href="/features.html" id="nav-features" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  Features
+                </a>
                 <div class="use-cases-menu-item relative">
-                  <a href="#" class="text-sm font-medium text-black font-semibold transition whitespace-nowrap flex items-center gap-1">
+                  <a href="/#use-cases" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
                     Use Cases
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                   </a>
                   <div class="use-cases-dropdown">
-                    <a href="/coaches.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Coaches</a>
-                    <a href="/creator.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Creator</a>
-                    <a href="/bootcamps.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Bootcamps</a>
-                    <a href="/lernraum.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Lernräume</a>
+                    <a href="/coaches.html" id="nav-uc-coaches" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                      </svg>
+                      Für Coaches
+                    </a>
+                    <a href="/creator.html" id="nav-uc-creators" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                      </svg>
+                      Für Creator
+                    </a>
+                    <a href="/bootcamps.html" id="nav-uc-bootcamps" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        <line x1="8" y1="7" x2="18" y2="7"></line>
+                        <line x1="8" y1="11" x2="18" y2="11"></line>
+                        <line x1="8" y1="15" x2="14" y2="15"></line>
+                      </svg>
+                      Für Bootcamps
+                    </a>
+                    <a href="/lernraum.html" id="nav-uc-lernraeume" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                      </svg>
+                      Für Lernräume
+                    </a>
                   </div>
                 </div>
-                <a href="/preise.html" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Preise</a>
-                <a href="/updates.html" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap">Updates</a>
+                <a href="/preise.html" id="nav-pricing" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                  Preise
+                </a>
+                <a href="/updates.html" id="nav-updates" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg>
+                  Updates
+                </a>
+                <a href="/faq.html" id="nav-faq" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                  FAQ
+                </a>
               </nav>
             </div>
           </div>
-          <button id="language-switch" class="px-4 py-3 text-sm font-normal transition-all duration-300 border border-black/20 rounded-full hover:border-black/40 flex items-center gap-2" style="color: #2A2A2A;" data-lang="de">
+          <button id="language-switch" class="px-4 py-3 text-sm font-normal transition-all duration-300 border border-black/20 rounded-full hover:border-black/40 flex items-center gap-2" style="transform: scale(1); transition: transform 0.15s ease; color: #2A2A2A;" data-lang="de">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
             </svg>
-            <span>EN</span>
+            <span style="transition: opacity 0.2s ease;">EN</span>
           </button>
         </div>
         
@@ -181,8 +254,10 @@
         </a>
         
         <div class="flex items-center space-x-4 ml-auto">
-          <a href="https://app.glymmer.io/auth/login" class="px-4 py-2 text-sm font-normal transition" style="color: #2A2A2A;">Log In</a>
-          <a href="/kontakt.html#sales" class="px-6 py-3 text-sm font-normal bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
+          <a href="https://app.glymmer.io/auth/login" id="nav-login" class="px-4 py-2 text-sm font-normal transition" style="color: #2A2A2A;">
+            Log In
+          </a>
+          <a href="/kontakt.html#sales" id="hero-cta-start" class="px-6 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
             Jetzt starten
             <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
               <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -194,7 +269,7 @@
       <div id="burger-menu-overlay" class="md:hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
           <div class="flex justify-between items-center mb-8">
-            <h2 class="text-2xl font-semibold text-black">Menü</h2>
+            <h2 id="mobile-menu-title" class="text-2xl font-semibold text-black">Menü</h2>
             <button id="burger-menu-close" class="p-2 text-black/70 hover:text-black transition" aria-label="Close Menu">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -203,19 +278,88 @@
             </button>
           </div>
           <nav class="flex flex-col space-y-6">
-            <a href="/features.html" class="text-2xl font-medium text-black/70 hover:text-black transition">Features</a>
+            <a href="/features.html" id="nav-features-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              Features
+            </a>
             <div class="space-y-3">
-              <div class="text-2xl font-medium text-black font-semibold">Use Cases</div>
+              <a href="/#use-cases" class="text-2xl font-medium text-black/70 font-semibold hover:text-black transition flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Use Cases
+              </a>
               <div class="ml-4 space-y-3">
-                <a href="/coaches.html" class="block text-xl font-medium text-black/70 hover:text-black transition">Für Coaches</a>
-                <a href="/creator.html" class="block text-xl font-medium text-black/70 hover:text-black transition">Für Creator</a>
-                <a href="/bootcamps.html" class="block text-xl font-medium text-black/70 hover:text-black transition">Für Bootcamps</a>
-                <a href="/lernraum.html" class="block text-xl font-medium text-black/70 hover:text-black transition">Für Lernräume</a>
+                <a href="/coaches.html" id="nav-uc-coaches-mobile" class="block text-xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  Für Coaches
+                </a>
+                <a href="/creator.html" id="nav-uc-creators-mobile" class="block text-xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                  </svg>
+                  Für Creator
+                </a>
+                <a href="/bootcamps.html" id="nav-uc-bootcamps-mobile" class="block text-xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    <line x1="8" y1="7" x2="18" y2="7"></line>
+                    <line x1="8" y1="11" x2="18" y2="11"></line>
+                    <line x1="8" y1="15" x2="14" y2="15"></line>
+                  </svg>
+                  Für Bootcamps
+                </a>
+                <a href="/lernraum.html" id="nav-uc-lernraeume-mobile" class="block text-xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                  </svg>
+                  Für Lernräume
+                </a>
               </div>
             </div>
-            <a href="/preise.html" class="text-2xl font-medium text-black/70 hover:text-black transition">Preise</a>
-            <a href="/updates.html" class="text-2xl font-medium text-black/70 hover:text-black transition">Updates</a>
-            <a href="/kontakt.html#sales" class="text-2xl font-medium text-black/70 hover:text-black transition mt-4">Jetzt starten</a>
+            <a href="/preise.html" id="nav-pricing-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              Preise
+            </a>
+            <a href="/updates.html" id="nav-updates-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+              Updates
+            </a>
+            <a href="/faq.html" id="nav-faq-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+              FAQ
+            </a>
+            <a href="/kontakt.html#sales" id="nav-get-started-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition mt-4 flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+              Jetzt starten
+            </a>
           </nav>
         </div>
       </div>
@@ -226,7 +370,7 @@
   <section class="pt-32 pb-12 px-6 lg:px-8 bg-white">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16 animate-on-scroll pt-12">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent;">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Cal Sans', sans-serif;">
           Monetarisierte Fan-Communities launchen
         </h1>
         <p class="text-base md:text-lg text-black/50 max-w-3xl mx-auto mb-6 leading-relaxed font-normal">
@@ -273,32 +417,35 @@
   <!-- CTA Section -->
   <section class="py-20 px-6 lg:px-8 bg-white">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent;">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Cal Sans', sans-serif;">
         Bereit loszulegen?
       </h2>
       <p class="text-base md:text-lg text-black/50 max-w-3xl mx-auto mb-8 leading-relaxed font-normal">
         Starte noch heute und baue deine Community auf
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/kontakt.html#sales" class="px-8 py-2 bg-primary text-white rounded-full font-semibold hover:bg-primary-hover transition text-lg shadow-lg shadow-primary/30">
-          Kostenlos starten
-        </a>
-        <a href="/kontakt.html#sales" class="px-8 py-2 border-2 border-primary text-primary rounded-full font-semibold hover:bg-primary hover:text-white transition text-lg">
-          Mit Sales sprechen
+        <a href="/kontakt.html#sales" class="px-6 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group mx-auto sm:mx-0" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
+          Jetzt starten
+          <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-50 border-t border-black/10 py-12 px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
+  <footer class="bg-gray-50 pt-12 pb-32 px-6 lg:px-8 relative overflow-hidden">
+    <div class="absolute inset-0 flex items-end justify-center pointer-events-none overflow-visible">
+      <img src="./public/Glymmer_Logo_Dunkel.png" alt="" class="w-[1500px] h-auto opacity-[0.05] translate-y-[48%]" style="max-width: 95vw;">
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
           <div class="mb-4">
-            <img src="./public/Glymmer_Logo_schwarz.png" alt="Glymmer" class="h-6 w-auto">
+            <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
           </div>
-          <p class="text-black/70 text-sm">Deine Community-Plattform für Coaches und Creator</p>
+          <p class="text-black/70 text-sm">Die Community-Plattform für Coaches und Creator</p>
         </div>
         <div>
           <h4 class="font-semibold mb-4 text-black">Produkt</h4>
@@ -313,7 +460,7 @@
           <h4 class="font-semibold mb-4 text-black">Unternehmen</h4>
           <ul class="space-y-2 text-sm text-black/70">
             <li><a href="/kontakt.html" class="hover:text-black transition">Kontakt</a></li>
-            <li><a href="/kontakt.html#unternehmen" class="hover:text-black transition">Über uns</a></li>
+            <li><a href="https://teech.de/das-sind-wir/" target="_blank" rel="noopener noreferrer" class="hover:text-black transition">Über uns</a></li>
             <li><a href="/faq.html" class="hover:text-black transition">FAQ</a></li>
           </ul>
         </div>
@@ -326,8 +473,8 @@
           </ul>
         </div>
       </div>
-      <div class="border-t border-black/10 pt-8 text-center text-sm text-black/70">
-        <p>&copy; 2024 Glymmer. Alle Rechte vorbehalten.</p>
+      <div class="border-t border-black/10 pt-8 pb-8 text-center">
+        <p class="text-sm text-black/70">&copy; 2026 Glymmer - A teech Product. Alle Rechte vorbehalten.</p>
       </div>
     </div>
   </footer>
