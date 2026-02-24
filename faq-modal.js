@@ -27,6 +27,7 @@
   var closeFaqButton = document.getElementById('close-faq-modal');
   var navFaq = document.getElementById('nav-faq');
   var navFaqMobile = document.getElementById('nav-faq-mobile');
+  var footerLinkFaq = document.getElementById('footer-link-faq');
   var burgerMenuDropdown = document.getElementById('burger-menu-dropdown');
   var burgerMenuOverlay = document.getElementById('burger-menu-overlay');
   var burgerMenu = document.getElementById('burger-menu');
@@ -57,6 +58,7 @@
 
   if (navFaq) navFaq.addEventListener('click', function(e) { e.preventDefault(); openFaqModal(); });
   if (navFaqMobile) navFaqMobile.addEventListener('click', function(e) { e.preventDefault(); openFaqModal(); });
+  if (footerLinkFaq) footerLinkFaq.addEventListener('click', function(e) { e.preventDefault(); openFaqModal(); });
   closeFaqButton.addEventListener('click', closeFaqModal);
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && faqModal && !faqModal.classList.contains('hidden')) closeFaqModal();

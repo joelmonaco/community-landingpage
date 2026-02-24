@@ -202,6 +202,94 @@ const translations = {
         { q: 'Welche Preismodelle gibt es und wie funktionieren die Gebühren?', a: 'glymmer bietet verschiedene Pakete für unterschiedliche Wachstumsphasen – von kleineren Communities bis zu großen Programmen.<br><br>Du zahlst eine monatliche Plattformgebühr und eine faire Transaktionsgebühr auf Umsätze, die über glymmer laufen. So kannst du klein starten und die Kosten wachsen mit deinem Erfolg, nicht andersherum.' },
         { q: 'Was passiert, wenn meine Community stark wächst oder ich mehrere Projekte habe?', a: 'glymmer ist darauf ausgelegt, mit dir mitzuwachsen: Du kannst mehr Mitglieder, zusätzliche Programme und Events abbilden, ohne dein Setup komplett neu zu denken. Für größere Communities oder Bootcamps stehen dir erweiterte Admin-Features, mehr Speicher, Integrationen und individuelle Lösungen zur Verfügung. Wenn du merkst, dass du aus einem Paket „herausgewachsen“ bist, kannst du unkompliziert upgraden – die Community bleibt, du schaltest nur mehr Möglichkeiten frei.' }
       ]
+    },
+    featuresPage: {
+      heroTitle: 'Alle Features',
+      heroSubtitle: 'Alles was du brauchst, um deine Community erfolgreich zu führen und zu monetarisieren',
+      card1Title: 'Live Video & Workshops',
+      card1Desc: 'Führe Webinare, Bootcamps und virtuelle Treffen mit hochwertigen Video-Tools durch. Unterstützt verschiedene Videoformate für maximale Flexibilität.',
+      card2Title: 'Chat & Channels',
+      card2Desc: 'Einfache Kommunikation in privaten und öffentlichen Gruppen. Organisiere Diskussionen nach Themen und schaffe geschützte Räume für exklusive Inhalte.',
+      card3Title: 'Mediathek & Dateiablage',
+      card3Desc: 'Zentraler Speicherplatz für Videos, Dokumente und Kursmaterialien. Organisiere deine Inhalte übersichtlich und mache sie für deine Community zugänglich.',
+      card4Title: 'Gamification & Mitgliedschaften',
+      card4Desc: 'Motiviere mit spielerischen Elementen und exklusiven Angeboten. Belohne aktive Mitglieder und schaffe Anreize für Engagement.',
+      card5Title: 'Kalender & Ticketing',
+      card5Desc: 'Organisiere Events, Manage Zugänge und verkaufe Tickets direkt in der Plattform. Alles an einem Ort, einfach und übersichtlich.',
+      card6Title: 'Umfragen & Feedback',
+      card6Desc: 'Sammle Insights und verbessere deine Angebote kontinuierlich. Erhalte wertvolles Feedback von deiner Community.',
+      card7Title: 'Analytics & Dashboard',
+      card7Desc: 'Behalte den Überblick über Aktivität, Engagement und Wachstum deiner Community. Detaillierte Analysen helfen dir, datengetriebene Entscheidungen zu treffen.',
+      card8Title: 'Sicherheit & Datenschutz',
+      card8Desc: 'Modernste Technologie für maximale Sicherheit und DSGVO-Konformität. Deine Daten und die deiner Community sind sicher.',
+      card9Title: 'Content-Verkauf',
+      card9Desc: 'Verkaufe einmalige Produkte oder Abos direkt in deiner Community. Einfaches Payment-System für maximale Conversion.'
+    },
+    coachesPage: {
+      heroTitle: 'Exklusive Klienten-Communities aufbauen',
+      heroSubtitle: 'Erstelle bezahlte Räume mit Live-Q&As, Challenges und Content-Drops für nachhaltige Kundenbindung.',
+      card1Title: 'Online-Kurse und Coachings zentralisieren',
+      card1Desc: 'Stoppe den Tool-Wechsel zwischen Zoom, E-Mail und Sheets. Kombiniere Kurse, Live-Sessions und 1:1 in einem Raum. Wachstum und Upselling laufen automatisch.',
+      card2Title: 'Bindung durch Community-Features boosten',
+      card2Desc: 'Vergiss vergessene Follow-ups nach Sessions. Nutze Chats, Events und Challenges für tägliche Interaktion – verbesserte Lernerfolge ohne Extra-Aufwand.',
+      card3Title: 'Monetarisierung und Skalierung automatisieren',
+      card3Desc: 'Keine komplizierten Zahlungs-Tools mehr. Erstelle Mitgliedschaften mit exklusivem Content. Für nachhaltige Einnahmen bei wachsender Community.'
+    },
+    creatorPage: {
+      heroTitle: 'Monetarisierte Fan-Communities launchen',
+      heroSubtitle: 'Biete Mitgliedschaften, exklusive Videos und Channels für Abonnenten – perfekt für passives Einkommen.',
+      card1Title: 'Marke mit exklusiven Inhalten ausbauen',
+      card1Desc: 'Stoppe Streuverluste auf Social Media. Baue mit exklusiven Inhalten und starkem Fan-Engagement eine loyale Community. Die Monetarisierung durch Mitgliedschaften und Content-Inhalten läuft nahtlos.',
+      card2Title: 'Kundenbindung durch Interaktion stärken',
+      card2Desc: 'Vergiss flache Follower-Listen. Schaffe nachhaltige Bindung mit direktem Austausch, Events und speziellen Angeboten. Fans werden so zu Abonnenten.',
+      card3Title: 'Umsatz mit Produkt-Integrationen skalieren',
+      card3Desc: 'Keine komplizierten Zahlungs-Plugins mehr. Nutze Mitgliedschaften, Produkt-Integrationen und Events – mache deine Marke erlebbar und generiere neue Einnahmen.'
+    },
+    bootcampsPage: {
+      heroTitle: 'Intensive Programme mit Struktur',
+      heroSubtitle: 'Führe Kurse mit Channels, Events und Workbooks durch.',
+      card1Title: '(Wochen)-Kurse in Channels organisieren',
+      card1Desc: 'Stoppe Planungs-Chaos über E-Mails, Kalender & Zoom. Führe strukturierte Programme mit Channels für jedes Modul durch. Teilnehmer finden alles sofort.',
+      card2Title: 'Events automatisieren',
+      card2Desc: 'Vergiss manuelle Nachfragen nach Sessions. Nutze Events und Mediathek für kontinuierliche Struktur – Programme laufen reibungslos.',
+      card3Title: 'Abschlussraten durch Gamification boosten',
+      card3Desc: 'Keine hohen Dropouts mehr. Kombiniere Challenges, Leaderboards und Belohnungen. Teilnehmer bleiben motiviert bis zum Ende.'
+    },
+    lernraumPage: {
+      heroTitle: 'Online-Unterricht und Gruppenkurse skalieren',
+      heroSubtitle: 'Organisiere 1:1-Nachhilfe oder Klassen mit interaktiver Tafel und Materialien.',
+      card1Title: 'Lernmaterialien übersichtlich organisieren',
+      card1Desc: 'Stoppe Suchen in E-Mails und Drives. Organisiere Online-Nachhilfe, Workshops und Materialien in Channels. Alles zentral und immer griffbereit.',
+      card2Title: 'Interaktion im digitalen Klassenzimmer boosten',
+      card2Desc: 'Vergiss statische PDFs. Ermögliche interaktives Lernen mit Live-Sessions, Chats und Tafeln. Schüler bleiben engagiert.',
+      card3Title: 'Skalierbares Lernen automatisieren',
+      card3Desc: 'Keine manuellen Gruppen mehr. Kombiniere Sessions mit Foren und Materialien. Für wachsende Klassen ohne Chaos.'
+    },
+    updatesPage: {
+      heroTitle: 'Updates',
+      heroSubtitle: 'Bleibe auf dem Laufenden über neue Features und Verbesserungen.'
+    },
+    preisePage: {
+      heroTitle: 'Preise',
+      heroSubtitle: 'Wähle das passende Lizenzpaket für deine Community'
+    },
+    imprintPage: {
+      title: 'Impressum',
+      section1Title: 'Verantwortliche nach § 5 Telemediengesetz (TMG)',
+      section2Title: 'Satzungssitz der Gesellschaft',
+      section3Title: 'Registergericht',
+      section3Text: 'Amtsgericht Charlottenburg (HRB 246628 B)',
+      contactTitle: 'Kontakt',
+      disclaimerTitle: 'Haftungsausschluss',
+      disclaimerIntro: 'Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.'
+    },
+    privacyPage: {
+      title: 'Datenschutz',
+      intro: 'Datenschutzerklärung für die Plattform „Glymmer“ der teech Education GmbH · Stand Februar 2026'
+    },
+    termsPage: {
+      title: 'AGB',
+      intro: 'Allgemeine Geschäftsbedingungen für die Plattform „glymmer“ der teech Education GmbH'
     }
   },
   en: {
@@ -406,6 +494,94 @@ const translations = {
         { q: 'What pricing models are there and how do fees work?', a: 'glymmer offers different packages for different growth phases – from smaller communities to large programmes.<br><br>You pay a monthly platform fee and a fair transaction fee on revenue generated through glymmer. So you can start small and costs grow with your success, not the other way around.' },
         { q: 'What happens when my community grows a lot or I have multiple projects?', a: 'glymmer is built to grow with you: you can add more members, programmes and events without rethinking your whole setup. For larger communities or bootcamps you get extended admin features, more storage, integrations and individual solutions. When you outgrow a package, you can upgrade easily – the community stays, you just unlock more options.' }
       ]
+    },
+    featuresPage: {
+      heroTitle: 'All Features',
+      heroSubtitle: 'Everything you need to run and monetise your community successfully',
+      card1Title: 'Live Video & Workshops',
+      card1Desc: 'Run webinars, bootcamps and virtual meetings with high-quality video tools. Supports various video formats for maximum flexibility.',
+      card2Title: 'Chat & Channels',
+      card2Desc: 'Easy communication in private and public groups. Organise discussions by topic and create protected spaces for exclusive content.',
+      card3Title: 'Media Library & File Storage',
+      card3Desc: 'Central storage for videos, documents and course materials. Organise your content clearly and make it accessible to your community.',
+      card4Title: 'Gamification & Memberships',
+      card4Desc: 'Motivate with gamification and exclusive offers. Reward active members and create incentives for engagement.',
+      card5Title: 'Calendar & Ticketing',
+      card5Desc: 'Organise events, manage access and sell tickets directly on the platform. All in one place, simple and clear.',
+      card6Title: 'Surveys & Feedback',
+      card6Desc: 'Gather insights and continuously improve your offerings. Get valuable feedback from your community.',
+      card7Title: 'Analytics & Dashboard',
+      card7Desc: 'Keep track of your community\'s activity, engagement and growth. Detailed analytics help you make data-driven decisions.',
+      card8Title: 'Security & Privacy',
+      card8Desc: 'State-of-the-art technology for maximum security and GDPR compliance. Your data and your community\'s data are safe.',
+      card9Title: 'Content Sales',
+      card9Desc: 'Sell one-off products or subscriptions directly in your community. Simple payment system for maximum conversion.'
+    },
+    coachesPage: {
+      heroTitle: 'Build exclusive client communities',
+      heroSubtitle: 'Create paid spaces with live Q&As, challenges and content drops for lasting customer loyalty.',
+      card1Title: 'Centralise online courses and coaching',
+      card1Desc: 'Stop switching between Zoom, email and sheets. Combine courses, live sessions and 1:1 in one space. Growth and upselling run automatically.',
+      card2Title: 'Boost retention with community features',
+      card2Desc: 'Forget forgotten follow-ups after sessions. Use chats, events and challenges for daily interaction – better learning outcomes without extra effort.',
+      card3Title: 'Automate monetisation and scaling',
+      card3Desc: 'No more complicated payment tools. Create memberships with exclusive content. For sustainable revenue as your community grows.'
+    },
+    creatorPage: {
+      heroTitle: 'Launch monetised fan communities',
+      heroSubtitle: 'Offer memberships, exclusive videos and channels for subscribers – perfect for passive income.',
+      card1Title: 'Grow your brand with exclusive content',
+      card1Desc: 'Stop wastage on social media. Build a loyal community with exclusive content and strong fan engagement. Monetisation through memberships and content runs seamlessly.',
+      card2Title: 'Strengthen loyalty through interaction',
+      card2Desc: 'Forget flat follower lists. Create lasting loyalty with direct exchange, events and special offers. Fans become subscribers.',
+      card3Title: 'Scale revenue with product integrations',
+      card3Desc: 'No more complicated payment plugins. Use memberships, product integrations and events – make your brand tangible and generate new revenue.'
+    },
+    bootcampsPage: {
+      heroTitle: 'Structured intensive programmes',
+      heroSubtitle: 'Run courses with channels, events and workbooks.',
+      card1Title: 'Organise (weekly) courses in channels',
+      card1Desc: 'Stop planning chaos across email, calendar & Zoom. Run structured programmes with channels for each module. Participants find everything instantly.',
+      card2Title: 'Automate events',
+      card2Desc: 'Forget manual session follow-ups. Use events and media library for continuous structure – programmes run smoothly.',
+      card3Title: 'Boost completion rates with gamification',
+      card3Desc: 'No more high dropouts. Combine challenges, leaderboards and rewards. Participants stay motivated until the end.'
+    },
+    lernraumPage: {
+      heroTitle: 'Scale online teaching and group courses',
+      heroSubtitle: 'Organise 1:1 tutoring or classes with interactive whiteboard and materials.',
+      card1Title: 'Organise learning materials clearly',
+      card1Desc: 'Stop searching through emails and drives. Organise online tutoring, workshops and materials in channels. Everything in one place and always to hand.',
+      card2Title: 'Boost interaction in the digital classroom',
+      card2Desc: 'Forget static PDFs. Enable interactive learning with live sessions, chats and whiteboards. Students stay engaged.',
+      card3Title: 'Automate scalable learning',
+      card3Desc: 'No more manual groups. Combine sessions with forums and materials. For growing classes without chaos.'
+    },
+    updatesPage: {
+      heroTitle: 'Updates',
+      heroSubtitle: 'Stay up to date with new features and improvements.'
+    },
+    preisePage: {
+      heroTitle: 'Pricing',
+      heroSubtitle: 'Choose the right licence package for your community'
+    },
+    imprintPage: {
+      title: 'Imprint',
+      section1Title: 'Responsible under § 5 German Teleservices Act (TMG)',
+      section2Title: 'Registered office of the company',
+      section3Title: 'Register court',
+      section3Text: 'Charlottenburg District Court (HRB 246628 B)',
+      contactTitle: 'Contact',
+      disclaimerTitle: 'Disclaimer',
+      disclaimerIntro: 'The contents of our pages were created with the greatest care. However, we cannot guarantee that the content is correct, complete or up to date.'
+    },
+    privacyPage: {
+      title: 'Privacy',
+      intro: 'Privacy policy for the Glymmer platform by teech Education GmbH · Status February 2026'
+    },
+    termsPage: {
+      title: 'Terms',
+      intro: 'General terms and conditions for the Glymmer platform by teech Education GmbH'
     }
   }
 };
@@ -870,6 +1046,79 @@ function applyTranslations(lang) {
     const el = document.getElementById(id);
     if (el) el.textContent = text;
   });
+
+  // ----- Page-specific content (features, coaches, creator, bootcamps, lernraum, updates, preise, legal) -----
+  function setText(id, text) { const el = document.getElementById(id); if (el && text != null) el.textContent = text; }
+  function setHtml(id, html) { const el = document.getElementById(id); if (el && html != null) el.innerHTML = html; }
+
+  if (t.featuresPage) {
+    setText('features-hero-title', t.featuresPage.heroTitle);
+    setText('features-hero-subtitle', t.featuresPage.heroSubtitle);
+    for (let i = 1; i <= 9; i++) {
+      setText('features-card-' + i + '-title', t.featuresPage['card' + i + 'Title']);
+      setText('features-card-' + i + '-desc', t.featuresPage['card' + i + 'Desc']);
+    }
+  }
+  if (t.coachesPage) {
+    setText('coaches-hero-title', t.coachesPage.heroTitle);
+    setText('coaches-hero-subtitle', t.coachesPage.heroSubtitle);
+    for (let i = 1; i <= 3; i++) {
+      setText('coaches-card-' + i + '-title', t.coachesPage['card' + i + 'Title']);
+      setText('coaches-card-' + i + '-desc', t.coachesPage['card' + i + 'Desc']);
+    }
+  }
+  if (t.creatorPage) {
+    setText('creator-hero-title', t.creatorPage.heroTitle);
+    setText('creator-hero-subtitle', t.creatorPage.heroSubtitle);
+    for (let i = 1; i <= 3; i++) {
+      setText('creator-card-' + i + '-title', t.creatorPage['card' + i + 'Title']);
+      setText('creator-card-' + i + '-desc', t.creatorPage['card' + i + 'Desc']);
+    }
+  }
+  if (t.bootcampsPage) {
+    setText('bootcamps-hero-title', t.bootcampsPage.heroTitle);
+    setText('bootcamps-hero-subtitle', t.bootcampsPage.heroSubtitle);
+    for (let i = 1; i <= 3; i++) {
+      setText('bootcamps-card-' + i + '-title', t.bootcampsPage['card' + i + 'Title']);
+      setText('bootcamps-card-' + i + '-desc', t.bootcampsPage['card' + i + 'Desc']);
+    }
+  }
+  if (t.lernraumPage) {
+    setText('lernraum-hero-title', t.lernraumPage.heroTitle);
+    setText('lernraum-hero-subtitle', t.lernraumPage.heroSubtitle);
+    for (let i = 1; i <= 3; i++) {
+      setText('lernraum-card-' + i + '-title', t.lernraumPage['card' + i + 'Title']);
+      setText('lernraum-card-' + i + '-desc', t.lernraumPage['card' + i + 'Desc']);
+    }
+  }
+  if (t.updatesPage) {
+    setText('updates-hero-title', t.updatesPage.heroTitle);
+    setText('updates-hero-subtitle', t.updatesPage.heroSubtitle);
+  }
+  if (t.preisePage) {
+    setText('preise-hero-title', t.preisePage.heroTitle);
+    setText('preise-hero-subtitle', t.preisePage.heroSubtitle);
+  }
+  if (t.imprintPage) {
+    setText('legal-imprint-title', t.imprintPage.title);
+    setText('legal-imprint-h1', t.imprintPage.title);
+    setText('legal-imprint-section1', t.imprintPage.section1Title);
+    setText('legal-imprint-section2', t.imprintPage.section2Title);
+    setText('legal-imprint-section3', t.imprintPage.section3Text != null ? t.imprintPage.section3Text : t.imprintPage.section3Title);
+    setText('legal-imprint-contact', t.imprintPage.contactTitle);
+    setText('legal-imprint-disclaimer-title', t.imprintPage.disclaimerTitle);
+    setText('legal-imprint-disclaimer-intro', t.imprintPage.disclaimerIntro);
+  }
+  if (t.privacyPage) {
+    setText('legal-privacy-title', t.privacyPage.title);
+    setText('legal-privacy-h1', t.privacyPage.title);
+    setText('legal-privacy-intro', t.privacyPage.intro);
+  }
+  if (t.termsPage) {
+    setText('legal-terms-title', t.termsPage.title);
+    setText('legal-terms-h1', t.termsPage.title);
+    setText('legal-terms-intro', t.termsPage.intro);
+  }
 
   // Mobile nav
   const navMobile = { 'mobile-menu-title': t.nav.menu, 'nav-features-mobile': t.nav.features, 'nav-use-cases-mobile': t.nav.useCases, 'nav-pricing-mobile': t.nav.pricing, 'nav-updates-mobile': t.nav.updates, 'nav-stories-mobile': t.nav.stories, 'nav-faq-mobile': t.nav.faq, 'nav-get-started-mobile': t.nav.getStarted };

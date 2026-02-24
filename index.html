@@ -2377,7 +2377,7 @@
           <ul class="space-y-2 text-sm text-black/70">
             <li><a id="footer-link-contact" href="/kontakt.html" class="hover:text-black transition">Kontakt</a></li>
             <li><a id="footer-link-about" href="https://teech.de/das-sind-wir/" target="_blank" rel="noopener noreferrer" class="hover:text-black transition">Über uns</a></li>
-            <li><a id="footer-link-faq" href="/faq.html" class="hover:text-black transition">FAQ</a></li>
+            <li><a id="footer-link-faq" href="#" class="hover:text-black transition">FAQ</a></li>
           </ul>
         </div>
         <div>
@@ -2737,6 +2737,7 @@
       const closeFaqButton = document.getElementById('close-faq-modal');
       const navFaq = document.getElementById('nav-faq');
       const navFaqMobile = document.getElementById('nav-faq-mobile');
+      const footerLinkFaq = document.getElementById('footer-link-faq');
       const burgerMenuDropdown = document.getElementById('burger-menu-dropdown');
       const burgerMenuOverlay = document.getElementById('burger-menu-overlay');
 
@@ -2772,6 +2773,9 @@
       }
       if (navFaqMobile) {
         navFaqMobile.addEventListener('click', (e) => { e.preventDefault(); openFaqModal(); });
+      }
+      if (footerLinkFaq) {
+        footerLinkFaq.addEventListener('click', (e) => { e.preventDefault(); openFaqModal(); });
       }
       closeFaqButton.addEventListener('click', closeFaqModal);
       document.addEventListener('keydown', (e) => {
