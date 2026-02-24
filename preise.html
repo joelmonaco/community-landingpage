@@ -1034,9 +1034,10 @@
           </div>
         </div>
         <div class="flex items-start gap-3">
-          <input type="checkbox" id="custom-datenschutz" name="datenschutz" required class="mt-1 w-4 h-4 rounded border-black/30 text-secondary focus:ring-secondary">
-          <label for="custom-datenschutz" class="text-sm text-black/80">Ich habe die <a href="/datenschutz.html" target="_blank" rel="noopener" class="text-secondary underline hover:no-underline">Datenschutzbestimmungen</a> gelesen und akzeptiere diese. <span class="text-red-500">*</span></label>
+          <input type="checkbox" id="custom-agb" name="agb" required class="mt-1 w-4 h-4 rounded border-black/30 text-secondary focus:ring-secondary">
+          <label for="custom-agb" class="text-sm text-black/80">Ich akzeptiere die <a href="/terms.html" target="_blank" rel="noopener" class="text-secondary underline hover:no-underline">AGB</a> <span class="text-red-500">*</span></label>
         </div>
+        <p class="text-sm text-black/60 mt-1"><a href="/privacy.html" target="_blank" rel="noopener" class="text-secondary underline hover:no-underline">Lese hier die Datenschutzbestimmungen</a>.</p>
         <p id="custom-form-error" class="text-sm text-red-500 hidden"></p>
         <button type="submit" class="w-full py-3 bg-secondary text-white rounded-full font-semibold hover:bg-secondary-hover transition" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.4);">Absenden</button>
       </form>
@@ -1088,14 +1089,14 @@
           var nachname = (document.getElementById('custom-nachname') || {}).value || '';
           var email = (document.getElementById('custom-email') || {}).value || '';
           var telefon = (document.getElementById('custom-telefon') || {}).value || '';
-          var datenschutz = (document.getElementById('custom-datenschutz') || {}).checked;
+          var agbChecked = (document.getElementById('custom-agb') || {}).checked;
           var errEl = document.getElementById('custom-form-error');
           var submitBtn = customForm.querySelector('button[type=submit]');
 
           if (!vorname.trim()) { if (errEl) { errEl.textContent = 'Bitte Vorname angeben.'; errEl.classList.remove('hidden'); } return; }
           if (!nachname.trim()) { if (errEl) { errEl.textContent = 'Bitte Nachname angeben.'; errEl.classList.remove('hidden'); } return; }
           if (!email.trim()) { if (errEl) { errEl.textContent = 'Bitte E-Mail angeben.'; errEl.classList.remove('hidden'); } return; }
-          if (!datenschutz) { if (errEl) { errEl.textContent = 'Bitte die Datenschutzbestimmungen akzeptieren.'; errEl.classList.remove('hidden'); } return; }
+          if (!agbChecked) { if (errEl) { errEl.textContent = 'Bitte AGB akzeptieren.'; errEl.classList.remove('hidden'); } return; }
           if (errEl) { errEl.classList.add('hidden'); errEl.textContent = ''; }
 
           if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Wird gesendet…'; }
