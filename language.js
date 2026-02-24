@@ -8,7 +8,7 @@ const translations = {
       stories: 'Customer Stories',
       updates: 'Updates',
       faq: 'FAQ',
-      talkToSales: 'Mit Sales sprechen',
+      talkToSales: 'Termin vereinbaren',
       getStarted: 'Jetzt starten',
       login: 'Log In',
       menu: 'Menü'
@@ -154,7 +154,7 @@ const translations = {
       title: 'Bereit loszulegen?',
       subtitle: 'Starte noch heute und baue deine Community auf',
       start: 'Jetzt starten',
-      talkToSales: 'Mit Sales sprechen',
+      talkToSales: 'Termin vereinbaren',
       startFree: 'Kostenlos starten'
     },
     footer: {
