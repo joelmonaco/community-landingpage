@@ -1,0 +1,34 @@
+RewriteEngine On
+RewriteBase /
+
+# Ohne .html in der URL – alle Seiten
+RewriteRule ^preise/?$ preise.html [L]
+RewriteRule ^updates/?$ updates.html [L]
+RewriteRule ^kontakt/?$ kontakt.html [L]
+RewriteRule ^faq/?$ faq.html [L]
+RewriteRule ^features/?$ features.html [L]
+RewriteRule ^coaches/?$ coaches.html [L]
+RewriteRule ^creator/?$ creator.html [L]
+RewriteRule ^bootcamps/?$ bootcamps.html [L]
+RewriteRule ^lernraum/?$ lernraum.html [L]
+RewriteRule ^customer-stories/?$ customer-stories.html [L]
+RewriteRule ^imprint/?$ imprint.html [L]
+RewriteRule ^impressum/?$ impressum.html [L]
+RewriteRule ^terms/?$ terms.html [L]
+RewriteRule ^agb/?$ agb.html [L]
+RewriteRule ^privacy/?$ privacy.html [L]
+RewriteRule ^datenschutz/?$ datenschutz.html [L]
+RewriteRule ^analytics/?$ analytics.html [L]
+RewriteRule ^benachrichtigungen/?$ benachrichtigungen.html [L]
+RewriteRule ^gamification/?$ gamification.html [L]
+RewriteRule ^gruppenchats/?$ gruppenchats.html [L]
+RewriteRule ^integrationen/?$ integrationen.html [L]
+RewriteRule ^kalender/?$ kalender.html [L]
+RewriteRule ^mitgliedschaften/?$ mitgliedschaften.html [L]
+RewriteRule ^monetarisierung/?$ monetarisierung.html [L]
+RewriteRule ^ticketing/?$ ticketing.html [L]
+RewriteRule ^umfragen/?$ umfragen.html [L]
+
+# Optional: .html-Aufrufe auf saubere URL umleiten (z. B. /preise.html → /preise)
+RewriteCond %{THE_REQUEST} \s/[^.]+\.html [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
