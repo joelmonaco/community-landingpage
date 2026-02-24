@@ -525,9 +525,13 @@ function applyTranslations(lang) {
   navUcIds.forEach((id, i) => {
     const el = document.getElementById(id);
     if (!el) return;
-    const textNode = Array.from(el.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
-    if (textNode) textNode.textContent = navUcTexts[i];
-    else el.appendChild(document.createTextNode(navUcTexts[i]));
+    const textNodes = Array.from(el.childNodes).filter(n => n.nodeType === Node.TEXT_NODE);
+    if (textNodes.length > 0) {
+      textNodes[0].textContent = navUcTexts[i];
+      textNodes.slice(1).forEach(n => n.remove());
+    } else {
+      el.appendChild(document.createTextNode(navUcTexts[i]));
+    }
   });
 
   // Pricing
