@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Datenschutzerklärung für die Plattform Glymmer der teech Education GmbH">
+  <title>Datenschutz - Glymmer</title>
+  <link rel="icon" type="image/png" href="./public/Favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    @font-face { font-family: 'Vanguard CF'; src: url('./fonts/Vanguard-CF-Bold.otf') format('opentype'); font-weight: bold; font-style: normal; }
+    @font-face { font-family: 'Suisse Intl'; src: url('./fonts/suisse/SuisseIntl-Regular.otf') format('opentype'); font-weight: 400; font-style: normal; }
+    @font-face { font-family: 'Suisse Intl'; src: url('./fonts/suisse/SuisseIntl-Medium.otf') format('opentype'); font-weight: 500; font-style: normal; }
+    @font-face { font-family: 'Suisse Intl'; src: url('./fonts/suisse/SuisseIntl-SemiBold.otf') format('opentype'); font-weight: 600; font-style: normal; }
+    @font-face { font-family: 'Suisse Intl'; src: url('./fonts/suisse/SuisseIntl-Bold.otf') format('opentype'); font-weight: 700; font-style: normal; }
+    body { font-family: 'Suisse Intl', sans-serif; -webkit-text-size-adjust: 100%; background: #ffffff; color: #1a1a1a; }
+    .headline-vanguard { font-family: 'Vanguard CF', sans-serif; }
+    html { scroll-behavior: smooth; }
+    #burger-menu.active #burger-line-top { transform: translateY(6px) rotate(45deg); transform-origin: 12px 6px; }
+    #burger-menu.active #burger-line-middle { opacity: 0; }
+    #burger-menu.active #burger-line-bottom { transform: translateY(-6px) rotate(-45deg); transform-origin: 12px 18px; }
+    .use-cases-dropdown { position: absolute; top: 100%; left: 0; margin-top: 0.5rem; background: white; border-radius: 1.5rem; padding: 1rem; min-width: 220px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); z-index: 1000; }
+    .use-cases-menu-item:hover .use-cases-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-black">
+  <!-- Header -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-black/5">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
+      <div class="flex items-center justify-between relative">
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <button id="burger-menu" class="relative p-2 transition" style="color: #2A2A2A;" aria-label="Menu">
+              <div class="relative w-6 h-6">
+                <svg id="burger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute inset-0">
+                  <g id="burger-lines"><line id="burger-line-top" x1="3" y1="6" x2="21" y2="6"></line><line id="burger-line-middle" x1="3" y1="12" x2="21" y2="12"></line><line id="burger-line-bottom" x1="3" y1="18" x2="21" y2="18"></line></g>
+                </svg>
+              </div>
+            </button>
+            <div id="burger-menu-dropdown" class="hidden md:block absolute top-full left-0 mt-2 bg-white rounded-3xl py-4 px-6 min-w-[200px] opacity-0 invisible transition-all duration-300 transform translate-y-2" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);">
+              <nav class="flex flex-col space-y-3">
+                <a href="/features.html" class="text-sm font-medium text-black/70 hover:text-black transition">Features</a>
+                <div class="use-cases-menu-item relative">
+                  <a href="/#use-cases" class="text-sm font-medium text-black/70 hover:text-black transition flex items-center gap-1">Use Cases ▾</a>
+                  <div class="use-cases-dropdown">
+                    <a href="/coaches.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Coaches</a>
+                    <a href="/creator.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Creator</a>
+                    <a href="/bootcamps.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Bootcamps</a>
+                    <a href="/lernraum.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Lernräume</a>
+                  </div>
+                </div>
+                <a href="/preise.html" class="text-sm font-medium text-black/70 hover:text-black transition">Preise</a>
+                <a href="/updates.html" class="text-sm font-medium text-black/70 hover:text-black transition">Updates</a>
+                <a href="/faq.html" class="text-sm font-medium text-black/70 hover:text-black transition">FAQ</a>
+              </nav>
+            </div>
+          </div>
+          <button id="language-switch" class="px-4 py-3 text-sm border border-black/20 rounded-full hover:border-black/40 flex items-center gap-2" style="color: #2A2A2A;" data-lang="de">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>EN</span>
+          </button>
+        </div>
+        <a href="/" class="absolute left-1/2 transform -translate-x-1/2"><img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto"></a>
+        <div class="flex items-center space-x-4 ml-auto">
+          <a href="https://app.glymmer.io/auth/login" class="px-4 py-2 text-sm" style="color: #2A2A2A;">Log In</a>
+          <a href="/kontakt.html#sales" class="px-6 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition inline-flex items-center gap-2" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">Jetzt starten →</a>
+        </div>
+      </div>
+      <div id="burger-menu-overlay" class="md:hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transform translate-x-full transition-transform duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-8">
+          <div class="flex justify-between items-center mb-8">
+            <h2 class="text-2xl font-semibold text-black">Menü</h2>
+            <button id="burger-menu-close" class="p-2 text-black/70 hover:text-black" aria-label="Schließen">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+          </div>
+          <nav class="flex flex-col space-y-4">
+            <a href="/features.html" class="text-xl font-medium text-black/70 hover:text-black">Features</a>
+            <a href="/coaches.html" class="text-xl font-medium text-black/70 hover:text-black">Use Cases – Coaches</a>
+            <a href="/creator.html" class="text-xl font-medium text-black/70 hover:text-black">Use Cases – Creator</a>
+            <a href="/preise.html" class="text-xl font-medium text-black/70 hover:text-black">Preise</a>
+            <a href="/updates.html" class="text-xl font-medium text-black/70 hover:text-black">Updates</a>
+            <a href="/faq.html" class="text-xl font-medium text-black/70 hover:text-black">FAQ</a>
+            <a href="/kontakt.html#sales" class="text-xl font-medium text-black/70 hover:text-black mt-4">Jetzt starten</a>
+          </nav>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-28 pb-20 px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="headline-vanguard text-4xl md:text-5xl font-bold mb-4 text-black">Datenschutz</h1>
+      <p class="text-black/60 text-lg mb-12">Datenschutzerklärung für die Plattform „Glymmer“ der teech Education GmbH · Stand Februar 2026</p>
+
+      <div class="prose prose-lg max-w-none text-black/85 space-y-10">
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">Unsere Cookie-Richtlinie</h2>
+          <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Webseiten besuchen oder unsere Plattform glymmer verwenden. Personenbezogene Daten sind alle Informationen, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie dieser Datenschutzerklärung.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">1 Verantwortlichkeit der Datenverarbeitung</h2>
+          <h3 class="text-lg font-medium text-black mt-4 mb-2">1.1 Verantwortlich ist:</h3>
+          <p>teech Education GmbH · Verwaltungssitz · Schlossgartenstraße 69 · 64298 Darmstadt · datenschutz@teech.de · +4961513946040</p>
+          <h3 class="text-lg font-medium text-black mt-4 mb-2">1.2 Sie erreichen unseren Datenschutzbeauftragten unter:</h3>
+          <p>ink solutions GmbH · Danilo Terrasi · Grafenstraße 31a · 64283 Darmstadt · datenschutz@teech.de</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">2 Zweck der Verarbeitung</h2>
+          <p>Wir verarbeiten Ihre Daten, um die Webseiten betreiben und darin enthaltenen Dienste und Leistungen anbieten zu können.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">3 Art der verarbeiteten Daten beim Besuch unserer Webseiten</h2>
+          <p class="mb-4">Beim Besuch unserer Webseiten verarbeiten wir Ihre personenbezogenen Daten. Die in dieser Ziffer 3 beschriebene Datenverarbeitung gilt ausschließlich für den Besuch unserer Webseiten und nicht für die Nutzung von glymmer. Wir beschreiben die Datenverarbeitung für die Nutzung von glymmer unter Ziffer 4.</p>
+          <h3 class="text-lg font-medium text-black mt-4 mb-2">3.1 Verarbeitung technischer Daten</h3>
+          <p>Wenn Sie unsere Webseiten besuchen, verarbeiten wir folgende, technische Daten (sog. „Server-Log-Dateien") von Ihnen, um die Webseiten betreiben zu können: Browsertyp und Browserversion, verwendetes Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Datum und Uhrzeit der Serveranfrage, IP-Adresse.</p>
+          <h3 class="text-lg font-medium text-black mt-4 mb-2">3.2 Bei Kontaktaufnahme</h3>
+          <p>Zum Zwecke der Kontaktaufnahme nutzen wir bestimmte Anwendungen, die Ihnen die Kontaktaufnahme erleichtern sollen. Sie haben die Möglichkeit, uns mittels der implementierten Chat-Tools direkt zu kontaktieren. Wir nutzen hierfür die Anwendungen „HubSpot" von HubSpot, Inc. sowie „WhatsApp Web" der WhatsApp LLC. Bei Nutzung eines der Chat-Tools verarbeiten wir die von Ihnen dort eingegebenen Nachrichten zur Klärung Ihrer Anfrage. Wenn Sie unser Kontaktformular nutzen, verarbeiten wir die dort abgefragten Daten, um die Kontaktaufnahme sowie eine Rückmeldung zu ermöglichen. Zu diesen Daten gehören: Ihre Personendaten (Name, Vorname), Rolle in der Anwendung glymmer, Die Information, ob bereits ein Zugang für glymmer besteht, Ihre Kontaktdaten (E-Mail-Adresse, Telefonnummer), Die von Ihnen eingegebene Nachricht.</p>
+          <h3 class="text-lg font-medium text-black mt-4 mb-2">3.3 Informationen zu Cookies</h3>
+          <p>Wir nutzen auf unseren Webseiten Cookies. Cookies sind kleine Textdateien, die auf Ihrem Rechner abgelegt werden und die Ihr Browser speichert. Cookies richten auf Ihrem Rechner keinen Schaden an und enthalten keine Viren. Sie dienen dazu, unser Angebot nutzerfreundlicher, effektiver und sicherer zu machen. Sie können jederzeit in den Cookie-Einstellungen die Nutzung von Cookies auf unserer Webseite anpassen. Alle Informationen zum Einsatz von Cookies auf unseren Webseiten finden Sie in unserer Cookie-Richtlinie. Wir nutzen sog. „Technische oder funktionelle Cookies" zur Wahrung unseres berechtigten Interesses am Betrieb der Webseiten (Art. 6 Abs. 1 Buchstabe f DSGVO). Alle weiteren Cookies nutzen wir ausschließlich mit Ihrer Einwilligung (Art. 6 Abs. 1 Buchstabe a DSGVO).</p>
+          <h3 class="text-lg font-medium text-black mt-4 mb-2">3.4 Informationen zu Marketing und Webseitentracking</h3>
+          <p>Um unsere Leistungen adäquat bewerben zu können, nutzen wir auf unserer Webseite verschiedene Anwendungen. Alle hier aufgeführten Anwendungen finden Sie auch in unserer Cookie-Richtlinie.</p>
+          <ul class="list-disc pl-6 space-y-2 mt-2">
+            <li><strong>Newsletter</strong> – Auf unserer Webseite und Plattform können Sie einen Newsletter abonnieren. Der Newsletter informiert Sie u.a. über glymmer, Weiterentwicklungen, Events und ggf. Artikel über uns im Allgemeinen. Die Daten, die Sie bei der Anmeldung zum Newsletter angeben, geben wir nicht weiter. Sie haben jederzeit die Möglichkeit, sich von dem Newsletter abzumelden. Nutzen Sie hierfür den entsprechenden Link in dem Newsletter. Wir erfassen auf pseudonymer und statistischer Basis, welche Newsletter zu welchem Zeitpunkt und in welcher Häufigkeit gelesen wurde. Die Datenverarbeitung für den Newsletter erfolgt gemäß Artikel 6 Abs. 1 Buchstabe a DSGVO auf Basis Ihrer Einwilligung. Sie können diese Einwilligung jederzeit für die Zukunft widerrufen. Klicken Sie hierfür den Link zur Abmeldung im Newsletter oder wenden Sie sich auf anderem Wege an die teech Education GmbH.</li>
+            <li><strong>YouTube</strong> – Für Integration und Darstellung von Videoinhalten nutzt unsere Website Plugins von YouTube. Anbieter des Videoportals ist die YouTube, LLC, 901 Cherry Ave., San Bruno, CA 94066, USA. Bei Aufruf einer Seite mit integriertem YouTube-Plugin wird eine Verbindung zu den Servern von YouTube hergestellt. YouTube erfährt hierdurch, welche unserer Seiten Sie aufgerufen haben. YouTube kann Ihr Surfverhalten direkt Ihrem persönlichen Profil zuzuordnen, sollten Sie in Ihrem YouTube Konto eingeloggt sein. Durch vorheriges Ausloggen haben Sie die Möglichkeit, dies zu unterbinden. Die Nutzung von YouTube erfolgt für eine ansprechende Darstellung unserer Online-Angebote.</li>
+            <li><strong>Google Analytics &amp; Google Maps</strong> – Unsere Website verwendet Funktionen des Webanalysedienstes Google Analytics. Anbieter des Webanalysedienstes ist die Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Google Analytics ermöglicht eine Analyse der Webseiten-Nutzung. Die erzeugten Informationen über Ihre Benutzung unserer Website werden an einen Server von Google übermittelt und dort gespeichert. Server-Standort ist im Regelfall die USA. Wir nutzen die Kenntnisse aus dieser Analyse zur bedarfsgerechten Gestaltung unserer Webseiten. Wir setzen Google Analytics in Verbindung mit der Funktion IP-Anonymisierung ein. Sie gewährleistet, dass Google Ihre IP-Adresse innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum vor der Übermittlung in die USA kürzt. Es kann Ausnahmefälle geben, in denen Google die volle IP-Adresse an einen Server in den USA überträgt und dort kürzt. In unserem Auftrag wird Google diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über Websiteaktivitäten zu erstellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber uns zu erbringen. Es findet keine Zusammenführung der von Google Analytics übermittelten IP-Adresse mit anderen Daten von Google statt. Für die Anzeige von Karten nutzen wir Google Maps.</li>
+            <li><strong>Facebook</strong> – Wir verwenden Facebook für die Anzeige der letzten Social-Posts und/oder Social-Share-Buttons.</li>
+          </ul>
+          <h3 class="text-lg font-medium text-black mt-4 mb-2">3.5 Sicherheit der Webseite</h3>
+          <p>Wir sichern unsere Seite mittels einer SSL- bzw. TLS-Verschlüsselung ab. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von "http://" auf "https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile. Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden. Wir verarbeiten Ihre Daten nur in dem Umfang, um unsere Leistung erbringen zu können. Eine vollautomatisierte automatische Entscheidungsfindung (Artikel 22 DSGVO) findet nicht statt.</p>
+          <h3 class="text-lg font-medium text-black mt-4 mb-2">3.6 Design der Webseite</h3>
+          <p>Wir nutzen für die Darstellung der Texte des „ReCaptcha", zur Sicherung unserer Webseite vor schadhaften Anfragen, auf unserer Webseite teilweise Designs von „Google Fonts" der Google LLC. Mithilfe dieser Einbindung sind wir in der Lage, auf weboptimierte Schriftarten von externen Servern zuzugreifen. Hierdurch wird an den Server übermittelt, welche unserer Internetseiten Sie besucht haben. Auch wird die IP-Adresse des Browsers, des Endgerätes und des Besuchers dieser Internetseiten von Google gespeichert. Es werden keinerlei Cookies erhoben. Eine Nutzung dieses Tools liegt in unserem berechtigten Interesse (Artikel 6 Absatz 1 Buchstabe f DSGVO) da wir Ladezeiten verringern und den Besuch auf unserer Website für sie optimieren wollen.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">4 Art der verarbeiteten Daten bei Nutzung von glymmer</h2>
+          <p class="mb-4">Wenn Sie glymmer nutzen, verarbeiten wir hierfür Ihre personenbezogenen Daten wie im Folgenden beschrieben. Wenn Sie glymmer verwenden, agieren wir als Auftragsverarbeiter. Die Datenverarbeitung erfolgt entsprechend ausschließlich nach Weisung und entsprechend des Vertrages zur Auftragsverarbeitung, den Sie als Besteller von glymmer mit uns abschließen. Die Datenverarbeitung durch uns erfolgt auch nach den im Vertrag zur Auftragsverarbeitung geregelten Grundsätzen, wenn Sie lediglich Nutzer von glymmer sind. Bei Nutzung von glymmer verarbeiten wir folgende Daten:</p>
+          <h3 class="text-lg font-medium text-black mt-4 mb-2">4.1 Community Owner</h3>
+          <p>In der Rolle als Community Owner haben Sie die Möglichkeit, den Account ihrer Community verwalten. Wir verarbeiten die hierfür erforderlichen Daten und Informationen: Ihre gewählten Zugangsdaten (Nutzername; Passwort), Ihren Namen und die Organisation, die Sie verwalten, Ihre Kontaktdaten (E-Mail-Adresse; Handynummer). Wir verarbeiten ebenfalls die von Ihnen auf der Plattform eingegebenen Daten und Informationen zum Verwalten einer Community.</p>
+          <h3 class="text-lg font-medium text-black mt-4 mb-2">4.2 Nutzer einer Community</h3>
+          <p>In der Rolle als Nutzer haben Sie die Möglichkeit, einer Community beizutreten und im Rahmen der bereitgestellten Funktionen des Community Owners in der Community zu konsumieren und zu interagieren. Wir verarbeiten die hierfür erforderlichen Daten und Informationen: Ihre gewählten Zugangsdaten (Nutzername; Passwort), Ihren Namen und die Organisation, die Sie verwalten, Ihre Kontaktdaten (E-Mail-Adresse; Handynummer). Wir verarbeiten ebenfalls die von Ihnen auf der Plattform eingegebenen Daten und Informationen zum Beitreten einer Community.</p>
+          <h3 class="text-lg font-medium text-black mt-4 mb-2">4.3 Datenverarbeitung im Supportfall</h3>
+          <p>Sofern Sie unseren Support in Anspruch nehmen, eröffnen wir für Ihre Fälle so genannte „Tickets". Für die Bearbeitung dieser Tickets nutzen wir das Tool „HubSpot" der HubSpot, Inc. Die Daten und Informationen der Tickets verbleiben im Wesentlichen in Deutschland. Zum Zwecke der Verfügbarkeit und Sicherung werden die Informationen auch auf die Server von HubSpot, Inc. in die USA geleitet. Dies erfolgt ausschließlich im Rahmen des Vertrages zur Auftragsverarbeitung, den Ihre Schule mit uns schließt.</p>
+          <h3 class="text-lg font-medium text-black mt-4 mb-2">4.4 Sicherheit der Plattform</h3>
+          <p>Wir sichern glymmer mittels einer SSL- bzw. TLS-Verschlüsselung ab. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von "http://" auf "https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile. Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden. Wir verarbeiten Ihre Daten nur in dem Umfang, um unsere Leistung erbringen zu können. Eine vollautomatisierte automatische Entscheidungsfindung (Artikel 22 DSGVO) findet nicht statt.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">5 Kategorien von Empfängern</h2>
+          <h3 class="text-lg font-medium text-black mt-4 mb-2">5.1 Betrieb der Webseite</h3>
+          <p>Wir arbeiten mit bestimmten Dienstleistern zusammen, um den Betrieb unserer Webseiten und die unter Ziffer 3 dargestellte Datenverarbeitung sicherzustellen. In bestimmten Fällen werden die Daten von den Dienstleistern auch außerhalb der EU/des EWR verarbeitet (z.B. in den USA). Dies erfolgt ausschließlich unter Einbeziehung der erforderlichen Technischen und Organisatorischen Sicherheitsmaßnahmen. Alle genannten Dienstleister agieren als Auftragsverarbeiter für uns. Wir geben die Daten in keinem Fall an unbefugte Dritte weiter und verkaufen Ihre Daten auch nicht.</p>
+          <h3 class="text-lg font-medium text-black mt-4 mb-2">5.2 Betrieb von glymmer</h3>
+          <p>Für den Betrieb von glymmer arbeiten wir mit einem externen Rechenzentrum im Rahmen einer Auftragsverarbeitung zusammen. Die Daten bei Nutzung von glymmer verbleiben dabei ausschließlich in Deutschland. Wir geben die Daten in keinem Fall an unbefugte Dritte weiter. Sofern Sie unseren Support in Anspruch nehmen, nutzen wir hierfür das Tool „HubSpot" der HubSpot, Inc. (s. Ziffer 4.4).</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">6 Rechtsgrundlage und Dauer der Datenverarbeitung</h2>
+          <p>Wir verarbeiten Ihre Daten zur Wahrung unserer berechtigten Interessen (Artikel 6 Absatz 1 Buchstabe f DSGVO). Unser berechtigtes Interesse ist hierbei der Betrieb unserer Webseiten sowie das Angebot der darin enthaltenen Leistungen. Die Datenverarbeitung im Rahmen der Verwendung von glymmer erfolgt zur Erfüllung unserer vertraglichen Verpflichtung (Art. 6 Abs. 1 Buchstabe b DSGVO). Außerdem verarbeiten wir Ihre Daten zur Erfüllung rechtlicher Verpflichtungen (Artikel 6 Absatz 1 Buchstabe c DSGVO). Diese rechtlichen Verpflichtungen sind z.B. Aufbewahrungs- und Dokumentationspflichten. Wir speichern Ihre Daten, solange es für die Erfüllung vertraglicher Verpflichtungen oder gesetzlicher Pflichten erforderlich ist. Ist eine Datenverarbeitung nicht mehr erforderlich, löschen wir Ihre Daten. Eine Löschung nehmen wir nicht vor, wenn die – befristete – Datenverarbeitung weiterhin erforderlich ist. In diesem Fall verarbeiten wir Ihre Daten eingeschränkt. Dies kann zu folgenden Zwecken der Fall sein: Erfüllung handels- und steuerrechtlicher Aufbewahrungspflichten: Zu nennen sind das Handelsgesetzbuch (HGB), die Abgabenordnung (AO), das Kreditwesengesetz (KWG) und das Geldwäschegesetz (GwG). Die dort vorgegebenen Fristen zur Aufbewahrung bzw. Dokumentation betragen zwei bis zehn Jahre. Erhaltung von Beweismitteln im Rahmen der gesetzlichen Verjährungsvorschriften. Nach den §§ 195ff. des Bürgerlichen Gesetzbuches (BGB) können diese Verjährungsfristen bis zu 30 Jahre betragen, wobei die regelmäßige Verjährungsfrist 3 Jahre beträgt.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">7 Ihre Datenschutzrechte</h2>
+          <p>Bezüglich Ihrer personenbezogenen Daten haben Sie folgende Rechte: das Recht auf Auskunft nach Artikel 15 DSGVO, das Recht auf Berichtigung nach Artikel 16 DSGVO, das Recht auf Löschung nach Artikel 17 DSGVO, das Recht auf Einschränkung der Verarbeitung nach Artikel 18 DSGVO sowie das Recht auf Datenübertragbarkeit nach Artikel 20 DSGVO. Beim Auskunfts- und beim Löschungsrecht gelten die Einschränkungen nach den §§ 34 und 35 BDSG. Darüber hinaus besteht ein Beschwerderecht bei einer zuständigen Datenaufsichtsbehörde (Artikel 77 DSGVO, § 40 BDSG). Soweit die Verarbeitung Ihrer personenbezogenen Daten auf Ihrer Einwilligung beruht, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Ihren Widerruf können Sie an datenschutz@teech.de richten. Verarbeitungen, die vor Ihrem Widerruf erfolgt sind, sind davon nicht betroffen. Sie können das Löschen/Sperren und Berichtigen Ihrer personenbezogenen Daten sowie die Auskunftserteilung über diese Daten unter der Kontaktadresse unseres Datenschutzbeauftragten (s. Nr. 1) veranlassen.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-50 pt-12 pb-32 px-6 lg:px-8 relative overflow-hidden">
+    <div class="absolute inset-0 flex items-end justify-center pointer-events-none overflow-visible">
+      <img src="./public/Glymmer_Logo_Dunkel.png" alt="" class="w-[1500px] h-auto opacity-[0.05] translate-y-[48%]" style="max-width: 95vw;">
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="mb-4"><img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto"></div>
+          <p class="text-black/70 text-sm">Die Community-Plattform für Coaches und Creator</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-black">Produkt</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a href="/features.html" class="hover:text-black transition">Features</a></li>
+            <li><a href="/coaches.html" class="hover:text-black transition">Use Cases</a></li>
+            <li><a href="/preise.html" class="hover:text-black transition">Preise</a></li>
+            <li><a href="/updates.html" class="hover:text-black transition">Updates</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-black">Unternehmen</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a href="/kontakt.html" class="hover:text-black transition">Kontakt</a></li>
+            <li><a href="https://teech.de/das-sind-wir/" target="_blank" rel="noopener noreferrer" class="hover:text-black transition">Über uns</a></li>
+            <li><a href="/faq.html" class="hover:text-black transition">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-black">Rechtliches</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a href="/imprint.html" class="hover:text-black transition">Impressum</a></li>
+            <li><a href="/privacy.html" class="hover:text-black transition">Datenschutz</a></li>
+            <li><a href="/terms.html" class="hover:text-black transition">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-black/10 pt-8 pb-8 text-center">
+        <p class="text-sm text-black/70">&copy; 2026 Glymmer - A teech Product. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./language.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var burgerMenu = document.getElementById('burger-menu');
+      var burgerMenuClose = document.getElementById('burger-menu-close');
+      var burgerMenuOverlay = document.getElementById('burger-menu-overlay');
+      var burgerMenuDropdown = document.getElementById('burger-menu-dropdown');
+      function toggleIcon(open) { if (burgerMenu) burgerMenu.classList.toggle('active', open); }
+      if (burgerMenu && burgerMenuDropdown) {
+        var open = false;
+        burgerMenu.addEventListener('click', function(e) {
+          e.stopPropagation();
+          open = !open;
+          burgerMenuDropdown.classList.toggle('opacity-0', !open);
+          burgerMenuDropdown.classList.toggle('invisible', !open);
+          burgerMenuDropdown.classList.toggle('translate-y-2', !open);
+          burgerMenuDropdown.classList.toggle('opacity-100', open);
+          burgerMenuDropdown.classList.toggle('visible', open);
+          burgerMenuDropdown.classList.toggle('translate-y-0', open);
+          toggleIcon(open);
+        });
+        document.addEventListener('click', function(e) {
+          if (!burgerMenu.contains(e.target) && !burgerMenuDropdown.contains(e.target)) {
+            open = false;
+            burgerMenuDropdown.classList.add('opacity-0', 'invisible', 'translate-y-2');
+            burgerMenuDropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+            toggleIcon(false);
+          }
+        });
+      }
+      if (burgerMenu && burgerMenuOverlay) {
+        burgerMenu.addEventListener('click', function() {
+          if (window.innerWidth < 768) {
+            burgerMenuOverlay.classList.toggle('translate-x-full');
+            document.body.style.overflow = burgerMenuOverlay.classList.contains('translate-x-full') ? '' : 'hidden';
+            toggleIcon(!burgerMenuOverlay.classList.contains('translate-x-full'));
+          }
+        });
+      }
+      if (burgerMenuClose && burgerMenuOverlay) {
+        burgerMenuClose.addEventListener('click', function() {
+          burgerMenuOverlay.classList.add('translate-x-full');
+          document.body.style.overflow = '';
+          toggleIcon(false);
+        });
+      }
+      if (burgerMenuOverlay) {
+        burgerMenuOverlay.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            burgerMenuOverlay.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+            toggleIcon(false);
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

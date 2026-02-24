@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Allgemeine Geschäftsbedingungen (AGB) für die Plattform Glymmer der teech Education GmbH">
+  <title>AGB - Glymmer</title>
+  <link rel="icon" type="image/png" href="./public/Favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    @font-face { font-family: 'Vanguard CF'; src: url('./fonts/Vanguard-CF-Bold.otf') format('opentype'); font-weight: bold; font-style: normal; }
+    @font-face { font-family: 'Suisse Intl'; src: url('./fonts/suisse/SuisseIntl-Regular.otf') format('opentype'); font-weight: 400; font-style: normal; }
+    @font-face { font-family: 'Suisse Intl'; src: url('./fonts/suisse/SuisseIntl-Medium.otf') format('opentype'); font-weight: 500; font-style: normal; }
+    @font-face { font-family: 'Suisse Intl'; src: url('./fonts/suisse/SuisseIntl-SemiBold.otf') format('opentype'); font-weight: 600; font-style: normal; }
+    @font-face { font-family: 'Suisse Intl'; src: url('./fonts/suisse/SuisseIntl-Bold.otf') format('opentype'); font-weight: 700; font-style: normal; }
+    body { font-family: 'Suisse Intl', sans-serif; -webkit-text-size-adjust: 100%; background: #ffffff; color: #1a1a1a; }
+    .headline-vanguard { font-family: 'Vanguard CF', sans-serif; }
+    html { scroll-behavior: smooth; }
+    #burger-menu.active #burger-line-top { transform: translateY(6px) rotate(45deg); transform-origin: 12px 6px; }
+    #burger-menu.active #burger-line-middle { opacity: 0; }
+    #burger-menu.active #burger-line-bottom { transform: translateY(-6px) rotate(-45deg); transform-origin: 12px 18px; }
+    .use-cases-dropdown { position: absolute; top: 100%; left: 0; margin-top: 0.5rem; background: white; border-radius: 1.5rem; padding: 1rem; min-width: 220px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); z-index: 1000; }
+    .use-cases-menu-item:hover .use-cases-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-black">
+  <!-- Header (wie Startseite) -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-black/5">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
+      <div class="flex items-center justify-between relative">
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <button id="burger-menu" class="relative p-2 transition" style="color: #2A2A2A;" aria-label="Menu">
+              <div class="relative w-6 h-6">
+                <svg id="burger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute inset-0">
+                  <g id="burger-lines"><line id="burger-line-top" x1="3" y1="6" x2="21" y2="6"></line><line id="burger-line-middle" x1="3" y1="12" x2="21" y2="12"></line><line id="burger-line-bottom" x1="3" y1="18" x2="21" y2="18"></line></g>
+                </svg>
+              </div>
+            </button>
+            <div id="burger-menu-dropdown" class="hidden md:block absolute top-full left-0 mt-2 bg-white rounded-3xl py-4 px-6 min-w-[200px] opacity-0 invisible transition-all duration-300 transform translate-y-2" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);">
+              <nav class="flex flex-col space-y-3">
+                <a href="/features.html" class="text-sm font-medium text-black/70 hover:text-black transition">Features</a>
+                <div class="use-cases-menu-item relative">
+                  <a href="/#use-cases" class="text-sm font-medium text-black/70 hover:text-black transition flex items-center gap-1">Use Cases ▾</a>
+                  <div class="use-cases-dropdown">
+                    <a href="/coaches.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Coaches</a>
+                    <a href="/creator.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Creator</a>
+                    <a href="/bootcamps.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Bootcamps</a>
+                    <a href="/lernraum.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Lernräume</a>
+                  </div>
+                </div>
+                <a href="/preise.html" class="text-sm font-medium text-black/70 hover:text-black transition">Preise</a>
+                <a href="/updates.html" class="text-sm font-medium text-black/70 hover:text-black transition">Updates</a>
+                <a href="/faq.html" class="text-sm font-medium text-black/70 hover:text-black transition">FAQ</a>
+              </nav>
+            </div>
+          </div>
+          <button id="language-switch" class="px-4 py-3 text-sm border border-black/20 rounded-full hover:border-black/40 flex items-center gap-2" style="color: #2A2A2A;" data-lang="de">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>EN</span>
+          </button>
+        </div>
+        <a href="/" class="absolute left-1/2 transform -translate-x-1/2"><img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto"></a>
+        <div class="flex items-center space-x-4 ml-auto">
+          <a href="https://app.glymmer.io/auth/login" class="px-4 py-2 text-sm" style="color: #2A2A2A;">Log In</a>
+          <a href="/kontakt.html#sales" class="px-6 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition inline-flex items-center gap-2" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">Jetzt starten →</a>
+        </div>
+      </div>
+      <div id="burger-menu-overlay" class="md:hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transform translate-x-full transition-transform duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-8">
+          <div class="flex justify-between items-center mb-8">
+            <h2 class="text-2xl font-semibold text-black">Menü</h2>
+            <button id="burger-menu-close" class="p-2 text-black/70 hover:text-black" aria-label="Schließen">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+          </div>
+          <nav class="flex flex-col space-y-4">
+            <a href="/features.html" class="text-xl font-medium text-black/70 hover:text-black">Features</a>
+            <a href="/coaches.html" class="text-xl font-medium text-black/70 hover:text-black">Use Cases – Coaches</a>
+            <a href="/creator.html" class="text-xl font-medium text-black/70 hover:text-black">Use Cases – Creator</a>
+            <a href="/preise.html" class="text-xl font-medium text-black/70 hover:text-black">Preise</a>
+            <a href="/updates.html" class="text-xl font-medium text-black/70 hover:text-black">Updates</a>
+            <a href="/faq.html" class="text-xl font-medium text-black/70 hover:text-black">FAQ</a>
+            <a href="/kontakt.html#sales" class="text-xl font-medium text-black/70 hover:text-black mt-4">Jetzt starten</a>
+          </nav>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-28 pb-20 px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="headline-vanguard text-4xl md:text-5xl font-bold mb-4 text-black">AGB</h1>
+      <p class="text-black/60 text-lg mb-12">Allgemeine Geschäftsbedingungen für die Plattform „glymmer“ der teech Education GmbH</p>
+
+      <div class="prose prose-lg max-w-none text-black/85 space-y-10">
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">Präambel</h2>
+          <p>Dieses Modul regelt die Nutzung der Community Plattform von teech (nachfolgend „Plattform“) durch Organisationen, Unternehmen oder Einzelpersonen (nachfolgend „Community Owner“). Die Plattform dient der digitalen Bereitstellung, Verwaltung und Monetarisierung von Communities, Inhalten, Events und interaktiven Formaten. Sie bietet technische Funktionen zur Kommunikation, Zusammenarbeit und Wissensvermittlung – einschließlich der sogenannten Live Rooms (vormals „Classroom“) sowie der Integration von Dritttools, Zahlungs- und KI-Funktionen. Ziel dieses Moduls ist es, den rechtlichen und organisatorischen Rahmen für den Betrieb und die Nutzung der Plattform festzulegen. Das Vertragsverhältnis besteht ausschließlich zwischen der teech Education GmbH („teech“) als Anbieter und dem jeweiligen Community Owner als Lizenznehmer.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">1. Anbieterkennzeichnung</h2>
+          <p>teech Education GmbH<br>Verwaltungssitz: Schlossgartenstraße 69, 64289 Darmstadt<br>Satzungssitz: c/o Factory Works GmbH, Rheinsberger Str. 76/77, 10115 Berlin<br>Vertreten durch: Joel Monaco, Emanuele Monaco<br>Amtsgericht Charlottenburg (HRB 246628 B)<br>E‑Mail: hi@teech.de<br>USt‑IdNr.: DE340393891</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">2. Geltungsbereich und Vertragsverhältnis</h2>
+          <p>Dieses Modul regelt die Nutzung der Community Plattform von teech (nachfolgend „Plattform“) durch Organisationen, Unternehmen oder Einzelpersonen (nachfolgend „Community Owner“), die auf der Plattform eigene Communities betreiben, verwalten oder monetarisieren. Der Vertrag besteht ausschließlich zwischen teech Education GmbH (nachfolgend „teech“) und dem jeweiligen Community Owner. Mitglieder, Nutzer oder sonstige Dritte, die über die Community des Owners auf die Plattform zugreifen, stehen nicht in einem direkten Vertragsverhältnis zu teech. teech stellt ausschließlich die technische Infrastruktur bereit und übernimmt keine redaktionelle, organisatorische oder rechtliche Verantwortung für Aktivitäten innerhalb der vom Community Owner betriebenen Community. Eine Vorabprüfung von Inhalten findet nicht statt. teech wird nicht Vertragspartner der Mitglieder oder Nutzer einer Community. Vertragsbeziehungen über Mitgliedschaften, Inhalte, Veranstaltungen oder sonstige Leistungen entstehen ausschließlich zwischen dem Community Owner und seinen jeweiligen Mitgliedern. teech übernimmt keinerlei inhaltliche, wirtschaftliche oder rechtliche Verantwortung für Leistungen, Inhalte oder Vertragsverhältnisse zwischen dem Community Owner und dessen Mitgliedern. Etwaige Ansprüche von Mitgliedern sind ausschließlich gegenüber dem Community Owner geltend zu machen. Eine unmittelbare oder mittelbare Einbeziehung von Mitgliedern oder sonstigen Nutzern der Community in den Schutzbereich dieses Vertrags ist ausgeschlossen. Ansprüche Dritter gegen teech aus dem Vertragsverhältnis mit dem Community Owner bestehen nicht.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">3. Leistungsumfang und Lizenzmodelle</h2>
+          <p>teech stellt dem Community Owner die Plattform als cloudbasierte Software-as-a-Service (SaaS) bereit. Der Zugriff erfolgt über die bereitgestellten Web- oder App-Interfaces. Der konkrete Leistungsumfang ergibt sich aus dem zum Zeitpunkt des Vertragsschlusses gültigen Lizenzmodell sowie den jeweils veröffentlichten Leistungsbeschreibungen auf glymmer.io oder im individuellen Angebot. Die Plattform umfasst die technische Bereitstellung und den Betrieb sämtlicher Funktionen, die für die Verwaltung, Interaktion und Monetarisierung von Communities erforderlich sind. Funktionsgrenzen, Speicher- oder Teilnehmerlimits können je nach Lizenzmodell variieren. teech ist berechtigt, Funktionen oder technische Komponenten im Rahmen der Weiterentwicklung anzupassen, zu ersetzen oder zu erweitern, sofern keine wesentliche Einschränkung der vertraglich vereinbarten Leistungen erfolgt. Alle Rechte an der Plattform, einschließlich sämtlicher Software, Designs, Datenbanken, Marken, Kennzeichen und sonstiger Schutzrechte, verbleiben ausschließlich bei teech. Dem Community Owner wird lediglich ein einfaches, nicht übertragbares Nutzungsrecht für die Dauer des Vertragsverhältnisses eingeräumt. Eine weitergehende Nutzung, Vervielfältigung, Bearbeitung oder Verwertung der Plattform oder ihrer Bestandteile ist unzulässig. teech ist nicht verpflichtet, dem Community Owner Exklusivität in Bezug auf Branche, Region oder Geschäftsmodell einzuräumen. teech schuldet keinen bestimmten wirtschaftlichen Erfolg oder eine bestimmte Monetarisierung der Community. Dem Community Owner ist es untersagt, die Plattform oder Teile hiervon zu analysieren, zu dekompilieren, zurückzuentwickeln (Reverse Engineering) oder anderweitig technische Funktionsweisen offenzulegen, soweit dies nicht zwingend gesetzlich zulässig ist.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">4. Pflichten und Verantwortung des Community Owners</h2>
+          <p>Der Community Owner verpflichtet sich, die Plattform ausschließlich im Rahmen des vereinbarten Lizenzmodells zu nutzen und alle geltenden gesetzlichen Bestimmungen einzuhalten – insbesondere Datenschutz-, Urheber-, Marken-, Wettbewerbs-, Telemedien- und Jugendschutzrecht. Er ist verpflichtet, seinen Mitgliedern rechtlich wirksame Nutzungsbedingungen sowie eine datenschutzrechtliche Information bereitzustellen. teech kann auf Wunsch technische Unterstützung bei der Einbindung dieser Dokumente leisten, übernimmt jedoch keine rechtliche Prüfung oder Verantwortung für deren Inhalt. Der Community Owner trägt die alleinige Verantwortung für sämtliche Inhalte, Aktivitäten und Interaktionen innerhalb seiner Community. Für alle innerhalb der Community veröffentlichten oder geteilten Inhalte trägt ausschließlich der Community Owner die Verantwortung. Der Community Owner stellt teech von sämtlichen Ansprüchen Dritter frei, die aufgrund von Inhalten, Leistungen oder sonstigen Aktivitäten innerhalb seiner Community geltend gemacht werden. Dies gilt auch für behördliche Maßnahmen, Bußgelder oder sonstige öffentlich-rechtliche Inanspruchnahmen, soweit diese aus dem Verantwortungsbereich des Community Owners stammen. Die Freistellung umfasst auch die angemessenen Kosten der Rechtsverteidigung. Sofern teech personenbezogene Daten im Auftrag des Community Owners verarbeitet, erfolgt dies auf Grundlage einer gesonderten Vereinbarung zur Auftragsverarbeitung gemäß Art. 28 DSGVO. teech erhält im Rahmen der technischen Bereitstellung der Plattform lediglich die zur Vertragserfüllung erforderlichen Zugriffsmöglichkeiten. Eine inhaltliche Kontrolle, Überwachung oder eigenständige Verantwortlichkeit für die Datenverarbeitung innerhalb der Community ist hiermit nicht verbunden. Der Community Owner bleibt allein verantwortlich für die Rechtmäßigkeit der Verarbeitung personenbezogener Daten innerhalb seiner Community.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">5. Zahlungsabwicklung und Abrechnung</h2>
+          <p>Die Zahlungsabwicklung erfolgt über einen von teech eingesetzten externen Zahlungsdienstleister. teech ist berechtigt, den Zahlungsdienstleister jederzeit zu wechseln, mehrere Zahlungsdienstleister parallel einzusetzen oder einzelne Zahlungsmethoden zu aktivieren oder zu deaktivieren. Für die Nutzung der Zahlungsabwicklung gelten ergänzend die jeweiligen Geschäftsbedingungen und Vertragsregelungen des eingesetzten Zahlungsdienstleisters. Diese werden dem Community Owner im Rahmen des Onboarding- oder Zahlungsprozesses zugänglich gemacht. teech übernimmt keine Verantwortung für die Inhalte oder Änderungen dieser Bedingungen. Der Zahlungsdienstleister kann für die Abwicklung von Transaktionen eigene Gebühren erheben und diese unmittelbar vom jeweiligen Zahlungsbetrag einbehalten. teech hat auf Art, Höhe oder Struktur dieser Gebühren keinen Einfluss. Etwaige zusätzliche Kosten, insbesondere bei bestimmten Zahlungsmethoden, trägt der Community Owner selbst. teech übernimmt keine Gewähr für die dauerhafte Verfügbarkeit einzelner Zahlungsmethoden.</p>
+          <p class="mt-4">Soweit der Community Owner über die Plattform kostenpflichtige Leistungen anbietet oder diese abwickelt, steht teech eine Umsatzbeteiligung zu. Die Höhe der Beteiligung ergibt sich aus dem jeweils gebuchten Lizenzmodell oder einer gesonderten Vereinbarung. Die Umsatzbeteiligung wird unabhängig von den Gebühren des eingesetzten Zahlungsdienstleisters berechnet und dem Community Owner gesondert in Rechnung gestellt oder im Rahmen der Zahlungsabwicklung berücksichtigt. Grundlage der Berechnung der Umsatzbeteiligung ist der vom Community Owner über die Plattform erzielte Gesamtumsatz aus digitalen Leistungen vor Abzug von Gebühren des eingesetzten Zahlungsdienstleisters. Gesetzliche Umsatzsteuer bleibt unberührt, soweit sie gesondert ausgewiesen wird.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">6. Zahlungsverzug</h2>
+          <p>Gerät der Community Owner mit einer Zahlung in Verzug oder werden fällige Beträge mangels Deckung, fehlerhafter Angaben oder aus vergleichbaren Gründen nicht erfolgreich eingezogen, ist teech berechtigt, den Zugang zur Plattform vollständig zu sperren. Die Sperrung umfasst sämtliche Zugänge zur Community, einschließlich der Zugänge des Community Owners sowie aller Community-Mitglieder. Während der Sperrung besteht kein Zugriff auf Inhalte, Daten oder Funktionen der Plattform. Die Sperrung erfolgt bis zum vollständigen Ausgleich aller offenen Forderungen. Nach vollständigem Zahlungsausgleich wird der Zugang unverzüglich wieder freigeschaltet. Für die Dauer der Sperrung bleibt die Zahlungspflicht des Community Owners bestehen. Schadensersatz- oder Minderungsansprüche aufgrund der Sperrung sind ausgeschlossen. teech ist berechtigt, im Falle des Zahlungsverzugs Verzugszinsen in gesetzlicher Höhe (§ 288 BGB) sowie den Ersatz der durch Rücklastschriften oder Inkassoverfahren entstehenden Kosten zu verlangen. Dauert der Zahlungsverzug länger als 30 Tage an, ist teech berechtigt, den Vertrag außerordentlich zu kündigen. Im Falle der Zahlungsunfähigkeit, drohenden Zahlungsunfähigkeit oder Eröffnung eines Insolvenzverfahrens über das Vermögen des Community Owners ist teech berechtigt, die Plattform unverzüglich zu sperren und den Vertrag außerordentlich zu kündigen.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">7. Laufzeit, Kündigung und Upgrade-Regelungen</h2>
+          <p>Der Vertrag beginnt mit dem Abschluss eines kostenpflichtigen Lizenzmodells. Vor dem Abschluss kann die Plattform im Rahmen eines kostenlosen Testzeitraums von 14 Tagen genutzt werden. Der Testzeitraum endet automatisch, ohne dass es einer Kündigung bedarf. Bei monatlicher Laufzeit kann der Vertrag bis zum Ende der laufenden Abrechnungsperiode gekündigt werden. Bei jährlicher Laufzeit beträgt die Kündigungsfrist drei Monate zum Ende der jeweiligen Vertragslaufzeit. Sofern keine Kündigung erfolgt, verlängert sich der Vertrag jeweils um die vereinbarte Laufzeit. Für den Free-Plan gilt keine feste Laufzeit. teech ist berechtigt, diesen Plan jederzeit mit angemessener Frist zu ändern oder einzustellen.</p>
+          <p class="mt-4">Die Kündigung kann schriftlich oder über die hierfür vorgesehene Funktion innerhalb der Plattform erklärt werden. Beide Parteien sind berechtigt, den Vertrag aus wichtigem Grund ohne Einhaltung einer Kündigungsfrist zu kündigen. Ein wichtiger Grund liegt insbesondere vor, wenn eine Partei trotz schriftlicher Aufforderung wesentlich gegen vertragliche Pflichten verstößt, über das Vermögen einer Partei ein Insolvenzverfahren eröffnet oder beantragt wird oder die Plattform dauerhaft eingestellt wird. Vorübergehende technische Störungen, Wartungsarbeiten oder Funktionsanpassungen stellen keinen wichtigen Grund zur außerordentlichen Kündigung dar. Im Falle der Vertragsbeendigung endet der Zugang zur Plattform mit Wirksamwerden der Kündigung. Die Regelungen zur Datenherausgabe bleiben hiervon unberührt.</p>
+          <p class="mt-4">Eine Hochstufung (Upgrade) in ein höheres Lizenzmodell kann jederzeit veranlasst werden. Das Upgrade wird mit Bestätigung durch teech oder mit technischer Umstellung wirksam. Die Differenz zur bisherigen Lizenzgebühr wird anteilig (pro rata) für den verbleibenden Zeitraum der laufenden Abrechnungsperiode berechnet. Eine Hochstufung berührt die bestehende Vertragslaufzeit nicht. Erfolgt jedoch ein Wechsel von monatlicher auf jährliche Abrechnung, beginnt mit der Umstellung eine neue Vertragslaufzeit. Eine Herabstufung (Downgrade) ist nur zum Ende der laufenden Vertragslaufzeit möglich und wird mit Beginn der darauffolgenden Abrechnungsperiode wirksam. teech ist berechtigt, Lizenzwechsel aus technischen oder organisatorischen Gründen angemessen zu verzögern, sofern dies für die ordnungsgemäße Systemumstellung erforderlich ist.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">8. Support und Service Level</h2>
+          <p>teech erbringt Supportleistungen ausschließlich für aktive Community Owner im Rahmen der jeweils gebuchten Lizenz. Mitglieder oder Nutzer innerhalb einer Community haben keinen unmittelbaren Anspruch auf Support, sofern dies nicht ausdrücklich vereinbart wurde. Der reguläre Support steht werktags von Montag bis Freitag zwischen 09:00 und 17:00 Uhr (MEZ) zur Verfügung. Anfragen außerhalb dieser Zeiten werden am folgenden Werktag bearbeitet. teech ist berechtigt, Art und Umfang der Supportleistungen nach eigenem Ermessen an den jeweiligen technischen Entwicklungsstand anzupassen, sofern die vertraglich zugesicherten Leistungen gewahrt bleiben.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">9. Datenherausgabe und Löschung</h2>
+          <p>Nach Beendigung des Vertragsverhältnisses kann der Community Owner innerhalb von vier Wochen die Herausgabe seiner auf der Plattform gespeicherten Daten beantragen. Die Bereitstellung erfolgt in einem gängigen, maschinenlesbaren Format nach Wahl von teech. Ein Anspruch auf Bereitstellung der Daten in einem bestimmten Format, auf strukturierte Aufbereitung oder auf Mitlieferung der zur Nutzung erforderlichen Software besteht nicht. Sofern der Community Owner keine Herausgabe innerhalb der genannten Frist beantragt, werden die gespeicherten Daten nach Ablauf der Frist gelöscht, soweit keine gesetzlichen Aufbewahrungspflichten oder berechtigten Interessen von teech entgegenstehen. teech ist berechtigt, Anträge auf Datenherausgabe oder Löschung einer unabhängigen datenschutzrechtlichen Prüfung zu unterziehen. Die Bearbeitung kann sich hierdurch angemessen verzögern. Backups, Sicherungskopien und Systemprotokolle (Logfiles) sind von der Löschung ausgenommen, soweit deren Aufbewahrung aus technischen, sicherheitsrelevanten oder gesetzlichen Gründen erforderlich ist. Sofern keine gesetzliche Verpflichtung zur Datenherausgabe besteht, kann teech für die Bereitstellung eine angemessene Vergütung verlangen. Die Höhe richtet sich nach dem technischen und organisatorischen Aufwand. Eine vorübergehende Sperrung der Plattform stellt keine Beendigung des Vertragsverhältnisses dar.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">10. Verhaltenscodex und Meldepflichten</h2>
+          <p>Der Community Owner verpflichtet sich, die Plattform ausschließlich im Einklang mit geltendem Recht und den Grundsätzen moralischen und respektvollen Handelns zu nutzen. Er hat sicherzustellen, dass diese Grundsätze auch innerhalb seiner Community eingehalten werden. Es ist insbesondere untersagt, Inhalte zu verbreiten oder Handlungen vorzunehmen, die gegen gesetzliche Bestimmungen verstoßen oder geeignet sind, den Betrieb oder die Sicherheit der Plattform zu beeinträchtigen. teech stellt technische und organisatorische Möglichkeiten bereit, um rechtswidrige oder missbräuchliche Inhalte zu melden und arbeitet im Falle schwerwiegender Verstöße oder behördlicher Ermittlungen mit den zuständigen Behörden zusammen. Der Community Owner haftet für sämtliche Verstöße gegen gesetzliche Bestimmungen oder diese AGB, die innerhalb seiner Community begangen werden. teech ist berechtigt, bei schwerwiegenden oder wiederholten Verstößen die betroffene Community ganz oder teilweise zu sperren oder dauerhaft zu schließen. Dies gilt insbesondere bei rechtswidrigen Inhalten, massiven Vertragsverletzungen oder Gefährdung der Plattformintegrität. teech behält sich vor, bei groben oder strafrechtlich relevanten Verstößen rechtliche Schritte einzuleiten und mit zuständigen Behörden zusammenzuarbeiten. teech ist berechtigt, bei behördlichen Anfragen oder strafrechtlich relevanten Sachverhalten mit zuständigen Behörden zusammenzuarbeiten. Eine eigene inhaltliche Verantwortlichkeit oder Haftung für die innerhalb der Community bereitgestellten Inhalte ist hiermit nicht verbunden.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">11. Referenznutzung</h2>
+          <p>teech ist berechtigt, den Namen, die Marke, das Logo sowie allgemeine, nicht vertrauliche Informationen über die Zusammenarbeit mit dem Community Owner als Referenz in Kommunikations-, Marketing- oder Vertriebsunterlagen zu verwenden. Eine solche Nutzung erfolgt ausschließlich in angemessener und sachlicher Form. Der Community Owner kann dieser Nutzung jederzeit für die Zukunft widersprechen.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">12. Technische Updates und Funktionserweiterungen</h2>
+          <p>teech führt regelmäßig technische Updates, Wartungen und Verbesserungen durch, um die Sicherheit, Stabilität und Funktionsfähigkeit der Plattform zu gewährleisten. Diese Updates erfolgen automatisch und sind für den Community Owner kostenfrei. teech ist berechtigt, Funktionen der Plattform zu ändern, zu ersetzen oder zu erweitern, soweit dadurch der vertraglich vereinbarte Leistungsumfang nicht wesentlich beeinträchtigt wird. Neue oder erweiterte Funktionen, die über den bestehenden Leistungsumfang hinausgehen, können als kostenpflichtige Zusatzleistungen angeboten werden. Ein Anspruch auf Beibehaltung bestimmter Funktionen, Integrationen oder technischer Ausgestaltungen besteht nicht, sofern nicht ausdrücklich schriftlich etwas anderes vereinbart wurde.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">13. Höhere Gewalt und Betriebsunterbrechungen</h2>
+          <p>teech haftet nicht für die Nichterfüllung oder Verzögerung von Verpflichtungen, soweit diese auf Ereignisse außerhalb des Einflussbereichs von teech zurückzuführen sind. Hierzu zählen insbesondere Naturkatastrophen, Krieg, Terroranschläge, Streik, behördliche Maßnahmen oder Ausfälle von Kommunikationsnetzen. teech ist berechtigt, den Betrieb der Plattform vorübergehend einzuschränken oder zu unterbrechen, wenn dies zur Wartung, Sicherheit oder Durchführung technischer Maßnahmen erforderlich ist. Ansprüche auf Schadensersatz oder Minderung bestehen in diesen Fällen nicht.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">14. Haftung und Verfügbarkeit</h2>
+          <p>teech haftet unbeschränkt für Schäden, die auf Vorsatz oder grober Fahrlässigkeit beruhen, sowie für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit. Bei leicht fahrlässiger Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) ist die Haftung auf den vertragstypischen, vorhersehbaren Schaden begrenzt. Soweit die Haftung nicht auf Vorsatz oder grober Fahrlässigkeit beruht, ist sie der Höhe nach auf die im Zeitpunkt des Schadenseintritts in den letzten zwölf Monaten vom Community Owner gezahlten Lizenzgebühren begrenzt. Eine weitergehende Haftung ist ausgeschlossen. Insbesondere haftet teech nicht für mittelbare Schäden, Folgeschäden, entgangenen Gewinn, Umsatzverluste, Reputationsschäden oder Datenverluste, soweit gesetzlich zulässig. teech übernimmt keine Gewähr für eine ununterbrochene oder störungsfreie Verfügbarkeit der Plattform. Kurzzeitige Unterbrechungen aufgrund von Wartung, Updates oder technischen Anpassungen stellen keinen Mangel dar. Eine bestimmte Mindestverfügbarkeit der Plattform wird nicht geschuldet, sofern nicht ausdrücklich in einer gesonderten schriftlichen Vereinbarung etwas anderes geregelt ist. Für Schäden, die durch den Verlust von Daten entstehen, haftet teech nur, soweit der Community Owner seinen gesetzlichen und vertraglichen Mitwirkungspflichten zur Datensicherung nachgekommen ist. Die Haftung nach dem Produkthaftungsgesetz bleibt unberührt.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">15. Schlussbestimmungen</h2>
+          <p>Änderungen oder Ergänzungen dieser AGB bedürfen der Textform, sofern nicht ausdrücklich etwas anderes bestimmt ist. Mündliche Nebenabreden bestehen nicht. Individuelle Vereinbarungen oder schriftliche Angebote gehen im Falle von Widersprüchen den Regelungen dieser AGB vor. Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts (CISG). Gerichtsstand für alle Streitigkeiten aus oder im Zusammenhang mit diesen AGB oder den hierunter geschlossenen Verträgen ist – soweit gesetzlich zulässig – Darmstadt. Sollten einzelne Bestimmungen dieser AGB unwirksam oder undurchführbar sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen hiervon unberührt. Anstelle der unwirksamen Regelung tritt eine solche, die dem wirtschaftlichen Zweck der ursprünglichen Bestimmung möglichst nahekommt. teech ist berechtigt, diese AGB mit Wirkung für die Zukunft anzupassen oder zu ergänzen, soweit dadurch der Vertragszweck nicht wesentlich verändert wird. Über Änderungen wird in Textform informiert. Widerspricht der Community Owner nicht innerhalb von 14 Tagen nach Mitteilung, gelten die Änderungen als akzeptiert. Sofern zwischen teech und einem Community Owner individuelle Vereinbarungen bestehen, gehen diese im Falle von Abweichungen den Bestimmungen dieser AGB vor. Die Abtretung von Rechten oder Ansprüchen aus diesem Vertragsverhältnis durch den Community Owner ist nur mit vorheriger schriftlicher Zustimmung von teech zulässig.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer (wie Startseite) -->
+  <footer class="bg-gray-50 pt-12 pb-32 px-6 lg:px-8 relative overflow-hidden">
+    <div class="absolute inset-0 flex items-end justify-center pointer-events-none overflow-visible">
+      <img src="./public/Glymmer_Logo_Dunkel.png" alt="" class="w-[1500px] h-auto opacity-[0.05] translate-y-[48%]" style="max-width: 95vw;">
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="mb-4"><img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto"></div>
+          <p class="text-black/70 text-sm">Die Community-Plattform für Coaches und Creator</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-black">Produkt</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a href="/features.html" class="hover:text-black transition">Features</a></li>
+            <li><a href="/coaches.html" class="hover:text-black transition">Use Cases</a></li>
+            <li><a href="/preise.html" class="hover:text-black transition">Preise</a></li>
+            <li><a href="/updates.html" class="hover:text-black transition">Updates</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-black">Unternehmen</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a href="/kontakt.html" class="hover:text-black transition">Kontakt</a></li>
+            <li><a href="https://teech.de/das-sind-wir/" target="_blank" rel="noopener noreferrer" class="hover:text-black transition">Über uns</a></li>
+            <li><a href="/faq.html" class="hover:text-black transition">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-black">Rechtliches</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a href="/imprint.html" class="hover:text-black transition">Impressum</a></li>
+            <li><a href="/privacy.html" class="hover:text-black transition">Datenschutz</a></li>
+            <li><a href="/terms.html" class="hover:text-black transition">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-black/10 pt-8 pb-8 text-center">
+        <p class="text-sm text-black/70">&copy; 2026 Glymmer - A teech Product. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./language.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var burgerMenu = document.getElementById('burger-menu');
+      var burgerMenuClose = document.getElementById('burger-menu-close');
+      var burgerMenuOverlay = document.getElementById('burger-menu-overlay');
+      var burgerMenuDropdown = document.getElementById('burger-menu-dropdown');
+      function toggleIcon(open) {
+        if (burgerMenu) burgerMenu.classList.toggle('active', open);
+      }
+      if (burgerMenu && burgerMenuDropdown) {
+        var open = false;
+        burgerMenu.addEventListener('click', function(e) {
+          e.stopPropagation();
+          open = !open;
+          burgerMenuDropdown.classList.toggle('opacity-0', !open);
+          burgerMenuDropdown.classList.toggle('invisible', !open);
+          burgerMenuDropdown.classList.toggle('translate-y-2', !open);
+          burgerMenuDropdown.classList.toggle('opacity-100', open);
+          burgerMenuDropdown.classList.toggle('visible', open);
+          burgerMenuDropdown.classList.toggle('translate-y-0', open);
+          toggleIcon(open);
+        });
+        document.addEventListener('click', function(e) {
+          if (!burgerMenu.contains(e.target) && !burgerMenuDropdown.contains(e.target)) {
+            open = false;
+            burgerMenuDropdown.classList.add('opacity-0', 'invisible', 'translate-y-2');
+            burgerMenuDropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+            toggleIcon(false);
+          }
+        });
+      }
+      if (burgerMenu && burgerMenuOverlay) {
+        burgerMenu.addEventListener('click', function() {
+          if (window.innerWidth < 768) {
+            burgerMenuOverlay.classList.toggle('translate-x-full');
+            document.body.style.overflow = burgerMenuOverlay.classList.contains('translate-x-full') ? '' : 'hidden';
+            toggleIcon(!burgerMenuOverlay.classList.contains('translate-x-full'));
+          }
+        });
+      }
+      if (burgerMenuClose && burgerMenuOverlay) {
+        burgerMenuClose.addEventListener('click', function() {
+          burgerMenuOverlay.classList.add('translate-x-full');
+          document.body.style.overflow = '';
+          toggleIcon(false);
+        });
+      }
+      if (burgerMenuOverlay) {
+        burgerMenuOverlay.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            burgerMenuOverlay.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+            toggleIcon(false);
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

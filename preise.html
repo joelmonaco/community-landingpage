@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Teech Preise - Wähle das passende Lizenzpaket für deine Community-Plattform. Flexible Preismodelle für Coaches und Creator.">
-  <title>Preise - Teech Community-Plattform</title>
+  <meta name="description" content="Glymmer Preise – Wähle das passende Lizenzpaket für deine Community-Plattform. Flexible Preismodelle für Coaches und Creator.">
+  <meta name="keywords" content="Community-Plattform, Preise, SaaS, Coaching, Creator, Mitgliedschaften">
+  <meta name="author" content="Glymmer">
+  <title>Preise – Glymmer Community-Plattform</title>
+  <link rel="icon" type="image/png" href="./public/Favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./styles.css">
   <link rel="canonical" href="https://teech.com/preise.html">
@@ -15,342 +21,775 @@
       font-weight: bold;
       font-style: normal;
     }
-
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-Light.otf') format('opentype');
+      font-weight: 300;
+      font-style: normal;
+    }
     @font-face {
       font-family: 'Suisse Intl';
       src: url('./fonts/suisse/SuisseIntl-Regular.otf') format('opentype');
       font-weight: 400;
       font-style: normal;
     }
-
     @font-face {
       font-family: 'Suisse Intl';
       src: url('./fonts/suisse/SuisseIntl-Medium.otf') format('opentype');
       font-weight: 500;
       font-style: normal;
     }
-
     @font-face {
       font-family: 'Suisse Intl';
       src: url('./fonts/suisse/SuisseIntl-SemiBold.otf') format('opentype');
       font-weight: 600;
       font-style: normal;
     }
-
     @font-face {
       font-family: 'Suisse Intl';
       src: url('./fonts/suisse/SuisseIntl-Bold.otf') format('opentype');
       font-weight: 700;
       font-style: normal;
     }
-
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       font-family: 'Suisse Intl', sans-serif;
       -webkit-text-size-adjust: 100%;
+      background: #ffffff;
+      color: #1a1a1a;
+      overflow-x: hidden;
     }
-
-    .headline-vanguard {
-      font-family: 'Vanguard CF', sans-serif;
+    .headline-vanguard { font-family: 'Vanguard CF', sans-serif; }
+    .gradient-bg {
+      background: linear-gradient(135deg, rgba(113, 103, 245, 0.4) 0%, rgba(255, 252, 4, 0.4) 100%);
+      background-size: 200% 200%;
+      animation: gradientShift 8s ease infinite;
     }
-
-    .pricing-card {
-      transition: transform 0.3s ease;
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
-
-    .pricing-card:hover {
-      transform: translateY(-4px);
-    }
-
-    /* Main Color - Modernes Lila/Flieder */
     :root {
-      --primary-purple: #8B5CF6;
-      --primary-purple-hover: #7C3AED;
-      --primary-purple-light: #A78BFA;
-      --primary-purple-bg: #F5F3FF;
+      --primary-yellow: #FFFC04;
+      --primary-yellow-hover: #E6E304;
+      --primary-purple: #7167F5;
+      --primary-purple-hover: #5F56E0;
+      --primary-purple-bg: #E8E6FF;
     }
-
-    .bg-primary {
-      background-color: var(--primary-purple);
+    .bg-primary { background-color: var(--primary-yellow); }
+    .bg-primary-hover:hover { background-color: var(--primary-yellow-hover); }
+    .text-primary { color: var(--primary-yellow); }
+    .border-primary { border-color: var(--primary-yellow); }
+    .bg-secondary { background-color: var(--primary-purple); }
+    .bg-secondary-hover:hover { background-color: var(--primary-purple-hover); }
+    .text-secondary { color: var(--primary-purple); }
+    .border-secondary { border-color: var(--primary-purple); }
+    #burger-menu.active #burger-line-top { transform: translateY(6px) rotate(45deg); transform-origin: 12px 6px; }
+    #burger-menu.active #burger-line-middle { opacity: 0; }
+    #burger-menu.active #burger-line-bottom { transform: translateY(-6px) rotate(-45deg); transform-origin: 12px 18px; }
+    .use-cases-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 0.5rem;
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1rem;
+      min-width: 220px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
     }
-
-    .bg-primary-hover:hover {
-      background-color: var(--primary-purple-hover);
+    .use-cases-menu-item:hover .use-cases-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
     }
-
-    .text-primary {
-      color: var(--primary-purple);
+    .pricing-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .pricing-card:hover { transform: translateY(-4px); }
+    @keyframes scrollBanner {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
-
-    .border-primary {
-      border-color: var(--primary-purple);
-    }
-
-    .bg-primary-light {
-      background-color: var(--primary-purple-bg);
-    }
+    /* FAQ Modal (lila Overlay wie Startseite) */
+    .modal-overlay { opacity: 0; transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    .modal-overlay.show { opacity: 1; }
+    .modal-overlay.show .modal-content { opacity: 1; transform: scale(1) translateY(0); }
+    .modal-content { opacity: 0; transform: scale(0.9) translateY(20px); transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s; }
+    .faq-accordion-item summary::-webkit-details-marker { display: none; }
+    .faq-accordion-item summary::marker { content: none; }
+    .faq-accordion-item[open] .faq-accordion-icon { transform: rotate(180deg); }
+    .faq-accordion-icon { transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    .faq-accordion-answer-wrapper { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    .faq-accordion-answer-inner { display: block; }
+    .faq-accordion-answer-inner .faq-accordion-answer { opacity: 0; transform: scale(0.96, 0) translateX(12px); transition: opacity 0.35s ease-out 0.08s, transform 0.45s cubic-bezier(0.4, 0, 0.2, 1); }
+    .faq-accordion-item[open] .faq-accordion-answer-inner .faq-accordion-answer { opacity: 1; transform: scale(1, 1) translateX(0); }
+    .faq-accordion-list { column-count: 1; column-gap: 0.5rem; }
+    @media (min-width: 640px) { .faq-accordion-list { column-count: 2; } }
+    @media (min-width: 1024px) { .faq-accordion-list { column-count: 4; } }
+    .faq-accordion-item { break-inside: avoid; margin-bottom: 0.5rem; background: rgba(255, 255, 255, 0.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04); }
+    .faq-accordion-answer { border: none !important; }
   </style>
 </head>
-<body class="min-h-screen bg-black text-white">
-  
-  <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-black/75 backdrop-blur-sm border-b border-white/10">
+<body class="min-h-screen bg-white text-black smooth-scroll">
+
+  <!-- Header (exakt wie Startseite index.html) -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm transition-all duration-300">
     <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
       <div class="flex items-center justify-between relative">
-        <a href="/" class="text-2xl font-bold headline-vanguard">TEECH</a>
-        <div class="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
-          <a href="/features.html" id="nav-features" class="text-white/80 hover:text-white transition">Features</a>
-          <a href="/use-cases.html" id="nav-use-cases" class="text-white/80 hover:text-white transition">Use Cases</a>
-          <a href="/preise.html" id="nav-pricing" class="text-white font-semibold">Preise</a>
-          <a href="/customer-stories.html" id="nav-stories" class="text-white/80 hover:text-white transition">Customer Stories</a>
-        </div>
-        <div class="flex items-center space-x-4 ml-auto">
-          <button id="language-switch" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-full hover:border-white/40 flex items-center gap-2 hover:border-white/40 flex items-center gap-2" data-lang="de">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Links: Burger Menu + Language Switch -->
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <button id="burger-menu" class="relative p-2 transition" style="color: #2A2A2A;" aria-label="Menu">
+              <div class="relative w-6 h-6">
+                <svg id="burger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute inset-0">
+                  <g id="burger-lines" style="transform-origin: 12px 12px; transition: transform 0.3s ease;">
+                    <line id="burger-line-top" x1="3" y1="6" x2="21" y2="6" style="transition: transform 0.3s ease, opacity 0.3s ease;"></line>
+                    <line id="burger-line-middle" x1="3" y1="12" x2="21" y2="12" style="transition: opacity 0.2s ease;"></line>
+                    <line id="burger-line-bottom" x1="3" y1="18" x2="21" y2="18" style="transition: transform 0.3s ease, opacity 0.3s ease;"></line>
+                  </g>
+                </svg>
+              </div>
+            </button>
+            <!-- Desktop Dropdown Menu -->
+            <div id="burger-menu-dropdown" class="hidden md:block absolute top-full left-0 mt-2 bg-white rounded-3xl py-4 px-6 min-w-[200px] opacity-0 invisible transition-all duration-300 transform translate-y-2" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);">
+              <nav class="flex flex-col space-y-3">
+                <a href="/features.html" id="nav-features" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                  Features
+                </a>
+                <div class="use-cases-menu-item relative">
+                  <a href="/#use-cases" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    Use Cases
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                  </a>
+                  <div class="use-cases-dropdown">
+                    <a href="/coaches.html" id="nav-uc-coaches" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                      </svg>
+                      Für Coaches
+                    </a>
+                    <a href="/creator.html" id="nav-uc-creators" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                      </svg>
+                      Für Creator
+                    </a>
+                    <a href="/bootcamps.html" id="nav-uc-bootcamps" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        <line x1="8" y1="7" x2="18" y2="7"></line>
+                        <line x1="8" y1="11" x2="18" y2="11"></line>
+                        <line x1="8" y1="15" x2="14" y2="15"></line>
+                      </svg>
+                      Für Bootcamps
+                    </a>
+                    <a href="/lernraum.html" id="nav-uc-lernraeume" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                      </svg>
+                      Für Lernräume
+                    </a>
+                  </div>
+                </div>
+                <a href="/preise.html" id="nav-pricing" class="text-sm font-semibold text-black transition whitespace-nowrap flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                  Preise
+                </a>
+                <a href="/updates.html" id="nav-updates" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                  </svg>
+                  Updates
+                </a>
+                <a href="#" id="nav-faq" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                  FAQ
+                </a>
+              </nav>
+            </div>
+          </div>
+          <button id="language-switch" class="px-4 py-3 text-sm font-normal transition-all duration-300 border border-black/20 rounded-full hover:border-black/40 flex items-center gap-2" style="transform: scale(1); transition: transform 0.15s ease; color: #2A2A2A;" data-lang="de">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
             </svg>
-            <span>EN</span>
+            <span style="transition: opacity 0.2s ease;">EN</span>
           </button>
-          <a href="/kontakt.html#sales" id="nav-get-started" class="px-6 py-2 text-sm font-medium bg-primary text-white rounded-full hover:bg-primary-hover transition">
-            Jetzt starten
-          </a>
-          <a href="https://app.glymmer.io/auth/login" id="nav-login" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition">
+        </div>
+        
+        <!-- Mitte: Logo -->
+        <a href="/" class="absolute left-1/2 transform -translate-x-1/2 flex items-center">
+          <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
+        </a>
+        
+        <!-- Rechts: Log In + Jetzt starten Buttons -->
+        <div class="flex items-center space-x-4 ml-auto">
+          <a href="https://app.glymmer.io/auth/login" id="nav-login" class="px-4 py-2 text-sm font-normal transition" style="color: #2A2A2A;">
             Log In
           </a>
+          <a href="/kontakt.html#sales" id="hero-cta-start" class="px-6 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
+            Jetzt starten
+            <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Mobile Burger Menu Overlay -->
+      <div id="burger-menu-overlay" class="md:hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+          <div class="flex justify-between items-center mb-8">
+            <h2 id="mobile-menu-title" class="text-2xl font-semibold text-black">Menü</h2>
+            <button id="burger-menu-close" class="p-2 text-black/70 hover:text-black transition" aria-label="Close Menu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+          <nav class="flex flex-col space-y-6">
+            <a href="/features.html" id="nav-features-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              Features
+            </a>
+            <div class="space-y-3">
+              <a href="/#use-cases" class="text-2xl font-medium text-black/70 font-semibold hover:text-black transition flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Use Cases
+              </a>
+              <div class="ml-4 space-y-3">
+                <a href="/coaches.html" id="nav-uc-coaches-mobile" class="block text-xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                  Für Coaches
+                </a>
+                <a href="/creator.html" id="nav-uc-creators-mobile" class="block text-xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                  </svg>
+                  Für Creator
+                </a>
+                <a href="/bootcamps.html" id="nav-uc-bootcamps-mobile" class="block text-xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    <line x1="8" y1="7" x2="18" y2="7"></line>
+                    <line x1="8" y1="11" x2="18" y2="11"></line>
+                    <line x1="8" y1="15" x2="14" y2="15"></line>
+                  </svg>
+                  Für Bootcamps
+                </a>
+                <a href="/lernraum.html" id="nav-uc-lernraeume-mobile" class="block text-xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                  </svg>
+                  Für Lernräume
+                </a>
+              </div>
+            </div>
+            <a href="/preise.html" id="nav-pricing-mobile" class="text-2xl font-semibold text-black transition flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              Preise
+            </a>
+            <a href="/updates.html" id="nav-updates-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+              Updates
+            </a>
+            <a href="#" id="nav-faq-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+              FAQ
+            </a>
+            <a href="/kontakt.html#sales" id="nav-get-started-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition mt-4 flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+              Jetzt starten
+            </a>
+          </nav>
         </div>
       </div>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="pt-32 pb-12 px-6 lg:px-8">
+  <!-- Hero (wie Startseite: gradient-bg, Cal Sans, gleiche Typo) -->
+  <section class="pt-32 pb-16 px-6 lg:px-8 gradient-bg">
     <div class="max-w-7xl mx-auto text-center">
-      <h1 class="headline-vanguard text-5xl md:text-7xl lg:text-8xl font-bold mb-6 fade-in">
+      <h1 class="text-6xl md:text-7xl lg:text-8xl font-medium mb-4 leading-normal pb-2" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Cal Sans', sans-serif;">
         Preise
       </h1>
-      <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto delay-200">
+      <p class="text-base md:text-lg text-black/50 max-w-3xl mx-auto">
         Wähle das passende Lizenzpaket für deine Community
       </p>
     </div>
   </section>
 
-  <!-- Pricing Cards -->
-  <section class="py-12 px-6 lg:px-8">
+  <!-- Pricing Cards (Startseiten-Stil: weiße Karten, Lila/Gelb, rounded-3xl) -->
+  <section class="py-16 px-6 lg:px-8">
     <div class="max-w-6xl mx-auto">
       <div class="grid md:grid-cols-3 gap-8">
-        
-        <!-- Starter Plan -->
-        <div class="pricing-card bg-white/5 p-8 rounded-full border border-white/10 animate-on-scroll delay-100">
-          <h3 class="text-2xl font-semibold mb-2">Starter</h3>
+        <!-- Starter -->
+        <div class="pricing-card bg-white p-8 rounded-3xl border border-black/10 shadow-sm animate-on-scroll">
+          <h3 class="text-xl font-semibold text-black mb-2">Starter</h3>
           <div class="mb-6">
-            <span class="text-4xl font-bold">€49</span>
-            <span class="text-white/70">/Monat</span>
+            <span class="text-3xl font-bold text-black">€49</span>
+            <span class="text-black/60">/Monat</span>
           </div>
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-start">
-              <span class="mr-2">✓</span>
-              <span class="text-white/80">Bis zu 100 Mitglieder</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-2">✓</span>
-              <span class="text-white/80">Alle Kernfeatures</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-2">✓</span>
-              <span class="text-white/80">Basis-Support</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-2">✓</span>
-              <span class="text-white/80">Content-Verkauf</span>
-            </li>
+          <ul class="space-y-4 mb-8 text-black/80 text-sm">
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Bis zu 100 Mitglieder</li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Alle Kernfeatures</li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Basis-Support</li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Content-Verkauf</li>
           </ul>
-          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 border border-white/20 text-white rounded-full font-semibold hover:border-white/40 transition">
+          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 bg-secondary text-white rounded-full font-semibold hover:bg-secondary-hover transition flex items-center justify-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.4);">
             Jetzt starten
+            <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
 
-        <!-- Professional Plan -->
-        <div class="pricing-card bg-white p-8 rounded-full border-2 border-primary text-black relative animate-on-scroll delay-200 scale-in shadow-lg shadow-primary/20">
-          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
+        <!-- Professional (hervorgehoben wie auf Startseite) -->
+        <div class="pricing-card relative p-8 rounded-3xl border-2 border-secondary shadow-lg animate-on-scroll" style="background-color: rgba(113, 103, 245, 0.06); box-shadow: 0 10px 40px rgba(113, 103, 245, 0.2);">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-sm font-semibold">
             Beliebt
           </div>
-          <h3 class="text-2xl font-semibold mb-2">Professional</h3>
+          <h3 class="text-xl font-semibold text-black mb-2">Professional</h3>
           <div class="mb-6">
-            <span class="text-4xl font-bold">€149</span>
-            <span class="text-black/70">/Monat</span>
+            <span class="text-3xl font-bold text-black">€149</span>
+            <span class="text-black/60">/Monat</span>
           </div>
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-start">
-              <span class="mr-2">✓</span>
-              <span class="text-black/80">Bis zu 1.000 Mitglieder</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-2">✓</span>
-              <span class="text-black/80">Alle Features</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-2">✓</span>
-              <span class="text-black/80">Erweiterte Personalisierung</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-2">✓</span>
-              <span class="text-black/80">Priority Support</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-2">✓</span>
-              <span class="text-black/80">Erweiterte Analytics</span>
-            </li>
+          <ul class="space-y-4 mb-8 text-black/80 text-sm">
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Bis zu 1.000 Mitglieder</li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Alle Features</li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Erweiterte Personalisierung</li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Priority Support</li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Erweiterte Analytics</li>
           </ul>
-          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 bg-primary text-white rounded-full font-semibold hover:bg-primary-hover transition">
+          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 bg-secondary text-white rounded-full font-semibold hover:bg-secondary-hover transition flex items-center justify-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.4);">
             Jetzt starten
+            <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
 
-        <!-- Enterprise Plan -->
-        <div class="pricing-card bg-white/5 p-8 rounded-full border border-white/10 animate-on-scroll delay-300">
-          <h3 class="text-2xl font-semibold mb-2">Enterprise</h3>
+        <!-- Enterprise -->
+        <div class="pricing-card bg-white p-8 rounded-3xl border border-black/10 shadow-sm animate-on-scroll">
+          <h3 class="text-xl font-semibold text-black mb-2">Enterprise</h3>
           <div class="mb-6">
-            <span class="text-4xl font-bold">Custom</span>
+            <span class="text-3xl font-bold text-black">Custom</span>
           </div>
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-start">
-              <span class="mr-2">✓</span>
-              <span class="text-white/80">Unbegrenzte Mitglieder</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-2">✓</span>
-              <span class="text-white/80">White-Label Lösung</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-2">✓</span>
-              <span class="text-white/80">Dedicated Support</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-2">✓</span>
-              <span class="text-white/80">Custom Integrationen</span>
-            </li>
-            <li class="flex items-start">
-              <span class="mr-2">✓</span>
-              <span class="text-white/80">SLA Garantie</span>
-            </li>
+          <ul class="space-y-4 mb-8 text-black/80 text-sm">
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Unbegrenzte Mitglieder</li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> White-Label Lösung</li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Dedicated Support</li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Custom Integrationen</li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> SLA Garantie</li>
           </ul>
-          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 border border-white/20 text-white rounded-full font-semibold hover:border-white/40 transition">
+          <a href="/kontakt.html#sales" class="block w-full text-center px-6 py-3 bg-secondary text-white rounded-full font-semibold hover:bg-secondary-hover transition flex items-center justify-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.4);">
             Kontakt aufnehmen
+            <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-        </div>
-
-      </div>
-      
-      <!-- Pricing Mockup -->
-      <div class="mt-12 max-w-4xl mx-auto animate-on-scroll delay-400">
-        <div class="mockup-container">
-          <div class="mockup-screen">
-            <div class="mockup-content">
-              <div class="grid grid-cols-3 gap-4">
-                <div class="mockup-card">
-                  <div class="mockup-line short"></div>
-                  <div class="mockup-line long"></div>
-                  <div class="mockup-line medium"></div>
-                  <div class="mockup-button mt-4"></div>
-                </div>
-                <div class="mockup-card">
-                  <div class="mockup-line short"></div>
-                  <div class="mockup-line long"></div>
-                  <div class="mockup-line medium"></div>
-                  <div class="mockup-button mt-4"></div>
-                </div>
-                <div class="mockup-card">
-                  <div class="mockup-line short"></div>
-                  <div class="mockup-line long"></div>
-                  <div class="mockup-line medium"></div>
-                  <div class="mockup-button mt-4"></div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="py-12 px-6 lg:px-8 bg-white/5">
+  <!-- FAQ (Startseiten-Stil: helle Boxen, rounded-3xl – gleicher Hintergrund wie Sektion darüber) -->
+  <section class="py-16 px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-semibold mb-8 text-center">Häufige Fragen zu den Preisen</h2>
-      <div class="space-y-6">
-        <div class="bg-black/50 p-6 rounded-full">
-          <h3 class="font-semibold mb-2">Kann ich jederzeit upgraden oder downgraden?</h3>
-          <p class="text-white/70">Ja, du kannst dein Paket jederzeit anpassen. Änderungen werden anteilig verrechnet.</p>
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-8 leading-normal pb-2 text-center" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Cal Sans', sans-serif;">Häufige Fragen zu den Preisen</h2>
+      <div class="space-y-4">
+        <div class="bg-white/80 backdrop-blur-sm p-6 rounded-3xl" style="box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);">
+          <h3 class="font-semibold text-black mb-2">Kann ich jederzeit upgraden oder downgraden?</h3>
+          <p class="text-black/60 text-sm">Ja, du kannst dein Paket jederzeit anpassen. Änderungen werden anteilig verrechnet.</p>
         </div>
-        <div class="bg-black/50 p-6 rounded-full">
-          <h3 class="font-semibold mb-2">Gibt es eine Testversion?</h3>
-          <p class="text-white/70">Ja, alle Pakete können 14 Tage kostenlos getestet werden. Keine Kreditkarte erforderlich.</p>
+        <div class="bg-white/80 backdrop-blur-sm p-6 rounded-3xl" style="box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);">
+          <h3 class="font-semibold text-black mb-2">Gibt es eine Testversion?</h3>
+          <p class="text-black/60 text-sm">Ja, alle Pakete können 14 Tage kostenlos getestet werden. Keine Kreditkarte erforderlich.</p>
         </div>
-        <div class="bg-black/50 p-6 rounded-full">
-          <h3 class="font-semibold mb-2">Was passiert, wenn ich mein Mitgliederlimit überschreite?</h3>
-          <p class="text-white/70">Wir informieren dich rechtzeitig. Du kannst dann upgraden oder zusätzliche Mitglieder einzeln buchen.</p>
+        <div class="bg-white/80 backdrop-blur-sm p-6 rounded-3xl" style="box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);">
+          <h3 class="font-semibold text-black mb-2">Was passiert, wenn ich mein Mitgliederlimit überschreite?</h3>
+          <p class="text-black/60 text-sm">Wir informieren dich rechtzeitig. Du kannst dann upgraden oder zusätzliche Mitglieder einzeln buchen.</p>
         </div>
       </div>
       <div class="text-center mt-8">
-        <a href="/faq.html" class="text-white/80 hover:text-white transition font-semibold">
-          Alle FAQs ansehen →
+        <a href="#" id="open-faq-modal-link" class="text-secondary font-semibold hover:underline transition cursor-pointer">Alle FAQs ansehen →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA (gleicher Stil wie "Bereit loszulegen?" auf der Startseite) -->
+  <section class="py-40 px-6 lg:px-8 relative overflow-hidden" style="background-color: #2A2A2A;">
+    <!-- Animated Banner -->
+    <div class="absolute inset-0 flex items-start pointer-events-none overflow-hidden" style="z-index: 1;">
+      <div class="banner-container" style="position: absolute; width: 200%; top: -30px; left: -50%; transform: rotate(-2deg); background-color: #7167F5; padding: 40px 0; box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
+        <div class="banner-content flex items-center whitespace-nowrap" style="animation: scrollBanner 30s linear infinite;">
+          <span class="banner-text" style="display: inline-flex; align-items: center; gap: 12px; padding: 0; font-size: 2rem; font-weight: 700; color: #2A2A2A; font-family: 'Cal Sans', sans-serif;">
+            GROW YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            ANALYSE YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            FEED YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            ENGAGE WITH YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            STRENGTHEN YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            BUILD YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="banner-text" style="display: inline-flex; align-items: center; gap: 12px; padding: 0; font-size: 2rem; font-weight: 700; color: #2A2A2A; font-family: 'Cal Sans', sans-serif;">
+            GROW YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            ANALYSE YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            FEED YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            ENGAGE WITH YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            STRENGTHEN YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+            BUILD YOUR COMMUNITY
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #2A2A2A;">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-4xl mx-auto text-center animate-on-scroll relative" style="z-index: 1; margin-top: 60px;">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="color: #ffffff; font-family: 'Cal Sans', sans-serif;">
+        Noch Fragen?
+      </h2>
+      <p class="text-base md:text-lg text-white/70 max-w-3xl mx-auto mb-8 leading-relaxed font-normal">
+        Sprich mit unserem Sales-Team über das passende Paket für dich
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/kontakt.html#sales" class="px-6 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
+          Jetzt starten
+          <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="/kontakt.html#sales" class="px-6 py-3 text-sm font-medium bg-white rounded-full hover:bg-gray-50 transition" style="color: #2A2A2A; box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
+          Termin vereinbaren
         </a>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="py-20 px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="headline-vanguard text-4xl md:text-6xl font-bold mb-6">Noch Fragen?</h2>
-      <p class="text-xl text-white/70 mb-8">
-        Sprich mit unserem Sales-Team über das passende Paket für dich
-      </p>
-      <a href="/kontakt.html#sales" class="inline-block px-8 py-2 bg-primary text-white rounded-full font-semibold hover:bg-primary-hover transition text-lg shadow-lg shadow-primary/30">
-        Mit Sales sprechen
-      </a>
+  <!-- FAQ Modal (lila Overlay wie auf Startseite) -->
+  <div id="faq-modal" class="fixed inset-0 z-50 hidden items-center justify-center modal-overlay overflow-y-auto" style="background-color: #7167F5;">
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none" style="z-index: 1;">
+      <span class="text-[22rem] md:text-[32rem] lg:text-[42rem] xl:text-[52rem] font-black leading-none" style="font-family: 'Cal Sans', sans-serif; color: rgba(0, 0, 0, 0.03);">FAQ</span>
     </div>
-  </section>
+    <div class="relative w-full flex items-center justify-center px-2 sm:px-4 lg:px-6 py-12 min-h-full" style="z-index: 2;">
+      <button id="close-faq-modal" class="fixed top-6 right-6 text-white z-[60] p-2 rounded-full hover:opacity-80 transition" aria-label="Schließen">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="max-w-7xl mx-auto text-left modal-content w-full">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 leading-normal text-white" style="font-family: 'Cal Sans', sans-serif;">
+          Frequently Asked Questions
+        </h2>
+        <div class="faq-accordion-list">
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Was ist glymmer eigentlich genau?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  glymmer ist deine Community-Plattform, auf der du Inhalte, Austausch und Umsatz an einem Ort bündelst – unter deiner eigenen Marke.<br><br>
+                  Du kannst Communities für Coaches, Creator, Bootcamps oder Lernräume aufbauen, Live-Sessions hosten, Kurse anbieten, Mitgliedschaften verkaufen, Events organisieren und alles über ein zentrales Dashboard steuern – DSGVO-konform und Made in Germany.
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Für wen ist glymmer geeignet?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  glymmer ist für alle, die mehr wollen als eine lose Follower-Liste:<br>
+                  <strong>Coaches & Trainer</strong>, die aus Kunden eine echte Community machen wollen.<br>
+                  <strong>Creator</strong>, die ihre Inhalte und Fans in ein eigenes, monetarisierbares Ökosystem holen möchten.<br>
+                  <strong>Bootcamps & Bildungsanbieter</strong>, die Programme mit Struktur, Live-Sessions und Community kombinieren.<br>
+                  <strong>Lernräume, Nachhilfe & Academies</strong>, die Online-Unterricht, Gruppen und Materialien an einem Ort organisieren wollen.
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Was kann ich mit glymmer konkret machen?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  Du kannst: <strong>Community aufbauen</strong> – Channels, Gruppenchats, Feeds, Events, Live-Sessions. <strong>Content strukturieren</strong> – Mediathek, Dateiablage, Kursbereiche, Workbooks. <strong>Monetarisieren</strong> – Mitgliedschaften, einmalige Produktverkäufe, Tickets für Events. <strong>Lernen & Engagement stärken</strong> – Gamification, Challenges, Feedback, Umfragen. <strong>Alles steuern</strong> – Analytics, Admin-Dashboard, Rollen & Berechtigungen.
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Wie verdiene ich Geld mit glymmer?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  glymmer wurde dafür gebaut, dass sich deine Community rechnet: Erstelle <strong>Mitgliedschaften</strong> mit unterschiedlichen Zugangslevels (z.B. Basic, Premium, VIP). Verkaufe <strong>Programme, Kurse, Bootcamps oder Einzelprodukte</strong> direkt in deiner Community. Nutze <strong>Events & Ticketing</strong>, um Workshops, Live-Formate oder Challenges zu monetarisieren. Deine Zahlungen laufen zentral über die Plattform – wiederkehrende Einnahmen inklusive.
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Kann ich glymmer kostenlos testen?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  Klar! <a href="/kontakt.html#sales" class="underline font-medium hover:no-underline">Jetzt testen für 14 Tage kostenlos</a>.
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Ist glymmer DSGVO-konform und wo liegen die Daten?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  Ja, glymmer ist eine deutsche SaaS-Plattform mit Hosting und Infrastruktur, die auf Datenschutz und Sicherheit ausgelegt ist.<br><br>
+                  Deine Community-Daten gehören dir – du behältst die Kontrolle über Mitglieder, Inhalte und Kommunikation und reduzierst deine Abhängigkeit von Social-Media-Plattformen und deren Geschäftsmodellen.
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Brauche ich noch andere Tools wie Zoom, WhatsApp oder Mailchimp?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  Viele unserer Kunden verschlanken mit glymmer ihre komplette Tool-Landschaft: Live-Sessions und Workshops laufen direkt in glymmer – externe Tools wie Zoom, Teams oder Miro werden nicht mehr gebraucht. Community-Chat und Channels bündeln die Kommunikation und ersetzen verstreute WhatsApp-, Slack- oder Discord-Gruppen. Gezielte Push-Benachrichtigungen und automatisierte E-Mail-Updates machen separate Newsletter-Tools wie Mailchimp überflüssig. Events, Ticketing und Mitgliedschaften werden zentral in der Plattform organisiert und abgerechnet.<br><br>
+                  Weniger Tools, weniger Brüche – mehr Fokus auf deine Community.
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Wie schnell kann ich mit glymmer starten?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  In der Regel kannst du deine Community innerhalb weniger Minuten aufsetzen: Template oder Struktur auswählen, Branding hinzufügen (Logo, Farben, Domain). Erste Channels, Events und Inhalte anlegen. Mitglieder einladen oder bestehende Kontakte importieren.<br><br>
+                  Auf Wunsch begleiten wir dich mit einem individuellen Migrationsservice, damit du deine ersten Launches, Kurse oder Memberships direkt sauber strukturierst.
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Kann ich glymmer in meinem eigenen Branding nutzen – inklusive App?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  Ja, glymmer ist als White-Label-Lösung gedacht: Du nutzt deine Farben, dein Logo und auf Wunsch deine eigene Domain. Deine Community fühlt sich wie deine eigene Plattform an – nicht wie ein fremdes Netzwerk. Zusätzlich kannst du dir eine eigene Community-App bereitstellen lassen, die deine Mitglieder über App Store und Google Play nutzen.
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Welche Preismodelle gibt es und wie funktionieren die Gebühren?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  glymmer bietet verschiedene Pakete für unterschiedliche Wachstumsphasen – von kleineren Communities bis zu großen Programmen.<br><br>
+                  Du zahlst eine monatliche Plattformgebühr und eine faire Transaktionsgebühr auf Umsätze, die über glymmer laufen. So kannst du klein starten und die Kosten wachsen mit deinem Erfolg, nicht andersherum.
+                </div>
+              </div>
+            </div>
+          </details>
+          <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
+            <summary class="faq-accordion-question cursor-pointer list-none px-4 py-4 text-xl font-semibold flex items-center justify-between gap-3" style="font-family: 'Cal Sans', sans-serif;">
+              <span>Was passiert, wenn meine Community stark wächst oder ich mehrere Projekte habe?</span>
+              <span class="faq-accordion-icon flex-shrink-0 transition-transform duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="faq-accordion-answer-wrapper">
+              <div class="faq-accordion-answer-inner">
+                <div class="faq-accordion-answer px-4 pb-3 pt-0 text-sm leading-relaxed" style="font-family: 'Suisse Intl', sans-serif;">
+                  glymmer ist darauf ausgelegt, mit dir mitzuwachsen: Du kannst mehr Mitglieder, zusätzliche Programme und Events abbilden, ohne dein Setup komplett neu zu denken. Für größere Communities oder Bootcamps stehen dir erweiterte Admin-Features, mehr Speicher, Integrationen und individuelle Lösungen zur Verfügung. Wenn du merkst, dass du aus einem Paket „herausgewachsen“ bist, kannst du unkompliziert upgraden – die Community bleibt, du schaltest nur mehr Möglichkeiten frei.
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- Footer -->
-  <footer class="bg-black border-t border-white/10 py-12 px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
+  <!-- Footer (wie Startseite) -->
+  <footer class="bg-gray-50 pt-12 pb-32 px-6 lg:px-8 relative overflow-hidden">
+    <div class="absolute inset-0 flex items-end justify-center pointer-events-none overflow-visible">
+      <img src="./public/Glymmer_Logo_Dunkel.png" alt="" class="w-[1500px] h-auto opacity-[0.05] translate-y-[48%]" style="max-width: 95vw;">
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
-          <h3 class="text-xl font-bold headline-vanguard mb-4">TEECH</h3>
-          <p class="text-white/70 text-sm">
-            Deine Community-Plattform für Coaches und Creator
-          </p>
+          <div class="mb-4">
+            <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
+          </div>
+          <p class="text-black/70 text-sm">Die Community-Plattform für Coaches und Creator</p>
         </div>
         <div>
-          <h4 class="font-semibold mb-4">Produkt</h4>
-          <ul class="space-y-2 text-sm text-white/70">
-            <li><a href="/features.html" class="hover:text-white transition">Features</a></li>
-            <li><a href="/use-cases.html" class="hover:text-white transition">Use Cases</a></li>
-            <li><a href="/preise.html" class="hover:text-white transition">Preise</a></li>
-            <li><a href="/customer-stories.html" class="hover:text-white transition">Customer Stories</a></li>
+          <h4 class="font-semibold mb-4 text-black">Produkt</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a href="/features.html" class="hover:text-black transition">Features</a></li>
+            <li><a href="/coaches.html" class="hover:text-black transition">Use Cases</a></li>
+            <li><a href="/preise.html" class="hover:text-black transition">Preise</a></li>
+            <li><a href="/updates.html" class="hover:text-black transition">Updates</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold mb-4">Unternehmen</h4>
-          <ul class="space-y-2 text-sm text-white/70">
-            <li><a href="/kontakt.html" class="hover:text-white transition">Kontakt</a></li>
-            <li><a href="/kontakt.html#unternehmen" class="hover:text-white transition">Über uns</a></li>
-            <li><a href="/faq.html" class="hover:text-white transition">FAQ</a></li>
+          <h4 class="font-semibold mb-4 text-black">Unternehmen</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a href="/kontakt.html" class="hover:text-black transition">Kontakt</a></li>
+            <li><a href="https://teech.de/das-sind-wir/" target="_blank" rel="noopener noreferrer" class="hover:text-black transition">Über uns</a></li>
+            <li><a href="/faq.html" class="hover:text-black transition">FAQ</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold mb-4">Rechtliches</h4>
-          <ul class="space-y-2 text-sm text-white/70">
-            <li><a href="/impressum.html" class="hover:text-white transition">Impressum</a></li>
-            <li><a href="/datenschutz.html" class="hover:text-white transition">Datenschutz</a></li>
-            <li><a href="/agb.html" class="hover:text-white transition">AGB</a></li>
+          <h4 class="font-semibold mb-4 text-black">Rechtliches</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a href="/imprint.html" class="hover:text-black transition">Impressum</a></li>
+            <li><a href="/privacy.html" class="hover:text-black transition">Datenschutz</a></li>
+            <li><a href="/terms.html" class="hover:text-black transition">AGB</a></li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-white/10 pt-8 text-center text-sm text-white/70">
-        <p>&copy; 2024 Teech. Alle Rechte vorbehalten.</p>
+      <div class="border-t border-black/10 pt-8 pb-8 text-center">
+        <p class="text-sm text-black/70">&copy; 2026 Glymmer - A teech Product. Alle Rechte vorbehalten.</p>
       </div>
     </div>
   </footer>
@@ -358,6 +797,113 @@
   <script src="./animations.js"></script>
   <script src="./language.js"></script>
   <script src="./cursor-follower.js"></script>
+  <script>
+    (function() {
+      const burgerMenu = document.getElementById('burger-menu');
+      const burgerMenuDropdown = document.getElementById('burger-menu-dropdown');
+      const burgerMenuOverlay = document.getElementById('burger-menu-overlay');
+      const burgerMenuClose = document.getElementById('burger-menu-close');
+
+      if (burgerMenu) {
+        burgerMenu.addEventListener('click', function() {
+          burgerMenu.classList.toggle('active');
+          if (window.innerWidth >= 768) {
+            if (burgerMenuDropdown) {
+              const isVisible = !burgerMenuDropdown.classList.contains('opacity-0');
+              if (isVisible) {
+                burgerMenuDropdown.classList.add('opacity-0', 'invisible', 'translate-y-2');
+              } else {
+                burgerMenuDropdown.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+              }
+            }
+          } else {
+            if (burgerMenuOverlay) burgerMenuOverlay.classList.toggle('translate-x-full');
+          }
+        });
+      }
+      if (burgerMenuClose) {
+        burgerMenuClose.addEventListener('click', function() {
+          if (burgerMenuOverlay) burgerMenuOverlay.classList.add('translate-x-full');
+          if (burgerMenu) burgerMenu.classList.remove('active');
+        });
+      }
+      if (burgerMenuOverlay) {
+        burgerMenuOverlay.addEventListener('click', function(e) {
+          if (e.target === burgerMenuOverlay) {
+            burgerMenuOverlay.classList.add('translate-x-full');
+            if (burgerMenu) burgerMenu.classList.remove('active');
+          }
+        });
+        const menuLinks = burgerMenuOverlay.querySelectorAll('a');
+        menuLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            burgerMenuOverlay.classList.add('translate-x-full');
+            if (burgerMenu) burgerMenu.classList.remove('active');
+          });
+        });
+      }
+
+      var header = document.getElementById('main-header');
+      if (header) {
+        function updateHeaderBackground() {
+          if (window.scrollY > 50) {
+            header.classList.add('bg-white/70');
+          } else {
+            header.classList.remove('bg-white/70');
+          }
+        }
+        window.addEventListener('scroll', updateHeaderBackground);
+        updateHeaderBackground();
+      }
+    })();
+
+    (function() {
+      var faqModal = document.getElementById('faq-modal');
+      var closeFaqButton = document.getElementById('close-faq-modal');
+      var navFaq = document.getElementById('nav-faq');
+      var navFaqMobile = document.getElementById('nav-faq-mobile');
+      var openFaqLink = document.getElementById('open-faq-modal-link');
+      var burgerMenuDropdown = document.getElementById('burger-menu-dropdown');
+      var burgerMenuOverlay = document.getElementById('burger-menu-overlay');
+      var burgerMenu = document.getElementById('burger-menu');
+
+      if (!faqModal || !closeFaqButton) return;
+
+      function openFaqModal() {
+        faqModal.classList.remove('hidden');
+        faqModal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        if (burgerMenuDropdown) {
+          burgerMenuDropdown.classList.add('opacity-0', 'invisible', 'translate-y-2');
+          burgerMenuDropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+        }
+        if (burgerMenuOverlay && !burgerMenuOverlay.classList.contains('translate-x-full')) {
+          burgerMenuOverlay.classList.add('translate-x-full');
+          if (burgerMenu) burgerMenu.classList.remove('active');
+        }
+        setTimeout(function() { faqModal.classList.add('show'); }, 10);
+      }
+
+      function closeFaqModal() {
+        faqModal.classList.remove('show');
+        setTimeout(function() {
+          faqModal.classList.add('hidden');
+          faqModal.classList.remove('flex');
+          document.body.style.overflow = '';
+        }, 500);
+      }
+
+      if (navFaq) navFaq.addEventListener('click', function(e) { e.preventDefault(); openFaqModal(); });
+      if (navFaqMobile) navFaqMobile.addEventListener('click', function(e) { e.preventDefault(); openFaqModal(); });
+      if (openFaqLink) openFaqLink.addEventListener('click', function(e) { e.preventDefault(); openFaqModal(); });
+      closeFaqButton.addEventListener('click', closeFaqModal);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && faqModal && !faqModal.classList.contains('hidden')) closeFaqModal();
+      });
+      faqModal.addEventListener('click', function(e) {
+        if (e.target === faqModal) closeFaqModal();
+      });
+    })();
+  </script>
 </body>
 </html>
-

@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Alle Features von Teech - Live Video, Chat, Mediathek, Gamification, Kalender, Analytics und mehr für deine Community-Plattform.">
-  <title>Features - Teech Community-Plattform</title>
+  <meta name="description" content="Alle Features von Glymmer - Live Video, Chat, Mediathek, Gamification, Kalender, Analytics und mehr für deine Community-Plattform.">
+  <title>Features - Glymmer Community-Plattform</title>
+  <link rel="icon" type="image/png" href="./public/Favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./styles.css">
   <link rel="canonical" href="https://teech.com/features.html">
@@ -13,6 +17,13 @@
       font-family: 'Vanguard CF';
       src: url('./fonts/Vanguard-CF-Bold.otf') format('opentype');
       font-weight: bold;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Suisse Intl';
+      src: url('./fonts/suisse/SuisseIntl-Light.otf') format('opentype');
+      font-weight: 300;
       font-style: normal;
     }
 
@@ -44,13 +55,33 @@
       font-style: normal;
     }
 
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
     body {
       font-family: 'Suisse Intl', sans-serif;
       -webkit-text-size-adjust: 100%;
+      background: #ffffff;
+      color: #1a1a1a;
+      overflow-x: hidden;
     }
 
     .headline-vanguard {
       font-family: 'Vanguard CF', sans-serif;
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, rgba(113, 103, 245, 0.4) 0%, rgba(255, 252, 4, 0.4) 100%);
+      background-size: 200% 200%;
+      animation: gradientShift 8s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .feature-card {
@@ -60,48 +91,145 @@
     .feature-card:hover {
       transform: translateY(-4px);
     }
+
+    :root {
+      --primary-yellow: #FFFC04;
+      --primary-yellow-hover: #E6E304;
+      --primary-purple: #7167F5;
+      --primary-purple-hover: #5F56E0;
+    }
+
+    .bg-secondary { background-color: var(--primary-purple); }
+    .bg-secondary-hover:hover { background-color: var(--primary-purple-hover); }
+    .text-secondary { color: var(--primary-purple); }
+
+    /* Burger Menu */
+    #burger-menu.active #burger-line-top {
+      transform: translateY(6px) rotate(45deg);
+      transform-origin: 12px 6px;
+    }
+    #burger-menu.active #burger-line-middle { opacity: 0; }
+    #burger-menu.active #burger-line-bottom {
+      transform: translateY(-6px) rotate(-45deg);
+      transform-origin: 12px 18px;
+    }
+
+    .use-cases-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 0.5rem;
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1rem;
+      min-width: 220px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .use-cases-menu-item:hover .use-cases-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
   </style>
 </head>
-<body class="min-h-screen bg-black text-white">
-  
-  <!-- Header -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-black/75 backdrop-blur-sm border-b border-white/10">
+<body class="min-h-screen bg-white text-black smooth-scroll">
+
+  <!-- Header (wie Startseite) -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm transition-all duration-300">
     <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
       <div class="flex items-center justify-between relative">
-        <a href="/" class="text-2xl font-bold headline-vanguard">TEECH</a>
-        <div class="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
-          <a href="/features.html" id="nav-features" class="text-white font-semibold">Features</a>
-          <a href="/use-cases.html" id="nav-use-cases" class="text-white/80 hover:text-white transition">Use Cases</a>
-          <a href="/preise.html" id="nav-pricing" class="text-white/80 hover:text-white transition">Preise</a>
-          <a href="/customer-stories.html" id="nav-stories" class="text-white/80 hover:text-white transition">Customer Stories</a>
-        </div>
-        <div class="flex items-center space-x-4 ml-auto">
-          <button id="language-switch" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-full hover:border-white/40 flex items-center gap-2 hover:border-white/40 flex items-center gap-2" data-lang="de">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            </svg>
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <button id="burger-menu" class="relative p-2 transition" style="color: #2A2A2A;" aria-label="Menu">
+              <div class="relative w-6 h-6">
+                <svg id="burger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute inset-0">
+                  <g id="burger-lines" style="transform-origin: 12px 12px; transition: transform 0.3s ease;">
+                    <line id="burger-line-top" x1="3" y1="6" x2="21" y2="6" style="transition: transform 0.3s ease, opacity 0.3s ease;"></line>
+                    <line id="burger-line-middle" x1="3" y1="12" x2="21" y2="12" style="transition: opacity 0.2s ease;"></line>
+                    <line id="burger-line-bottom" x1="3" y1="18" x2="21" y2="18" style="transition: transform 0.3s ease, opacity 0.3s ease;"></line>
+                  </g>
+                </svg>
+              </div>
+            </button>
+            <div id="burger-menu-dropdown" class="hidden md:block absolute top-full left-0 mt-2 bg-white rounded-3xl py-4 px-6 min-w-[200px] opacity-0 invisible transition-all duration-300 transform translate-y-2" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);">
+              <nav class="flex flex-col space-y-3">
+                <a href="/features.html" id="nav-features" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                  Features
+                </a>
+                <div class="use-cases-menu-item relative">
+                  <a href="/#use-cases" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    Use Cases
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </a>
+                  <div class="use-cases-dropdown">
+                    <a href="/coaches.html" id="nav-uc-coaches" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">Für Coaches</a>
+                    <a href="/creator.html" id="nav-uc-creators" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">Für Creator</a>
+                    <a href="/bootcamps.html" id="nav-uc-bootcamps" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">Für Bootcamps</a>
+                    <a href="/lernraum.html" id="nav-uc-lernraeume" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">Für Lernräume</a>
+                  </div>
+                </div>
+                <a href="/preise.html" id="nav-pricing" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">Preise</a>
+                <a href="/updates.html" id="nav-updates" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">Updates</a>
+                <a href="/faq.html" id="nav-faq" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">FAQ</a>
+              </nav>
+            </div>
+          </div>
+          <button id="language-switch" class="px-4 py-3 text-sm font-normal transition-all duration-300 border border-black/20 rounded-full hover:border-black/40 flex items-center gap-2" style="color: #2A2A2A;" data-lang="de">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
             <span>EN</span>
           </button>
-          <a href="/kontakt.html#sales" id="nav-get-started" class="px-4 py-2 text-sm font-medium bg-white text-black rounded-full hover:bg-white/90 transition">
+        </div>
+        <a href="/" class="absolute left-1/2 transform -translate-x-1/2 flex items-center">
+          <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
+        </a>
+        <div class="flex items-center space-x-4 ml-auto">
+          <a href="https://app.glymmer.io/auth/login" id="nav-login" class="px-4 py-2 text-sm font-normal transition" style="color: #2A2A2A;">Log In</a>
+          <a href="/kontakt.html#sales" id="hero-cta-start" class="px-6 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
             Jetzt starten
+            <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a href="https://app.glymmer.io/auth/login" id="nav-login" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition">
-            Log In
-          </a>
+        </div>
+      </div>
+      <!-- Mobile Burger Menu Overlay -->
+      <div id="burger-menu-overlay" class="md:hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+          <div class="flex justify-between items-center mb-8">
+            <h2 id="mobile-menu-title" class="text-2xl font-semibold text-black">Menü</h2>
+            <button id="burger-menu-close" class="p-2 text-black/70 hover:text-black transition" aria-label="Close Menu">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+          </div>
+          <nav class="flex flex-col space-y-6">
+            <a href="/features.html" id="nav-features-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">Features</a>
+            <a href="/#use-cases" class="text-2xl font-medium text-black/70 font-semibold hover:text-black transition flex items-center gap-3">Use Cases</a>
+            <a href="/coaches.html" id="nav-uc-coaches-mobile" class="block text-xl font-medium text-black/70 hover:text-black transition ml-4">Für Coaches</a>
+            <a href="/creator.html" id="nav-uc-creators-mobile" class="block text-xl font-medium text-black/70 hover:text-black transition ml-4">Für Creator</a>
+            <a href="/bootcamps.html" id="nav-uc-bootcamps-mobile" class="block text-xl font-medium text-black/70 hover:text-black transition ml-4">Für Bootcamps</a>
+            <a href="/lernraum.html" id="nav-uc-lernraeume-mobile" class="block text-xl font-medium text-black/70 hover:text-black transition ml-4">Für Lernräume</a>
+            <a href="/preise.html" id="nav-pricing-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">Preise</a>
+            <a href="/updates.html" id="nav-updates-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">Updates</a>
+            <a href="/faq.html" id="nav-faq-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">FAQ</a>
+            <a href="/kontakt.html#sales" id="nav-get-started-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition mt-4 flex items-center gap-3">Jetzt starten</a>
+          </nav>
         </div>
       </div>
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="pt-32 pb-12 px-6 lg:px-8">
+  <!-- Hero Section (wie Startseite: gradient-bg, schwarzer Text) -->
+  <section class="pt-32 pb-12 px-6 lg:px-8 gradient-bg">
     <div class="max-w-7xl mx-auto text-center">
-      <h1 class="headline-vanguard text-5xl md:text-7xl lg:text-8xl font-bold mb-6 fade-in">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2 fade-in" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Cal Sans', sans-serif;">
         Alle Features
       </h1>
-      <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto delay-200">
+      <p class="text-base md:text-lg text-black/60 max-w-3xl mx-auto delay-200">
         Alles was du brauchst, um deine Community erfolgreich zu führen und zu monetarisieren
       </p>
     </div>
@@ -144,82 +272,82 @@
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Feature 1 -->
-        <div class="feature-card bg-white/5 p-8 rounded-full border border-white/10 animate-on-scroll delay-100">
+        <div class="feature-card bg-gray-50 p-8 rounded-3xl border border-black/5 animate-on-scroll delay-100">
           <div class="text-4xl mb-4">🎥</div>
-          <h3 class="text-2xl font-semibold mb-3">Live Video & Workshops</h3>
-          <p class="text-white/70 leading-relaxed">
+          <h3 class="text-2xl font-semibold mb-3 text-black">Live Video & Workshops</h3>
+          <p class="text-black/70 leading-relaxed">
             Führe Webinare, Bootcamps und virtuelle Treffen mit hochwertigen Video-Tools durch. Unterstützt verschiedene Videoformate für maximale Flexibilität.
           </p>
         </div>
 
         <!-- Feature 2 -->
-        <div class="feature-card bg-white/5 p-8 rounded-full border border-white/10 animate-on-scroll delay-200">
+        <div class="feature-card bg-gray-50 p-8 rounded-3xl border border-black/5 animate-on-scroll delay-200">
           <div class="text-4xl mb-4">💬</div>
-          <h3 class="text-2xl font-semibold mb-3">Chat & Channels</h3>
-          <p class="text-white/70 leading-relaxed">
+          <h3 class="text-2xl font-semibold mb-3 text-black">Chat & Channels</h3>
+          <p class="text-black/70 leading-relaxed">
             Einfache Kommunikation in privaten und öffentlichen Gruppen. Organisiere Diskussionen nach Themen und schaffe geschützte Räume für exklusive Inhalte.
           </p>
         </div>
 
         <!-- Feature 3 -->
-        <div class="feature-card bg-white/5 p-8 rounded-full border border-white/10 animate-on-scroll delay-300">
+        <div class="feature-card bg-gray-50 p-8 rounded-3xl border border-black/5 animate-on-scroll delay-300">
           <div class="text-4xl mb-4">📁</div>
-          <h3 class="text-2xl font-semibold mb-3">Mediathek & Dateiablage</h3>
-          <p class="text-white/70 leading-relaxed">
+          <h3 class="text-2xl font-semibold mb-3 text-black">Mediathek & Dateiablage</h3>
+          <p class="text-black/70 leading-relaxed">
             Zentraler Speicherplatz für Videos, Dokumente und Kursmaterialien. Organisiere deine Inhalte übersichtlich und mache sie für deine Community zugänglich.
           </p>
         </div>
 
         <!-- Feature 4 -->
-        <div class="feature-card bg-white/5 p-8 rounded-full border border-white/10 animate-on-scroll delay-100">
+        <div class="feature-card bg-gray-50 p-8 rounded-3xl border border-black/5 animate-on-scroll delay-100">
           <div class="text-4xl mb-4">🎮</div>
-          <h3 class="text-2xl font-semibold mb-3">Gamification & Mitgliedschaften</h3>
-          <p class="text-white/70 leading-relaxed">
+          <h3 class="text-2xl font-semibold mb-3 text-black">Gamification & Mitgliedschaften</h3>
+          <p class="text-black/70 leading-relaxed">
             Motiviere mit spielerischen Elementen und exklusiven Angeboten. Belohne aktive Mitglieder und schaffe Anreize für Engagement.
           </p>
         </div>
 
         <!-- Feature 5 -->
-        <div class="feature-card bg-white/5 p-8 rounded-full border border-white/10 animate-on-scroll delay-200">
+        <div class="feature-card bg-gray-50 p-8 rounded-3xl border border-black/5 animate-on-scroll delay-200">
           <div class="text-4xl mb-4">📅</div>
-          <h3 class="text-2xl font-semibold mb-3">Kalender & Ticketing</h3>
-          <p class="text-white/70 leading-relaxed">
+          <h3 class="text-2xl font-semibold mb-3 text-black">Kalender & Ticketing</h3>
+          <p class="text-black/70 leading-relaxed">
             Organisiere Events, Manage Zugänge und verkaufe Tickets direkt in der Plattform. Alles an einem Ort, einfach und übersichtlich.
           </p>
         </div>
 
         <!-- Feature 6 -->
-        <div class="feature-card bg-white/5 p-8 rounded-full border border-white/10 animate-on-scroll delay-300">
+        <div class="feature-card bg-gray-50 p-8 rounded-3xl border border-black/5 animate-on-scroll delay-300">
           <div class="text-4xl mb-4">📊</div>
-          <h3 class="text-2xl font-semibold mb-3">Umfragen & Feedback</h3>
-          <p class="text-white/70 leading-relaxed">
+          <h3 class="text-2xl font-semibold mb-3 text-black">Umfragen & Feedback</h3>
+          <p class="text-black/70 leading-relaxed">
             Sammle Insights und verbessere deine Angebote kontinuierlich. Erhalte wertvolles Feedback von deiner Community.
           </p>
         </div>
 
         <!-- Feature 7 -->
-        <div class="feature-card bg-white/5 p-8 rounded-full border border-white/10 animate-on-scroll delay-100">
+        <div class="feature-card bg-gray-50 p-8 rounded-3xl border border-black/5 animate-on-scroll delay-100">
           <div class="text-4xl mb-4">📈</div>
-          <h3 class="text-2xl font-semibold mb-3">Analytics & Dashboard</h3>
-          <p class="text-white/70 leading-relaxed">
+          <h3 class="text-2xl font-semibold mb-3 text-black">Analytics & Dashboard</h3>
+          <p class="text-black/70 leading-relaxed">
             Behalte den Überblick über Aktivität, Engagement und Wachstum deiner Community. Detaillierte Analysen helfen dir, datengetriebene Entscheidungen zu treffen.
           </p>
         </div>
 
         <!-- Feature 8 -->
-        <div class="feature-card bg-white/5 p-8 rounded-full border border-white/10 animate-on-scroll delay-200">
+        <div class="feature-card bg-gray-50 p-8 rounded-3xl border border-black/5 animate-on-scroll delay-200">
           <div class="text-4xl mb-4">🔒</div>
-          <h3 class="text-2xl font-semibold mb-3">Sicherheit & Datenschutz</h3>
-          <p class="text-white/70 leading-relaxed">
+          <h3 class="text-2xl font-semibold mb-3 text-black">Sicherheit & Datenschutz</h3>
+          <p class="text-black/70 leading-relaxed">
             Modernste Technologie für maximale Sicherheit und DSGVO-Konformität. Deine Daten und die deiner Community sind sicher.
           </p>
         </div>
 
         <!-- Feature 9 - Content Verkauf -->
-        <div class="feature-card bg-white/5 p-8 rounded-full border border-white/10 animate-on-scroll delay-300">
+        <div class="feature-card bg-gray-50 p-8 rounded-3xl border border-black/5 animate-on-scroll delay-300">
           <div class="text-4xl mb-4">💰</div>
-          <h3 class="text-2xl font-semibold mb-3">Content-Verkauf</h3>
-          <p class="text-white/70 leading-relaxed">
+          <h3 class="text-2xl font-semibold mb-3 text-black">Content-Verkauf</h3>
+          <p class="text-black/70 leading-relaxed">
             Verkaufe einmalige Produkte oder Abos direkt in deiner Community. Einfaches Payment-System für maximale Conversion.
           </p>
         </div>
@@ -228,9 +356,9 @@
   </section>
   
   <!-- Feature Mockups Section -->
-  <section class="py-12 px-6 lg:px-8 bg-white/5">
+  <section class="py-12 px-6 lg:px-8 bg-gray-50">
     <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-semibold mb-8 text-center animate-on-scroll">Produkt-Mockups</h2>
+      <h2 class="text-3xl font-semibold mb-8 text-center animate-on-scroll text-black">Produkt-Mockups</h2>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="animate-on-scroll delay-100">
           <div class="mockup-container">
@@ -278,62 +406,68 @@
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="py-20 px-6 lg:px-8 bg-white/5">
+  <!-- CTA Section (wie Startseite: lila Primär-Button) -->
+  <section class="py-20 px-6 lg:px-8 bg-gray-50">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="headline-vanguard text-4xl md:text-6xl font-bold mb-6">Bereit loszulegen?</h2>
-      <p class="text-xl text-white/70 mb-8">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 leading-normal" style="font-family: 'Cal Sans', sans-serif; color: #2A2A2A;">Bereit loszulegen?</h2>
+      <p class="text-xl text-black/60 mb-8">
         Starte noch heute und baue deine Community auf
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/kontakt.html#sales" class="px-8 py-2 bg-white text-black rounded-full font-semibold hover:bg-white/90 transition text-lg">
+        <a href="/kontakt.html#sales" class="px-8 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group justify-center" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
           Kostenlos starten
+          <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="/kontakt.html#sales" class="px-8 py-2 border border-white/20 text-white rounded-full font-semibold hover:border-white/40 transition text-lg">
+        <a href="/kontakt.html#sales" class="px-8 py-3 text-sm font-medium bg-white rounded-full hover:bg-gray-50 transition justify-center" style="color: #2A2A2A; box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);">
           Mit Sales sprechen
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-black border-t border-white/10 py-12 px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
+  <!-- Footer (wie Startseite) -->
+  <footer class="bg-gray-50 pt-12 pb-32 px-6 lg:px-8 relative overflow-hidden">
+    <div class="absolute inset-0 flex items-end justify-center pointer-events-none overflow-visible">
+      <img src="./public/Glymmer_Logo_Dunkel.png" alt="" class="w-[1500px] h-auto opacity-[0.05] translate-y-[48%]" style="max-width: 95vw;">
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
-          <h3 class="text-xl font-bold headline-vanguard mb-4">TEECH</h3>
-          <p class="text-white/70 text-sm">
-            Deine Community-Plattform für Coaches und Creator
+          <div class="mb-4">
+            <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
+          </div>
+          <p id="footer-tagline" class="text-black/70 text-sm">
+            Die Community-Plattform für Coaches und Creator
           </p>
         </div>
         <div>
-          <h4 class="font-semibold mb-4">Produkt</h4>
-          <ul class="space-y-2 text-sm text-white/70">
-            <li><a href="/features.html" class="hover:text-white transition">Features</a></li>
-            <li><a href="/use-cases.html" class="hover:text-white transition">Use Cases</a></li>
-            <li><a href="/preise.html" class="hover:text-white transition">Preise</a></li>
-            <li><a href="/customer-stories.html" class="hover:text-white transition">Customer Stories</a></li>
+          <h4 id="footer-product" class="font-semibold mb-4 text-black">Produkt</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a id="footer-link-features" href="/features.html" class="hover:text-black transition">Features</a></li>
+            <li><a id="footer-link-use-cases" href="/coaches.html" class="hover:text-black transition">Use Cases</a></li>
+            <li><a id="footer-link-pricing" href="/preise.html" class="hover:text-black transition">Preise</a></li>
+            <li><a id="footer-link-updates" href="/updates.html" class="hover:text-black transition">Updates</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold mb-4">Unternehmen</h4>
-          <ul class="space-y-2 text-sm text-white/70">
-            <li><a href="/kontakt.html" class="hover:text-white transition">Kontakt</a></li>
-            <li><a href="/kontakt.html#unternehmen" class="hover:text-white transition">Über uns</a></li>
-            <li><a href="/faq.html" class="hover:text-white transition">FAQ</a></li>
+          <h4 id="footer-company" class="font-semibold mb-4 text-black">Unternehmen</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a id="footer-link-contact" href="/kontakt.html" class="hover:text-black transition">Kontakt</a></li>
+            <li><a id="footer-link-about" href="https://teech.de/das-sind-wir/" target="_blank" rel="noopener noreferrer" class="hover:text-black transition">Über uns</a></li>
+            <li><a id="footer-link-faq" href="/faq.html" class="hover:text-black transition">FAQ</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold mb-4">Rechtliches</h4>
-          <ul class="space-y-2 text-sm text-white/70">
-            <li><a href="/impressum.html" class="hover:text-white transition">Impressum</a></li>
-            <li><a href="/datenschutz.html" class="hover:text-white transition">Datenschutz</a></li>
-            <li><a href="/agb.html" class="hover:text-white transition">AGB</a></li>
+          <h4 id="footer-legal" class="font-semibold mb-4 text-black">Rechtliches</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a id="footer-link-imprint" href="/imprint.html" class="hover:text-black transition">Impressum</a></li>
+            <li><a id="footer-link-privacy" href="/privacy.html" class="hover:text-black transition">Datenschutz</a></li>
+            <li><a id="footer-link-terms" href="/terms.html" class="hover:text-black transition">AGB</a></li>
           </ul>
         </div>
       </div>
-      <div class="border-t border-white/10 pt-8 text-center text-sm text-white/70">
-        <p>&copy; 2024 Teech. Alle Rechte vorbehalten.</p>
+      <div class="border-t border-black/10 pt-8 pb-8 text-center">
+        <p id="footer-copyright" class="text-sm text-black/70">&copy; 2026 Glymmer - A teech Product. Alle Rechte vorbehalten.</p>
       </div>
     </div>
   </footer>
@@ -341,6 +475,96 @@
   <script src="./animations.js"></script>
   <script src="./language.js"></script>
   <script src="./cursor-follower.js"></script>
+  <script>
+    // Header Background on Scroll + Burger Menu (wie Startseite)
+    document.addEventListener('DOMContentLoaded', () => {
+      const header = document.getElementById('main-header');
+      if (header) {
+        function updateHeaderBackground() {
+          if (window.scrollY > 50) {
+            header.classList.add('bg-white/70');
+          } else {
+            header.classList.remove('bg-white/70');
+          }
+        }
+        window.addEventListener('scroll', updateHeaderBackground);
+        updateHeaderBackground();
+      }
+      const burgerMenu = document.getElementById('burger-menu');
+      const burgerMenuClose = document.getElementById('burger-menu-close');
+      const burgerMenuOverlay = document.getElementById('burger-menu-overlay');
+      const burgerMenuDropdown = document.getElementById('burger-menu-dropdown');
+      function toggleMenuIcon(isOpen) {
+        if (burgerMenu) {
+          if (isOpen) burgerMenu.classList.add('active');
+          else burgerMenu.classList.remove('active');
+        }
+      }
+      if (burgerMenu && burgerMenuDropdown) {
+        let isOpen = false;
+        burgerMenu.addEventListener('click', (e) => {
+          e.stopPropagation();
+          isOpen = !isOpen;
+          if (isOpen) {
+            burgerMenuDropdown.classList.remove('opacity-0', 'invisible', 'translate-y-2');
+            burgerMenuDropdown.classList.add('opacity-100', 'visible', 'translate-y-0');
+          } else {
+            burgerMenuDropdown.classList.add('opacity-0', 'invisible', 'translate-y-2');
+            burgerMenuDropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+          }
+          toggleMenuIcon(isOpen);
+        });
+        document.addEventListener('click', (e) => {
+          if (!burgerMenu.contains(e.target) && !burgerMenuDropdown.contains(e.target)) {
+            isOpen = false;
+            burgerMenuDropdown.classList.add('opacity-0', 'invisible', 'translate-y-2');
+            burgerMenuDropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+            toggleMenuIcon(isOpen);
+          }
+        });
+        burgerMenuDropdown.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            isOpen = false;
+            burgerMenuDropdown.classList.add('opacity-0', 'invisible', 'translate-y-2');
+            burgerMenuDropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+            toggleMenuIcon(isOpen);
+          });
+        });
+      }
+      if (burgerMenu && burgerMenuOverlay) {
+        let isMobileOpen = false;
+        burgerMenu.addEventListener('click', () => {
+          if (window.innerWidth < 768) {
+            isMobileOpen = !isMobileOpen;
+            if (isMobileOpen) {
+              burgerMenuOverlay.classList.remove('translate-x-full');
+              document.body.style.overflow = 'hidden';
+            } else {
+              burgerMenuOverlay.classList.add('translate-x-full');
+              document.body.style.overflow = '';
+            }
+            toggleMenuIcon(isMobileOpen);
+          }
+        });
+      }
+      if (burgerMenuClose && burgerMenuOverlay) {
+        burgerMenuClose.addEventListener('click', () => {
+          burgerMenuOverlay.classList.add('translate-x-full');
+          document.body.style.overflow = '';
+          toggleMenuIcon(false);
+        });
+      }
+      if (burgerMenuOverlay) {
+        burgerMenuOverlay.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            burgerMenuOverlay.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+            toggleMenuIcon(false);
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
 

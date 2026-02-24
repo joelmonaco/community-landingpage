@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Impressum - Angaben gemäß § 5 TMG der teech Education GmbH">
+  <title>Impressum - Glymmer</title>
+  <link rel="icon" type="image/png" href="./public/Favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    @font-face { font-family: 'Vanguard CF'; src: url('./fonts/Vanguard-CF-Bold.otf') format('opentype'); font-weight: bold; font-style: normal; }
+    @font-face { font-family: 'Suisse Intl'; src: url('./fonts/suisse/SuisseIntl-Regular.otf') format('opentype'); font-weight: 400; font-style: normal; }
+    @font-face { font-family: 'Suisse Intl'; src: url('./fonts/suisse/SuisseIntl-Medium.otf') format('opentype'); font-weight: 500; font-style: normal; }
+    @font-face { font-family: 'Suisse Intl'; src: url('./fonts/suisse/SuisseIntl-SemiBold.otf') format('opentype'); font-weight: 600; font-style: normal; }
+    @font-face { font-family: 'Suisse Intl'; src: url('./fonts/suisse/SuisseIntl-Bold.otf') format('opentype'); font-weight: 700; font-style: normal; }
+    body { font-family: 'Suisse Intl', sans-serif; -webkit-text-size-adjust: 100%; background: #ffffff; color: #1a1a1a; }
+    .headline-vanguard { font-family: 'Vanguard CF', sans-serif; }
+    html { scroll-behavior: smooth; }
+    #burger-menu.active #burger-line-top { transform: translateY(6px) rotate(45deg); transform-origin: 12px 6px; }
+    #burger-menu.active #burger-line-middle { opacity: 0; }
+    #burger-menu.active #burger-line-bottom { transform: translateY(-6px) rotate(-45deg); transform-origin: 12px 18px; }
+    .use-cases-dropdown { position: absolute; top: 100%; left: 0; margin-top: 0.5rem; background: white; border-radius: 1.5rem; padding: 1rem; min-width: 220px; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); z-index: 1000; }
+    .use-cases-menu-item:hover .use-cases-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-black">
+  <!-- Header -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-black/5">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
+      <div class="flex items-center justify-between relative">
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <button id="burger-menu" class="relative p-2 transition" style="color: #2A2A2A;" aria-label="Menu">
+              <div class="relative w-6 h-6">
+                <svg id="burger-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute inset-0">
+                  <g id="burger-lines"><line id="burger-line-top" x1="3" y1="6" x2="21" y2="6"></line><line id="burger-line-middle" x1="3" y1="12" x2="21" y2="12"></line><line id="burger-line-bottom" x1="3" y1="18" x2="21" y2="18"></line></g>
+                </svg>
+              </div>
+            </button>
+            <div id="burger-menu-dropdown" class="hidden md:block absolute top-full left-0 mt-2 bg-white rounded-3xl py-4 px-6 min-w-[200px] opacity-0 invisible transition-all duration-300 transform translate-y-2" style="box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);">
+              <nav class="flex flex-col space-y-3">
+                <a href="/features.html" class="text-sm font-medium text-black/70 hover:text-black transition">Features</a>
+                <div class="use-cases-menu-item relative">
+                  <a href="/#use-cases" class="text-sm font-medium text-black/70 hover:text-black transition flex items-center gap-1">Use Cases ▾</a>
+                  <div class="use-cases-dropdown">
+                    <a href="/coaches.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Coaches</a>
+                    <a href="/creator.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Creator</a>
+                    <a href="/bootcamps.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Bootcamps</a>
+                    <a href="/lernraum.html" class="block text-sm font-medium text-black/70 hover:text-black transition py-2">Für Lernräume</a>
+                  </div>
+                </div>
+                <a href="/preise.html" class="text-sm font-medium text-black/70 hover:text-black transition">Preise</a>
+                <a href="/updates.html" class="text-sm font-medium text-black/70 hover:text-black transition">Updates</a>
+                <a href="/faq.html" class="text-sm font-medium text-black/70 hover:text-black transition">FAQ</a>
+              </nav>
+            </div>
+          </div>
+          <button id="language-switch" class="px-4 py-3 text-sm border border-black/20 rounded-full hover:border-black/40 flex items-center gap-2" style="color: #2A2A2A;" data-lang="de">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>EN</span>
+          </button>
+        </div>
+        <a href="/" class="absolute left-1/2 transform -translate-x-1/2"><img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto"></a>
+        <div class="flex items-center space-x-4 ml-auto">
+          <a href="https://app.glymmer.io/auth/login" class="px-4 py-2 text-sm" style="color: #2A2A2A;">Log In</a>
+          <a href="/kontakt.html#sales" class="px-6 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition inline-flex items-center gap-2" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">Jetzt starten →</a>
+        </div>
+      </div>
+      <div id="burger-menu-overlay" class="md:hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transform translate-x-full transition-transform duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-8">
+          <div class="flex justify-between items-center mb-8">
+            <h2 class="text-2xl font-semibold text-black">Menü</h2>
+            <button id="burger-menu-close" class="p-2 text-black/70 hover:text-black" aria-label="Schließen">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+          </div>
+          <nav class="flex flex-col space-y-4">
+            <a href="/features.html" class="text-xl font-medium text-black/70 hover:text-black">Features</a>
+            <a href="/coaches.html" class="text-xl font-medium text-black/70 hover:text-black">Use Cases – Coaches</a>
+            <a href="/creator.html" class="text-xl font-medium text-black/70 hover:text-black">Use Cases – Creator</a>
+            <a href="/preise.html" class="text-xl font-medium text-black/70 hover:text-black">Preise</a>
+            <a href="/updates.html" class="text-xl font-medium text-black/70 hover:text-black">Updates</a>
+            <a href="/faq.html" class="text-xl font-medium text-black/70 hover:text-black">FAQ</a>
+            <a href="/kontakt.html#sales" class="text-xl font-medium text-black/70 hover:text-black mt-4">Jetzt starten</a>
+          </nav>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-28 pb-20 px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="headline-vanguard text-4xl md:text-5xl font-bold mb-12 text-black">Impressum</h1>
+
+      <div class="prose prose-lg max-w-none text-black/85 space-y-8">
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">Verantwortliche nach § 5 Telemediengesetz (TMG)</h2>
+          <p>
+            teech Education GmbH<br>
+            Verwaltungssitz<br>
+            Schlossgartenstraße 69<br>
+            64289 Darmstadt<br>
+            Vertreten durch: Joel Monaco, Emanuele Monaco
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">Satzungssitz der Gesellschaft</h2>
+          <p>
+            c/o Factory Works GmbH<br>
+            Rheinsberger Str. 76/77<br>
+            10115 Berlin
+          </p>
+        </section>
+
+        <section>
+          <p>Amtsgericht Charlottenburg (HRB 246628 B)</p>
+        </section>
+
+        <section>
+          <p>
+            E-Mail: <a href="mailto:hi@teech.de" class="text-secondary hover:underline">hi@teech.de</a><br>
+            <a href="https://teech.de" target="_blank" rel="noopener noreferrer" class="text-secondary hover:underline">Hier</a> kannst Du direkt einen Rückruf buchen, sofern Du Fragen hast.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-semibold text-black mb-3">Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz</h2>
+          <p>DE340393891</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-50 pt-12 pb-32 px-6 lg:px-8 relative overflow-hidden">
+    <div class="absolute inset-0 flex items-end justify-center pointer-events-none overflow-visible">
+      <img src="./public/Glymmer_Logo_Dunkel.png" alt="" class="w-[1500px] h-auto opacity-[0.05] translate-y-[48%]" style="max-width: 95vw;">
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="mb-4"><img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto"></div>
+          <p class="text-black/70 text-sm">Die Community-Plattform für Coaches und Creator</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-black">Produkt</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a href="/features.html" class="hover:text-black transition">Features</a></li>
+            <li><a href="/coaches.html" class="hover:text-black transition">Use Cases</a></li>
+            <li><a href="/preise.html" class="hover:text-black transition">Preise</a></li>
+            <li><a href="/updates.html" class="hover:text-black transition">Updates</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-black">Unternehmen</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a href="/kontakt.html" class="hover:text-black transition">Kontakt</a></li>
+            <li><a href="https://teech.de/das-sind-wir/" target="_blank" rel="noopener noreferrer" class="hover:text-black transition">Über uns</a></li>
+            <li><a href="/faq.html" class="hover:text-black transition">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-black">Rechtliches</h4>
+          <ul class="space-y-2 text-sm text-black/70">
+            <li><a href="/imprint.html" class="hover:text-black transition">Impressum</a></li>
+            <li><a href="/privacy.html" class="hover:text-black transition">Datenschutz</a></li>
+            <li><a href="/terms.html" class="hover:text-black transition">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-black/10 pt-8 pb-8 text-center">
+        <p class="text-sm text-black/70">&copy; 2026 Glymmer - A teech Product. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./language.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var burgerMenu = document.getElementById('burger-menu');
+      var burgerMenuClose = document.getElementById('burger-menu-close');
+      var burgerMenuOverlay = document.getElementById('burger-menu-overlay');
+      var burgerMenuDropdown = document.getElementById('burger-menu-dropdown');
+      function toggleIcon(open) { if (burgerMenu) burgerMenu.classList.toggle('active', open); }
+      if (burgerMenu && burgerMenuDropdown) {
+        var open = false;
+        burgerMenu.addEventListener('click', function(e) {
+          e.stopPropagation();
+          open = !open;
+          burgerMenuDropdown.classList.toggle('opacity-0', !open);
+          burgerMenuDropdown.classList.toggle('invisible', !open);
+          burgerMenuDropdown.classList.toggle('translate-y-2', !open);
+          burgerMenuDropdown.classList.toggle('opacity-100', open);
+          burgerMenuDropdown.classList.toggle('visible', open);
+          burgerMenuDropdown.classList.toggle('translate-y-0', open);
+          toggleIcon(open);
+        });
+        document.addEventListener('click', function(e) {
+          if (!burgerMenu.contains(e.target) && !burgerMenuDropdown.contains(e.target)) {
+            open = false;
+            burgerMenuDropdown.classList.add('opacity-0', 'invisible', 'translate-y-2');
+            burgerMenuDropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
+            toggleIcon(false);
+          }
+        });
+      }
+      if (burgerMenu && burgerMenuOverlay) {
+        burgerMenu.addEventListener('click', function() {
+          if (window.innerWidth < 768) {
+            burgerMenuOverlay.classList.toggle('translate-x-full');
+            document.body.style.overflow = burgerMenuOverlay.classList.contains('translate-x-full') ? '' : 'hidden';
+            toggleIcon(!burgerMenuOverlay.classList.contains('translate-x-full'));
+          }
+        });
+      }
+      if (burgerMenuClose && burgerMenuOverlay) {
+        burgerMenuClose.addEventListener('click', function() {
+          burgerMenuOverlay.classList.add('translate-x-full');
+          document.body.style.overflow = '';
+          toggleIcon(false);
+        });
+      }
+      if (burgerMenuOverlay) {
+        burgerMenuOverlay.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            burgerMenuOverlay.classList.add('translate-x-full');
+            document.body.style.overflow = '';
+            toggleIcon(false);
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
