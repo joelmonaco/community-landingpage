@@ -178,11 +178,12 @@ const translations = {
       labelEmail: 'E-Mail *',
       labelComment: 'Kommentar (optional)',
       placeholderComment: 'Wann passt es Ihnen? Weitere Wünsche?',
-      checkboxLabel: 'Ich akzeptiere die <a href="/terms.html" target="_blank" rel="noopener">AGB</a> und die <a href="/privacy.html" target="_blank" rel="noopener">Datenschutzerklärung</a> *',
+      checkboxLabel: 'Ich akzeptiere die <a href="/terms.html" target="_blank" rel="noopener">AGB</a> *',
+      privacyLinkText: 'Lese hier die <a href="/privacy.html" target="_blank" rel="noopener">Datenschutzbestimmungen</a>.',
       submitBtn: 'Anfrage senden',
       sendingBtn: 'Wird gesendet…',
       successMessage: 'Vielen Dank! Wir melden uns in Kürze bei Ihnen.',
-      errorAccept: 'Bitte AGB und Datenschutzerklärung akzeptieren.',
+      errorAccept: 'Bitte AGB akzeptieren.',
       errorSend: 'Fehler beim Senden. Bitte später erneut versuchen.'
     },
     faq: {
@@ -517,11 +518,12 @@ const translations = {
       labelEmail: 'Email *',
       labelComment: 'Comment (optional)',
       placeholderComment: 'When does it suit you? Any other requests?',
-      checkboxLabel: 'I accept the <a href="/terms.html" target="_blank" rel="noopener">Terms</a> and the <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> *',
+      checkboxLabel: 'I accept the <a href="/terms.html" target="_blank" rel="noopener">Terms</a> *',
+      privacyLinkText: 'Read the <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> here.',
       submitBtn: 'Send request',
       sendingBtn: 'Sending…',
       successMessage: 'Thank you! We will get back to you shortly.',
-      errorAccept: 'Please accept the Terms and Privacy Policy.',
+      errorAccept: 'Please accept the Terms.',
       errorSend: 'Error sending. Please try again later.'
     },
     faq: {
@@ -954,6 +956,8 @@ function applyTranslations(lang) {
     if (termKommentar) termKommentar.placeholder = t.terminModal.placeholderComment;
     const termCheckboxLabel = document.getElementById('termin-modal-label-checkbox');
     if (termCheckboxLabel) termCheckboxLabel.innerHTML = t.terminModal.checkboxLabel;
+    const termPrivacyLink = document.getElementById('termin-modal-privacy-link');
+    if (termPrivacyLink && t.terminModal.privacyLinkText) termPrivacyLink.innerHTML = t.terminModal.privacyLinkText;
     const termSubmit = document.getElementById('termin-modal-submit');
     if (termSubmit) termSubmit.textContent = t.terminModal.submitBtn;
   }

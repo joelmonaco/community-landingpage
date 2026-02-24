@@ -32,3 +32,6 @@ RewriteRule ^umfragen/?$ umfragen.html [L]
 # Optional: .html-Aufrufe auf saubere URL umleiten (z. B. /preise.html → /preise)
 RewriteCond %{THE_REQUEST} \s/[^.]+\.html [NC]
 RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+# Redirect .html → extensionless
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.html[\s?]
+RewriteRule ^ %1 [R=301,L]

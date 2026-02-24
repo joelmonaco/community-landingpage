@@ -22,6 +22,8 @@
       '#termin-modal-form .checkbox-group label{display:flex;align-items:flex-start;gap:0.5rem;font-weight:400;cursor:pointer;}' +
       '#termin-modal-form .checkbox-group input{width:1rem;height:1rem;margin-top:0.2rem;}' +
       '#termin-modal-form .checkbox-group a{text-decoration:underline;color:#7167F5;}' +
+      '#termin-modal-form .privacy-link-line{margin-top:0.5rem;font-size:0.8125rem;color:#6b7280;}' +
+      '#termin-modal-form .privacy-link-line a{text-decoration:underline;color:#7167F5;}' +
       '#termin-modal-form button[type=submit]{width:100%;padding:0.75rem 1rem;background:#7167F5;color:#fff;border:none;border-radius:9999px;font-weight:600;cursor:pointer;}' +
       '#termin-modal-form button[type=submit]:hover{background:#5b52d4;}' +
       '#termin-modal-form .message{margin-top:1rem;padding:0.75rem;border-radius:0.5rem;display:none;}' +
@@ -42,11 +44,12 @@
     labelEmail: 'E-Mail *',
     labelComment: 'Kommentar (optional)',
     placeholderComment: 'Wann passt es Ihnen? Weitere Wünsche?',
-    checkboxLabel: 'Ich akzeptiere die <a href="/terms.html" target="_blank" rel="noopener">AGB</a> und die <a href="/privacy.html" target="_blank" rel="noopener">Datenschutzerklärung</a> *',
+    checkboxLabel: 'Ich akzeptiere die <a href="/terms.html" target="_blank" rel="noopener">AGB</a> *',
+    privacyLinkText: 'Lese hier die <a href="/privacy.html" target="_blank" rel="noopener">Datenschutzbestimmungen</a>.',
     submitBtn: 'Anfrage senden',
     sendingBtn: 'Wird gesendet…',
     successMessage: 'Vielen Dank! Wir melden uns in Kürze bei Ihnen.',
-    errorAccept: 'Bitte AGB und Datenschutzerklärung akzeptieren.',
+    errorAccept: 'Bitte AGB akzeptieren.',
     errorSend: 'Fehler beim Senden. Bitte später erneut versuchen.'
   };
 
@@ -77,8 +80,9 @@
       '<label id="termin-modal-label-kommentar" for="termin-kommentar">' + (s.labelComment || 'Kommentar (optional)') + '</label>' +
       '<textarea id="termin-kommentar" name="kommentar" placeholder="' + (s.placeholderComment || '') + '"></textarea>' +
       '<div class="checkbox-group">' +
-      '<label><input type="checkbox" name="agb_datenschutz" required> <span id="termin-modal-label-checkbox">' + (s.checkboxLabel || 'Ich akzeptiere die <a href="/terms.html" target="_blank" rel="noopener">AGB</a> und die <a href="/privacy.html" target="_blank" rel="noopener">Datenschutzerklärung</a> *') + '</span></label>' +
+      '<label><input type="checkbox" name="agb" required> <span id="termin-modal-label-checkbox">' + (s.checkboxLabel || 'Ich akzeptiere die <a href="/terms.html" target="_blank" rel="noopener">AGB</a> *') + '</span></label>' +
       '</div>' +
+      '<p class="privacy-link-line" id="termin-modal-privacy-link">' + (s.privacyLinkText || 'Lese hier die <a href="/privacy.html" target="_blank" rel="noopener">Datenschutzbestimmungen</a>.') + '</p>' +
       '<button type="submit" id="termin-modal-submit">' + (s.submitBtn || 'Anfrage senden') + '</button>' +
       '<div class="message" id="termin-form-message" role="alert"></div>' +
       '</form>' +
@@ -131,10 +135,10 @@
     var telefon = (form.telefon && form.telefon.value) || '';
     var email = (form.email && form.email.value) || '';
     var kommentar = (form.kommentar && form.kommentar.value) || '';
-    var agbDatenschutz = form.agb_datenschutz && form.agb_datenschutz.checked;
+    var agbChecked = (form.agb && form.agb.checked);
     var s = getModalStrings();
-    if (!agbDatenschutz) {
-      showMessage('error', s.errorAccept || 'Bitte AGB und Datenschutzerklärung akzeptieren.');
+    if (!agbChecked) {
+      showMessage('error', s.errorAccept || 'Bitte AGB akzeptieren.');
       return;
     }
     var btn = form.querySelector('button[type=submit]');
