@@ -394,18 +394,18 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
         <!-- Starter -->
         <div class="pricing-card bg-white p-8 rounded-3xl border border-black/10 shadow-sm animate-on-scroll">
-          <h3 class="text-xl font-semibold text-black mb-2">Starter</h3>
+          <h3 id="preise-starter-title" class="text-xl font-semibold text-black mb-2">Starter</h3>
           <div class="mb-6">
             <span class="text-3xl font-bold text-black">€99</span>
-            <span class="text-black/60">/Monat</span>
+            <span id="preise-per-month-1" class="text-black/60">/Monat</span>
           </div>
           <ul class="space-y-4 mb-8 text-black/80 text-sm">
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Bis zu 100 Mitglieder</li>
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Alle Kernfeatures</li>
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Basis-Support</li>
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Content-Verkauf</li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-starter-f1">Bis zu 100 Mitglieder</span></li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-starter-f2">Alle Kernfeatures</span></li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-starter-f3">Basis-Support</span></li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-starter-f4">Content-Verkauf</span></li>
           </ul>
-          <a href="https://app.glymmer.io/create?product=c2ff5338-91ae-457f-9958-6acbe55437c1" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3 bg-secondary text-white rounded-full font-semibold hover:bg-secondary-hover transition flex items-center justify-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.4);">
+          <a href="https://app.glymmer.io/create?product=c2ff5338-91ae-457f-9958-6acbe55437c1" target="_blank" rel="noopener noreferrer" class="js-cta-start block w-full text-center px-6 py-3 bg-secondary text-white rounded-full font-semibold hover:bg-secondary-hover transition flex items-center justify-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.4);">
             Jetzt starten
             <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -413,22 +413,22 @@
 
         <!-- Professional (hervorgehoben) -->
         <div class="pricing-card relative p-8 rounded-3xl border-2 border-secondary shadow-lg animate-on-scroll" style="background-color: rgba(113, 103, 245, 0.06); box-shadow: 0 10px 40px rgba(113, 103, 245, 0.2);">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-sm font-semibold">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-sm font-semibold" id="preise-popular">
             Beliebt
           </div>
-          <h3 class="text-xl font-semibold text-black mb-2">Professional</h3>
+          <h3 id="preise-pro-title" class="text-xl font-semibold text-black mb-2">Professional</h3>
           <div class="mb-6">
             <span class="text-3xl font-bold text-black">€199</span>
-            <span class="text-black/60">/Monat</span>
+            <span id="preise-per-month-2" class="text-black/60">/Monat</span>
           </div>
           <ul class="space-y-4 mb-8 text-black/80 text-sm">
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Bis zu 1.000 Mitglieder</li>
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Alle Features</li>
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Erweiterte Personalisierung</li>
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Priority Support</li>
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Erweiterte Analytics</li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-pro-f1">Bis zu 1.000 Mitglieder</span></li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-pro-f2">Alle Features</span></li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-pro-f3">Erweiterte Personalisierung</span></li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-pro-f4">Priority Support</span></li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-pro-f5">Erweiterte Analytics</span></li>
           </ul>
-          <a href="https://app.glymmer.io/create?product=7eb3f354-908e-45bd-9c0e-d42dde6a9892" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3 bg-secondary text-white rounded-full font-semibold hover:bg-secondary-hover transition flex items-center justify-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.4);">
+          <a href="https://app.glymmer.io/create?product=7eb3f354-908e-45bd-9c0e-d42dde6a9892" target="_blank" rel="noopener noreferrer" class="js-cta-start block w-full text-center px-6 py-3 bg-secondary text-white rounded-full font-semibold hover:bg-secondary-hover transition flex items-center justify-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.4);">
             Jetzt starten
             <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -436,19 +436,19 @@
 
         <!-- Business -->
         <div class="pricing-card bg-white p-8 rounded-3xl border border-black/10 shadow-sm animate-on-scroll">
-          <h3 class="text-xl font-semibold text-black mb-2">Business</h3>
+          <h3 id="preise-business-title" class="text-xl font-semibold text-black mb-2">Business</h3>
           <div class="mb-6">
             <span class="text-3xl font-bold text-black">€399</span>
-            <span class="text-black/60">/Monat</span>
+            <span id="preise-per-month-3" class="text-black/60">/Monat</span>
           </div>
           <ul class="space-y-4 mb-8 text-black/80 text-sm">
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Unbegrenzt viele Mitglieder</li>
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Alles aus Professional</li>
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Professionelles Videoconferencing</li>
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Integrationen</li>
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Schneller Support</li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-business-f1">Unbegrenzt viele Mitglieder</span></li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-business-f2">Alles aus Professional</span></li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-business-f3">Professionelles Videoconferencing</span></li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-business-f4">Integrationen</span></li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-business-f5">Schneller Support</span></li>
           </ul>
-          <a href="https://app.glymmer.io/create?product=ad256a62-7edc-4576-9b16-c1ac3cf2b6db" target="_blank" rel="noopener noreferrer" class="block w-full text-center px-6 py-3 bg-secondary text-white rounded-full font-semibold hover:bg-secondary-hover transition flex items-center justify-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.4);">
+          <a href="https://app.glymmer.io/create?product=ad256a62-7edc-4576-9b16-c1ac3cf2b6db" target="_blank" rel="noopener noreferrer" class="js-cta-start block w-full text-center px-6 py-3 bg-secondary text-white rounded-full font-semibold hover:bg-secondary-hover transition flex items-center justify-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.4);">
             Jetzt starten
             <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -456,19 +456,19 @@
 
         <!-- Enterprise (Custom) -->
         <div class="pricing-card bg-white p-8 rounded-3xl border border-black/10 shadow-sm animate-on-scroll">
-          <h3 class="text-xl font-semibold text-black mb-2">Enterprise</h3>
+          <h3 id="preise-enterprise-title" class="text-xl font-semibold text-black mb-2">Enterprise</h3>
           <div class="mb-6">
             <span class="text-3xl font-bold text-black">Custom</span>
           </div>
           <ul class="space-y-4 mb-8 text-black/80 text-sm">
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Unbegrenzte Mitglieder</li>
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> White-Label Lösung</li>
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Dedicated Support</li>
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> Custom Integrationen</li>
-            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span> SLA Garantie</li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-enterprise-f1">Unbegrenzte Mitglieder</span></li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-enterprise-f2">White-Label Lösung</span></li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-enterprise-f3">Dedicated Support</span></li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-enterprise-f4">Custom Integrationen</span></li>
+            <li class="flex items-start gap-3"><span class="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style="background: rgba(113, 103, 245, 0.2);"><svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span><span id="preise-enterprise-f5">SLA Garantie</span></li>
           </ul>
           <button type="button" id="open-custom-modal" class="w-full text-center px-6 py-3 bg-secondary text-white rounded-full font-semibold hover:bg-secondary-hover transition flex items-center justify-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.4);">
-            Kontakt aufnehmen
+            <span id="preise-contact-btn">Kontakt aufnehmen</span>
             <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </div>
@@ -479,7 +479,7 @@
   <!-- FAQ (Startseiten-Stil: helle Boxen, rounded-3xl – gleicher Hintergrund wie Sektion darüber) -->
   <section class="py-16 px-6 lg:px-8">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-8 leading-normal pb-2 text-center" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Cal Sans', sans-serif;">Häufige Fragen zu den Preisen</h2>
+      <h2 id="preise-faq-heading" class="text-4xl md:text-5xl lg:text-6xl font-medium mb-8 leading-normal pb-2 text-center" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Cal Sans', sans-serif;">Häufige Fragen zu den Preisen</h2>
       <div class="text-center mt-8">
         <a href="#" id="open-faq-modal-link" class="text-secondary font-semibold hover:underline transition cursor-pointer">Alle FAQs ansehen →</a>
       </div>
@@ -548,14 +548,14 @@
       </div>
     </div>
     <div class="max-w-4xl mx-auto text-center animate-on-scroll relative" style="z-index: 1; margin-top: 60px;">
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="color: #ffffff; font-family: 'Cal Sans', sans-serif;">
+      <h2 id="preise-cta-title" class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="color: #ffffff; font-family: 'Cal Sans', sans-serif;">
         Noch Fragen?
       </h2>
-      <p class="text-base md:text-lg text-white/70 max-w-3xl mx-auto mb-8 leading-relaxed font-normal">
+      <p id="preise-cta-subtitle" class="text-base md:text-lg text-white/70 max-w-3xl mx-auto mb-8 leading-relaxed font-normal">
         Sprich mit unserem Sales-Team über das passende Paket für dich
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/preise.html" class="px-6 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
+        <a href="/preise.html" class="js-cta-start px-6 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
           Jetzt starten
           <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
             <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>

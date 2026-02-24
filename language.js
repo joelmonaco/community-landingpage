@@ -267,11 +267,48 @@ const translations = {
     },
     updatesPage: {
       heroTitle: 'Updates',
-      heroSubtitle: 'Bleibe auf dem Laufenden über neue Features und Verbesserungen.'
+      heroSubtitle: 'Bleibe auf dem Laufenden über neue Features und Verbesserungen.',
+      article1Title: 'Stärkere Stabilität & verbesserte Performance',
+      article1Body: 'Wir haben die technische Grundlage unserer Plattform weiter optimiert, um dir ein noch stabileres und schnelleres Erlebnis zu bieten. Zahlreiche Fehlerbehebungen und Backend-Verfeinerungen sorgen dafür, dass alles flüssiger läuft — besonders bei hoher Nutzung oder großen Datenmengen.',
+      article2Title: 'Kalender: Offline-Events jetzt verfügbar',
+      article2Body: 'Ab sofort kannst du in deinem Kalender Offline-Events anlegen und verwalten. So behältst du auch bei Präsenz-Terminen den Überblick und kannst sie wie gewohnt planen und mit der Community teilen.',
+      article3Title: 'User-to-User Anrufe direkt auf der Plattform',
+      article3Body: 'Wir freuen uns, eine neue Kommunikationsfunktion einzuführen: Nutzer können sich jetzt direkt gegenseitig anrufen — ohne externe Tools, direkt über die Plattform.',
+      article4Title: 'Mehr Flexibilität in der Mediathek',
+      article4Body: 'Die Mediathek unterstützt nun eine größere Auswahl an Dateiformaten. Du kannst ab sofort noch mehr Inhalte hochladen und abrufen — darunter Formate, die bisher nicht unterstützt wurden, um deine Ressourcen vielseitiger zu nutzen.'
     },
     preisePage: {
       heroTitle: 'Preise',
-      heroSubtitle: 'Wähle das passende Lizenzpaket für deine Community'
+      heroSubtitle: 'Wähle das passende Lizenzpaket für deine Community',
+      popularBadge: 'Beliebt',
+      perMonth: '/Monat',
+      starterTitle: 'Starter',
+      starterF1: 'Bis zu 100 Mitglieder',
+      starterF2: 'Alle Kernfeatures',
+      starterF3: 'Basis-Support',
+      starterF4: 'Content-Verkauf',
+      proTitle: 'Professional',
+      proF1: 'Bis zu 1.000 Mitglieder',
+      proF2: 'Alle Features',
+      proF3: 'Erweiterte Personalisierung',
+      proF4: 'Priority Support',
+      proF5: 'Erweiterte Analytics',
+      businessTitle: 'Business',
+      businessF1: 'Unbegrenzt viele Mitglieder',
+      businessF2: 'Alles aus Professional',
+      businessF3: 'Professionelles Videoconferencing',
+      businessF4: 'Integrationen',
+      businessF5: 'Schneller Support',
+      enterpriseTitle: 'Enterprise',
+      enterpriseF1: 'Unbegrenzte Mitglieder',
+      enterpriseF2: 'White-Label Lösung',
+      enterpriseF3: 'Dedicated Support',
+      enterpriseF4: 'Custom Integrationen',
+      enterpriseF5: 'SLA Garantie',
+      contactBtn: 'Kontakt aufnehmen',
+      faqHeading: 'Häufige Fragen zu den Preisen',
+      ctaTitle: 'Noch Fragen?',
+      ctaSubtitle: 'Sprich mit unserem Sales-Team über das passende Paket für dich'
     },
     imprintPage: {
       title: 'Impressum',
@@ -559,11 +596,48 @@ const translations = {
     },
     updatesPage: {
       heroTitle: 'Updates',
-      heroSubtitle: 'Stay up to date with new features and improvements.'
+      heroSubtitle: 'Stay up to date with new features and improvements.',
+      article1Title: 'Stronger stability & improved performance',
+      article1Body: 'We have further optimised the technical foundation of our platform to give you an even more stable and faster experience. Numerous bug fixes and backend refinements ensure everything runs more smoothly — especially under heavy use or with large amounts of data.',
+      article2Title: 'Calendar: Offline events now available',
+      article2Body: 'You can now create and manage offline events in your calendar. This way you keep track of in-person events as well and can plan and share them with your community as usual.',
+      article3Title: 'User-to-user calls directly on the platform',
+      article3Body: 'We are pleased to introduce a new communication feature: users can now call each other directly — without external tools, right on the platform.',
+      article4Title: 'More flexibility in the media library',
+      article4Body: 'The media library now supports a wider range of file formats. You can upload and access even more content — including formats that were not previously supported, so you can use your resources more flexibly.'
     },
     preisePage: {
       heroTitle: 'Pricing',
-      heroSubtitle: 'Choose the right licence package for your community'
+      heroSubtitle: 'Choose the right licence package for your community',
+      popularBadge: 'Popular',
+      perMonth: '/month',
+      starterTitle: 'Starter',
+      starterF1: 'Up to 100 members',
+      starterF2: 'All core features',
+      starterF3: 'Basic support',
+      starterF4: 'Content sales',
+      proTitle: 'Professional',
+      proF1: 'Up to 1,000 members',
+      proF2: 'All features',
+      proF3: 'Advanced customisation',
+      proF4: 'Priority support',
+      proF5: 'Advanced analytics',
+      businessTitle: 'Business',
+      businessF1: 'Unlimited members',
+      businessF2: 'Everything in Professional',
+      businessF3: 'Professional video conferencing',
+      businessF4: 'Integrations',
+      businessF5: 'Fast support',
+      enterpriseTitle: 'Enterprise',
+      enterpriseF1: 'Unlimited members',
+      enterpriseF2: 'White-label solution',
+      enterpriseF3: 'Dedicated support',
+      enterpriseF4: 'Custom integrations',
+      enterpriseF5: 'SLA guarantee',
+      contactBtn: 'Contact us',
+      faqHeading: 'Frequently asked questions about pricing',
+      ctaTitle: 'Still have questions?',
+      ctaSubtitle: 'Talk to our sales team about the right package for you'
     },
     imprintPage: {
       title: 'Imprint',
@@ -1094,11 +1168,61 @@ function applyTranslations(lang) {
   if (t.updatesPage) {
     setText('updates-hero-title', t.updatesPage.heroTitle);
     setText('updates-hero-subtitle', t.updatesPage.heroSubtitle);
+    for (let i = 1; i <= 4; i++) {
+      setText('updates-article-' + i + '-title', t.updatesPage['article' + i + 'Title']);
+      setText('updates-article-' + i + '-body', t.updatesPage['article' + i + 'Body']);
+    }
   }
   if (t.preisePage) {
     setText('preise-hero-title', t.preisePage.heroTitle);
     setText('preise-hero-subtitle', t.preisePage.heroSubtitle);
+    setText('preise-popular', t.preisePage.popularBadge);
+    setText('preise-per-month-1', t.preisePage.perMonth);
+    setText('preise-per-month-2', t.preisePage.perMonth);
+    setText('preise-per-month-3', t.preisePage.perMonth);
+    setText('preise-starter-title', t.preisePage.starterTitle);
+    setText('preise-starter-f1', t.preisePage.starterF1);
+    setText('preise-starter-f2', t.preisePage.starterF2);
+    setText('preise-starter-f3', t.preisePage.starterF3);
+    setText('preise-starter-f4', t.preisePage.starterF4);
+    setText('preise-pro-title', t.preisePage.proTitle);
+    setText('preise-pro-f1', t.preisePage.proF1);
+    setText('preise-pro-f2', t.preisePage.proF2);
+    setText('preise-pro-f3', t.preisePage.proF3);
+    setText('preise-pro-f4', t.preisePage.proF4);
+    setText('preise-pro-f5', t.preisePage.proF5);
+    setText('preise-business-title', t.preisePage.businessTitle);
+    setText('preise-business-f1', t.preisePage.businessF1);
+    setText('preise-business-f2', t.preisePage.businessF2);
+    setText('preise-business-f3', t.preisePage.businessF3);
+    setText('preise-business-f4', t.preisePage.businessF4);
+    setText('preise-business-f5', t.preisePage.businessF5);
+    setText('preise-enterprise-title', t.preisePage.enterpriseTitle);
+    setText('preise-enterprise-f1', t.preisePage.enterpriseF1);
+    setText('preise-enterprise-f2', t.preisePage.enterpriseF2);
+    setText('preise-enterprise-f3', t.preisePage.enterpriseF3);
+    setText('preise-enterprise-f4', t.preisePage.enterpriseF4);
+    setText('preise-enterprise-f5', t.preisePage.enterpriseF5);
+    setText('preise-contact-btn', t.preisePage.contactBtn);
+    setText('preise-faq-heading', t.preisePage.faqHeading);
+    setText('preise-cta-title', t.preisePage.ctaTitle);
+    setText('preise-cta-subtitle', t.preisePage.ctaSubtitle);
   }
+  // All "Jetzt starten" links (pricing cards + CTA) – preserve SVG
+  document.querySelectorAll('.js-cta-start').forEach(function(el) {
+    const text = (t.cta && t.cta.start) ? t.cta.start : '';
+    const svg = el.querySelector('svg');
+    if (svg && text) {
+      const textNodes = Array.from(el.childNodes).filter(function(n) { return n.nodeType === Node.TEXT_NODE; });
+      if (textNodes.length > 0) {
+        textNodes[0].textContent = text;
+      } else {
+        el.insertBefore(document.createTextNode(text), svg);
+      }
+    } else if (text) {
+      el.textContent = text;
+    }
+  });
   if (t.imprintPage) {
     setText('legal-imprint-title', t.imprintPage.title);
     setText('legal-imprint-h1', t.imprintPage.title);
