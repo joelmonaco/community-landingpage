@@ -281,31 +281,41 @@ const translations = {
       heroTitle: 'Preise',
       heroSubtitle: 'Wähle das passende Lizenzpaket für deine Community',
       popularBadge: 'Beliebt',
-      perMonth: '/Monat',
+      featuresLabel: 'Features:',
       starterTitle: 'Starter',
-      starterF1: 'Bis zu 100 Mitglieder',
-      starterF2: 'Alle Kernfeatures',
-      starterF3: 'Basis-Support',
-      starterF4: 'Content-Verkauf',
+      starterPrice: '99 €/Monat',
+      starterSpecs: '3 Admins / 5 Moderatoren / 250 GB Speicher',
+      starterFee: '+ 5% Plattformgebühren*',
+      starterF1: 'Profile, Channels, Posts & Interaktionen',
+      starterF2: 'Direkt-/Gruppen-Chat, Event-Kalender',
+      starterF3: 'Zahlungen',
+      starterF4: 'E-Mail-Support + DSGVO-konform',
       proTitle: 'Professional',
-      proF1: 'Bis zu 1.000 Mitglieder',
-      proF2: 'Alle Features',
-      proF3: 'Erweiterte Personalisierung',
-      proF4: 'Priority Support',
-      proF5: 'Erweiterte Analytics',
+      proPrice: '199 €/Monat',
+      proSpecs: '5 Admins / 10 Moderatoren / 500 GB Speicher',
+      proFee: '+ 3% Plattformgebühren*',
+      proF1: 'Alles aus Starter + Gamification Basics',
+      proF2: 'Suche, VideoCalls, Event-Ticketing',
+      proF3: 'größere Live Rooms',
+      proF4: 'Erweiterter Support',
       businessTitle: 'Business',
-      businessF1: 'Unbegrenzt viele Mitglieder',
-      businessF2: 'Alles aus Professional',
-      businessF3: 'Professionelles Videoconferencing',
-      businessF4: 'Integrationen',
-      businessF5: 'Schneller Support',
+      businessPrice: '399 €/Monat',
+      businessSpecs: '10 Admins / 20 Moderatoren / 1 TB Speicher',
+      businessFee: '+ 1,5% Plattformgebühren*',
+      businessF1: 'Alles aus Professional + erweiterte Live Rooms bis zu Summits',
+      businessF2: 'Erweiterte Analytics & Gamification Professional',
+      businessF3: 'Verlinkte Ressourcen + Umfragen',
+      businessF4: 'Telefon-Support',
       enterpriseTitle: 'Enterprise',
-      enterpriseF1: 'Unbegrenzte Mitglieder',
-      enterpriseF2: 'White-Label Lösung',
-      enterpriseF3: 'Dedicated Support',
-      enterpriseF4: 'Custom Integrationen',
-      enterpriseF5: 'SLA Garantie',
+      enterprisePrice: 'Custom',
+      enterpriseF1: 'Individuelle White Label Lösung',
+      enterpriseF2: 'Individuelle Gebühren',
+      enterpriseF3: 'Customer Success Manager',
+      enterpriseF4: 'Dedicated Support',
+      enterpriseF5: 'Custom Integrationen',
       contactBtn: 'Kontakt aufnehmen',
+      disclaimer: 'Alle Preise netto zzgl. MwSt. 14 Tage kostenlos testen.',
+      feeFootnote: '*Für alle Zahlungen die über glymmer abgewickelt werden (z. B. für Mitgliedschaften, Buchungen oder Event-Tickets) fallen Plattformgebühren an. Zusätzlich erhebt unser Partner für die Zahlungsabwicklung Gebühren, die je nach gewählter Zahlungsmethode variieren. Einen detaillierten Überblick über diese Gebühren findest du unter <a href="https://www.mollie.com/de/pricing" target="_blank" rel="noopener noreferrer" class="underline hover:text-secondary">https://www.mollie.com/de/pricing</a>',
       faqHeading: 'Häufige Fragen zu den Preisen',
       ctaTitle: 'Noch Fragen?',
       ctaSubtitle: 'Sprich mit unserem Sales-Team über das passende Paket für dich'
@@ -610,31 +620,41 @@ const translations = {
       heroTitle: 'Pricing',
       heroSubtitle: 'Choose the right licence package for your community',
       popularBadge: 'Popular',
-      perMonth: '/month',
+      featuresLabel: 'Features:',
       starterTitle: 'Starter',
-      starterF1: 'Up to 100 members',
-      starterF2: 'All core features',
-      starterF3: 'Basic support',
-      starterF4: 'Content sales',
+      starterPrice: '99 €/month',
+      starterSpecs: '3 Admins / 5 Moderators / 250 GB storage',
+      starterFee: '+ 5% platform fees*',
+      starterF1: 'Profiles, Channels, Posts & interactions',
+      starterF2: 'Direct/group chat, event calendar',
+      starterF3: 'Payments',
+      starterF4: 'Email support + GDPR compliant',
       proTitle: 'Professional',
-      proF1: 'Up to 1,000 members',
-      proF2: 'All features',
-      proF3: 'Advanced customisation',
-      proF4: 'Priority support',
-      proF5: 'Advanced analytics',
+      proPrice: '199 €/month',
+      proSpecs: '5 Admins / 10 Moderators / 500 GB storage',
+      proFee: '+ 3% platform fees*',
+      proF1: 'Everything in Starter + Gamification basics',
+      proF2: 'Search, video calls, event ticketing',
+      proF3: 'Larger live rooms',
+      proF4: 'Extended support',
       businessTitle: 'Business',
-      businessF1: 'Unlimited members',
-      businessF2: 'Everything in Professional',
-      businessF3: 'Professional video conferencing',
-      businessF4: 'Integrations',
-      businessF5: 'Fast support',
+      businessPrice: '399 €/month',
+      businessSpecs: '10 Admins / 20 Moderators / 1 TB storage',
+      businessFee: '+ 1.5% platform fees*',
+      businessF1: 'Everything in Professional + extended live rooms up to summits',
+      businessF2: 'Advanced analytics & Gamification Professional',
+      businessF3: 'Linked resources + surveys',
+      businessF4: 'Phone support',
       enterpriseTitle: 'Enterprise',
-      enterpriseF1: 'Unlimited members',
-      enterpriseF2: 'White-label solution',
-      enterpriseF3: 'Dedicated support',
-      enterpriseF4: 'Custom integrations',
-      enterpriseF5: 'SLA guarantee',
+      enterprisePrice: 'Custom',
+      enterpriseF1: 'Individual white-label solution',
+      enterpriseF2: 'Individual fees',
+      enterpriseF3: 'Customer Success Manager',
+      enterpriseF4: 'Dedicated support',
+      enterpriseF5: 'Custom integrations',
       contactBtn: 'Contact us',
+      disclaimer: 'All prices net plus VAT. 14-day free trial.',
+      feeFootnote: '*Platform fees apply to all payments processed via glymmer (e.g. for memberships, bookings or event tickets). Our payment partner also charges fees for payment processing, which vary depending on the payment method. You can find a detailed overview at <a href="https://www.mollie.com/en/pricing" target="_blank" rel="noopener noreferrer" class="underline hover:text-secondary">https://www.mollie.com/en/pricing</a>',
       faqHeading: 'Frequently asked questions about pricing',
       ctaTitle: 'Still have questions?',
       ctaSubtitle: 'Talk to our sales team about the right package for you'
@@ -1177,36 +1197,47 @@ function applyTranslations(lang) {
     setText('preise-hero-title', t.preisePage.heroTitle);
     setText('preise-hero-subtitle', t.preisePage.heroSubtitle);
     setText('preise-popular', t.preisePage.popularBadge);
-    setText('preise-per-month-1', t.preisePage.perMonth);
-    setText('preise-per-month-2', t.preisePage.perMonth);
-    setText('preise-per-month-3', t.preisePage.perMonth);
+    setText('preise-features-label', t.preisePage.featuresLabel);
+    setText('preise-features-label-pro', t.preisePage.featuresLabel);
+    setText('preise-features-label-business', t.preisePage.featuresLabel);
     setText('preise-starter-title', t.preisePage.starterTitle);
+    setText('preise-starter-price', t.preisePage.starterPrice);
+    setText('preise-starter-specs', t.preisePage.starterSpecs);
+    setText('preise-starter-fee', t.preisePage.starterFee);
     setText('preise-starter-f1', t.preisePage.starterF1);
     setText('preise-starter-f2', t.preisePage.starterF2);
     setText('preise-starter-f3', t.preisePage.starterF3);
     setText('preise-starter-f4', t.preisePage.starterF4);
     setText('preise-pro-title', t.preisePage.proTitle);
+    setText('preise-pro-price', t.preisePage.proPrice);
+    setText('preise-pro-specs', t.preisePage.proSpecs);
+    setText('preise-pro-fee', t.preisePage.proFee);
     setText('preise-pro-f1', t.preisePage.proF1);
     setText('preise-pro-f2', t.preisePage.proF2);
     setText('preise-pro-f3', t.preisePage.proF3);
     setText('preise-pro-f4', t.preisePage.proF4);
-    setText('preise-pro-f5', t.preisePage.proF5);
     setText('preise-business-title', t.preisePage.businessTitle);
+    setText('preise-business-price', t.preisePage.businessPrice);
+    setText('preise-business-specs', t.preisePage.businessSpecs);
+    setText('preise-business-fee', t.preisePage.businessFee);
     setText('preise-business-f1', t.preisePage.businessF1);
     setText('preise-business-f2', t.preisePage.businessF2);
     setText('preise-business-f3', t.preisePage.businessF3);
     setText('preise-business-f4', t.preisePage.businessF4);
-    setText('preise-business-f5', t.preisePage.businessF5);
     setText('preise-enterprise-title', t.preisePage.enterpriseTitle);
+    setText('preise-enterprise-price', t.preisePage.enterprisePrice);
     setText('preise-enterprise-f1', t.preisePage.enterpriseF1);
     setText('preise-enterprise-f2', t.preisePage.enterpriseF2);
     setText('preise-enterprise-f3', t.preisePage.enterpriseF3);
     setText('preise-enterprise-f4', t.preisePage.enterpriseF4);
     setText('preise-enterprise-f5', t.preisePage.enterpriseF5);
     setText('preise-contact-btn', t.preisePage.contactBtn);
+    setText('preise-disclaimer', t.preisePage.disclaimer);
     setText('preise-faq-heading', t.preisePage.faqHeading);
     setText('preise-cta-title', t.preisePage.ctaTitle);
     setText('preise-cta-subtitle', t.preisePage.ctaSubtitle);
+    const feeFootnoteEl = document.getElementById('preise-fee-footnote');
+    if (feeFootnoteEl && t.preisePage.feeFootnote) feeFootnoteEl.innerHTML = t.preisePage.feeFootnote;
   }
   // All "Jetzt starten" links (pricing cards + CTA) – preserve SVG
   document.querySelectorAll('.js-cta-start').forEach(function(el) {
