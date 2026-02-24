@@ -23,8 +23,8 @@ const mimeTypes = {
   '.txt': 'text/plain'
 };
 
-function sendTerminEmail(data) {
-  const transporter = nodemailer.createTransport({
+function getTransporter() {
+  return nodemailer.createTransport({
     host: process.env.SMTP_HOST || 'localhost',
     port: parseInt(process.env.SMTP_PORT || '587', 10),
     secure: process.env.SMTP_SECURE === 'true',
@@ -32,7 +32,10 @@ function sendTerminEmail(data) {
       ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
       : undefined
   });
+}
 
+function sendTerminEmail(data) {
+  const transporter = getTransporter();
   const text = [
     'Neue Rückruf-Anfrage (Termin vereinbaren)',
     '',
@@ -47,6 +50,34 @@ function sendTerminEmail(data) {
     from: process.env.SMTP_FROM || process.env.SMTP_USER || 'noreply@glymmer.io',
     to: TERMIN_EMAIL_TO,
     subject: 'Rückruf-Anfrage: ' + (data.vorname || '') + ' ' + (data.nachname || ''),
+    text: text
+  };
+
+  return transporter.sendMail(mailOptions);
+}
+
+function sendContactEmail(data) {
+  const transporter = getTransporter();
+  const source = data.source === 'enterprise' ? 'Enterprise-Anfrage (Kontakt aufnehmen)' : 'Kontaktanfrage';
+  const nameLine = (data.vorname || data.nachname)
+    ? 'Vorname: ' + (data.vorname || '') + '\nNachname: ' + (data.nachname || '')
+    : (data.name ? 'Name: ' + data.name : '');
+  const text = [
+    'Neue ' + source,
+    '',
+    nameLine,
+    'E-Mail: ' + (data.email || ''),
+    data.telefon ? 'Telefon: ' + data.telefon : '',
+    data.message ? 'Nachricht: ' + data.message : ''
+  ].filter(Boolean).join('\n');
+
+  const subjectName = (data.vorname && data.nachname)
+    ? (data.vorname + ' ' + data.nachname)
+    : (data.name || data.email || 'Kontakt');
+  const mailOptions = {
+    from: process.env.SMTP_FROM || process.env.SMTP_USER || 'noreply@glymmer.io',
+    to: TERMIN_EMAIL_TO,
+    subject: source + ': ' + subjectName,
     text: text
   };
 
@@ -75,7 +106,42 @@ function serveFile(req, res, filePath, contentType) {
 
 const server = http.createServer((req, res) => {
   const url = decodeURIComponent(req.url);
-  const hasApiTermin = url.split('?')[0] === '/api/termin';
+  const pathname = url.split('?')[0];
+  const hasApiTermin = pathname === '/api/termin';
+  const hasApiContact = pathname === '/api/contact';
+
+  if (hasApiContact && req.method === 'POST') {
+    let body = '';
+    req.on('data', (chunk) => (body += chunk));
+    req.on('end', () => {
+      let data;
+      try {
+        data = JSON.parse(body || '{}');
+      } catch (e) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ message: 'Ungültige Anfrage.' }));
+        return;
+      }
+      const hasSmtp = process.env.SMTP_HOST || process.env.SMTP_USER;
+      if (hasSmtp) {
+        sendContactEmail(data)
+          .then(() => {
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ success: true }));
+          })
+          .catch((err) => {
+            console.error('Kontakt E-Mail Fehler:', err);
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ message: 'E-Mail konnte nicht gesendet werden.' }));
+          });
+      } else {
+        console.log('Kontakt-Anfrage (SMTP nicht konfiguriert):', data);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true }));
+      }
+    });
+    return;
+  }
 
   if (hasApiTermin && req.method === 'POST') {
     let body = '';

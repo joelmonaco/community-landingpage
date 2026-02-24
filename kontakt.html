@@ -98,28 +98,29 @@
       
       <div class="bg-white/5 p-8 rounded-full border border-white/10 mb-12">
         <h2 class="text-2xl font-semibold mb-6">Kontaktiere uns</h2>
-        <div class="space-y-4 text-left max-w-md mx-auto">
+        <form id="kontakt-form" class="space-y-4 text-left max-w-md mx-auto">
           <div>
-            <label class="block text-sm font-medium mb-2">Name</label>
-            <input type="text" class="w-full px-4 py-3 bg-black border border-white/20 rounded-full text-white focus:outline-none focus:border-white/40" placeholder="Dein Name">
+            <label class="block text-sm font-medium mb-2" for="kontakt-name">Name</label>
+            <input type="text" id="kontakt-name" name="name" class="w-full px-4 py-3 bg-black border border-white/20 rounded-full text-white focus:outline-none focus:border-white/40" placeholder="Dein Name" required>
           </div>
           <div>
-            <label class="block text-sm font-medium mb-2">E-Mail</label>
-            <input type="email" class="w-full px-4 py-3 bg-black border border-white/20 rounded-full text-white focus:outline-none focus:border-white/40" placeholder="deine@email.com">
+            <label class="block text-sm font-medium mb-2" for="kontakt-email">E-Mail</label>
+            <input type="email" id="kontakt-email" name="email" class="w-full px-4 py-3 bg-black border border-white/20 rounded-full text-white focus:outline-none focus:border-white/40" placeholder="deine@email.com" required>
           </div>
           <div>
-            <label class="block text-sm font-medium mb-2">Nachricht</label>
-            <textarea rows="4" class="w-full px-4 py-3 bg-black border border-white/20 rounded-full text-white focus:outline-none focus:border-white/40" placeholder="Wie können wir dir helfen?"></textarea>
+            <label class="block text-sm font-medium mb-2" for="kontakt-message">Nachricht</label>
+            <textarea rows="4" id="kontakt-message" name="message" class="w-full px-4 py-3 bg-black border border-white/20 rounded-full text-white focus:outline-none focus:border-white/40" placeholder="Wie können wir dir helfen?" required></textarea>
           </div>
-          <button class="w-full px-6 py-3 bg-white text-black rounded-full font-semibold hover:bg-white/90 transition">
+          <p id="kontakt-form-error" class="text-sm text-red-400 hidden"></p>
+          <button type="submit" id="kontakt-submit" class="w-full px-6 py-3 bg-white text-black rounded-full font-semibold hover:bg-white/90 transition">
             Nachricht senden
           </button>
-        </div>
+        </form>
       </div>
 
       <div class="text-white/70">
         <p class="mb-2">Oder kontaktiere uns direkt:</p>
-        <p class="text-lg">E-Mail: <a href="mailto:sales@teech.com" class="text-white hover:underline">sales@teech.com</a></p>
+        <p class="text-lg">E-Mail: <a href="mailto:hi@glymmer.io" class="text-white hover:underline">hi@glymmer.io</a></p>
         <p class="text-lg">Telefon: <a href="tel:+49123456789" class="text-white hover:underline">+49 123 456 789</a></p>
       </div>
     </div>
@@ -220,6 +221,48 @@
   <script src="./language.js"></script>
   <script src="./cursor-follower.js"></script>
   <script src="./termin-modal.js"></script>
+  <script>
+    (function() {
+      var form = document.getElementById('kontakt-form');
+      if (!form) return;
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = (document.getElementById('kontakt-name') || {}).value || '';
+        var email = (document.getElementById('kontakt-email') || {}).value || '';
+        var message = (document.getElementById('kontakt-message') || {}).value || '';
+        var errEl = document.getElementById('kontakt-form-error');
+        var btn = document.getElementById('kontakt-submit');
+        if (!name.trim() || !email.trim() || !message.trim()) {
+          if (errEl) { errEl.textContent = 'Bitte alle Felder ausfüllen.'; errEl.classList.remove('hidden'); }
+          return;
+        }
+        if (errEl) { errEl.classList.add('hidden'); errEl.textContent = ''; }
+        if (btn) { btn.disabled = true; btn.textContent = 'Wird gesendet…'; }
+        fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: name.trim(), email: email.trim(), message: message.trim(), source: 'kontakt' })
+        })
+          .then(function(res) {
+            if (res.ok) {
+              form.reset();
+              if (btn) { btn.textContent = 'Nachricht gesendet – wir melden uns!'; btn.classList.add('opacity-80'); }
+            } else {
+              return res.json().then(function(data) {
+                throw new Error(data.message || 'Fehler beim Senden.');
+              }, function() { throw new Error('Fehler beim Senden.'); });
+            }
+          })
+          .catch(function(err) {
+            if (errEl) {
+              errEl.textContent = err.message || 'Fehler beim Senden. Bitte später erneut versuchen.';
+              errEl.classList.remove('hidden');
+            }
+            if (btn) { btn.disabled = false; btn.textContent = 'Nachricht senden'; }
+          });
+      });
+    })();
+  </script>
 </body>
 </html>
 

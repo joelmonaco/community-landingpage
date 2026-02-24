@@ -1090,6 +1090,7 @@
           var telefon = (document.getElementById('custom-telefon') || {}).value || '';
           var datenschutz = (document.getElementById('custom-datenschutz') || {}).checked;
           var errEl = document.getElementById('custom-form-error');
+          var submitBtn = customForm.querySelector('button[type=submit]');
 
           if (!vorname.trim()) { if (errEl) { errEl.textContent = 'Bitte Vorname angeben.'; errEl.classList.remove('hidden'); } return; }
           if (!nachname.trim()) { if (errEl) { errEl.textContent = 'Bitte Nachname angeben.'; errEl.classList.remove('hidden'); } return; }
@@ -1097,9 +1098,39 @@
           if (!datenschutz) { if (errEl) { errEl.textContent = 'Bitte die Datenschutzbestimmungen akzeptieren.'; errEl.classList.remove('hidden'); } return; }
           if (errEl) { errEl.classList.add('hidden'); errEl.textContent = ''; }
 
-          var params = new URLSearchParams({ custom: '1', vorname: vorname.trim(), nachname: nachname.trim(), email: email.trim() });
-          if (telefon.trim()) params.set('telefon', telefon.trim());
-          window.location.href = '/kontakt.html#sales?' + params.toString();
+          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Wird gesendet…'; }
+          fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              vorname: vorname.trim(),
+              nachname: nachname.trim(),
+              email: email.trim(),
+              telefon: telefon.trim() || undefined,
+              source: 'enterprise'
+            })
+          })
+            .then(function(res) {
+              if (res.ok) {
+                customForm.reset();
+                if (errEl) { errEl.classList.add('hidden'); errEl.textContent = ''; }
+                alert('Vielen Dank! Wir melden uns in Kürze bei dir.');
+                closeCustomModal();
+              } else {
+                return res.json().then(function(data) {
+                  throw new Error(data.message || 'Fehler beim Senden.');
+                }, function() { throw new Error('Fehler beim Senden.'); });
+              }
+            })
+            .catch(function(err) {
+              if (errEl) {
+                errEl.textContent = err.message || 'Fehler beim Senden. Bitte später erneut versuchen.';
+                errEl.classList.remove('hidden');
+              }
+            })
+            .finally(function() {
+              if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Absenden'; }
+            });
         });
       }
     })();
