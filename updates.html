@@ -161,6 +161,12 @@
   <!-- Header (wie Startseite) -->
   <header id="main-header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm transition-all duration-300">
     <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
+      <!-- Mobile: Logo oben in eigener Zeile -->
+      <div class="flex justify-center pt-2 pb-1 md:hidden">
+        <a href="/" class="flex items-center">
+          <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
+        </a>
+      </div>
       <div class="flex items-center justify-between relative">
         <div class="flex items-center space-x-4">
           <div class="relative">
@@ -214,7 +220,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
                   Updates
                 </a>
-                <a href="/#faq" id="nav-faq" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">
+                <a href="#" id="nav-faq" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                   FAQ
                 </a>
@@ -226,7 +232,7 @@
             <span style="transition: opacity 0.2s ease;">EN</span>
           </button>
         </div>
-        <a href="/" class="absolute left-1/2 transform -translate-x-1/2 flex items-center">
+        <a href="/" class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center">
           <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
         </a>
         <div class="flex items-center space-x-4 ml-auto">
@@ -282,7 +288,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
               Updates
             </a>
-            <a href="/#faq" id="nav-faq-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
+            <a href="#" id="nav-faq-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
               FAQ
             </a>
@@ -559,6 +565,7 @@
       }
     });
   </script>
+  <script src="./faq-modal.js"></script>
   <script src="./termin-modal.js"></script>
 </body>
 </html>

@@ -357,6 +357,12 @@
   <!-- Header -->
   <header id="main-header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm transition-all duration-300">
     <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
+      <!-- Mobile: Logo oben in eigener Zeile -->
+      <div class="flex justify-center pt-2 pb-1 md:hidden">
+        <a href="/" class="flex items-center">
+          <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
+        </a>
+      </div>
       <div class="flex items-center justify-between relative">
         <!-- Links: Burger Menu + Language Switch -->
         <div class="flex items-center space-x-4">
@@ -467,8 +473,8 @@
           </button>
         </div>
         
-        <!-- Mitte: Logo -->
-        <a href="/" class="absolute left-1/2 transform -translate-x-1/2 flex items-center">
+        <!-- Mitte: Logo (nur Desktop, auf Mobile in eigener Zeile oben) -->
+        <a href="/" class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center">
           <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
         </a>
         
@@ -2440,7 +2446,7 @@
       </button>
       <div class="max-w-7xl mx-auto text-left modal-content w-full">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 leading-normal text-white" style="font-family: 'Cal Sans', sans-serif;">
-          Frequently Asked Questions
+          Häufige Fragen
         </h2>
         <div class="faq-accordion-list">
           <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">

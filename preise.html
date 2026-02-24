@@ -140,6 +140,12 @@
   <!-- Header (exakt wie Startseite index.html) -->
   <header id="main-header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm transition-all duration-300">
     <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
+      <!-- Mobile: Logo oben in eigener Zeile -->
+      <div class="flex justify-center pt-2 pb-1 md:hidden">
+        <a href="/" class="flex items-center">
+          <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
+        </a>
+      </div>
       <div class="flex items-center justify-between relative">
         <!-- Links: Burger Menu + Language Switch -->
         <div class="flex items-center space-x-4">
@@ -250,8 +256,8 @@
           </button>
         </div>
         
-        <!-- Mitte: Logo -->
-        <a href="/" class="absolute left-1/2 transform -translate-x-1/2 flex items-center">
+        <!-- Mitte: Logo (nur Desktop, auf Mobile in eigener Zeile oben) -->
+        <a href="/" class="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center">
           <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
         </a>
         
@@ -573,7 +579,7 @@
       </button>
       <div class="max-w-7xl mx-auto text-left modal-content w-full">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 leading-normal text-white" style="font-family: 'Cal Sans', sans-serif;">
-          Frequently Asked Questions
+          Häufige Fragen
         </h2>
         <div class="faq-accordion-list">
           <details class="faq-accordion-item rounded-2xl overflow-hidden text-black">
@@ -908,6 +914,96 @@
       });
       faqModal.addEventListener('click', function(e) {
         if (e.target === faqModal) closeFaqModal();
+      });
+    })();
+  </script>
+  <script>
+    // FAQ Accordion: Smooth Ausklapp-Animation (wie auf Startseite)
+    (function() {
+      var faqItems = document.querySelectorAll('.faq-accordion-item');
+      if (faqItems.length === 0) return;
+      var TRANSITION_MS = 500;
+      var FLIP_DURATION_MS = 420;
+      var FLIP_EASING = 'cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      function getRects(elements) {
+        return Array.from(elements).map(function(el) { return el.getBoundingClientRect(); });
+      }
+      function applyFlipAnimation(items, rectsBefore, rectsAfter, excludeItem, onEnd) {
+        var toClean = [];
+        items.forEach(function(el, i) {
+          if (el === excludeItem) return;
+          var before = rectsBefore[i];
+          var after = rectsAfter[i];
+          var dx = before.left - after.left;
+          var dy = before.top - after.top;
+          if (Math.abs(dx) < 0.1 && Math.abs(dy) < 0.1) return;
+          el.style.willChange = 'transform';
+          el.style.backfaceVisibility = 'hidden';
+          el.style.transition = 'transform ' + (FLIP_DURATION_MS / 1000) + 's ' + FLIP_EASING;
+          el.style.transform = 'translate3d(' + dx + 'px, ' + dy + 'px, 0)';
+          toClean.push(el);
+        });
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            toClean.forEach(function(el) { el.style.transform = 'translate3d(0, 0, 0)'; });
+            setTimeout(function() {
+              toClean.forEach(function(el) {
+                el.style.willChange = '';
+                el.style.backfaceVisibility = '';
+                el.style.transition = '';
+                el.style.transform = '';
+              });
+              if (onEnd) onEnd();
+            }, FLIP_DURATION_MS + 30);
+          });
+        });
+      }
+      function closeFaqItem(item, withFlip, done) {
+        var wrapper = item.querySelector('.faq-accordion-answer-wrapper');
+        var answerInner = item.querySelector('.faq-accordion-answer-inner');
+        if (!wrapper || !answerInner || !item.hasAttribute('open')) return;
+        var rectsBefore = getRects(faqItems);
+        wrapper.style.maxHeight = 'none';
+        var measuredHeight = answerInner.scrollHeight;
+        wrapper.style.maxHeight = measuredHeight + 'px';
+        void wrapper.offsetHeight;
+        requestAnimationFrame(function() { wrapper.style.maxHeight = '0px'; });
+        setTimeout(function() {
+          item.removeAttribute('open');
+          wrapper.style.maxHeight = '0px';
+          if (withFlip) {
+            void item.offsetHeight;
+            var rectsAfter = getRects(faqItems);
+            applyFlipAnimation(faqItems, rectsBefore, rectsAfter, null, done);
+          } else if (done) done();
+        }, TRANSITION_MS + 20);
+      }
+      faqItems.forEach(function(item) {
+        var summary = item.querySelector('summary');
+        var wrapper = item.querySelector('.faq-accordion-answer-wrapper');
+        var answerInner = item.querySelector('.faq-accordion-answer-inner');
+        if (!summary || !wrapper || !answerInner) return;
+        wrapper.style.maxHeight = '0px';
+        summary.addEventListener('click', function(e) {
+          e.preventDefault();
+          var isOpen = item.hasAttribute('open');
+          if (isOpen) {
+            closeFaqItem(item, true);
+          } else {
+            faqItems.forEach(function(otherItem) {
+              if (otherItem !== item && otherItem.hasAttribute('open')) {
+                var ow = otherItem.querySelector('.faq-accordion-answer-wrapper');
+                otherItem.removeAttribute('open');
+                if (ow) ow.style.maxHeight = '0px';
+              }
+            });
+            void item.offsetHeight;
+            item.setAttribute('open', '');
+            wrapper.style.maxHeight = 'none';
+            var targetHeight = answerInner.scrollHeight;
+            wrapper.style.maxHeight = targetHeight + 'px';
+          }
+        });
       });
     })();
   </script>
