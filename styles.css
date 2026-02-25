@@ -8,6 +8,47 @@
   will-change: transform;
 }
 
+@media (max-width: 768px) {
+  /* App-Wireframes mobil: Bilder nebeneinander, Karussell läuft beim Scrollen */
+  #app-wireframes-section #app-slider-wrapper {
+    overflow-x: hidden;
+  }
+  #app-wireframes-section #app-slider-container {
+    overflow-x: hidden;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  #app-wireframes-section #app-slider {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: fit-content;
+    min-width: 100%;
+  }
+  #app-wireframes-section #app-slider .wireframe-container {
+    flex-shrink: 0;
+    width: 72vw !important;
+    min-width: 72vw;
+    margin-right: -4.5rem !important;
+    max-width: none;
+  }
+  #app-wireframes-section #app-slider .wireframe-container:last-child {
+    margin-right: 0 !important;
+  }
+  #app-wireframes-section #app-slider .wireframe-image {
+    max-height: min(70vh, 520px) !important;
+  }
+  /* Dauerhaft laufendes Karussell (nur mobil) */
+  #app-wireframes-section #app-slider.app-slider-mobile-loop {
+    animation: app-carousel-mobile 40s linear infinite;
+  }
+}
+
+@keyframes app-carousel-mobile {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* Main Colors - Gelb und Lila */
 :root {
   --primary-yellow: #FFFC04;

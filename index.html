@@ -1192,7 +1192,7 @@
   </section>
 
   <!-- Personalisiere Deine Plattform Section -->
-  <section id="personalize" class="pt-28 pb-20 px-6 lg:px-8 bg-white">
+  <section id="personalize" class="pt-28 pb-10 px-6 lg:px-8 bg-white">
     <div class="max-w-[81rem] mx-auto">
       <div class="text-center mb-16 animate-on-scroll pt-12">
         <h2 id="personalize-title" class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Cal Sans', sans-serif;">
@@ -1583,7 +1583,7 @@
   </section>
 
   <!-- App Wireframes Section -->
-  <section id="app-wireframes-section" class="pt-20 bg-white overflow-x-visible relative">
+  <section id="app-wireframes-section" class="pt-10 bg-white overflow-x-visible relative">
     <!-- Header mit App Icon, Headline und Untertitel -->
     <div class="max-w-4xl mx-auto text-center mb-16 px-6">
       <div class="flex justify-center mb-6 animate-on-scroll">
@@ -1882,7 +1882,34 @@
       
       if (!appSection || !sliderWrapper || !slider) return;
       
+      var isMobile = false;
+      function checkMobile() {
+        var nowMobile = window.matchMedia('(max-width: 768px)').matches;
+        if (nowMobile && !slider.classList.contains('app-slider-mobile-loop')) {
+          var containers = slider.querySelectorAll('.wireframe-container');
+          if (containers.length === 6) {
+            containers.forEach(function(el) { slider.appendChild(el.cloneNode(true)); });
+            slider.classList.add('app-slider-mobile-loop');
+          }
+        }
+        if (!nowMobile && slider.classList.contains('app-slider-mobile-loop')) {
+          var all = slider.querySelectorAll('.wireframe-container');
+          for (var i = 6; i < all.length; i++) all[i].remove();
+          slider.classList.remove('app-slider-mobile-loop');
+        }
+        isMobile = nowMobile;
+      }
+      checkMobile();
+      window.addEventListener('resize', function() {
+        checkMobile();
+        updateSlider();
+      });
+      
       function updateSlider() {
+        if (isMobile) {
+          slider.style.transform = '';
+          return;
+        }
         const sectionRect = appSection.getBoundingClientRect();
         const wrapperRect = sliderWrapper.getBoundingClientRect();
         const sectionTop = sectionRect.top;
@@ -1926,7 +1953,10 @@
       }
       
       window.addEventListener('scroll', onScroll, { passive: true });
-      window.addEventListener('resize', updateSlider, { passive: true });
+      window.addEventListener('resize', function() {
+        checkMobile();
+        updateSlider();
+      });
       updateSlider(); // Initial update
     })();
   </script>
