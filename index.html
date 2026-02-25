@@ -1205,6 +1205,7 @@
       
       <!-- Personalization Controls -->
       <div class="platform-personalize-controls mb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 animate-on-scroll delay-100">
+        <div class="platform-personalize-farben-row">
         <div id="platform-control-button-farbe" class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-start">
           <label id="platform-label-button-farbe" class="block text-lg font-medium text-black/70 mb-3" style="font-family: 'Cal Sans', sans-serif;">Button-Farbe</label>
           <div class="flex-1 flex items-center justify-center min-h-0">
@@ -1217,6 +1218,8 @@
             <input type="color" id="platform-bg-top" value="#f0eeff" class="platform-color-input">
           </div>
         </div>
+        </div>
+        <div class="platform-personalize-logo-darstellung-row">
         <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-start">
           <label id="platform-label-logo" class="block text-lg font-medium text-black/70 mb-3" style="font-family: 'Cal Sans', sans-serif;">Logo</label>
           <div class="flex-1 flex items-center justify-center min-h-0">
@@ -1225,6 +1228,23 @@
             </label>
             <input type="file" id="platform-logo-file" accept="image/*" class="hidden">
           </div>
+        </div>
+        <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-start">
+          <label id="platform-label-darstellung" class="block text-lg font-medium text-black/70 mb-3" style="font-family: 'Cal Sans', sans-serif;">Darstellung</label>
+          <div class="flex flex-col items-center justify-center gap-3">
+            <span class="text-black/60" aria-hidden="true">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </span>
+            <label class="relative inline-flex w-8 h-14 flex-shrink-0 cursor-pointer items-center platform-dark-mode-switch">
+              <input type="checkbox" id="platform-dark-mode" class="sr-only peer" value="dark">
+              <div class="w-8 h-14 rounded-full bg-black/15 transition-colors peer-checked:bg-[#2a2a2a]"></div>
+              <div class="absolute left-1 top-1 w-6 h-6 rounded-full border border-black/10 bg-white shadow-sm transition-transform peer-checked:translate-y-6"></div>
+            </label>
+            <span class="text-black/60" aria-hidden="true">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </span>
+          </div>
+        </div>
         </div>
         <div class="platform-control-box rounded-2xl p-5 flex flex-col items-center justify-start">
           <label id="platform-label-menu" class="block text-lg font-medium text-black/70 mb-3 w-full text-center" style="font-family: 'Cal Sans', sans-serif;">Menüpunkte</label>
@@ -1257,22 +1277,6 @@
               </span>
               <span id="platform-menu-chat-label" class="text-xs font-medium text-black/50 transition-colors group-has-[:checked]:text-[#7167F5]">Chat</span>
             </label>
-          </div>
-        </div>
-        <div class="platform-control-box rounded-2xl p-5 text-center flex flex-col items-center justify-start">
-          <label id="platform-label-darstellung" class="block text-lg font-medium text-black/70 mb-3" style="font-family: 'Cal Sans', sans-serif;">Darstellung</label>
-          <div class="flex flex-col items-center justify-center gap-3">
-            <span class="text-black/60" aria-hidden="true">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-            </span>
-            <label class="relative inline-flex w-8 h-14 flex-shrink-0 cursor-pointer items-center platform-dark-mode-switch">
-              <input type="checkbox" id="platform-dark-mode" class="sr-only peer" value="dark">
-              <div class="w-8 h-14 rounded-full bg-black/15 transition-colors peer-checked:bg-[#2a2a2a]"></div>
-              <div class="absolute left-1 top-1 w-6 h-6 rounded-full border border-black/10 bg-white shadow-sm transition-transform peer-checked:translate-y-6"></div>
-            </label>
-            <span class="text-black/60" aria-hidden="true">
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            </span>
           </div>
         </div>
       </div>

@@ -204,7 +204,7 @@
   }
   #use-cases .use-case-box:nth-child(1) > img {
     width: 100% !important;
-    max-width: 300px !important;
+    max-width: 100% !important;
     height: 560px !important;
     object-fit: cover;
     object-position: top center;
@@ -216,10 +216,12 @@
     height: 280px;
     max-height: 280px;
     border-radius: 0 0 2.5rem 2.5rem;
+    width: 100%;
+    max-width: 100%;
   }
   #use-cases .use-case-box:nth-child(3) > img {
     width: 100% !important;
-    max-width: 300px !important;
+    max-width: 100% !important;
     height: 560px !important;
     object-fit: cover;
     object-position: top center;
@@ -231,21 +233,52 @@
     height: 280px;
     max-height: 280px;
     border-radius: 0 0 2.5rem 2.5rem;
+    width: 100%;
+    max-width: 100%;
   }
   #use-cases .use-case-box:nth-child(4) > img {
     width: 100% !important;
-    max-width: 300px !important;
+    max-width: 100% !important;
     height: 560px !important;
     object-fit: cover;
     object-position: top center;
     border-radius: 2.5rem;
   }
-  /* Coaches, Bootcamps, Lernräume: Bildgröße wie bei Creator (einheitlich 300px max) */
+  /* Alle vier Boxen: gleiche Breite wie Feature-Karten oben (volle Containerbreite) */
+  #use-cases .use-cases-boxes {
+    flex-direction: column;
+    align-items: stretch;
+  }
   #use-cases .use-cases-boxes .use-case-box {
-    max-width: 300px;
+    width: 100%;
+    max-width: 100%;
+  }
+  #use-cases .use-case-box:nth-child(1) {
+    width: 100%;
+    max-width: 100%;
+  }
+  #use-cases .use-case-box:nth-child(2) {
+    width: 100%;
+    max-width: 100%;
+  }
+  /* Creator (nur Mobil): gleiche Bildgröße wie Coaches/Bootcamps/Lernräume */
+  #use-cases .use-case-box:nth-child(2) > div:first-child {
+    width: 100%;
+    overflow: hidden;
+    height: 280px;
+    max-height: 280px;
+    border-radius: 0 0 2.5rem 2.5rem;
+  }
+  #use-cases .use-case-box:nth-child(2) > div:first-child > img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 560px !important;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 2.5rem;
   }
   #use-cases .use-case-box img {
-    max-width: 300px !important;
+    max-width: 100% !important;
     width: 100% !important;
     height: auto;
     box-sizing: border-box;
@@ -628,6 +661,15 @@
   box-shadow: none;
 }
 
+/* Wrapper für Button-Farbe + Hintergrundfarbe: auf Desktop „unsichtbar“, Kinder sind Grid-Items */
+.platform-personalize-farben-row {
+  display: contents;
+}
+/* Wrapper für Logo + Darstellung: auf Desktop „unsichtbar“, Kinder sind Grid-Items */
+.platform-personalize-logo-darstellung-row {
+  display: contents;
+}
+
 /* Farbfelder Button-Farbe & Hintergrundfarbe: ohne Rand, weicher Schatten, größer, runde Ecken */
 .platform-color-input {
   width: 5.5rem;
@@ -984,8 +1026,58 @@
 }
 
 @media (max-width: 768px) {
+  /* Mobile: Wrapper wird eine Box, Button-Farbe und Hintergrundfarbe nebeneinander */
+  .platform-personalize-farben-row {
+    display: flex !important;
+    flex-direction: row;
+    gap: 0;
+    background-color: #eceaf5;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .platform-personalize-farben-row .platform-control-box {
+    flex: 1;
+    min-width: 0;
+  }
+  .platform-personalize-farben-row .platform-control-box:first-child {
+    border-radius: 1rem 0 0 1rem;
+  }
+  .platform-personalize-farben-row .platform-control-box:last-child {
+    border-radius: 0 1rem 1rem 0;
+  }
+  /* Mobile: Logo und Darstellung nebeneinander in einer Box */
+  .platform-personalize-logo-darstellung-row {
+    display: flex !important;
+    flex-direction: row;
+    gap: 0;
+    background-color: #eceaf5;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .platform-personalize-logo-darstellung-row .platform-control-box {
+    flex: 1;
+    min-width: 0;
+  }
+  .platform-personalize-logo-darstellung-row .platform-control-box:first-child {
+    border-radius: 1rem 0 0 1rem;
+  }
+  .platform-personalize-logo-darstellung-row .platform-control-box:last-child {
+    border-radius: 0 1rem 1rem 0;
+  }
   .platform-personalize-controls {
-    grid-template-columns: 1fr;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: minmax(160px, 1fr) minmax(160px, 1fr) auto;
+    row-gap: 1.25rem !important;
+  }
+  /* Erste zwei Zeilen (beide Doppelboxen) gleich hoch */
+  .platform-personalize-controls > .platform-personalize-farben-row,
+  .platform-personalize-controls > .platform-personalize-logo-darstellung-row {
+    min-height: 0;
+  }
+  /* Ab Logo, Menüpunkte, Darstellung: volle Breite (weiterhin Grid-Items) */
+  .platform-personalize-controls > .platform-control-box {
+    border-radius: 1rem;
   }
   .platform-preview-inner {
     flex-direction: column;
