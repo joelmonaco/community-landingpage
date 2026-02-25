@@ -284,6 +284,39 @@
   }
 }
 
+/* Mobile: Nur LetsFit (Mitte), Leni Welsch (oben links), Kalender (rechts). Rest ausblenden. */
+@media (max-width: 768px) {
+  #hero-wireframe-container .animate-on-scroll {
+    position: relative;
+    z-index: 5;
+  }
+
+  #umsatz-box,
+  #mediathek-box,
+  #floating-box-right {
+    display: none !important;
+  }
+
+  #kalender-box {
+    display: flex !important;
+    left: auto;
+    right: -25%;
+    width: 72%;
+    max-width: 240px;
+    top: 200px;
+    height: 220px;
+    z-index: 15;
+    overflow: hidden;
+  }
+
+  #floating-box-left {
+    left: -17%;
+    right: auto;
+    top: 100px;
+    z-index: 15;
+  }
+}
+
 #hero-wireframe-container {
   position: relative;
 }
