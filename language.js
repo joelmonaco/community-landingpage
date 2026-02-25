@@ -148,7 +148,7 @@ const translations = {
     app: {
       title: 'Generiere deine eigene App',
       subtitle: 'Deine personalisierte Community App, die du über den App Store und Google Play Store zur Verfügung stellen kannst',
-      generateBtn: 'App generieren'
+      generateBtn: 'Termin vereinbaren'
     },
     cta: {
       title: 'Bereit loszulegen?',
@@ -489,7 +489,7 @@ const translations = {
     app: {
       title: 'Generate your own app',
       subtitle: 'Your customised community app, available on the App Store and Google Play Store',
-      generateBtn: 'Generate app'
+      generateBtn: 'Schedule a call'
     },
     cta: {
       title: 'Ready to get started?',
@@ -929,6 +929,7 @@ function applyTranslations(lang) {
 
   // All "Termin vereinbaren" / "Talk to Sales" buttons (including in modals and CTAs)
   document.querySelectorAll('[data-termin-modal="open"]').forEach(function(el) {
+    if (el.id === 'app-generate-button') return; // Text kommt aus app.generateBtn
     const textNodes = Array.from(el.childNodes).filter(function(n) { return n.nodeType === Node.TEXT_NODE; });
     if (textNodes.length > 0) {
       textNodes[0].textContent = t.cta.talkToSales;

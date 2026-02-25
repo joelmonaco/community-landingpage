@@ -188,6 +188,70 @@
 #use-cases.in-view .use-case-box:nth-child(3) { transition-delay: 240ms; }
 #use-cases.in-view .use-case-box:nth-child(4) { transition-delay: 360ms; }
 
+@media (max-width: 768px) {
+  #use-cases {
+    padding-top: 3.45rem !important;
+  }
+  #use-cases .use-case-box:nth-child(2) > div:nth-child(2) {
+    display: none;
+  }
+  /* Coaches (nur Mobil): Bildhöhe auf 50% – sichtbare Bildfläche ist halb so hoch */
+  #use-cases .use-case-box:nth-child(1) {
+    overflow: hidden;
+    height: 280px;
+    max-height: 280px;
+    border-radius: 0 0 2.5rem 2.5rem;
+  }
+  #use-cases .use-case-box:nth-child(1) > img {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: 560px !important;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 2.5rem;
+  }
+  /* Bootcamps (nur Mobil): wie Coaches – 50 % Höhe, unten abgerundet */
+  #use-cases .use-case-box:nth-child(3) {
+    overflow: hidden;
+    height: 280px;
+    max-height: 280px;
+    border-radius: 0 0 2.5rem 2.5rem;
+  }
+  #use-cases .use-case-box:nth-child(3) > img {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: 560px !important;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 2.5rem;
+  }
+  /* Lernräume (nur Mobil): wie Coaches – 50 % Höhe, unten abgerundet */
+  #use-cases .use-case-box:nth-child(4) {
+    overflow: hidden;
+    height: 280px;
+    max-height: 280px;
+    border-radius: 0 0 2.5rem 2.5rem;
+  }
+  #use-cases .use-case-box:nth-child(4) > img {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: 560px !important;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 2.5rem;
+  }
+  /* Coaches, Bootcamps, Lernräume: Bildgröße wie bei Creator (einheitlich 300px max) */
+  #use-cases .use-cases-boxes .use-case-box {
+    max-width: 300px;
+  }
+  #use-cases .use-case-box img {
+    max-width: 300px !important;
+    width: 100% !important;
+    height: auto;
+    box-sizing: border-box;
+  }
+}
+
 /* Customer Stories – Scroll-Animation (graue Boxen + Bild-Boxen) */
 #stories .story-dark-box,
 #stories .story-colored-box {
@@ -314,6 +378,78 @@
     right: auto;
     top: 100px;
     z-index: 15;
+  }
+}
+
+/* Mobile: Features-Abschnitt "Community-Management mit Glymmer" höher setzen, weniger Abstand oben */
+@media (max-width: 768px) {
+  #features {
+    padding-top: 2rem;
+  }
+  #features .max-w-7xl > .text-center:first-of-type {
+    padding-top: 0.5rem;
+  }
+}
+
+/* Mobile: Drei Feature-Segmente (Live Video, Chat, Mediathek) – nicht abschneiden, nicht überlappen */
+@media (max-width: 768px) {
+  /* Hintergrund einheitlich weiß, damit zwischen den Segmenten kein grauer Streifen sichtbar ist */
+  #features,
+  #features .max-w-7xl,
+  #features .flex.flex-col.mb-40,
+  #features .grid {
+    background: #fff !important;
+  }
+  #features .max-w-7xl {
+    min-width: 0;
+  }
+  #features .flex.flex-col.mb-40 {
+    overflow-x: hidden;
+    min-width: 0;
+  }
+  #features .grid {
+    margin-top: 0;
+    min-width: 0;
+  }
+  #features .grid > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+  #features .feature-card {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  #features .grid.-mt-24 {
+    margin-top: 1.5rem;
+  }
+  #features .grid.-mt-24 > div:first-child {
+    display: none;
+  }
+  #features .chat-mockup {
+    margin-top: 0 !important;
+    border-radius: 1.5rem !important;
+  }
+  #features .video-call-visualization,
+  #features .video-call-visualization > div,
+  #features .chat-mockup,
+  #features .file-storage-mockup {
+    max-width: 100%;
+    min-width: 0;
+  }
+  #features .flex.flex-col.mb-40 .feature-card {
+    padding: 1.5rem 1rem !important;
+  }
+  /* Live Video: zwei kleine Videofenster auf Mobile ausblenden */
+  #features .video-call-visualization .absolute.top-8.right-8,
+  #features .video-call-visualization .absolute.bottom-8.right-8 {
+    display: none;
+  }
+  /* Live Video: Video-Bereich unten abrunden */
+  #features .video-call-visualization .relative.rounded-t-xl,
+  #features .video-call-visualization .relative > div,
+  #features .video-call-visualization .relative video {
+    border-radius: 1.5rem !important;
   }
 }
 
@@ -973,6 +1109,12 @@
   will-change: transform;
 }
 
+@media (max-width: 768px) {
+  .logo-slider-container {
+    margin-top: calc(2.5rem + 10vh) !important;
+    margin-bottom: 0.25rem !important;
+  }
+}
 
 /* Feature Hover Farben */
 .feature-hover-item {
@@ -1051,6 +1193,38 @@
   background-color: var(--primary-yellow-hover);
   color: black;
   box-shadow: 0 4px 20px rgba(230, 227, 4, 0.5);
+}
+
+/* Mobile: Feature-Überschriften (Monetarisierung etc.) und Tooltips – nicht abschneiden, Abschnitt höher */
+@media (max-width: 768px) {
+  #features .text-center.space-y-8.mt-28 {
+    margin-top: 0.5rem !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow-x: visible;
+  }
+  #features .feature-hover-item {
+    font-size: 2.25rem !important;
+    line-height: 1.3;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+  #features .feature-hover-item > span {
+    white-space: nowrap;
+  }
+  #features .feature-tooltip {
+    max-width: min(500px, calc(100vw - 2rem));
+    width: max-content;
+    left: 50%;
+    transform: translateX(-50%) translateY(-12px);
+    padding: 14px 16px;
+    font-size: 13px;
+    box-sizing: border-box;
+  }
+  #features .feature-hover-item:hover .feature-tooltip {
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 /* Customer Stories: Name transparent wenn nicht ausgewählt, weiß wenn ausgewählt (dunkler Kasten #2A2A2A) */
