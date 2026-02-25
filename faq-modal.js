@@ -29,7 +29,7 @@
   var navFaqMobile = document.getElementById('nav-faq-mobile');
   var footerLinkFaq = document.getElementById('footer-link-faq');
   var burgerMenuDropdown = document.getElementById('burger-menu-dropdown');
-  var burgerMenuOverlay = document.getElementById('burger-menu-overlay');
+  var burgerMenuWrapper = document.getElementById('burger-menu-wrapper');
   var burgerMenu = document.getElementById('burger-menu');
 
   function openFaqModal() {
@@ -40,8 +40,8 @@
       burgerMenuDropdown.classList.add('opacity-0', 'invisible', 'translate-y-2');
       burgerMenuDropdown.classList.remove('opacity-100', 'visible', 'translate-y-0');
     }
-    if (burgerMenuOverlay && !burgerMenuOverlay.classList.contains('translate-x-full')) {
-      burgerMenuOverlay.classList.add('translate-x-full');
+    if (burgerMenuWrapper && burgerMenuWrapper.classList.contains('burger-mobile-open')) {
+      burgerMenuWrapper.classList.remove('burger-mobile-open');
       if (burgerMenu) burgerMenu.classList.remove('active');
     }
     setTimeout(function() { faqModal.classList.add('show'); }, 10);

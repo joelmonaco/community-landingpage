@@ -330,106 +330,65 @@
           </a>
         </div>
       </div>
-      
-      <div id="burger-menu-overlay" class="md:hidden fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
-          <div class="flex justify-between items-center mb-8">
-            <h2 id="mobile-menu-title" class="text-2xl font-semibold text-black">Menü</h2>
-            <button id="burger-menu-close" class="p-2 text-black/70 hover:text-black transition" aria-label="Close Menu">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
-          </div>
-          <nav class="flex flex-col space-y-6">
-            <a href="/features.html" id="nav-features-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="7" height="7"></rect>
-                <rect x="14" y="3" width="7" height="7"></rect>
-                <rect x="14" y="14" width="7" height="7"></rect>
-                <rect x="3" y="14" width="7" height="7"></rect>
-              </svg>
-              Features
-            </a>
-            <div class="space-y-3">
-              <a href="/#use-cases" class="text-2xl font-medium text-black/70 font-semibold hover:text-black transition flex items-center gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-                Use Cases
-              </a>
-              <div class="ml-4 space-y-3">
-                <a href="/coaches.html" id="nav-uc-coaches-mobile" class="block text-xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
-                  Für Coaches
-                </a>
-                <a href="/creator.html" id="nav-uc-creators-mobile" class="block text-xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
-                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
-                  </svg>
-                  Für Creator
-                </a>
-                <a href="/bootcamps.html" id="nav-uc-bootcamps-mobile" class="block text-xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                    <line x1="8" y1="7" x2="18" y2="7"></line>
-                    <line x1="8" y1="11" x2="18" y2="11"></line>
-                    <line x1="8" y1="15" x2="14" y2="15"></line>
-                  </svg>
-                  Für Bootcamps
-                </a>
-                <a href="/lernraum.html" id="nav-uc-lernraeume-mobile" class="block text-xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                  </svg>
-                  Für Lernräume
-                </a>
-              </div>
-            </div>
-            <a href="/preise.html" id="nav-pricing-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="1" x2="12" y2="23"></line>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-              </svg>
-              Preise
-            </a>
-            <a href="/updates.html" id="nav-updates-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-              </svg>
-              Updates
-            </a>
-            <a href="#" id="nav-faq-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-              </svg>
-              FAQ
-            </a>
-            <a href="/preise.html" id="nav-get-started-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition mt-4 flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-              </svg>
-              Jetzt starten
-            </a>
-          </nav>
-        </div>
-      </div>
     </nav>
   </header>
+  <!-- Mobile Burger Menu: von links reinschieben, weiß, volle Höhe, ohne „Jetzt starten“ -->
+  <div id="burger-menu-wrapper" class="fixed inset-0 z-[60] md:hidden">
+    <div class="burger-menu-backdrop fixed inset-0 bg-black/20 opacity-0 pointer-events-none min-h-[100dvh]" id="burger-menu-backdrop" aria-hidden="true"></div>
+    <div id="burger-menu-overlay" class="burger-menu-panel fixed left-0 top-0 bottom-0 w-[min(220px,72vw)] max-w-[220px] bg-white shadow-2xl flex flex-col">
+      <div class="burger-menu-inner p-6 pt-8 flex-1 flex flex-col min-h-0">
+            <div class="flex justify-between items-center mb-6">
+              <h2 id="mobile-menu-title" class="text-lg font-semibold text-black">Menü</h2>
+              <button id="burger-menu-close" class="p-2 text-black/70 hover:text-black transition rounded-lg hover:bg-black/5" aria-label="Menü schließen">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+            </div>
+            <nav class="flex flex-col space-y-1">
+              <a href="/features.html" id="nav-features-mobile" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 transition">
+                <span class="burger-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;width:16px;height:16px;min-width:16px;min-height:16px;display:inline-block"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></span>
+                Features
+              </a>
+              <div class="space-y-1">
+                <a href="/#use-cases" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  Use Cases
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+                <div class="ml-4 space-y-1">
+                  <a href="/coaches.html" id="nav-uc-coaches-mobile" class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    Für Coaches
+                  </a>
+                  <a href="/creator.html" id="nav-uc-creators-mobile" class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                    Für Creator
+                  </a>
+                  <a href="/bootcamps.html" id="nav-uc-bootcamps-mobile" class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path><line x1="8" y1="7" x2="18" y2="7"></line><line x1="8" y1="11" x2="18" y2="11"></line><line x1="8" y1="15" x2="14" y2="15"></line></svg>
+                    Für Bootcamps
+                  </a>
+                  <a href="/lernraum.html" id="nav-uc-lernraeume-mobile" class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    Für Lernräume
+                  </a>
+                </div>
+              </div>
+              <a href="/preise.html" id="nav-pricing-mobile" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 transition">
+                <span class="burger-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;width:16px;height:16px;min-width:16px;min-height:16px;display:inline-block"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></span>
+                Preise
+              </a>
+              <a href="/updates.html" id="nav-updates-mobile" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 transition">
+                <span class="burger-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;width:16px;height:16px;min-width:16px;min-height:16px;display:inline-block"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></span>
+                Updates
+              </a>
+              <a href="#" id="nav-faq-mobile" class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium text-black/70 hover:text-black hover:bg-black/5 transition">
+                <span class="burger-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;width:16px;height:16px;min-width:16px;min-height:16px;display:inline-block"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></span>
+                FAQ
+              </a>
+            </nav>
+          </div>
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <section class="pt-32 pb-12 px-6 lg:px-8 relative bg-cover bg-center min-h-[320px] flex items-center" style="background-image: url('./public/Creator_Hero.jpg');">
@@ -620,6 +579,7 @@
   <script>
     const burgerMenu = document.getElementById('burger-menu');
     const burgerMenuDropdown = document.getElementById('burger-menu-dropdown');
+    const burgerMenuWrapper = document.getElementById('burger-menu-wrapper');
     const burgerMenuOverlay = document.getElementById('burger-menu-overlay');
     const burgerMenuClose = document.getElementById('burger-menu-close');
 
@@ -636,8 +596,9 @@
             }
           }
         } else {
-          if (burgerMenuOverlay) {
-            burgerMenuOverlay.classList.toggle('translate-x-full');
+          if (burgerMenuWrapper) {
+            burgerMenuWrapper.classList.toggle('burger-mobile-open');
+            document.body.style.overflow = burgerMenuWrapper.classList.contains('burger-mobile-open') ? 'hidden' : '';
           }
         }
       });
@@ -645,17 +606,30 @@
 
     if (burgerMenuClose) {
       burgerMenuClose.addEventListener('click', () => {
-        if (burgerMenuOverlay) burgerMenuOverlay.classList.add('translate-x-full');
+        if (burgerMenuWrapper) {
+          burgerMenuWrapper.classList.remove('burger-mobile-open');
+          document.body.style.overflow = '';
+        }
+        if (burgerMenu) burgerMenu.classList.remove('active');
+      });
+    }
+
+    const burgerMenuBackdrop = document.getElementById('burger-menu-backdrop');
+    if (burgerMenuBackdrop && burgerMenuWrapper) {
+      burgerMenuBackdrop.addEventListener('click', () => {
+        burgerMenuWrapper.classList.remove('burger-mobile-open');
+        document.body.style.overflow = '';
         if (burgerMenu) burgerMenu.classList.remove('active');
       });
     }
 
     if (burgerMenuOverlay) {
-      burgerMenuOverlay.addEventListener('click', (e) => {
-        if (e.target === burgerMenuOverlay) {
-          burgerMenuOverlay.classList.add('translate-x-full');
+      burgerMenuOverlay.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          burgerMenuWrapper.classList.remove('burger-mobile-open');
+          document.body.style.overflow = '';
           if (burgerMenu) burgerMenu.classList.remove('active');
-        }
+        });
       });
     }
 

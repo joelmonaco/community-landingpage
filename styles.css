@@ -347,6 +347,64 @@
 #stories.in-view .story-row:nth-child(3) .story-dark-box { transition-delay: 480ms; }
 #stories.in-view .story-row:nth-child(3) .story-colored-box { transition-delay: 600ms; }
 
+@media (max-width: 768px) {
+  /* Nur die Überschrift „Community ab 2026 unverzichtbar“ mobil ausblenden, Rest bleibt */
+  #why-community-2026 #why-community-title {
+    display: none !important;
+  }
+  /* CTA „Jetzt starten“-Button: Text mittig zentrieren */
+  #cta-start {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  /* Platz für vollen Zitat-Satz, nichts wird abgeschnitten */
+  #why-community-2026 {
+    overflow: visible !important;
+    padding-top: 2rem !important;
+    margin-top: 0 !important;
+  }
+  #why-community-2026 .animate-on-scroll {
+    overflow: visible !important;
+  }
+}
+
+/* Zitat „Social Media kann dich …“: maximal 6 Zeilen, gut lesbar, Anfang sichtbar */
+#quote-text.quote-text-compact,
+#why-community-2026 #quote-text {
+  font-size: clamp(1.25rem, 3.5vw + 0.75rem, 2.25rem) !important;
+  line-height: 1.35 !important;
+  max-width: 14em !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 1.5rem !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0.5rem !important;
+  letter-spacing: -0.01em;
+  overflow: visible !important;
+  min-height: auto !important;
+}
+
+@media (max-width: 768px) {
+  /* Mobil: zuerst Bild, dann Inhaltsbox (in jeder Story-Zeile) */
+  #stories .story-row .story-dark-box { order: 2; }
+  #stories .story-row .story-colored-box { order: 1; }
+  /* Gleiche Breite wie Glymmer-Vorschau: max-w-[81rem], kein doppeltes Padding */
+  #stories > div {
+    max-width: 81rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Bildboxen mobil um 2/3 kleiner in der Höhe (1/3 der ursprünglichen Höhe) */
+  #stories .story-row .story-colored-box {
+    min-height: 0;
+    height: 227px;
+    max-height: 33vh;
+  }
+}
+
 /* Floating User Box Animations */
 @keyframes popIn {
   0% {
@@ -1565,12 +1623,118 @@
 }
 .faq-accordion-answer { border: none !important; }
 
-/* Header Mobile: Log In + Jetzt starten immer nebeneinander, keine Zeilenumbrüche */
-@media (max-width: 767px) {
+/* Header Mobile: Log In + Jetzt starten immer nebeneinander (alle Seiten inkl. Unterseiten) */
+@media (max-width: 768px) {
   #main-header nav > div:last-of-type {
     flex-wrap: nowrap;
   }
-  #main-header .flex-nowrap.ml-auto {
+  #main-header .flex-nowrap.ml-auto,
+  #main-header .ml-auto.shrink-0 {
     flex-wrap: nowrap;
+  }
+}
+
+/* Footer Mobile: Produkt, Unternehmen, Rechtliches in einer Reihe (alle Seiten inkl. Unterseiten) */
+@media (max-width: 768px) {
+  footer .max-w-7xl > .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  footer .max-w-7xl > .grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Mobile Burger Menu: von links reinschieben, weißer Hintergrund, wie Desktop mit Icons */
+#burger-menu-wrapper {
+  pointer-events: none;
+}
+#burger-menu-wrapper.burger-mobile-open {
+  pointer-events: auto;
+}
+#burger-menu-wrapper .burger-menu-backdrop {
+  transition: opacity 0.3s ease;
+}
+#burger-menu-wrapper.burger-mobile-open .burger-menu-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+#burger-menu-wrapper .burger-menu-panel {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+  height: 100vh;
+  height: 100dvh;
+  max-height: 100vh;
+  max-height: 100dvh;
+  top: 0;
+  bottom: 0;
+  width: min(220px, 72vw);
+  max-width: min(220px, 72vw);
+  background: #fff;
+}
+#burger-menu-wrapper.burger-mobile-open .burger-menu-panel {
+  transform: translateX(0);
+}
+/* Innenbereich: volle Höhe, kein Scroll, durchgehend weiß */
+.burger-menu-inner {
+  background: #fff;
+  min-height: 100%;
+  overflow: visible;
+}
+/* Backdrop immer über ganzen Viewport */
+#burger-menu-wrapper,
+#burger-menu-wrapper .burger-menu-backdrop {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+#burger-menu-wrapper .burger-menu-backdrop {
+  position: fixed;
+  inset: 0;
+}
+#burger-menu-wrapper .burger-menu-panel nav a svg,
+#burger-menu-wrapper .burger-menu-panel nav a > svg:first-of-type,
+#burger-menu-wrapper .burger-menu-panel .burger-icon svg {
+  flex-shrink: 0 !important;
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+  display: block !important;
+  vertical-align: middle;
+  fill: none !important;
+  stroke: currentColor;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+/* Icon-Wrapper: feste Größe, damit Icons nicht kollabieren */
+#burger-menu-wrapper .burger-menu-panel .burger-icon {
+  display: inline-block !important;
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+  flex-shrink: 0 !important;
+  vertical-align: middle;
+}
+#burger-menu-wrapper .burger-menu-panel .burger-icon svg {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+/* Icons Features/Preise/Updates/FAQ mit Klasse absichern */
+#burger-menu-wrapper .burger-menu-panel .burger-nav-icon {
+  flex-shrink: 0 !important;
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+@media (min-width: 768px) {
+  #burger-menu-wrapper {
+    display: none !important;
   }
 }
