@@ -280,12 +280,13 @@ const translations = {
     },
     preisePage: {
       heroTitle: 'Preise',
+      heroTrial: 'Jetzt 14 Tage kostenlos testen',
       heroSubtitle: 'Wähle das passende Lizenzpaket für deine Community',
       popularBadge: 'Beliebt',
       featuresLabel: 'Features:',
       starterTitle: 'Starter',
       starterPrice: '99 €/Monat',
-      starterSpecs: '3 Admins / 5 Moderatoren / 250 GB Speicher',
+      starterSpecs: '3 Admins / 5 Moderatoren / 250 GB Speicher / unbegrenzte Mitglieder',
       starterFee: '+ 5% Plattformgebühren*',
       starterF1: 'Profile, Channels, Posts & Interaktionen',
       starterF2: 'Direkt-/Gruppen-Chat, Event-Kalender',
@@ -293,7 +294,7 @@ const translations = {
       starterF4: 'E-Mail-Support + DSGVO-konform',
       proTitle: 'Professional',
       proPrice: '199 €/Monat',
-      proSpecs: '5 Admins / 10 Moderatoren / 500 GB Speicher',
+      proSpecs: '5 Admins / 10 Moderatoren / 500 GB Speicher / unbegrenzte Mitglieder',
       proFee: '+ 3% Plattformgebühren*',
       proF1: 'Alles aus Starter + Gamification Basics',
       proF2: 'Suche, VideoCalls, Event-Ticketing',
@@ -301,7 +302,7 @@ const translations = {
       proF4: 'Erweiterter Support',
       businessTitle: 'Business',
       businessPrice: '399 €/Monat',
-      businessSpecs: '10 Admins / 20 Moderatoren / 1 TB Speicher',
+      businessSpecs: '10 Admins / 20 Moderatoren / 1 TB Speicher / unbegrenzte Mitglieder',
       businessFee: '+ 1,5% Plattformgebühren*',
       businessF1: 'Alles aus Professional + erweiterte Live Rooms bis zu Summits',
       businessF2: 'Erweiterte Analytics & Gamification Professional',
@@ -620,12 +621,13 @@ const translations = {
     },
     preisePage: {
       heroTitle: 'Pricing',
+      heroTrial: 'Try free for 14 days now',
       heroSubtitle: 'Choose the right licence package for your community',
       popularBadge: 'Popular',
       featuresLabel: 'Features:',
       starterTitle: 'Starter',
       starterPrice: '99 €/month',
-      starterSpecs: '3 Admins / 5 Moderators / 250 GB storage',
+      starterSpecs: '3 Admins / 5 Moderators / 250 GB storage / unlimited members',
       starterFee: '+ 5% platform fees*',
       starterF1: 'Profiles, Channels, Posts & interactions',
       starterF2: 'Direct/group chat, event calendar',
@@ -633,7 +635,7 @@ const translations = {
       starterF4: 'Email support + GDPR compliant',
       proTitle: 'Professional',
       proPrice: '199 €/month',
-      proSpecs: '5 Admins / 10 Moderators / 500 GB storage',
+      proSpecs: '5 Admins / 10 Moderators / 500 GB storage / unlimited members',
       proFee: '+ 3% platform fees*',
       proF1: 'Everything in Starter + Gamification basics',
       proF2: 'Search, video calls, event ticketing',
@@ -641,7 +643,7 @@ const translations = {
       proF4: 'Extended support',
       businessTitle: 'Business',
       businessPrice: '399 €/month',
-      businessSpecs: '10 Admins / 20 Moderators / 1 TB storage',
+      businessSpecs: '10 Admins / 20 Moderators / 1 TB storage / unlimited members',
       businessFee: '+ 1.5% platform fees*',
       businessF1: 'Everything in Professional + extended live rooms up to summits',
       businessF2: 'Advanced analytics & Gamification Professional',
@@ -1199,6 +1201,7 @@ function applyTranslations(lang) {
   }
   if (t.preisePage) {
     setText('preise-hero-title', t.preisePage.heroTitle);
+    if (t.preisePage.heroTrial) setText('preise-hero-trial', t.preisePage.heroTrial);
     setText('preise-hero-subtitle', t.preisePage.heroSubtitle);
     setText('preise-popular', t.preisePage.popularBadge);
     setText('preise-features-label', t.preisePage.featuresLabel);
