@@ -146,7 +146,7 @@
       btn.disabled = true;
       btn.textContent = s.sendingBtn || 'Wird gesendet…';
     }
-    fetch('/api/termin', {
+    fetch('api/termin.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

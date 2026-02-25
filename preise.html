@@ -139,7 +139,7 @@
 
   <!-- Header (exakt wie Startseite index.html) -->
   <header id="main-header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm transition-all duration-300">
-    <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-2">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
       <!-- Mobile: Logo oben in eigener Zeile -->
       <div class="flex justify-center pt-2 pb-1 md:hidden">
         <a href="/" class="flex items-center">
@@ -222,7 +222,7 @@
                     </a>
                   </div>
                 </div>
-                <a href="/preise.html" id="nav-pricing" class="text-sm font-semibold text-black transition whitespace-nowrap flex items-center gap-2">
+                <a href="/preise.html" id="nav-pricing" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="12" y1="1" x2="12" y2="23"></line>
                     <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
@@ -246,8 +246,8 @@
               </nav>
             </div>
           </div>
-          <button id="language-switch" class="px-4 py-3 text-sm font-normal transition-all duration-300 border border-black/20 rounded-full hover:border-black/40 flex items-center gap-2" style="transform: scale(1); transition: transform 0.15s ease; color: #2A2A2A;" data-lang="de">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <button id="language-switch" class="px-3 py-2 md:px-4 md:py-3 text-xs md:text-sm font-normal transition-all duration-300 border border-black/20 rounded-full hover:border-black/40 flex items-center justify-center gap-1.5 md:gap-2 shrink-0" style="transform: scale(1); transition: transform 0.15s ease; color: #2A2A2A;" data-lang="de">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 md:w-4 md:h-4" viewBox="0 0 24 24" fill="none" stroke="#2A2A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
@@ -261,14 +261,14 @@
           <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
         </a>
         
-        <!-- Rechts: Log In + Jetzt starten Buttons -->
-        <div class="flex items-center space-x-4 ml-auto">
-          <a href="https://app.glymmer.io/auth/login" id="nav-login" class="px-4 py-2 text-sm font-normal transition" style="color: #2A2A2A;">
+        <!-- Rechts: Log In + Jetzt starten Buttons (immer nebeneinander, kompakt auf kleinen Screens) -->
+        <div class="flex items-center flex-nowrap gap-2 sm:gap-4 ml-auto shrink-0 min-w-0">
+          <a href="https://app.glymmer.io/auth/login" id="nav-login" class="px-3 py-2 md:px-4 text-xs md:text-sm font-normal transition whitespace-nowrap" style="color: #2A2A2A;">
             Log In
           </a>
-          <a href="/preise.html" id="hero-cta-start" class="px-6 py-3 text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition flex items-center gap-2 group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
+          <a href="/preise.html" id="hero-cta-start" class="inline-flex items-center justify-center gap-2 px-3 py-2 md:px-6 md:py-3 text-xs md:text-sm font-medium bg-secondary text-white rounded-full hover:bg-secondary-hover transition group" style="box-shadow: 0 4px 20px rgba(113, 103, 245, 0.5);">
             Jetzt starten
-            <svg class="transition-transform duration-300 group-hover:translate-x-1" style="display: inline-block; width: 18px; height: 18px; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <svg class="shrink-0 w-4 h-4 md:w-[18px] md:h-[18px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
               <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
@@ -343,7 +343,7 @@
                 </a>
               </div>
             </div>
-            <a href="/preise.html" id="nav-pricing-mobile" class="text-2xl font-semibold text-black transition flex items-center gap-3">
+            <a href="/preise.html" id="nav-pricing-mobile" class="text-2xl font-medium text-black/70 hover:text-black transition flex items-center gap-3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="1" x2="12" y2="23"></line>
                 <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
@@ -768,36 +768,36 @@
           <div class="mb-4">
             <img src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-8 w-auto">
           </div>
-          <p class="text-black/70 text-sm">Die Community-Plattform für Coaches und Creator</p>
+          <p id="footer-tagline" class="text-black/70 text-sm">Die Community-Plattform für Coaches und Creator</p>
         </div>
         <div>
-          <h4 class="font-semibold mb-4 text-black">Produkt</h4>
+          <h4 id="footer-product" class="font-semibold mb-4 text-black">Produkt</h4>
           <ul class="space-y-2 text-sm text-black/70">
-            <li><a href="/features.html" class="hover:text-black transition">Features</a></li>
-            <li><a href="/coaches.html" class="hover:text-black transition">Use Cases</a></li>
-            <li><a href="/preise.html" class="hover:text-black transition">Preise</a></li>
-            <li><a href="/updates.html" class="hover:text-black transition">Updates</a></li>
+            <li><a id="footer-link-features" href="/features.html" class="hover:text-black transition">Features</a></li>
+            <li><a id="footer-link-use-cases" href="/#use-cases" class="hover:text-black transition">Use Cases</a></li>
+            <li><a id="footer-link-pricing" href="/preise.html" class="hover:text-black transition">Preise</a></li>
+            <li><a id="footer-link-updates" href="/updates.html" class="hover:text-black transition">Updates</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold mb-4 text-black">Unternehmen</h4>
+          <h4 id="footer-company" class="font-semibold mb-4 text-black">Unternehmen</h4>
           <ul class="space-y-2 text-sm text-black/70">
             <li><a id="footer-link-contact" href="#" data-termin-modal="open" class="hover:text-black transition">Kontakt</a></li>
-            <li><a href="https://teech.de/das-sind-wir/" target="_blank" rel="noopener noreferrer" class="hover:text-black transition">Über uns</a></li>
-            <li><a href="/faq.html" class="hover:text-black transition">FAQ</a></li>
+            <li><a id="footer-link-about" href="https://teech.de/das-sind-wir/" target="_blank" rel="noopener noreferrer" class="hover:text-black transition">Über uns</a></li>
+            <li><a id="footer-link-faq" href="#" class="hover:text-black transition">FAQ</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold mb-4 text-black">Rechtliches</h4>
+          <h4 id="footer-legal" class="font-semibold mb-4 text-black">Rechtliches</h4>
           <ul class="space-y-2 text-sm text-black/70">
-            <li><a href="/imprint.html" class="hover:text-black transition">Impressum</a></li>
-            <li><a href="/privacy.html" class="hover:text-black transition">Datenschutz</a></li>
-            <li><a href="/terms.html" class="hover:text-black transition">AGB</a></li>
+            <li><a id="footer-link-imprint" href="/imprint.html" class="hover:text-black transition">Impressum</a></li>
+            <li><a id="footer-link-privacy" href="/privacy.html" class="hover:text-black transition">Datenschutz</a></li>
+            <li><a id="footer-link-terms" href="/terms.html" class="hover:text-black transition">AGB</a></li>
           </ul>
         </div>
       </div>
       <div class="border-t border-black/10 pt-8 pb-8 text-center">
-        <p class="text-sm text-black/70">&copy; 2026 Glymmer - A teech Product. Alle Rechte vorbehalten.</p>
+        <p id="footer-copyright" class="text-sm text-black/70">&copy; 2026 Glymmer - A teech Product. Alle Rechte vorbehalten.</p>
       </div>
     </div>
   </footer>
@@ -1100,7 +1100,7 @@
           if (errEl) { errEl.classList.add('hidden'); errEl.textContent = ''; }
 
           if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Wird gesendet…'; }
-          fetch('/api/contact', {
+          fetch('api/contact.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
