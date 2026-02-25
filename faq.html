@@ -68,7 +68,7 @@
           <a href="/features.html" id="nav-features" class="text-white/80 hover:text-white transition">Features</a>
           <a href="/use-cases.html" id="nav-use-cases" class="text-white/80 hover:text-white transition">Use Cases</a>
           <a href="/preise.html" id="nav-pricing" class="text-white/80 hover:text-white transition">Preise</a>
-          <a href="/customer-stories.html" id="nav-stories" class="text-white/80 hover:text-white transition">Customer Stories</a>
+          <a href="#" id="nav-stories" class="text-white/80 hover:text-white transition">Customer Stories</a>
         </div>
         <div class="flex items-center space-x-4 ml-auto">
           <button id="language-switch" class="px-4 py-2 text-sm font-medium text-white/80 hover:text-white transition border border-white/20 rounded-full hover:border-white/40 flex items-center gap-2" data-lang="de">
@@ -162,7 +162,7 @@
         <div class="faq-item bg-white/5 p-6 rounded-full border border-white/10">
           <h3 class="text-xl font-semibold mb-3">Kann ich glymmer kostenlos testen?</h3>
           <p class="text-white/70 leading-relaxed">
-            Klar! <a href="/kontakt.html#sales" class="text-white underline hover:no-underline">Jetzt testen für 14 Tage kostenlos</a>.
+            Klar! <a href="#" data-termin-modal="open" class="text-white underline hover:no-underline">Jetzt testen für 14 Tage kostenlos</a>.
           </p>
         </div>
 
@@ -262,7 +262,7 @@
         <a href="#" data-termin-modal="open" class="px-8 py-2 bg-white text-black rounded-full font-semibold hover:bg-white/90 transition text-lg">
           Termin vereinbaren
         </a>
-        <a href="/kontakt.html" class="px-8 py-2 border border-white/20 text-white rounded-full font-semibold hover:border-white/40 transition text-lg">
+        <a href="#" data-termin-modal="open" class="px-8 py-2 border border-white/20 text-white rounded-full font-semibold hover:border-white/40 transition text-lg">
           Kontakt aufnehmen
         </a>
       </div>
@@ -285,14 +285,14 @@
             <li><a href="/features.html" class="hover:text-white transition">Features</a></li>
             <li><a id="footer-link-use-cases" href="/#use-cases" class="hover:text-white transition">Use Cases</a></li>
             <li><a href="/preise.html" class="hover:text-white transition">Preise</a></li>
-            <li><a href="/customer-stories.html" class="hover:text-white transition">Customer Stories</a></li>
+            <li><a href="#" class="hover:text-white transition">Customer Stories</a></li>
           </ul>
         </div>
         <div>
           <h4 class="font-semibold mb-4">Unternehmen</h4>
           <ul class="space-y-2 text-sm text-white/70">
             <li><a id="footer-link-contact" href="#" data-termin-modal="open" class="hover:text-white transition">Kontakt</a></li>
-            <li><a href="/kontakt.html#unternehmen" class="hover:text-white transition">Über uns</a></li>
+            <li><a href="https://teech.de/das-sind-wir/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Über uns</a></li>
             <li><a id="footer-link-faq" href="#" class="hover:text-white transition">FAQ</a></li>
           </ul>
         </div>
@@ -313,6 +313,7 @@
 
   <script src="./language.js"></script>
   <script src="./cursor-follower.js"></script>
+  <script src="./faq-modal.js"></script>
   <script src="./termin-modal.js"></script>
 </body>
 </html>
