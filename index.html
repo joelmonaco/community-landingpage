@@ -1283,8 +1283,19 @@
 
       <!-- Platform Preview (interactive) – gleicher seitlicher Abstand wie die vier Kästen -->
       <div class="platform-preview-wrapper w-full animate-on-scroll delay-200" id="platform-preview-wrapper">
-        <div class="platform-preview-frame rounded-2xl overflow-hidden platform-preview-shadow" id="platform-preview-frame">
+          <div class="platform-preview-frame rounded-2xl overflow-hidden platform-preview-shadow" id="platform-preview-frame">
+            <div class="platform-mobile-overlay absolute inset-0 bg-black/30 z-40 opacity-0 pointer-events-none transition-opacity duration-300" id="platform-mobile-overlay" aria-hidden="true"></div>
           <div class="platform-preview-inner flex min-h-[640px]" id="platform-preview-inner">
+            <!-- Mobile Header (nur auf Mobil sichtbar): Menü | Logo | Chat -->
+            <div class="platform-mobile-header hidden flex-shrink-0 items-center justify-between px-4 py-3 bg-white/95 border-b border-black/10" id="platform-mobile-header">
+              <button type="button" class="platform-mobile-menu-btn p-2 -ml-2 rounded-lg text-black/70 hover:bg-black/5 transition-colors" aria-label="Menü öffnen">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+              </button>
+              <img id="platform-mobile-header-logo" src="./public/Glymmer_Logo_Dunkel.png" alt="Glymmer" class="h-7 w-auto object-contain">
+              <button type="button" class="platform-mobile-chat-btn p-2 -mr-2 rounded-lg text-black/70 hover:bg-black/5 transition-colors" aria-label="Nachrichten öffnen">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </button>
+            </div>
             <!-- Sidebar -->
             <aside class="platform-sidebar w-[220px] flex-shrink-0 flex flex-col bg-white/95 platform-sidebar-shadow">
               <div class="p-4">
@@ -1477,7 +1488,7 @@
             <!-- Messages – Nachrichten-Übersicht, schmal rechts -->
             <div class="platform-messages-toggle w-[220px] flex-shrink-0 flex flex-col bg-white/95 shadow-[0_0_24px_rgba(0,0,0,0.04)]" id="platform-messages-area">
               <div class="px-3 py-2 flex items-center justify-between flex-shrink-0">
-                <span id="mockup-messages-title" class="text-sm font-semibold text-black/80">Messages</span>
+                <span id="mockup-messages-title" class="text-sm font-semibold text-black/80">Nachrichten</span>
                 <div class="flex items-center gap-2">
                   <button type="button" class="p-0.5 hover:bg-black/5 rounded transition-colors" aria-label="Neue Nachricht">
                     <svg class="w-4 h-4 text-black/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
@@ -1562,7 +1573,7 @@
                     <div class="text-sm font-medium text-black/90 truncate">Paula W.</div>
                     <div class="text-xs text-black/50 truncate">Melde mich gleich</div>
                   </div>
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -1974,6 +1985,7 @@
       const bgTop = document.getElementById('platform-bg-top');
       const logoFile = document.getElementById('platform-logo-file');
       const previewLogo = document.getElementById('platform-preview-logo');
+      const mobileHeaderLogo = document.getElementById('platform-mobile-header-logo');
       const defaultLogoDark = './public/Glymmer_Logo_Dunkel.png';
       const defaultLogoLight = './public/Glymmer_Logo_weiss.png';
       const menuKalender = document.getElementById('platform-menu-kalender');
@@ -2008,6 +2020,7 @@
             const url = URL.createObjectURL(f);
             previewLogo.src = url;
             previewLogo.dataset.customUrl = url;
+            if (mobileHeaderLogo) mobileHeaderLogo.src = url;
           }
         });
       }
@@ -2034,12 +2047,37 @@
           const isDark = darkMode.checked;
           frame.classList.toggle('platform-preview-dark', isDark);
           if (previewLogo.dataset.customUrl) {
+            if (mobileHeaderLogo) mobileHeaderLogo.src = previewLogo.src;
             return;
           }
-          previewLogo.src = isDark ? defaultLogoLight : defaultLogoDark;
+          const src = isDark ? defaultLogoLight : defaultLogoDark;
+          previewLogo.src = src;
+          if (mobileHeaderLogo) mobileHeaderLogo.src = src;
         }
         darkMode.addEventListener('change', updateDarkMode);
         updateDarkMode();
+      }
+
+      // Mobile: Menü- und Chat-Button öffnen/schließen, Overlay schließt beide
+      const menuBtn = document.querySelector('.platform-mobile-menu-btn');
+      const chatBtn = document.querySelector('.platform-mobile-chat-btn');
+      const overlay = document.getElementById('platform-mobile-overlay');
+      if (menuBtn) {
+        menuBtn.addEventListener('click', function() {
+          frame.classList.toggle('platform-mobile-menu-open');
+          if (frame.classList.contains('platform-mobile-menu-open')) frame.classList.remove('platform-mobile-chat-open');
+        });
+      }
+      if (chatBtn) {
+        chatBtn.addEventListener('click', function() {
+          frame.classList.toggle('platform-mobile-chat-open');
+          if (frame.classList.contains('platform-mobile-chat-open')) frame.classList.remove('platform-mobile-menu-open');
+        });
+      }
+      if (overlay) {
+        overlay.addEventListener('click', function() {
+          frame.classList.remove('platform-mobile-menu-open', 'platform-mobile-chat-open');
+        });
       }
     })();
   </script>

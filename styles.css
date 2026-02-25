@@ -836,6 +836,20 @@
   border-color: rgba(255, 255, 255, 0.1);
 }
 
+#platform-preview-frame.platform-preview-dark .platform-mobile-header {
+  background: rgba(26, 26, 26, 0.98);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-mobile-header button {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#platform-preview-frame.platform-preview-dark .platform-mobile-header button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
 #platform-preview-frame.platform-preview-dark .platform-nav-channel,
 #platform-preview-frame.platform-preview-dark .platform-nav-item,
 #platform-preview-frame.platform-preview-dark .platform-sidebar .platform-nav-channel,
@@ -1083,13 +1097,41 @@
     flex-direction: column;
     min-height: auto;
   }
+  /* Mobile: Header anzeigen */
+  .platform-mobile-header {
+    display: flex !important;
+  }
+  .platform-mobile-header button {
+    pointer-events: auto;
+    cursor: pointer;
+  }
+  /* Mobile: Frame als Bezug für Overlay und Slide-in-Panels */
+  #platform-preview-frame {
+    position: relative;
+  }
+  /* Mobile: Sidebar aus dem Flow, von links einschiebbar */
   .platform-sidebar {
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border-right: none;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    padding: 0.5rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: min(280px, 85vw);
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border-right: 1px solid rgba(0,0,0,0.08);
+    border-bottom: none;
+    padding: 0.5rem 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 50;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.15);
+  }
+  #platform-preview-frame.platform-mobile-menu-open .platform-sidebar {
+    transform: translateX(0);
+  }
+  .platform-preview-frame.platform-mobile-menu-open .platform-sidebar,
+  .platform-preview-frame.platform-mobile-chat-open #platform-messages-area {
+    pointer-events: auto;
   }
   .platform-sidebar .p-4.border-b,
   .platform-sidebar nav,
@@ -1098,13 +1140,40 @@
   }
   .platform-sidebar nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.25rem;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
   }
   .platform-sidebar .platform-nav-channel,
   .platform-sidebar .platform-nav-item {
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     min-width: 0;
+  }
+  /* Mobile: Nachrichten-Panel von rechts einschiebbar */
+  #platform-messages-area {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: min(280px, 85vw);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 50;
+    box-shadow: -4px 0 24px rgba(0,0,0,0.15);
+  }
+  #platform-preview-frame.platform-mobile-chat-open #platform-messages-area {
+    transform: translateX(0);
+  }
+  /* Mobile: Overlay bei geöffnetem Menü oder Chat */
+  #platform-preview-frame.platform-mobile-menu-open .platform-mobile-overlay,
+  #platform-preview-frame.platform-mobile-chat-open .platform-mobile-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  /* Main bleibt sichtbar und füllt den Platz unter dem Header */
+  .platform-main {
+    flex: 1 1 auto;
+    min-height: 0;
   }
 }
 
