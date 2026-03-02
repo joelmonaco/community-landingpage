@@ -1,14 +1,12 @@
-// Cursor Follower - Nur für Desktop
+// Cursor Follower - Nur für Desktop (nicht auf Mobil/Touch)
 (function() {
   // Warte bis DOM geladen ist
   function initCursor() {
-    // Prüfe ob Desktop - weniger strikte Prüfung
-    // Für Test: Immer aktivieren (kann später wieder eingeschränkt werden)
-    const isDesktop = true; // Temporär immer aktiv für Debugging
-    // const isDesktop = !('ontouchstart' in window) || window.matchMedia('(pointer: fine)').matches;
-    
+    // Nur bei Maus und breitem Viewport – auf Mobil (Touch) und in mobiler Ansicht ausblenden
+    const isDesktop = window.matchMedia('(pointer: fine)').matches && window.matchMedia('(min-width: 769px)').matches;
+
     if (!isDesktop) {
-      return; // Nicht auf Touch-Geräten
+      return; // Nicht auf Touch-Geräten / mobiler Ansicht
     }
     
     // Erstelle Cursor-Follower Element
