@@ -232,16 +232,25 @@
 @media (max-width: 768px) {
   #use-cases {
     padding-top: 3.45rem !important;
+    overflow: visible;
   }
   #use-cases .use-case-box:nth-child(2) > div:nth-child(2) {
     display: none;
   }
-  /* Coaches (nur Mobil): Bildhöhe auf 50% – sichtbare Bildfläche ist halb so hoch */
+  /* Coaches (nur Mobil): Bildhöhe auf 50% – sichtbare Bildfläche ist halb so hoch, alle Ecken abgerundet (inkl. iOS/Safari) */
   #use-cases .use-case-box:nth-child(1) {
     overflow: hidden;
     height: 280px;
     max-height: 280px;
-    border-radius: 0 0 2.5rem 2.5rem;
+    border-radius: 2.5rem;
+    -webkit-border-radius: 2.5rem;
+    isolation: isolate;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Crect width='100' height='100' rx='14' ry='14' fill='white'/%3E%3C/svg%3E");
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Crect width='100' height='100' rx='14' ry='14' fill='white'/%3E%3C/svg%3E");
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
   }
   #use-cases .use-case-box:nth-child(1) > img {
     width: 100% !important;
@@ -250,13 +259,22 @@
     object-fit: cover;
     object-position: top center;
     border-radius: 2.5rem;
+    -webkit-border-radius: 2.5rem;
   }
-  /* Bootcamps (nur Mobil): wie Coaches – 50 % Höhe, unten abgerundet */
+  /* Bootcamps (nur Mobil): wie Coaches – 50 % Höhe, alle Ecken abgerundet (inkl. iOS/Safari) */
   #use-cases .use-case-box:nth-child(3) {
     overflow: hidden;
     height: 280px;
     max-height: 280px;
-    border-radius: 0 0 2.5rem 2.5rem;
+    border-radius: 2.5rem;
+    -webkit-border-radius: 2.5rem;
+    isolation: isolate;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Crect width='100' height='100' rx='14' ry='14' fill='white'/%3E%3C/svg%3E");
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Crect width='100' height='100' rx='14' ry='14' fill='white'/%3E%3C/svg%3E");
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
     width: 100%;
     max-width: 100%;
   }
@@ -267,13 +285,22 @@
     object-fit: cover;
     object-position: top center;
     border-radius: 2.5rem;
+    -webkit-border-radius: 2.5rem;
   }
-  /* Lernräume (nur Mobil): wie Coaches – 50 % Höhe, unten abgerundet */
+  /* Lernräume (nur Mobil): wie Coaches – 50 % Höhe, alle Ecken abgerundet (inkl. iOS/Safari) */
   #use-cases .use-case-box:nth-child(4) {
     overflow: hidden;
     height: 280px;
     max-height: 280px;
-    border-radius: 0 0 2.5rem 2.5rem;
+    border-radius: 2.5rem;
+    -webkit-border-radius: 2.5rem;
+    isolation: isolate;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Crect width='100' height='100' rx='14' ry='14' fill='white'/%3E%3C/svg%3E");
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Crect width='100' height='100' rx='14' ry='14' fill='white'/%3E%3C/svg%3E");
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
     width: 100%;
     max-width: 100%;
   }
@@ -284,11 +311,13 @@
     object-fit: cover;
     object-position: top center;
     border-radius: 2.5rem;
+    -webkit-border-radius: 2.5rem;
   }
   /* Alle vier Boxen: gleiche Breite wie Feature-Karten oben (volle Containerbreite) */
   #use-cases .use-cases-boxes {
     flex-direction: column;
     align-items: stretch;
+    padding-bottom: 0.5rem;
   }
   #use-cases .use-cases-boxes .use-case-box {
     width: 100%;
@@ -302,13 +331,21 @@
     width: 100%;
     max-width: 100%;
   }
-  /* Creator (nur Mobil): gleiche Bildgröße wie Coaches/Bootcamps/Lernräume */
+  /* Creator (nur Mobil): gleiche Bildgröße wie Coaches/Bootcamps/Lernräume, alle Ecken abgerundet (inkl. iOS/Safari) */
   #use-cases .use-case-box:nth-child(2) > div:first-child {
     width: 100%;
     overflow: hidden;
     height: 280px;
     max-height: 280px;
-    border-radius: 0 0 2.5rem 2.5rem;
+    border-radius: 2.5rem;
+    -webkit-border-radius: 2.5rem;
+    isolation: isolate;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Crect width='100' height='100' rx='14' ry='14' fill='white'/%3E%3C/svg%3E");
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Crect width='100' height='100' rx='14' ry='14' fill='white'/%3E%3C/svg%3E");
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
   }
   #use-cases .use-case-box:nth-child(2) > div:first-child > img {
     width: 100% !important;
@@ -317,6 +354,7 @@
     object-fit: cover;
     object-position: top center;
     border-radius: 2.5rem;
+    -webkit-border-radius: 2.5rem;
   }
   #use-cases .use-case-box img {
     max-width: 100% !important;
