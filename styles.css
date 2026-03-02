@@ -1661,6 +1661,41 @@
 }
 .faq-accordion-answer { border: none !important; }
 
+/* FAQ Modal – nur mobile Ansicht: vertikal bis oben scrollbar, kein Horizontal-Scroll, Fragen zentriert */
+@media (max-width: 768px) {
+  #faq-modal {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    align-items: flex-start !important;
+    padding-bottom: 2rem;
+  }
+  #faq-modal > div.relative.w-full {
+    min-height: auto !important;
+    align-items: flex-start !important;
+    padding-top: 3.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  #faq-modal .modal-content {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  #faq-modal .faq-accordion-list {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  #faq-modal .faq-accordion-item,
+  #faq-modal .faq-accordion-question,
+  #faq-modal .faq-accordion-answer {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+}
+
 /* Header Mobile: Log In + Jetzt starten immer nebeneinander (alle Seiten inkl. Unterseiten) */
 @media (max-width: 768px) {
   #main-header nav > div:last-of-type {
