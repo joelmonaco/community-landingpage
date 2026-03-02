@@ -1776,35 +1776,50 @@
   display: block !important;
   vertical-align: middle;
   fill: none !important;
-  stroke: currentColor;
+  stroke: currentColor !important;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   opacity: 1 !important;
   visibility: visible !important;
+  color: inherit;
 }
 /* Icon-Wrapper: feste Größe, damit Icons nicht kollabieren */
 #burger-menu-wrapper .burger-menu-panel .burger-icon {
-  display: inline-block !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
   width: 16px !important;
   height: 16px !important;
   min-width: 16px !important;
   min-height: 16px !important;
   flex-shrink: 0 !important;
   vertical-align: middle;
+  color: inherit;
 }
 #burger-menu-wrapper .burger-menu-panel .burger-icon svg {
   width: 100% !important;
   height: 100% !important;
   display: block !important;
 }
-/* Icons Features/Preise/Updates/FAQ mit Klasse absichern */
-#burger-menu-wrapper .burger-menu-panel .burger-nav-icon {
-  flex-shrink: 0 !important;
-  width: 16px !important;
-  height: 16px !important;
-  min-width: 16px !important;
-  min-height: 16px !important;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+/* Features, Preise, Updates, FAQ: Farbe für Icons erben */
+#burger-menu-wrapper .burger-menu-panel #nav-features-mobile,
+#burger-menu-wrapper .burger-menu-panel #nav-pricing-mobile,
+#burger-menu-wrapper .burger-menu-panel #nav-updates-mobile,
+#burger-menu-wrapper .burger-menu-panel #nav-faq-mobile,
+#burger-menu-wrapper .burger-menu-panel a[href="/features.html"],
+#burger-menu-wrapper .burger-menu-panel a[href="/preise.html"],
+#burger-menu-wrapper .burger-menu-panel a[href="/updates.html"] {
+  color: rgba(0, 0, 0, 0.7);
+}
+#burger-menu-wrapper .burger-menu-panel a[href="/features.html"]:hover,
+#burger-menu-wrapper .burger-menu-panel a[href="/preise.html"]:hover,
+#burger-menu-wrapper .burger-menu-panel a[href="/updates.html"]:hover,
+#burger-menu-wrapper .burger-menu-panel #nav-features-mobile:hover,
+#burger-menu-wrapper .burger-menu-panel #nav-pricing-mobile:hover,
+#burger-menu-wrapper .burger-menu-panel #nav-updates-mobile:hover,
+#burger-menu-wrapper .burger-menu-panel #nav-faq-mobile:hover {
+  color: #000;
 }
 @media (min-width: 768px) {
   #burger-menu-wrapper {
