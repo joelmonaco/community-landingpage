@@ -4,9 +4,10 @@
   function initCursor() {
     // Nur bei Maus und breitem Viewport – auf Mobil (Touch) und in mobiler Ansicht ausblenden
     const isDesktop = window.matchMedia('(pointer: fine)').matches && window.matchMedia('(min-width: 769px)').matches;
+    const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-    if (!isDesktop) {
-      return; // Nicht auf Touch-Geräten / mobiler Ansicht
+    if (!isDesktop || hasTouch) {
+      return;
     }
     
     // Erstelle Cursor-Follower Element
