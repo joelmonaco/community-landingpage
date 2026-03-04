@@ -782,8 +782,8 @@
       </div>
       
       <div class="flex flex-col mb-40">
-        <div class="grid md:grid-cols-12 gap-6 items-start mb-0">
-          <div class="md:col-span-8 feature-card rounded-3xl animate-on-scroll delay-100 transition-all overflow-hidden" style="background: linear-gradient(135deg, #6B63D4 0%, #6B63D4 50%, #D4CC00 100%); box-shadow: 0 10px 40px rgba(107, 99, 212, 0.4), 0 10px 40px rgba(212, 204, 0, 0.3); padding: 3rem 3rem 0 3rem;">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+          <div class="md:col-span-12 lg:col-span-8 feature-card rounded-3xl animate-on-scroll delay-100 transition-all overflow-hidden" style="background: linear-gradient(135deg, #6B63D4 0%, #6B63D4 50%, #D4CC00 100%); box-shadow: 0 10px 40px rgba(107, 99, 212, 0.4), 0 10px 40px rgba(212, 204, 0, 0.3); padding: 3rem 3rem 0 3rem;">
             <h3 id="feature-live-video-title" class="text-3xl font-medium mb-2 text-white" style="font-family: 'Suisse Intl', sans-serif;">Live Video & Workshops</h3>
             <p id="feature-live-video-subtitle" class="text-white/90 mb-4" style="font-family: 'Suisse Intl', sans-serif;">Führe Webinare, Bootcamps und virtuelle Treffen mit hochwertigen Video-Tools durch.</p>
             <!-- Videocall Visualisierung -->
@@ -863,7 +863,7 @@
               </div>
             </div>
           </div>
-          <div class="md:col-span-4 feature-card p-12 rounded-3xl animate-on-scroll delay-200 transition-all" style="background: linear-gradient(45deg, #6B63D4 0%, #6B63D4 55%, #D4CC00 100%); box-shadow: 0 10px 40px rgba(107, 99, 212, 0.4), 0 10px 40px rgba(212, 204, 0, 0.3);">
+          <div class="md:col-span-6 lg:col-span-4 feature-card p-12 rounded-3xl animate-on-scroll delay-200 transition-all" style="background: linear-gradient(45deg, #6B63D4 0%, #6B63D4 55%, #D4CC00 100%); box-shadow: 0 10px 40px rgba(107, 99, 212, 0.4), 0 10px 40px rgba(212, 204, 0, 0.3);">
             <!-- Chat Mockup -->
             <div class="chat-mockup mb-4 bg-black/20 flex flex-col" style="height: 500px; margin-top: -3rem; border-radius: 0 0 1.5rem 1.5rem;">
               <div id="chat-messages-container" class="flex-1 p-3 space-y-3 overflow-y-auto" style="max-height: calc(500px - 80px);">
@@ -933,10 +933,8 @@
             <h3 id="feature-chat-title" class="text-3xl font-medium mb-2 text-white" style="font-family: 'Suisse Intl', sans-serif;">Chat & Channels</h3>
             <p id="feature-chat-subtitle" class="text-white/90 mb-4" style="font-family: 'Suisse Intl', sans-serif;">Einfache Kommunikation in privaten und öffentlichen Gruppen.</p>
           </div>
-        </div>
-        <div class="grid md:grid-cols-12 gap-6 -mt-24">
-          <div class="md:col-span-2"></div>
-          <div class="md:col-span-6 feature-card p-12 rounded-3xl animate-on-scroll delay-300 transition-all" style="background: linear-gradient(90deg, #6B63D4 0%, #6B63D4 50%, #D4CC00 100%); box-shadow: 0 10px 40px rgba(107, 99, 212, 0.4), 0 10px 40px rgba(212, 204, 0, 0.3);">
+          <div class="hidden lg:block lg:col-span-2"></div>
+          <div class="md:col-span-6 lg:col-span-6 lg:-mt-24 feature-card p-12 rounded-3xl animate-on-scroll delay-300 transition-all" style="background: linear-gradient(90deg, #6B63D4 0%, #6B63D4 50%, #D4CC00 100%); box-shadow: 0 10px 40px rgba(107, 99, 212, 0.4), 0 10px 40px rgba(212, 204, 0, 0.3);">
             <h3 id="feature-mediathek-title" class="text-3xl font-medium mb-2 text-white" style="font-family: 'Suisse Intl', sans-serif;">Mediathek & Dateiablage</h3>
             <p id="feature-mediathek-subtitle" class="text-white/90 mb-4" style="font-family: 'Suisse Intl', sans-serif;">Zentraler Speicherplatz für Videos, Dokumente und Kursmaterialien.</p>
             <!-- Dateiablage Mockup -->
@@ -1590,13 +1588,13 @@
           </div>
         </div>
       </div>
-      <!-- Spacer für Scroll-Bereich -->
-      <div class="h-[200vh]"></div>
+      <!-- Spacer für Scroll-Bereich (nur Desktop) -->
+      <div id="app-slider-spacer" class="h-[200vh]"></div>
     </div>
   </section>
 
   <!-- Customer Stories Section -->
-  <div class="px-6 lg:px-8 -mt-[190vh] relative z-10 bg-white">
+  <div id="customer-stories-header" class="px-6 lg:px-8 -mt-[190vh] relative z-10 bg-white">
     <div class="text-center mb-8 animate-on-scroll pt-16">
       <h2 id="stories-title" class="text-4xl md:text-5xl lg:text-6xl font-medium mb-4 leading-normal pb-2" style="background: linear-gradient(to right, #2A2A2A, rgba(42, 42, 42, 0.9), rgba(42, 42, 42, 0.3)); -webkit-background-clip: text; background-clip: text; color: transparent; font-family: 'Cal Sans', sans-serif;">
         Customer Stories
@@ -1844,8 +1842,13 @@
       if (!appSection || !sliderWrapper || !slider) return;
       
       var isMobile = false;
-      function checkMobile() {
+      var isTablet = false;
+      
+      function checkDevice() {
         var nowMobile = window.matchMedia('(max-width: 768px)').matches;
+        var nowTablet = window.matchMedia('(min-width: 769px) and (max-width: 1024px)').matches;
+        
+        // Mobile Karussell
         if (nowMobile && !slider.classList.contains('app-slider-mobile-loop')) {
           var containers = slider.querySelectorAll('.wireframe-container');
           if (containers.length === 6) {
@@ -1858,16 +1861,33 @@
           for (var i = 6; i < all.length; i++) all[i].remove();
           slider.classList.remove('app-slider-mobile-loop');
         }
+        
+        // Tablet Karussell
+        if (nowTablet && !slider.classList.contains('app-slider-tablet-loop')) {
+          var containers = slider.querySelectorAll('.wireframe-container');
+          if (containers.length === 6) {
+            containers.forEach(function(el) { slider.appendChild(el.cloneNode(true)); });
+            slider.classList.add('app-slider-tablet-loop');
+          }
+        }
+        if (!nowTablet && slider.classList.contains('app-slider-tablet-loop')) {
+          var all = slider.querySelectorAll('.wireframe-container');
+          for (var i = 6; i < all.length; i++) all[i].remove();
+          slider.classList.remove('app-slider-tablet-loop');
+        }
+        
         isMobile = nowMobile;
+        isTablet = nowTablet;
       }
-      checkMobile();
+      checkDevice();
       window.addEventListener('resize', function() {
-        checkMobile();
+        checkDevice();
         updateSlider();
       });
       
       function updateSlider() {
-        if (isMobile) {
+        // Auf Mobile und Tablet: CSS-Animation, kein Scroll-basiertes Transform
+        if (isMobile || isTablet) {
           slider.style.transform = '';
           return;
         }

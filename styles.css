@@ -42,9 +42,70 @@
   #app-wireframes-section #app-slider.app-slider-mobile-loop {
     animation: app-carousel-mobile 40s linear infinite;
   }
+  /* Spacer auf Mobile ausblenden */
+  #app-slider-spacer {
+    display: none !important;
+  }
+  /* Customer Stories Header Margin anpassen */
+  #customer-stories-header {
+    margin-top: 2rem !important;
+  }
 }
 
 @keyframes app-carousel-mobile {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* iPad/Tablet: weniger Überlappung, automatisches Karussell */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #app-wireframes-section {
+    overflow: hidden;
+  }
+  #app-wireframes-section #app-slider-wrapper {
+    overflow: visible;
+  }
+  #app-wireframes-section #app-slider-container {
+    overflow: visible;
+    position: relative !important;
+    padding-bottom: 2rem;
+  }
+  #app-wireframes-section #app-slider {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: fit-content;
+    min-width: 100%;
+  }
+  #app-wireframes-section #app-slider .wireframe-container {
+    flex-shrink: 0;
+    width: 45vw !important;
+    min-width: 45vw;
+    margin-right: -4rem !important;
+    max-width: none;
+  }
+  #app-wireframes-section #app-slider .wireframe-container:last-child {
+    margin-right: 0 !important;
+  }
+  #app-wireframes-section #app-slider .wireframe-image {
+    max-height: none !important;
+    height: auto !important;
+  }
+  /* Dauerhaft laufendes Karussell (Tablet) */
+  #app-wireframes-section #app-slider.app-slider-tablet-loop {
+    animation: app-carousel-tablet 50s linear infinite;
+  }
+  /* Spacer auf Tablet ausblenden */
+  #app-slider-spacer {
+    display: none !important;
+  }
+  /* Customer Stories Header Margin anpassen */
+  #customer-stories-header {
+    margin-top: 2rem !important;
+  }
+}
+
+@keyframes app-carousel-tablet {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
