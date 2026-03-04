@@ -116,7 +116,7 @@
       position: absolute;
       top: 100%;
       left: 0;
-      margin-top: 0.5rem;
+      padding-top: 0.5rem;
       background: white;
       border-radius: 1.5rem;
       padding: 1rem;
@@ -129,10 +129,24 @@
       z-index: 1000;
     }
 
-    .use-cases-menu-item:hover .use-cases-dropdown {
+    .use-cases-arrow-trigger:hover ~ .use-cases-dropdown,
+    .use-cases-dropdown:hover {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
+    }
+
+    .use-cases-arrow-trigger {
+      display: flex;
+      align-items: center;
+      padding: 4px 6px;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: background 0.2s ease;
+    }
+
+    .use-cases-arrow-trigger:hover {
+      background: rgba(0, 0, 0, 0.05);
     }
 
     @keyframes scrollBanner {
@@ -230,7 +244,7 @@
                   </svg>
                   Features
                 </a>
-                <div class="use-cases-menu-item relative">
+                <div class="use-cases-menu-item relative" style="display: flex; align-items: center;">
                   <a href="/#use-cases" class="text-sm font-medium text-black/70 hover:text-black transition whitespace-nowrap flex items-center gap-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -239,10 +253,12 @@
                       <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                     </svg>
                     Use Cases
+                  </a>
+                  <span class="use-cases-arrow-trigger">
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
-                  </a>
+                  </span>
                   <div class="use-cases-dropdown">
                     <a href="/coaches.html" id="nav-uc-coaches" class="block text-sm font-medium text-black/70 hover:text-black transition py-2 flex items-center gap-2">
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
