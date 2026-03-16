@@ -56,6 +56,38 @@ function sendTerminEmail(data) {
   return transporter.sendMail(mailOptions);
 }
 
+function sendKontaktEmail(data) {
+  const transporter = getTransporter();
+  const text = [
+    'Neue Kontaktanfrage',
+    '',
+    'Betreff: ' + (data.betreff || ''),
+    'Vorname: ' + (data.vorname || ''),
+    'Nachname: ' + (data.nachname || ''),
+    'E-Mail: ' + (data.email || ''),
+    data.telefon ? 'Telefon: ' + data.telefon : '',
+    '',
+    'Nachricht:',
+    data.nachricht || ''
+  ].filter(Boolean).join('\n');
+
+  const mailOptions = {
+    from: process.env.SMTP_FROM || process.env.SMTP_USER || 'noreply@glymmer.io',
+    to: TERMIN_EMAIL_TO,
+    subject: 'Kontaktanfrage [' + (data.betreff || '') + ']: ' + (data.vorname || '') + ' ' + (data.nachname || ''),
+    text: text
+  };
+
+  if (data.anhangBuffer && data.anhangName) {
+    mailOptions.attachments = [{
+      filename: data.anhangName,
+      content: data.anhangBuffer
+    }];
+  }
+
+  return transporter.sendMail(mailOptions);
+}
+
 function sendContactEmail(data) {
   const transporter = getTransporter();
   const source = data.source === 'enterprise' ? 'Enterprise-Anfrage (Kontakt aufnehmen)' : 'Kontaktanfrage';
@@ -104,11 +136,80 @@ function serveFile(req, res, filePath, contentType) {
   });
 }
 
+function parseMultipart(req) {
+  return new Promise((resolve, reject) => {
+    const contentType = req.headers['content-type'] || '';
+    const match = contentType.match(/boundary=(?:"([^"]+)"|([^\s;]+))/);
+    if (!match) return reject(new Error('No boundary'));
+    const boundary = match[1] || match[2];
+    const chunks = [];
+    req.on('data', c => chunks.push(c));
+    req.on('end', () => {
+      const buf = Buffer.concat(chunks);
+      const raw = buf.toString('binary');
+      const parts = raw.split('--' + boundary).slice(1, -1);
+      const fields = {};
+      let fileData = null;
+      for (const part of parts) {
+        const [headerBlock, ...bodyParts] = part.split('\r\n\r\n');
+        const body = bodyParts.join('\r\n\r\n').replace(/\r\n$/, '');
+        const dispMatch = headerBlock.match(/name="([^"]+)"/);
+        if (!dispMatch) continue;
+        const name = dispMatch[1];
+        const filenameMatch = headerBlock.match(/filename="([^"]+)"/);
+        if (filenameMatch) {
+          fileData = { name: name, filename: filenameMatch[1], buffer: Buffer.from(body, 'binary') };
+        } else {
+          fields[name] = body;
+        }
+      }
+      resolve({ fields, file: fileData });
+    });
+    req.on('error', reject);
+  });
+}
+
 const server = http.createServer((req, res) => {
   const url = decodeURIComponent(req.url);
   const pathname = url.split('?')[0];
   const hasApiTermin = pathname === '/api/termin';
   const hasApiContact = pathname === '/api/contact';
+  const hasApiKontakt = pathname === '/api/kontakt';
+
+  if (hasApiKontakt && req.method === 'POST') {
+    parseMultipart(req)
+      .then(({ fields, file }) => {
+        const data = {
+          vorname: fields.vorname || '',
+          nachname: fields.nachname || '',
+          email: fields.email || '',
+          telefon: fields.telefon || '',
+          betreff: fields.betreff || '',
+          nachricht: fields.nachricht || ''
+        };
+        if (file && file.buffer.length > 0) {
+          data.anhangName = file.filename;
+          data.anhangBuffer = file.buffer;
+        }
+        const hasSmtp = process.env.SMTP_HOST || process.env.SMTP_USER;
+        if (hasSmtp) {
+          return sendKontaktEmail(data).then(() => {
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ success: true }));
+          });
+        } else {
+          console.log('Kontakt-Anfrage (SMTP nicht konfiguriert):', { ...data, anhangBuffer: data.anhangBuffer ? '[Buffer ' + data.anhangBuffer.length + ' bytes]' : undefined });
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ success: true }));
+        }
+      })
+      .catch(err => {
+        console.error('Kontakt-Formular Fehler:', err);
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ message: 'Ungültige Anfrage.' }));
+      });
+    return;
+  }
 
   if (hasApiContact && req.method === 'POST') {
     let body = '';

@@ -1,6 +1,7 @@
 RewriteEngine On
 RewriteBase /
-
+RewriteCond %{SERVER_PORT} !=443
+RewriteRule ^(.*)$ https://glymmer.io/$1 [R=301,L]
 # Ohne .html in der URL – alle Seiten
 RewriteRule ^preise/?$ preise.html [L]
 RewriteRule ^updates/?$ updates.html [L]

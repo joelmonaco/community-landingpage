@@ -186,6 +186,35 @@ const translations = {
       errorAccept: 'Bitte AGB akzeptieren.',
       errorSend: 'Fehler beim Senden. Bitte später erneut versuchen.'
     },
+    kontaktModal: {
+      title: 'Kontakt',
+      closeAria: 'Schließen',
+      labelFirstname: 'Vorname *',
+      labelLastname: 'Nachname *',
+      labelEmail: 'E-Mail *',
+      labelPhone: 'Telefonnummer *',
+      labelSubject: 'Betreff *',
+      labelMessage: 'Nachricht *',
+      labelAttachment: 'Anhang (optional, max. 5 MB)',
+      placeholderMessage: 'Wie können wir Ihnen helfen?',
+      subjectOptions: [
+        'Generelle Fragen/Feedback',
+        'Subscription',
+        'Technischer Support/Fehler',
+        'Partnerschaft/Kooperation',
+        'Datenschutz/Compliance',
+        'Missbrauch in einer Community melden'
+      ],
+      subjectPlaceholder: 'Bitte wählen…',
+      checkboxLabel: 'Ich akzeptiere die <a href="/terms.html" target="_blank" rel="noopener">AGB</a> *',
+      privacyLinkText: 'Lese hier die <a href="/privacy.html" target="_blank" rel="noopener">Datenschutzbestimmungen</a>.',
+      submitBtn: 'Nachricht senden',
+      sendingBtn: 'Wird gesendet…',
+      successMessage: 'Vielen Dank! Wir haben Ihre Nachricht erhalten und melden uns in Kürze.',
+      errorAccept: 'Bitte AGB akzeptieren.',
+      errorFileSize: 'Die Datei ist zu groß. Maximal 5 MB erlaubt.',
+      errorSend: 'Fehler beim Senden. Bitte später erneut versuchen.'
+    },
     faq: {
       title: 'Häufige Fragen',
       closeAria: 'Schließen',
@@ -527,6 +556,35 @@ const translations = {
       errorAccept: 'Please accept the Terms.',
       errorSend: 'Error sending. Please try again later.'
     },
+    kontaktModal: {
+      title: 'Contact',
+      closeAria: 'Close',
+      labelFirstname: 'First name *',
+      labelLastname: 'Last name *',
+      labelEmail: 'Email *',
+      labelPhone: 'Phone number *',
+      labelSubject: 'Subject *',
+      labelMessage: 'Message *',
+      labelAttachment: 'Attachment (optional, max. 5 MB)',
+      placeholderMessage: 'How can we help you?',
+      subjectOptions: [
+        'General questions/feedback',
+        'Subscription',
+        'Technical support/bug',
+        'Partnership/cooperation',
+        'Privacy/compliance',
+        'Report abuse in a community'
+      ],
+      subjectPlaceholder: 'Please select…',
+      checkboxLabel: 'I accept the <a href="/terms.html" target="_blank" rel="noopener">Terms</a> *',
+      privacyLinkText: 'Read the <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> here.',
+      submitBtn: 'Send message',
+      sendingBtn: 'Sending…',
+      successMessage: 'Thank you! We have received your message and will get back to you shortly.',
+      errorAccept: 'Please accept the Terms.',
+      errorFileSize: 'The file is too large. Maximum 5 MB allowed.',
+      errorSend: 'Error sending. Please try again later.'
+    },
     faq: {
       title: 'Frequently Asked Questions',
       closeAria: 'Close',
@@ -705,6 +763,7 @@ function applyTranslations(lang) {
   if (typeof window !== 'undefined') {
     window.__currentTranslations = t;
     if (t.terminModal) window.terminModalTranslations = t.terminModal;
+    if (t.kontaktModal) window.kontaktModalTranslations = t.kontaktModal;
   }
 
   // Navigation
@@ -963,6 +1022,44 @@ function applyTranslations(lang) {
     if (termPrivacyLink && t.terminModal.privacyLinkText) termPrivacyLink.innerHTML = t.terminModal.privacyLinkText;
     const termSubmit = document.getElementById('termin-modal-submit');
     if (termSubmit) termSubmit.textContent = t.terminModal.submitBtn;
+  }
+
+  // Kontakt modal (injected by kontakt-modal.js)
+  if (t.kontaktModal) {
+    const km = t.kontaktModal;
+    const kontaktTitle = document.getElementById('kontakt-modal-title');
+    if (kontaktTitle) kontaktTitle.textContent = km.title;
+    const kontaktClose = document.getElementById('kontakt-modal-close');
+    if (kontaktClose) kontaktClose.setAttribute('aria-label', km.closeAria);
+    const kontaktVorname = document.getElementById('kontakt-label-vorname');
+    if (kontaktVorname) kontaktVorname.textContent = km.labelFirstname;
+    const kontaktNachname = document.getElementById('kontakt-label-nachname');
+    if (kontaktNachname) kontaktNachname.textContent = km.labelLastname;
+    const kontaktEmail = document.getElementById('kontakt-label-email');
+    if (kontaktEmail) kontaktEmail.textContent = km.labelEmail;
+    const kontaktTelefon = document.getElementById('kontakt-label-telefon');
+    if (kontaktTelefon) kontaktTelefon.textContent = km.labelPhone;
+    const kontaktBetreff = document.getElementById('kontakt-label-betreff');
+    if (kontaktBetreff) kontaktBetreff.textContent = km.labelSubject;
+    const kontaktNachricht = document.getElementById('kontakt-label-nachricht');
+    if (kontaktNachricht) kontaktNachricht.textContent = km.labelMessage;
+    const kontaktAnhang = document.getElementById('kontakt-label-anhang');
+    if (kontaktAnhang) kontaktAnhang.textContent = km.labelAttachment;
+    const kontaktNachrichtField = document.getElementById('kontakt-nachricht');
+    if (kontaktNachrichtField) kontaktNachrichtField.placeholder = km.placeholderMessage;
+    const kontaktCheckbox = document.getElementById('kontakt-label-checkbox');
+    if (kontaktCheckbox) kontaktCheckbox.innerHTML = km.checkboxLabel;
+    const kontaktPrivacy = document.getElementById('kontakt-privacy-link');
+    if (kontaktPrivacy && km.privacyLinkText) kontaktPrivacy.innerHTML = km.privacyLinkText;
+    const kontaktSubmit = document.getElementById('kontakt-modal-submit');
+    if (kontaktSubmit) kontaktSubmit.textContent = km.submitBtn;
+    const kontaktSelect = document.getElementById('kontakt-betreff');
+    if (kontaktSelect && km.subjectOptions) {
+      kontaktSelect.innerHTML = '<option value="" disabled selected>' + (km.subjectPlaceholder || '') + '</option>';
+      km.subjectOptions.forEach(function(opt) {
+        kontaktSelect.innerHTML += '<option value="' + opt + '">' + opt + '</option>';
+      });
+    }
   }
 
   // FAQ modal (index, preise, or injected by faq-modal.js)
