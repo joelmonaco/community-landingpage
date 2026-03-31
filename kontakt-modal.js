@@ -27,7 +27,7 @@
       '#kontakt-modal-form .checkbox-group label{display:flex;align-items:flex-start;gap:0.5rem;font-weight:400;cursor:pointer;}' +
       '#kontakt-modal-form .checkbox-group input{width:1rem;height:1rem;margin-top:0.2rem;}' +
       '#kontakt-modal-form .checkbox-group a{text-decoration:underline;color:#7167F5;}' +
-      '#kontakt-modal-form .privacy-link-line{margin-top:0.5rem;font-size:0.8125rem;color:#6b7280;}' +
+      '#kontakt-modal-form .privacy-link-line{margin-top:0.75rem;font-size:0.6875rem;color:#9ca3af;line-height:1.4;}' +
       '#kontakt-modal-form .privacy-link-line a{text-decoration:underline;color:#7167F5;}' +
       '#kontakt-modal-form button[type=submit]{width:100%;padding:0.75rem 1rem;background:#7167F5;color:#fff;border:none;border-radius:9999px;font-weight:600;cursor:pointer;font-size:1rem;}' +
       '#kontakt-modal-form button[type=submit]:hover{background:#5b52d4;}' +
@@ -50,7 +50,7 @@
     labelSubject: 'Betreff *',
     labelMessage: 'Nachricht *',
     labelAttachment: 'Anhang (optional, max. 5 MB)',
-    placeholderMessage: 'Wie können wir Ihnen helfen?',
+    placeholderMessage: 'Wie können wir dir helfen?',
     subjectOptions: [
       'Generelle Fragen/Feedback',
       'Subscription',
@@ -61,10 +61,10 @@
     ],
     subjectPlaceholder: 'Bitte wählen…',
     checkboxLabel: 'Ich akzeptiere die <a href="/terms.html" target="_blank" rel="noopener">AGB</a> *',
-    privacyLinkText: 'Lese hier die <a href="/privacy.html" target="_blank" rel="noopener">Datenschutzbestimmungen</a>.',
+    privacyLinkText: 'Die im Rahmen des Meldeformulars eingegebenen Daten werden ausschließlich zum Zweck der Bearbeitung Deiner Meldung sowie zur Missbrauchsbekämpfung verarbeitet. Rechtsgrundlage der Verarbeitung ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse). Du hast das Recht, gemäß Art. 21 DSGVO Widerspruch gegen die Verarbeitung Deiner personenbezogenen Daten einzulegen. Den Widerspruch kannst Du über die bekannten Kontaktkanäle richten. Ein Widerspruch kann zur Folge haben, dass die Meldung nicht weiter bearbeitet werden kann. Weitere Informationen zur Verarbeitung Deiner personenbezogenen Daten findest Du in der <a href="/privacy.html" target="_blank" rel="noopener">Datenschutzbestimmungen</a>.',
     submitBtn: 'Nachricht senden',
     sendingBtn: 'Wird gesendet…',
-    successMessage: 'Vielen Dank! Wir haben Ihre Nachricht erhalten und melden uns in Kürze.',
+    successMessage: 'Vielen Dank! Wir haben deine Nachricht erhalten und melden uns in Kürze.',
     errorAccept: 'Bitte AGB und Datenschutzbestimmungen akzeptieren.',
     errorFileSize: 'Die Datei ist zu groß. Maximal 5 MB erlaubt.',
     errorSend: 'Fehler beim Senden. Bitte später erneut versuchen.'

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /kontakt.html
+Disallow: /datenschutz.html
+Disallow: /impressum.html
+Disallow: /agb.html
+Disallow: /customer-stories.html
+
+Sitemap: https://glymmer.io/sitemap.xml

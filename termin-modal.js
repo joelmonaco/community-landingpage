@@ -43,12 +43,12 @@
     labelPhone: 'Telefonnummer *',
     labelEmail: 'E-Mail *',
     labelComment: 'Kommentar (optional)',
-    placeholderComment: 'Wann passt es Ihnen? Weitere Wünsche?',
+    placeholderComment: 'Wann passt es dir? Weitere Wünsche?',
     checkboxLabel: 'Ich akzeptiere die <a href="/terms.html" target="_blank" rel="noopener">AGB</a> *',
     privacyLinkText: 'Lese hier die <a href="/privacy.html" target="_blank" rel="noopener">Datenschutzbestimmungen</a>.',
     submitBtn: 'Anfrage senden',
     sendingBtn: 'Wird gesendet…',
-    successMessage: 'Vielen Dank! Wir melden uns in Kürze bei Ihnen.',
+    successMessage: 'Vielen Dank! Wir melden uns in Kürze bei dir.',
     errorAccept: 'Bitte AGB akzeptieren.',
     errorSend: 'Fehler beim Senden. Bitte später erneut versuchen.'
   };
@@ -161,7 +161,7 @@
     })
       .then(function (res) {
         if (res.ok) {
-          showMessage('success', s.successMessage || 'Vielen Dank! Wir melden uns in Kürze bei Ihnen.');
+          showMessage('success', s.successMessage || 'Vielen Dank! Wir melden uns in Kürze bei dir.');
           form.reset();
           setTimeout(closeModal, 2000);
         } else {
